@@ -4,8 +4,11 @@ Idea-to-Design-Workflow zur Verbesserung des Entwicklungsprozesses von Software 
 
 Ziel: Der Entwicklungsprozess wird einfacher, schneller und qualitativ hochwertiger.
 
+Die Datei rules/process.md enthält die für skizzwerk verbindlichen Prozessbeschreibung.
+
 Verzeichnisstruktur:
 
+```
 skizzwerk/
 ├── README.md
 ├── rules/
@@ -23,3 +26,4 @@ skizzwerk/
 │   └── requirements.md
 └── pilots/
     └── openclaw-xmpp/
+```

@@ -1,24 +1,40 @@
 ---
 document: idea
 process_phase: swk-01
-project: ""
+project: "openclaw-xmpp"
 status: draft
-created: YYYY-MM-DD
-last_updated: YYYY-MM-DD
+created: 2026-06-13
+last_updated: 2026-09-13
 ---
 
 # Projektidee
 
 ## 1. Originalbeschreibung
 
-> Hier steht die ursprüngliche Beschreibung unverändert.
+Ein XMPP-Plugin für aktuelle OpenClaw-Versionen entwickeln.
+
+Das Plugin muss muss Direktnachrichten, OMEMO-Verschlüsselung und
+Gruppenchats über MUC unterstützen.
+
+Vorhandene GitHub-Projekte sollen als mögliche Grundlage untersucht werden.
+
+Für neue OpenClaw-Versionen wird ein Verfahren zur automatischen
+Aktualisierung oder Kompatibilitätssicherung benötigt. Dies kann ggf. auch
+mit KI Agenten unterstützt werden.
 
 ## 2. Herkunft und Kontext
 
-- Verfasser:
-- Datum:
+- Verfasser: Martin Henkel
+- Datum: 2026-09-13
 - ergänzende Gespräche oder Dokumente:
 - bekannte Ausgangssituation:
+  - Ein eigener XMPP Server ist vorhanden
+  - z. Z. sind 2 OpenClaw Installation aktiv
+  - bestehende Plugins konnten z. T. nicht installiert werden
+    oder erfüllten nicht die Anforderungen an Sicherheit (OMEMO)
+    oder Kommunikation (Gruppenchats/MUX)
+  - darüber hinaus dient dieses Projekt auch als Pilot für das
+    Projekt skizzwerk
 
 ## 3. Verstandenes Ziel
 
