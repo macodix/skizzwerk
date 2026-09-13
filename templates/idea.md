@@ -2,7 +2,7 @@
 document: idea
 process_phase: swk-01
 project: ""
-status: draft
+status: input
 created: YYYY-MM-DD
 last_updated: YYYY-MM-DD
 ---

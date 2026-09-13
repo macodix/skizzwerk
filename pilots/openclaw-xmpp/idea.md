@@ -2,8 +2,8 @@
 document: idea
 process_phase: swk-01
 project: "openclaw-xmpp"
-status: draft
-created: 2026-06-13
+status: ipnut
+created: 2026-09-13
 last_updated: 2026-09-13
 ---
 
@@ -20,7 +20,7 @@ Vorhandene GitHub-Projekte sollen als mögliche Grundlage untersucht werden.
 
 Für neue OpenClaw-Versionen wird ein Verfahren zur automatischen
 Aktualisierung oder Kompatibilitätssicherung benötigt. Dies kann ggf. auch
-mit KI Agenten unterstützt werden.
+mit KI-Agenten unterstützt werden.
 
 ## 2. Herkunft und Kontext
 
@@ -28,11 +28,11 @@ mit KI Agenten unterstützt werden.
 - Datum: 2026-09-13
 - ergänzende Gespräche oder Dokumente:
 - bekannte Ausgangssituation:
-  - Ein eigener XMPP Server ist vorhanden
-  - z. Z. sind 2 OpenClaw Installation aktiv
+  - Ein eigener XMPP-Server ist vorhanden
+  - z. Z. sind 2 OpenClaw Installationen, Version 2026.9.4, aktiv
   - bestehende Plugins konnten z. T. nicht installiert werden
     oder erfüllten nicht die Anforderungen an Sicherheit (OMEMO)
-    oder Kommunikation (Gruppenchats/MUX)
+    oder Kommunikation (Gruppenchats/MUC)
   - darüber hinaus dient dieses Projekt auch als Pilot für das
     Projekt skizzwerk
 

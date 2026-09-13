@@ -4,7 +4,11 @@ Idea-to-Design-Workflow zur Verbesserung des Entwicklungsprozesses von Software 
 
 Ziel: Der Entwicklungsprozess wird einfacher, schneller und qualitativ hochwertiger.
 
-Die Datei rules/process.md enthält die für skizzwerk verbindlichen Prozessbeschreibung.
+Arbeisanweisungen:
+
+- Die Datei rules/process.md enthält die für skizzwerk verbindlichen Prozessbeschreibung.
+
+- Die verbindlichen Dokumentstatus sind in `rules/status.md` definiert.
 
 Verzeichnisstruktur:
 
