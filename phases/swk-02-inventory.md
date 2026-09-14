@@ -123,10 +123,20 @@ Für jeden vorgesehenen Untersuchungsbereich wird dokumentiert:
 11. Dokumentiere nicht durchgeführte Prüfungen und die daraus entstehenden
     Grenzen der Aussagekraft.
 
-12. Erstelle oder vervollständige die projektspezifische `inventory.md`
+12. Bezeichne eine Prüfung nur dann als unzulässig, wenn eine verbindliche
+    Regel sie ausdrücklich verbietet. Unterscheide zwischen:
+
+    - nicht erforderlich,
+    - nicht vorgesehen,
+    - nicht durchgeführt,
+    - technisch nicht möglich,
+    - wegen fehlenden Zugriffs nicht möglich,
+    - durch eine konkrete Regel unzulässig.
+
+13. Erstelle oder vervollständige die projektspezifische `inventory.md`
     anhand von `templates/inventory.md`.
 
-13. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-02` in
+14. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-02` in
     `rules/quality-gates.md`.
 
 ## Verbindliche Regeln
@@ -150,8 +160,20 @@ Für jeden vorgesehenen Untersuchungsbereich wird dokumentiert:
 - Bewerte noch nicht, welche gefundene Grundlage bevorzugt werden soll.
 - Verändere keine untersuchten externen Systeme, Installationen oder
   Repositories.
-- Führe keine Installation, Aktualisierung oder sonstige Veränderung eines
-  untersuchten Systems allein zur Bestandsaufnahme durch.
+- Verändere kein untersuchtes externes oder produktiv verwendetes System.
+- Installiere oder aktualisiere keine Software auf einem untersuchten externen
+  oder produktiv verwendeten System.
+- Builds und Tests in einer getrennten, entbehrlichen Arbeitsumgebung sind
+  zulässig, wenn:
+  - sie für einen Befund des festgelegten Untersuchungsumfangs erforderlich
+    sind,
+  - sie kein externes oder produktiv verwendetes System verändern,
+  - sie keine produktiven Zugangsdaten verwenden,
+  - Durchführung und Ergebnis reproduzierbar dokumentiert werden.
+- Ist ein Build oder Test nicht erforderlich oder nicht durchgeführt worden,
+  wird dies als `nicht durchgeführt` dokumentiert.
+- Aus einer nicht durchgeführten Prüfung darf kein Prozessverbot abgeleitet
+  werden.
 - Setze keine Annahme stillschweigend als Arbeitsgrundlage.
 - Ändere den Dokumentstatus nur entsprechend `rules/status.md` und dem
   Prüfergebnis.

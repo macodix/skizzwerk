@@ -29,6 +29,42 @@ Belegbarkeit nicht überschreiten.
 | `CONFLICT` | Verfügbare Quellen oder Befunde widersprechen sich. |
 | `DISPROVED` | Aussage wurde durch einen belastbaren Gegenbeleg widerlegt. |
 
+
+## Anforderungen an CONFLICT
+
+Der Nachweisstatus `CONFLICT` darf nur verwendet werden, wenn mindestens zwei
+belegte Aussagen:
+
+- denselben Sachverhalt betreffen,
+- denselben relevanten Bezugszeitpunkt oder Gültigkeitszeitraum betreffen,
+- denselben Geltungsbereich besitzen,
+- logisch nicht gleichzeitig zutreffen können.
+
+Für jeden Konflikt müssen dokumentiert werden:
+
+- die erste Aussage mit genauer Quelle,
+- die zweite Aussage mit genauer Quelle,
+- der gemeinsame Sachverhalt,
+- Bezugszeitpunkt oder Gültigkeitszeitraum,
+- Geltungsbereich,
+- die konkrete logische Unvereinbarkeit.
+
+Kein ausreichender Nachweis für `CONFLICT` sind allein:
+
+- unterschiedliche Versionsnummern mit möglicherweise unterschiedlicher
+  Bedeutung,
+- eine historische Aussage und ein davon abweichender aktueller Stand,
+- eine Dokumentationsaussage und das bloße Fehlen einer erwarteten
+  Zeichenkette im Quellcode,
+- fehlende Informationen,
+- unterschiedliche Formulierungen,
+- eine nicht durchgeführte Funktionsprüfung.
+
+Ist die Unvereinbarkeit nicht nachgewiesen, wird kein `CONFLICT` gesetzt.
+Der Sachverhalt wird entsprechend seiner tatsächlichen Belegbarkeit als
+`DOCUMENTED`, `INFERRED` oder `UNKNOWN` dokumentiert.
+
+
 ## Quellenarten
 
 | Quellenart | Beispiele |
@@ -43,6 +79,41 @@ Belegbarkeit nicht überschreiten.
 | `SECONDARY_SOURCE` | Bericht oder Erläuterung eines Dritten |
 | `ANALYSIS` | nachvollziehbare Ableitung durch skizzwerk |
 | `NONE` | noch keine Quelle vorhanden |
+
+## Anforderungen an CONFLICT
+
+Der Nachweisstatus `CONFLICT` darf nur verwendet werden, wenn mindestens zwei
+belegte Aussagen:
+
+- denselben Sachverhalt betreffen,
+- denselben relevanten Bezugszeitpunkt oder Gültigkeitszeitraum betreffen,
+- denselben Geltungsbereich besitzen,
+- logisch nicht gleichzeitig zutreffen können.
+
+Für jeden Konflikt müssen dokumentiert werden:
+
+- die erste Aussage mit genauer Quelle,
+- die zweite Aussage mit genauer Quelle,
+- der gemeinsame Sachverhalt,
+- Bezugszeitpunkt oder Gültigkeitszeitraum,
+- Geltungsbereich,
+- die konkrete logische Unvereinbarkeit.
+
+Kein ausreichender Nachweis für `CONFLICT` sind allein:
+
+- unterschiedliche Versionsnummern mit möglicherweise unterschiedlicher
+  Bedeutung,
+- eine historische Aussage und ein davon abweichender aktueller Stand,
+- eine Dokumentationsaussage und das bloße Fehlen einer erwarteten
+  Zeichenkette im Quellcode,
+- fehlende Informationen,
+- unterschiedliche Formulierungen,
+- eine nicht durchgeführte Funktionsprüfung.
+
+Ist die Unvereinbarkeit nicht nachgewiesen, wird kein `CONFLICT` gesetzt.
+Der Sachverhalt wird entsprechend seiner tatsächlichen Belegbarkeit als
+`DOCUMENTED`, `INFERRED` oder `UNKNOWN` dokumentiert.
+
 
 ## Regeln für swk-01
 
@@ -80,6 +151,10 @@ Skizzwerk darf eine Aussage des Ideengebers nicht selbstständig auf
 - Aussagen aus Issues und Pull Requests sind Hinweise, keine gesicherten Tatsachen.
 - Widersprüche zwischen Dokumentation, Code und Testergebnis erhalten `CONFLICT`.
 - Fehlende Nachweise dürfen nicht durch plausible Formulierungen ersetzt werden.
+- Eine nicht durchgeführte Prüfung wird als `nicht durchgeführt` dokumentiert.
+- Aus einer nicht durchgeführten Prüfung darf nicht abgeleitet werden, dass
+  diese Prüfung durch den Prozess verboten ist.
+- Eine Prüfung darf nur als `unzulässig` bezeichnet werden, wenn eine  verbindliche Regel sie ausdrücklich verbietet.
 - Quellen müssen so angegeben werden, dass der Befund erneut geprüft werden kann.
 
 ## Format eines Befunds
@@ -93,10 +168,12 @@ Das untersuchte Plugin unterstützt MUC-Gruppenchats.
 Status:
 DOCUMENTED
 
-Quelle:
-- Typ: PROJECT_DOCUMENTATION
-- Fundstelle: README, Abschnitt „Features“
-- Abruf- oder Prüfdatum: YYYY-MM-DD
+Quellen:
+
+| Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
+|---|---|---|---|---|
+| PROJECT_DOCUMENTATION | README, Abschnitt „Features“ | Commit abc123 | YYYY-MM-DD | Behauptung der MUC-Unterstützung |
+
 
 Prüfung:
 Noch kein Funktionstest durchgeführt.

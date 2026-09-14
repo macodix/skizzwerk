@@ -65,6 +65,11 @@ Dokumentabschnitte Text enthalten.
 - Versionen, Commits oder Veröffentlichungsstände angegeben sind, soweit sie
   für die Reproduzierbarkeit erforderlich und verfügbar sind,
 - bei jeder Quelle erkennbar ist, welcher Teil tatsächlich untersucht wurde,
+- bei einem Befund mit mehreren verwendeten Quellen jede Quelle einzeln mit
+  ihrer tatsächlichen Quellenart dokumentiert ist,
+- keine gemeinsame Quellenart verwendet wird, wenn die Quellen
+  unterschiedlichen Quellenarten angehören,
+- bei jeder Quelle erkennbar ist, welchen Beitrag sie zum Befund leistet,
 - jeder relevante Befund eine gültige `evd-nnn`-Kennung besitzt,
 - jeder Befund einen Nachweisstatus gemäß `rules/evidence.md` besitzt,
 - Befundübersicht und Einzelbefunde vollständig und widerspruchsfrei sind,
@@ -76,13 +81,30 @@ Dokumentabschnitte Text enthalten.
 - Ableitungen mit `INFERRED` gekennzeichnet und aus dokumentierten Befunden
   nachvollziehbar hergeleitet sind,
 - unbekannte Sachverhalte mit `UNKNOWN` gekennzeichnet sind,
-- widersprüchliche Quellen oder Befunde mit `CONFLICT` gekennzeichnet und
-  gegenübergestellt sind,
+- widersprüchliche Quellen oder Befunde mit `CONFLICT` gekennzeichnet und gegenübergestellt sind,
+- jeder Befund mit dem Status `CONFLICT` mindestens zwei belegte Aussagen mit
+  genauer Quelle nennt,
+- bei jedem `CONFLICT` der gemeinsame Sachverhalt, Bezugszeitpunkt und
+  Geltungsbereich dokumentiert sind,
+- bei jedem `CONFLICT` die logische Unvereinbarkeit der Aussagen konkret
+  begründet ist,
+- unterschiedliche Versionsangaben nicht ohne Prüfung ihrer Bedeutung als
+  Konflikt behandelt wurden,
+- historische und aktuelle Aussagen nicht allein wegen ihrer Abweichung als
+  Konflikt behandelt wurden,
+- das bloße Fehlen einer Zeichenkette oder eines erwarteten Codebestandteils
+  nicht ohne weitere Begründung als Widerlegung einer Dokumentationsaussage
+  behandelt wurde,
 - widerlegte Aussagen mit `DISPROVED` gekennzeichnet und durch einen
   belastbaren Gegenbeleg belegt sind,
 - fehlende Informationen nicht durch Annahmen oder plausible Formulierungen
   ersetzt wurden,
 - nicht durchgeführte Prüfungen bei den betroffenen Befunden dokumentiert sind,
+- nicht durchgeführte Prüfungen nicht ohne verbindliche Regel als unzulässig
+  bezeichnet wurden,
+- bei jeder nicht durchgeführten Prüfung zwischen fehlender Erforderlichkeit,
+  fehlender Durchführung, technischer Unmöglichkeit, fehlendem Zugriff und
+  ausdrücklichem Prozessverbot unterschieden wurde,
 - ein erfolgreicher Build nicht als Nachweis fachlicher Funktionsfähigkeit
   gewertet wurde,
 - vorhandener Quellcode nicht ohne geeignete Prüfung als funktionsfähig

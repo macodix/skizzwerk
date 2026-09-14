@@ -75,12 +75,18 @@ Aussage:
 
 Nachweisstatus:
 
-Quelle:
+Begründung des Nachweisstatus:
 
-- Typ:
-- Fundstelle:
-- Version oder Commit:
-- Abruf- oder Prüfdatum:
+Quellen:
+
+| Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
+|---|---|---|---|---|
+| | | | | |
+
+Bei mehreren verwendeten Quellen erhält jede Quelle eine eigene Tabellenzeile.
+
+Für Befunde mit dem Status `CONFLICT` müssen mindestens zwei Quellen
+dokumentiert werden.
 
 Prüfung:
 
@@ -101,6 +107,18 @@ Die Folgerung darf nur beschreiben, was aus dem Befund für den festgestellten
 Bestand folgt. Sie darf keine Anforderung, Bewertung, Lösungsauswahl oder
 Architekturentscheidung enthalten.
 -->
+
+### Zusätzliche Angaben bei CONFLICT
+
+- Aussage 1:
+- Quelle von Aussage 1:
+- Aussage 2:
+- Quelle von Aussage 2:
+- gemeinsamer Sachverhalt:
+- Bezugszeitpunkt oder Gültigkeitszeitraum:
+- Geltungsbereich:
+- konkrete logische Unvereinbarkeit:
+
 
 ## 7. Widersprüche
 
