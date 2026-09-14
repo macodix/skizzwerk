@@ -20,18 +20,18 @@ Für die Behandlung und Bewertung von Annahmen gilt
 
 | Kennung | Annahme | Status | Auswirkung bei Irrtum | Entscheidung erforderlich |
 |---|---|---|---|---|
-| ASM-001 | Das Plugin soll mit dem vorhandenen eigenen XMPP-Server arbeiten. | `identified` | beteiligte Systeme falsch eingegrenzt | ja |
-| ASM-002 | Das Plugin soll auf beiden aktiven OpenClaw-Installationen (2026.9.4 und 2026.7.1-2) laufen. | `identified` | Umfang der Versionen zu klein oder zu groß | ja |
-| ASM-003 | „Aktuelle OpenClaw-Versionen“ umfasst mindestens Version 2026.9.4. | `identified` | falsche Zielversion | ja |
-| ASM-004 | OMEMO-Verschlüsselung soll auch in Gruppenchats über MUC gelten. | `identified` | Funktionsumfang falsch verstanden | ja |
-| ASM-005 | XMPP ist der Kommunikationsweg zwischen OpenClaw und Chatpartnern. | `identified` | Projektgegenstand falsch verstanden | ja |
+| asm-001 | Das Plugin soll mit dem vorhandenen eigenen XMPP-Server arbeiten. | `identified` | beteiligte Systeme falsch eingegrenzt | ja |
+| asm-002 | Das Plugin soll auf beiden aktiven OpenClaw-Installationen (2026.9.4 und 2026.7.1-2) laufen. | `identified` | Umfang der Versionen zu klein oder zu groß | ja |
+| asm-003 | „Aktuelle OpenClaw-Versionen“ umfasst mindestens Version 2026.9.4. | `identified` | falsche Zielversion | ja |
+| asm-004 | OMEMO-Verschlüsselung soll auch in Gruppenchats über MUC gelten. | `identified` | Funktionsumfang falsch verstanden | ja |
+| asm-005 | XMPP ist der Kommunikationsweg zwischen OpenClaw und Chatpartnern. | `identified` | Projektgegenstand falsch verstanden | ja |
 
 Die Einstufung „Entscheidung erforderlich“ ist eine Einschätzung durch
 skizzwerk. `INFERRED`
 
 ## Einzelbeschreibungen
 
-### ASM-001
+### asm-001
 
 - Aussage: Das Plugin soll mit dem vorhandenen eigenen XMPP-Server arbeiten.
 - Herkunft oder Anlass: `idea.md` Abschnitt 2 nennt einen eigenen XMPP-Server,
@@ -47,7 +47,7 @@ skizzwerk. `INFERRED`
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
-### ASM-002
+### asm-002
 
 - Aussage: Das Plugin soll auf beiden aktiven OpenClaw-Installationen
   (2026.9.4 und 2026.7.1-2) laufen.
@@ -65,7 +65,7 @@ skizzwerk. `INFERRED`
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
-### ASM-003
+### asm-003
 
 - Aussage: „Aktuelle OpenClaw-Versionen“ umfasst mindestens Version 2026.9.4.
 - Herkunft oder Anlass: `idea.md` Abschnitt 1 nennt „aktuelle
@@ -81,7 +81,7 @@ skizzwerk. `INFERRED`
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
-### ASM-004
+### asm-004
 
 - Aussage: OMEMO-Verschlüsselung soll auch in Gruppenchats über MUC gelten.
 - Herkunft oder Anlass: `idea.md` Abschnitt 1 nennt OMEMO-Verschlüsselung und
@@ -97,7 +97,7 @@ skizzwerk. `INFERRED`
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
-### ASM-005
+### asm-005
 
 - Aussage: XMPP ist der Kommunikationsweg zwischen OpenClaw und Chatpartnern.
 - Herkunft oder Anlass: `idea.md` Abschnitt 1 nennt XMPP nur im Wort
