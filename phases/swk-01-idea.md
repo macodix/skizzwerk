@@ -5,6 +5,20 @@
 Eine frei formulierte Projektidee wird strukturiert, ohne Anforderungen,
 Lösungsarchitektur oder technische Entscheidungen vorwegzunehmen.
 
+
+## Vorprüfung
+
+Vor der Bearbeitung ist zu prüfen:
+
+- alle referenzierten Dateien existieren,
+- keine benötigte Regel oder Vorlage ist leer,
+- Vorlagen und Regeln verwenden gültige Kennungen,
+- die projektspezifische `idea.md` enthält die erforderlichen Eingaben,
+- die Abschnitte `1. Originalbeschreibung` und `2. Herkunft und Kontext` sind ausgefüllt.
+
+Es werden bei einer fehlgeschlagenen Vorprüfung keine
+projektspezifischen Ergebnisdateien verändert.
+
 ## Eingaben
 
 Erforderlich:
@@ -20,6 +34,8 @@ Zusätzliche Eingaben:
 - `rules/evidence.md`
 - `rules/assumptions.md`
 - `rules/quality-gates.md`
+- `rules/identifiers.md`
+
 
 ## Arbeitsauftrag
 
@@ -46,19 +62,6 @@ Zusätzliche Eingaben:
    erfassten Annahmen.
 8. Ergänze die fehlenden Abschnitte anhand von `templates/idea.md`.
 9. Prüfe das Ergebnis anhand des Qualitätskatalogs für `swk-01`.
-
-
-## Vorprüfung
-
-Vor der Bearbeitung ist zu prüfen:
-
-- alle referenzierten Dateien existieren,
-- keine benötigte Regel oder Vorlage ist leer,
-- Vorlagen und Regeln verwenden gültige Kennungen,
-- die erforderlichen Eingaben sind vorhanden.
-
-Bei einem Fehler wird die Phase nicht ausgeführt. Der Fehler wird konkret
-benannt.
 
 
 ## Verbindliche Regeln

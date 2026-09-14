@@ -85,7 +85,7 @@ Skizzwerk darf eine Aussage des Ideengebers nicht selbstständig auf
 ## Format eines Befunds
 
 ```markdown
-### EVD-001
+### evd-001
 
 Aussage:
 Das untersuchte Plugin unterstützt MUC-Gruppenchats.
