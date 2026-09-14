@@ -2,7 +2,7 @@
 document: idea
 process_phase: swk-01
 project: "openclaw-xmpp"
-status: review
+status: accepted
 created: 2026-09-13
 last_updated: 2026-09-14
 ---
@@ -189,7 +189,7 @@ erhält den Status `review`.
 
 ## 13. Freigabestatus
 
-- Ergebnis: `offen`
-- geprüft am:
-- geprüft durch:
-- Anmerkungen:
+- Ergebnis: `accepted`
+- geprüft am: 2026-09-14
+- geprüft durch: Martin Henkel
+- Anmerkungen: Inhalt ausdrüclrücklich bestätigt
