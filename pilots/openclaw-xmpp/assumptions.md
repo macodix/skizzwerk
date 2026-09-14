@@ -28,9 +28,10 @@ Für die Behandlung und Bewertung von Annahmen gilt
 
 Zurzeit ist keine Annahme aktiv. asm-001 bis asm-005 sind nach dem Abschnitt
 „Abgrenzung“ in `rules/assumptions.md` keine Annahmen: Sie werden in `swk-01`
-nicht als vorläufige Arbeitsgrundlage benötigt. Sie sind in `idea.md` als
-unbekannte Sachverhalte oder unklare Begriffe erfasst. Sie bleiben zur
-Nachvollziehbarkeit erhalten. `INFERRED`
+nicht als vorläufige Arbeitsgrundlage benötigt. asm-001 bis asm-004 sind in
+`idea.md` als unbekannte Sachverhalte oder unklare Begriffe erfasst; asm-005
+ist dort nicht mehr erfasst. Sie bleiben zur Nachvollziehbarkeit erhalten.
+`INFERRED`
 
 ## Einzelbeschreibungen
 
@@ -113,11 +114,12 @@ Nachvollziehbarkeit erhalten. `INFERRED`
 - Begründung: Die genannten Funktionen Direktnachrichten und Gruppenchats
   legen einen Nachrichtenaustausch über XMPP nahe.
 - Auswirkung bei Irrtum: Der Projektgegenstand ist falsch verstanden.
-- Bedeutung für den weiteren Prozess: keine als Annahme; als unklarer Begriff
-  in `idea.md` Abschnitt 10 erfasst.
+- Bedeutung für den weiteren Prozess: keine. Nach `phases/swk-01-idea.md` wird
+  die übliche Bedeutung von „XMPP-Plugin“ ohne konkreten Anlass nicht infrage
+  gestellt; der Punkt ist in `idea.md` nicht mehr erfasst.
 - Status: `superseded`
 - Zugehörige Entscheidung: nicht erforderlich
-- Nachweis oder Klärung: ersetzt durch die Erfassung als unklarer Begriff in
-  `idea.md` Abschnitt 10
+- Nachweis oder Klärung: ersetzt durch die Regel zu Mehrdeutigkeiten in
+  `phases/swk-01-idea.md`
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14

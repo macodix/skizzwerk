@@ -55,11 +55,13 @@ Diese Darstellung ist eine Interpretation der Originalbeschreibung.
 
 ## 4. Erwarteter Nutzen
 
-- Die in Abschnitt 2 beschriebene Lage wird behoben: Bestehende Plugins
-  konnten teils nicht installiert werden oder erfüllten die Anforderungen an
-  Sicherheit oder Kommunikation nicht. `INFERRED`
-- Neue OpenClaw-Versionen machen das Plugin nicht unbrauchbar. `INFERRED`
-- Das Projekt liefert als Pilot Erfahrungen für skizzwerk. `INFERRED`
+- Die Betreiber der vorhandenen OpenClaw-Installationen sind nicht mehr auf
+  bestehende Plugins angewiesen, die sich teils nicht installieren ließen oder
+  ihren Ansprüchen nicht genügten. `INFERRED`
+- Die Betreiber können neue OpenClaw-Versionen einsetzen, ohne die
+  XMPP-Anbindung jedes Mal selbst wiederherstellen zu müssen. `INFERRED`
+- Das Projekt skizzwerk erhält Erfahrungen aus einem echten Vorhaben.
+  `INFERRED`
 
 ## 5. Genannter Projektgegenstand
 
@@ -113,17 +115,12 @@ möglicher Auswirkung sind Ableitungen. `INFERRED`
 
 | Begriff oder Aussage | Unklarheit | Mögliche Auswirkung |
 |---|---|---|
-| „XMPP-Plugin“ | XMPP wird nur in diesem Wort genannt. Welche Rolle XMPP für das Plugin hat, ist nicht beschrieben. | Verständnis des Projektgegenstands |
-| „aktuelle OpenClaw-Versionen“ | Welche Versionen gemeint sind, ist offen. | Umfang der zu unterstützenden Versionen |
-| „neue OpenClaw-Versionen“ | Die Abgrenzung zu „aktuelle OpenClaw-Versionen“ ist offen. | Umfang des Verfahrens für neue Versionen |
-| „automatische Aktualisierung oder Kompatibilitätssicherung“ | Ob beides oder eines von beiden gemeint ist, ist offen. Was aktualisiert wird und was „automatisch“ umfasst, ist offen. | Projektumfang und Aufwand |
-| „Dies kann ggf. auch mit KI-Agenten unterstützt werden“ | Ob KI-Agenten erwünscht oder nur möglich sind, ist offen. | Umfang des Verfahrens |
-| „unterstützen“ (Das Plugin muss … unterstützen) | Welcher Funktionsumfang je Funktion gemeint ist, ist nicht beschrieben. | Abgrenzung, wann eine Funktion als erfüllt gilt |
-| „OMEMO-Verschlüsselung“ | Ob sie für Direktnachrichten, Gruppenchats oder beide gilt, ist offen. | Funktionsumfang |
-| „Anforderungen an Sicherheit (OMEMO)“ | Ob Sicherheit über OMEMO hinaus gemeint ist, ist offen. | Umfang der Sicherheitsanforderungen |
-| „als mögliche Grundlage untersucht“ | Ob Übernahme, Weiterentwicklung oder nur Vorlage gemeint ist, ist offen. Welche Projekte gemeint sind, ist offen. Ob die Untersuchung Teil des Projektgegenstands oder Vorarbeit ist, ist offen. | Vorgehen und Projektumfang |
-| „entwickeln“ | Ob Neuentwicklung oder Anpassung eines vorhandenen Projekts gemeint ist, ist offen. | Projektumfang |
-| „Pilot für das Projekt skizzwerk“ | Ob daraus Vorgaben für dieses Projekt folgen, ist offen. | Vorgehen |
+| „aktuelle OpenClaw-Versionen“ | Welche Versionen gemeint sind, ist offen. Abschnitt 2 nennt zwei aktive Installationen mit unterschiedlichen Versionen. | Projektumfang: Anzahl der zu unterstützenden Versionen; Abnahme: auf welchen Versionen geprüft wird |
+| „automatische Aktualisierung oder Kompatibilitätssicherung“ | Ob beides oder eines von beiden gemeint ist, ist offen. | Projektumfang: ein oder zwei Verfahren; spätere Entscheidung zwischen beiden |
+| „Dies kann ggf. auch mit KI-Agenten unterstützt werden“ | Ob KI-Agenten erwünscht oder nur möglich sind, ist offen. | Anforderungen: KI-Unterstützung verpflichtend oder freiwillig |
+| „unterstützen“ (Das Plugin muss … unterstützen) | Welcher Funktionsumfang je Funktion gemeint ist, ist nicht beschrieben. | Abnahme: wann eine Funktion als erfüllt gilt |
+| „OMEMO-Verschlüsselung“ | Ob sie für Direktnachrichten, Gruppenchats über MUC oder beide gilt, ist offen. Abschnitt 1 nennt beide nebeneinander. | Anforderungen und Abnahme: Verschlüsselung in Gruppenchats ja oder nein |
+| „als mögliche Grundlage untersucht“ | Ob ein vorhandenes Projekt übernommen, weiterentwickelt oder nur als Vorlage genutzt werden soll, ist offen. | Projektumfang: Neuentwicklung oder Anpassung; spätere Entscheidung über die Grundlage |
 
 ## 11. Abgrenzung zu Annahmen
 
@@ -171,8 +168,10 @@ Prüfung gegen die Qualitätsgrenze swk-01 in `rules/quality-gates.md`:
 - [x] Herkunft und Kontext unverändert erhalten
 - [x] Originalaussagen und Interpretationen klar getrennt
 - [x] Ziel und erwarteter Nutzen aus der Eingabe abgeleitet
+- [x] erwarteter Nutzen von Funktionen und Qualitätszielen getrennt
 - [x] genannte Nutzer, Systeme, Funktionen und Einschränkungen erfasst
 - [x] mehrdeutige Begriffe sichtbar gekennzeichnet
+- [x] jede genannte Mehrdeutigkeit hat eine konkrete wesentliche Auswirkung
 - [x] keine Annahme als Tatsache dargestellt
 - [x] keine zusätzliche Anforderung erfunden
 - [x] keine Architekturentscheidung getroffen
@@ -181,12 +180,15 @@ Prüfung gegen die Qualitätsgrenze swk-01 in `rules/quality-gates.md`:
 - [x] alle Kennungen entsprechen `rules/identifiers.md`
 - [x] Annahmen von Ableitungen und unbekannten Sachverhalten abgegrenzt
 - [x] jede in `idea.md` referenzierte Annahme existiert in `assumptions.md`
-- [x] Übersichts- und Einzelangaben zu Annahmen widerspruchsfrei
-- [x] `idea.md` und `assumptions.md` entsprechen den Vorlagen
+- [x] vorhandene `assumptions.md` in Übersichts- und Einzelangaben widerspruchsfrei
+- [x] `idea.md` entspricht `templates/idea.md`
+- [x] vorhandene `assumptions.md` entspricht `templates/assumptions.md`
+- [x] ohne erkannte Annahmen keine `assumptions.md` erforderlich
 
-Ergebnis: Alle Kriterien sind erfüllt. Nach dem Abschnitt „Abgrenzung“ in
-`rules/assumptions.md` ist zurzeit keine Annahme erforderlich; asm-001 bis
-asm-005 sind als `superseded` geführt. Das Dokument erhält den Status `review`.
+Ergebnis: Alle Kriterien sind erfüllt. Zurzeit ist keine Annahme aktiv. Die
+vorhandene `assumptions.md` enthält nur die als `superseded` geführten
+asm-001 bis asm-005 und bleibt zur Nachvollziehbarkeit erhalten. Das Dokument
+erhält den Status `review`.
 
 ## 13. Freigabestatus
 
