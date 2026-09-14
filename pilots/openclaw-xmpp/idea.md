@@ -13,7 +13,7 @@ last_updated: 2026-09-13
 
 Ein XMPP-Plugin für aktuelle OpenClaw-Versionen entwickeln.
 
-Das Plugin muss muss Direktnachrichten, OMEMO-Verschlüsselung und
+Das Plugin muss Direktnachrichten, OMEMO-Verschlüsselung und
 Gruppenchats über MUC unterstützen.
 
 Vorhandene GitHub-Projekte sollen als mögliche Grundlage untersucht werden.
