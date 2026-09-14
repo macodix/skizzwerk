@@ -2,7 +2,7 @@
 document: idea
 process_phase: swk-01
 project: "openclaw-xmpp"
-status: accepted
+status: draft
 created: 2026-09-13
 last_updated: 2026-09-14
 ---
