@@ -25,8 +25,10 @@ Dokumentabschnitte Text enthalten.
 - Herkunft und Kontext unverändert erhalten sind,
 - Originalaussagen und Interpretationen klar getrennt sind,
 - Ziel und erwarteter Nutzen aus der Eingabe abgeleitet wurden,
+- der erwartete Nutzen von Funktionen und Qualitätszielen getrennt ist,
 - genannte Nutzer, Systeme, Funktionen und Einschränkungen erfasst wurden,
 - mehrdeutige Begriffe sichtbar gekennzeichnet sind,
+- jede genannte Mehrdeutigkeit eine konkrete wesentliche Auswirkung besitzt,
 - keine Annahme als Tatsache dargestellt wird,
 - keine zusätzliche Anforderung erfunden wurde,
 - keine Architekturentscheidung getroffen wurde,
@@ -35,8 +37,13 @@ Dokumentabschnitte Text enthalten.
 - alle Kennungen `rules/identifiers.md` entsprechen,
 - Annahmen von Ableitungen und unbekannten Sachverhalten abgegrenzt sind,
 - jede in `idea.md` referenzierte Annahme in `assumptions.md` existiert,
-- Übersichts- und Einzelangaben zu Annahmen widerspruchsfrei sind,
-- `idea.md` und `assumptions.md` den jeweiligen Vorlagen entsprechen.
+- eine vorhandene `assumptions.md` in Übersichts- und Einzelangaben
+  widerspruchsfrei ist,
+- `idea.md` der Vorlage `templates/idea.md` entspricht,
+- eine vorhandene `assumptions.md` der Vorlage
+  `templates/assumptions.md` entspricht,
+- ohne erkannte Annahmen keine projektspezifische `assumptions.md`
+  erforderlich ist.
 
 
 ## Nichtbestehen der Qualitätsgrenze

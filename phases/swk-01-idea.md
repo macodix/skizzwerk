@@ -56,8 +56,8 @@ Zusätzliche Eingaben:
    - Ableitungen,
    - Annahmen,
    - unbekannten Sachverhalten.
-6. Erfasse jede erkannte Annahme mit eindeutiger Kennung in der
-   projektspezifischen `assumptions.md`.
+6. Falls Annahmen erkannt werden, erfasse sie mit eindeutiger   
+   Kennung in der projektspezifischen `assumptions.md`. Lege die Datei nur an, wenn mindestens eine Annahme vorhanden ist.
 7. Verweise in `idea.md` ausschließlich über diese Kennungen auf die
    erfassten Annahmen.
 8. Ergänze die fehlenden Abschnitte anhand von `templates/idea.md`.
@@ -75,12 +75,19 @@ Zusätzliche Eingaben:
 - Kennzeichne jede Interpretation ausdrücklich.
 - Überschreibe keine Originalaussage.
 - Ändere den Status nur entsprechend dem Prüfergebnis.
-- Für Statuswerte und Statusübergänge gilt `rules/status.md`.
+- Für Statuswerte und Statusübergänge gilt `rules/status.md`,
+- Erfasse nur Mehrdeutigkeiten, die den Projektumfang, die Anforderungen,
+  die Abnahme oder spätere Entscheidungen wesentlich beeinflussen.
+  Stelle die übliche Bedeutung eines ausdrücklich genannten
+  Projektgegenstands nicht ohne konkreten Anlass infrage.
+- Formuliere den erwarteten Nutzen als Wirkung für Benutzer, 
+  Betreiber oder andere Beteiligte. Wiederhole dort keine Funktionen, Anforderungen oder Qualitätsziele.
 
 ## Ergebnis
 
 - eine vervollständigte projektspezifische `idea.md`
-- eine angelegte oder ergänzte projektspezifische `assumptions.md`
+- bei vorhandenen Annahmen eine angelegte oder ergänzte 
+  projektspezifische `assumptions.md`
 
 Mögliche Statuswerte:
 
