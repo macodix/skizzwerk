@@ -20,14 +20,17 @@ Für die Behandlung und Bewertung von Annahmen gilt
 
 | Kennung | Annahme | Status | Auswirkung bei Irrtum | Entscheidung erforderlich |
 |---|---|---|---|---|
-| asm-001 | Das Plugin soll mit dem vorhandenen eigenen XMPP-Server arbeiten. | `identified` | beteiligte Systeme falsch eingegrenzt | ja |
-| asm-002 | Das Plugin soll auf beiden aktiven OpenClaw-Installationen (2026.9.4 und 2026.7.1-2) laufen. | `identified` | Umfang der Versionen zu klein oder zu groß | ja |
-| asm-003 | „Aktuelle OpenClaw-Versionen“ umfasst mindestens Version 2026.9.4. | `identified` | falsche Zielversion | ja |
-| asm-004 | OMEMO-Verschlüsselung soll auch in Gruppenchats über MUC gelten. | `identified` | Funktionsumfang falsch verstanden | ja |
-| asm-005 | XMPP ist der Kommunikationsweg zwischen OpenClaw und Chatpartnern. | `identified` | Projektgegenstand falsch verstanden | ja |
+| asm-001 | Das Plugin soll mit dem vorhandenen eigenen XMPP-Server arbeiten. | `superseded` | beteiligte Systeme falsch eingegrenzt | nein |
+| asm-002 | Das Plugin soll auf beiden aktiven OpenClaw-Installationen (2026.9.4 und 2026.7.1-2) laufen. | `superseded` | Umfang der Versionen zu klein oder zu groß | nein |
+| asm-003 | „Aktuelle OpenClaw-Versionen“ umfasst mindestens Version 2026.9.4. | `superseded` | falsche Zielversion | nein |
+| asm-004 | OMEMO-Verschlüsselung soll auch in Gruppenchats über MUC gelten. | `superseded` | Funktionsumfang falsch verstanden | nein |
+| asm-005 | XMPP ist der Kommunikationsweg zwischen OpenClaw und Chatpartnern. | `superseded` | Projektgegenstand falsch verstanden | nein |
 
-Die Einstufung „Entscheidung erforderlich“ ist eine Einschätzung durch
-skizzwerk. `INFERRED`
+Zurzeit ist keine Annahme aktiv. asm-001 bis asm-005 sind nach dem Abschnitt
+„Abgrenzung“ in `rules/assumptions.md` keine Annahmen: Sie werden in `swk-01`
+nicht als vorläufige Arbeitsgrundlage benötigt. Sie sind in `idea.md` als
+unbekannte Sachverhalte oder unklare Begriffe erfasst. Sie bleiben zur
+Nachvollziehbarkeit erhalten. `INFERRED`
 
 ## Einzelbeschreibungen
 
@@ -38,12 +41,14 @@ skizzwerk. `INFERRED`
   aber keine Rolle für das Plugin.
 - Begründung: Die Nennung im Kontext legt einen Zusammenhang nahe, ohne ihn
   auszusprechen.
-- Auswirkung bei Irrtum: Die beteiligten Systeme und die Untersuchung
-  vorhandener Projekte werden falsch eingegrenzt.
-- Bedeutung für den weiteren Prozess: Eingrenzung der beteiligten Systeme.
-- Status: `identified`
-- Zugehörige Entscheidung: noch nicht vorhanden
-- Nachweis oder Klärung: `ASSUMED`; nicht geklärt
+- Auswirkung bei Irrtum: Die beteiligten Systeme und die Untersuchung vorhandener
+  Projekte werden falsch eingegrenzt.
+- Bedeutung für den weiteren Prozess: keine als Annahme; als unbekannter
+  Sachverhalt in `idea.md` Abschnitt 11 erfasst.
+- Status: `superseded`
+- Zugehörige Entscheidung: nicht erforderlich
+- Nachweis oder Klärung: ersetzt durch die Einstufung als `UNKNOWN` in
+  `idea.md` Abschnitt 11
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
@@ -57,11 +62,12 @@ skizzwerk. `INFERRED`
   betroffen sind.
 - Auswirkung bei Irrtum: Der Umfang der zu unterstützenden Versionen ist zu
   klein oder zu groß.
-- Bedeutung für den weiteren Prozess: Eingrenzung der zu unterstützenden
-  Versionen.
-- Status: `identified`
-- Zugehörige Entscheidung: noch nicht vorhanden
-- Nachweis oder Klärung: `ASSUMED`; nicht geklärt
+- Bedeutung für den weiteren Prozess: keine als Annahme; als unbekannter
+  Sachverhalt in `idea.md` Abschnitt 11 erfasst.
+- Status: `superseded`
+- Zugehörige Entscheidung: nicht erforderlich
+- Nachweis oder Klärung: ersetzt durch die Einstufung als `UNKNOWN` in
+  `idea.md` Abschnitt 11
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
@@ -73,11 +79,12 @@ skizzwerk. `INFERRED`
   höchste aktive Version.
 - Begründung: Die höchste genannte Version liegt als Bezugspunkt nahe.
 - Auswirkung bei Irrtum: Die Zielversion ist falsch gewählt.
-- Bedeutung für den weiteren Prozess: Eingrenzung der zu unterstützenden
-  Versionen.
-- Status: `identified`
-- Zugehörige Entscheidung: noch nicht vorhanden
-- Nachweis oder Klärung: `ASSUMED`; nicht geklärt
+- Bedeutung für den weiteren Prozess: keine als Annahme; als unklarer Begriff
+  in `idea.md` Abschnitt 10 erfasst.
+- Status: `superseded`
+- Zugehörige Entscheidung: nicht erforderlich
+- Nachweis oder Klärung: ersetzt durch die Erfassung als unklarer Begriff in
+  `idea.md` Abschnitt 10
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
@@ -89,11 +96,12 @@ skizzwerk. `INFERRED`
 - Begründung: Abschnitt 2 nennt Sicherheit (OMEMO) als Anforderung, ohne sie
   auf Direktnachrichten zu beschränken.
 - Auswirkung bei Irrtum: Der Funktionsumfang ist falsch verstanden.
-- Bedeutung für den weiteren Prozess: Umfang der Funktionen und Bewertung
-  vorhandener Projekte.
-- Status: `identified`
-- Zugehörige Entscheidung: noch nicht vorhanden
-- Nachweis oder Klärung: `ASSUMED`; nicht geklärt
+- Bedeutung für den weiteren Prozess: keine als Annahme; als unklarer Begriff
+  in `idea.md` Abschnitt 10 erfasst.
+- Status: `superseded`
+- Zugehörige Entscheidung: nicht erforderlich
+- Nachweis oder Klärung: ersetzt durch die Erfassung als unklarer Begriff in
+  `idea.md` Abschnitt 10
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
 
@@ -105,10 +113,11 @@ skizzwerk. `INFERRED`
 - Begründung: Die genannten Funktionen Direktnachrichten und Gruppenchats
   legen einen Nachrichtenaustausch über XMPP nahe.
 - Auswirkung bei Irrtum: Der Projektgegenstand ist falsch verstanden.
-- Bedeutung für den weiteren Prozess: Verständnis des Projektgegenstands und
-  der beteiligten Systeme.
-- Status: `identified`
-- Zugehörige Entscheidung: noch nicht vorhanden
-- Nachweis oder Klärung: `ASSUMED`; nicht geklärt
+- Bedeutung für den weiteren Prozess: keine als Annahme; als unklarer Begriff
+  in `idea.md` Abschnitt 10 erfasst.
+- Status: `superseded`
+- Zugehörige Entscheidung: nicht erforderlich
+- Nachweis oder Klärung: ersetzt durch die Erfassung als unklarer Begriff in
+  `idea.md` Abschnitt 10
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14

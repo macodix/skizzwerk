@@ -113,18 +113,16 @@ möglicher Auswirkung sind Ableitungen. `INFERRED`
 
 | Begriff oder Aussage | Unklarheit | Mögliche Auswirkung |
 |---|---|---|
-| „XMPP-Plugin“ | XMPP wird nur in diesem Wort genannt. Welche Rolle XMPP für das Plugin hat, ist nicht beschrieben (siehe asm-005). | Verständnis des Projektgegenstands |
-| „aktuelle OpenClaw-Versionen“ | Welche Versionen gemeint sind, ist offen (siehe asm-003). | Umfang der zu unterstützenden Versionen |
+| „XMPP-Plugin“ | XMPP wird nur in diesem Wort genannt. Welche Rolle XMPP für das Plugin hat, ist nicht beschrieben. | Verständnis des Projektgegenstands |
+| „aktuelle OpenClaw-Versionen“ | Welche Versionen gemeint sind, ist offen. | Umfang der zu unterstützenden Versionen |
 | „neue OpenClaw-Versionen“ | Die Abgrenzung zu „aktuelle OpenClaw-Versionen“ ist offen. | Umfang des Verfahrens für neue Versionen |
 | „automatische Aktualisierung oder Kompatibilitätssicherung“ | Ob beides oder eines von beiden gemeint ist, ist offen. Was aktualisiert wird und was „automatisch“ umfasst, ist offen. | Projektumfang und Aufwand |
 | „Dies kann ggf. auch mit KI-Agenten unterstützt werden“ | Ob KI-Agenten erwünscht oder nur möglich sind, ist offen. | Umfang des Verfahrens |
 | „unterstützen“ (Das Plugin muss … unterstützen) | Welcher Funktionsumfang je Funktion gemeint ist, ist nicht beschrieben. | Abgrenzung, wann eine Funktion als erfüllt gilt |
-| „OMEMO-Verschlüsselung“ | Ob sie für Direktnachrichten, Gruppenchats oder beide gilt, ist offen (siehe asm-004). | Funktionsumfang |
+| „OMEMO-Verschlüsselung“ | Ob sie für Direktnachrichten, Gruppenchats oder beide gilt, ist offen. | Funktionsumfang |
 | „Anforderungen an Sicherheit (OMEMO)“ | Ob Sicherheit über OMEMO hinaus gemeint ist, ist offen. | Umfang der Sicherheitsanforderungen |
 | „als mögliche Grundlage untersucht“ | Ob Übernahme, Weiterentwicklung oder nur Vorlage gemeint ist, ist offen. Welche Projekte gemeint sind, ist offen. Ob die Untersuchung Teil des Projektgegenstands oder Vorarbeit ist, ist offen. | Vorgehen und Projektumfang |
 | „entwickeln“ | Ob Neuentwicklung oder Anpassung eines vorhandenen Projekts gemeint ist, ist offen. | Projektumfang |
-| „Ein eigener XMPP-Server ist vorhanden“ | Ob das Plugin mit diesem Server arbeiten soll, ist nicht genannt (siehe asm-001). | beteiligte Systeme |
-| „2 OpenClaw Installationen … aktiv“ | Ob das Plugin auf beiden Installationen laufen soll, ist nicht genannt (siehe asm-002). | Umfang der zu unterstützenden Versionen |
 | „Pilot für das Projekt skizzwerk“ | Ob daraus Vorgaben für dieses Projekt folgen, ist offen. | Vorgehen |
 
 ## 11. Abgrenzung zu Annahmen
@@ -132,7 +130,8 @@ möglicher Auswirkung sind Ableitungen. `INFERRED`
 In dieser Datei werden keine stillschweigenden Annahmen als Bestandteil der
 Idee behandelt. Notwendige Annahmen werden in `assumptions.md` erfasst.
 
-Erkannte Annahmen: asm-001, asm-002, asm-003, asm-004, asm-005.
+Aktive Annahmen: keine. Die früher erfassten Annahmen asm-001 bis asm-005
+sind in `assumptions.md` als `superseded` geführt. `INFERRED`
 
 ### Unbekannte Sachverhalte
 
@@ -148,6 +147,10 @@ Diese Punkte sind keine Annahmen. Die Eingabe enthält dazu keine Information.
   `UNKNOWN`
 - Ob und wie oft neue OpenClaw-Versionen Änderungen bringen, die das Plugin
   betreffen, ist unbekannt. `UNKNOWN`
+- Ob das Plugin mit dem vorhandenen eigenen XMPP-Server arbeiten soll, ist
+  unbekannt. `UNKNOWN`
+- Ob das Plugin auf beiden aktiven OpenClaw-Installationen laufen soll, ist
+  unbekannt. `UNKNOWN`
 
 ## 12. Prüfergebnis swk-01
 
@@ -157,6 +160,10 @@ Diese Punkte sind keine Annahmen. Die Eingabe enthält dazu keine Information.
 - [x] Keine technische Lösung wurde vorweggenommen.
 - [x] Unklare Begriffe wurden gekennzeichnet.
 - [x] Genannte Ziele, Funktionen und Einschränkungen wurden vollständig erfasst.
+
+Vorprüfung nach `phases/swk-01-idea.md`: bestanden. Alle referenzierten
+Dateien existieren und sind nicht leer. Regeln und Vorlagen verwenden gültige
+Kennungen. Abschnitt 1 und 2 sind ausgefüllt.
 
 Prüfung gegen die Qualitätsgrenze swk-01 in `rules/quality-gates.md`:
 
@@ -171,9 +178,15 @@ Prüfung gegen die Qualitätsgrenze swk-01 in `rules/quality-gates.md`:
 - [x] keine Architekturentscheidung getroffen
 - [x] keine konkrete technische Lösung ausgewählt
 - [x] offene Punkte sichtbar
+- [x] alle Kennungen entsprechen `rules/identifiers.md`
+- [x] Annahmen von Ableitungen und unbekannten Sachverhalten abgegrenzt
+- [x] jede in `idea.md` referenzierte Annahme existiert in `assumptions.md`
+- [x] Übersichts- und Einzelangaben zu Annahmen widerspruchsfrei
+- [x] `idea.md` und `assumptions.md` entsprechen den Vorlagen
 
-Ergebnis: Alle Kriterien sind erfüllt. Die Annahmen sind mit Kennung in
-`assumptions.md` erfasst. Das Dokument erhält den Status `review`.
+Ergebnis: Alle Kriterien sind erfüllt. Nach dem Abschnitt „Abgrenzung“ in
+`rules/assumptions.md` ist zurzeit keine Annahme erforderlich; asm-001 bis
+asm-005 sind als `superseded` geführt. Das Dokument erhält den Status `review`.
 
 ## 13. Freigabestatus
 
