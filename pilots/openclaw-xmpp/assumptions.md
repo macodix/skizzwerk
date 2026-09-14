@@ -42,7 +42,7 @@ skizzwerk. `INFERRED`
   vorhandener Projekte werden falsch eingegrenzt.
 - Bedeutung für den weiteren Prozess: Eingrenzung der beteiligten Systeme.
 - Status: `identified`
-- Zugehörige Entscheidung: keine
+- Zugehörige Entscheidung: noch nicht vorhanden
 - Nachweis oder Klärung: `ASSUMED`; nicht geklärt
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
@@ -60,7 +60,7 @@ skizzwerk. `INFERRED`
 - Bedeutung für den weiteren Prozess: Eingrenzung der zu unterstützenden
   Versionen.
 - Status: `identified`
-- Zugehörige Entscheidung: keine
+- Zugehörige Entscheidung: noch nicht vorhanden
 - Nachweis oder Klärung: `ASSUMED`; nicht geklärt
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
@@ -76,7 +76,7 @@ skizzwerk. `INFERRED`
 - Bedeutung für den weiteren Prozess: Eingrenzung der zu unterstützenden
   Versionen.
 - Status: `identified`
-- Zugehörige Entscheidung: keine
+- Zugehörige Entscheidung: noch nicht vorhanden
 - Nachweis oder Klärung: `ASSUMED`; nicht geklärt
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
@@ -92,7 +92,7 @@ skizzwerk. `INFERRED`
 - Bedeutung für den weiteren Prozess: Umfang der Funktionen und Bewertung
   vorhandener Projekte.
 - Status: `identified`
-- Zugehörige Entscheidung: keine
+- Zugehörige Entscheidung: noch nicht vorhanden
 - Nachweis oder Klärung: `ASSUMED`; nicht geklärt
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
@@ -108,7 +108,7 @@ skizzwerk. `INFERRED`
 - Bedeutung für den weiteren Prozess: Verständnis des Projektgegenstands und
   der beteiligten Systeme.
 - Status: `identified`
-- Zugehörige Entscheidung: keine
+- Zugehörige Entscheidung: noch nicht vorhanden
 - Nachweis oder Klärung: `ASSUMED`; nicht geklärt
 - Erfasst am: 2026-09-14
 - Zuletzt geändert: 2026-09-14
