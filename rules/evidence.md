@@ -104,3 +104,4 @@ Noch kein Funktionstest durchgeführt.
 Folgerung:
 Die behauptete MUC-Unterstützung muss während der Bestandsaufnahme im
 Quellcode und durch einen Integrationstest geprüft werden.
+```
