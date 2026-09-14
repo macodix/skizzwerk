@@ -56,8 +56,8 @@ Diese Darstellung ist eine Interpretation der Originalbeschreibung.
 - Die Betreiber der vorhandenen OpenClaw-Installationen sind nicht mehr auf
   bestehende Plugins angewiesen, die sich teils nicht installieren ließen oder
   ihren Ansprüchen nicht genügten. `INFERRED`
-- Die Betreiber können neue OpenClaw-Versionen einsetzen, ohne die
-  XMPP-Anbindung jedes Mal selbst wiederherstellen zu müssen. `INFERRED`
+- Der manuelle Aufwand für die Prüfung und gegebenenfalls notwendige Anpassung
+  der XMPP-Anbindung nach OpenClaw-Updates wird reduziert. `INFERRED`
 - Das Projekt skizzwerk erhält Erfahrungen aus einem echten Vorhaben.
   `INFERRED`
 
