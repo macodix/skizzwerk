@@ -2,7 +2,7 @@
 document: inventory
 process_phase: swk-02
 project: "openclaw-xmpp"
-status: review
+status: draft
 created: 2026-09-14
 last_updated: 2026-09-14
 basis: idea.md
