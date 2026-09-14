@@ -19,8 +19,7 @@ Gruppenchats über MUC unterstützen.
 Vorhandene GitHub-Projekte sollen als mögliche Grundlage untersucht werden.
 
 Für neue OpenClaw-Versionen wird ein Verfahren zur automatischen
-Aktualisierung oder Kompatibilitätssicherung benötigt. Dies kann ggf. auch
-mit KI-Agenten unterstützt werden.
+Aktualisierung oder Kompatibilitätssicherung benötigt. Dies kann ggf. auch mit KI-Agenten unterstützt werden.
 
 ## 2. Herkunft und Kontext
 
