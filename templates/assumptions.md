@@ -26,7 +26,7 @@ Für die Behandlung und Bewertung von Annahmen gilt
 
 <!-- Für jede Annahme einen Abschnitt nach diesem Muster anlegen. -->
 
-### ASM-001
+### asm-001
 
 - Aussage:
 - Herkunft oder Anlass:
@@ -34,7 +34,7 @@ Für die Behandlung und Bewertung von Annahmen gilt
 - Auswirkung bei Irrtum:
 - Bedeutung für den weiteren Prozess:
 - Status: `identified`
-- Zugehörige Entscheidung:
+- Zugehörige Entscheidung: noch nicht vorhanden
 - Nachweis oder Klärung:
 - Erfasst am:
 - Zuletzt geändert:

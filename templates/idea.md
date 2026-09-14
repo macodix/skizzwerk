@@ -67,7 +67,7 @@ Was soll nach der Originalbeschreibung entstehen oder verändert werden?
 In dieser Datei werden keine stillschweigenden Annahmen als Bestandteil der
 Idee behandelt. Notwendige Annahmen werden in `assumptions.md` erfasst.
 
-## 12. Prüfergebnis SKW-01
+## 12. Prüfergebnis swk-01
 
 - [ ] Originalbeschreibung wurde unverändert übernommen.
 - [ ] Interpretation und Original sind klar getrennt.

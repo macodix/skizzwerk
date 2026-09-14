@@ -47,6 +47,20 @@ Zusätzliche Eingaben:
 8. Ergänze die fehlenden Abschnitte anhand von `templates/idea.md`.
 9. Prüfe das Ergebnis anhand des Qualitätskatalogs für `swk-01`.
 
+
+## Vorprüfung
+
+Vor der Bearbeitung ist zu prüfen:
+
+- alle referenzierten Dateien existieren,
+- keine benötigte Regel oder Vorlage ist leer,
+- Vorlagen und Regeln verwenden gültige Kennungen,
+- die erforderlichen Eingaben sind vorhanden.
+
+Bei einem Fehler wird die Phase nicht ausgeführt. Der Fehler wird konkret
+benannt.
+
+
 ## Verbindliche Regeln
 
 - Erfinde keine Anforderungen.

@@ -32,6 +32,17 @@ Dokumentabschnitte Text enthalten.
 - keine Architekturentscheidung getroffen wurde,
 - keine konkrete technische Lösung ausgewählt wurde,
 - offene Punkte sichtbar bleiben.
+- keine Annahme als Tatsache dargestellt wird,
+- keine zusätzliche Anforderung erfunden wurde,
+- keine Architekturentscheidung getroffen wurde,
+- keine konkrete technische Lösung ausgewählt wurde,
+- offene Punkte sichtbar bleiben,
+- alle Kennungen `rules/identifiers.md` entsprechen,
+- Annahmen von Ableitungen und unbekannten Sachverhalten abgegrenzt sind,
+- jede in `idea.md` referenzierte Annahme in `assumptions.md` existiert,
+- Übersichts- und Einzelangaben zu Annahmen widerspruchsfrei sind,
+- `idea.md` und `assumptions.md` den jeweiligen Vorlagen entsprechen.
+
 
 ## Nichtbestehen der Qualitätsgrenze
 
