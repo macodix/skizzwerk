@@ -119,6 +119,9 @@ Architekturentscheidung enthalten.
 - Geltungsbereich:
 - konkrete logische Unvereinbarkeit:
 
+Diese Angaben werden nur bei einem Befund mit dem Status `CONFLICT`
+ausgefüllt.
+
 
 ## 7. Widersprüche
 

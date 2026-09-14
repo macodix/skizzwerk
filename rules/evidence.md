@@ -80,40 +80,34 @@ Der Sachverhalt wird entsprechend seiner tatsächlichen Belegbarkeit als
 | `ANALYSIS` | nachvollziehbare Ableitung durch skizzwerk |
 | `NONE` | noch keine Quelle vorhanden |
 
-## Anforderungen an CONFLICT
+## Mehrere Quellen eines Befunds
 
-Der Nachweisstatus `CONFLICT` darf nur verwendet werden, wenn mindestens zwei
-belegte Aussagen:
+Verwendet ein Befund mehrere Quellen, muss jede Quelle einzeln dokumentiert
+werden.
 
-- denselben Sachverhalt betreffen,
-- denselben relevanten Bezugszeitpunkt oder Gültigkeitszeitraum betreffen,
-- denselben Geltungsbereich besitzen,
-- logisch nicht gleichzeitig zutreffen können.
+Für jede Quelle sind anzugeben:
 
-Für jeden Konflikt müssen dokumentiert werden:
+- Quellenart,
+- genaue Fundstelle,
+- Version oder Commit, soweit verfügbar und relevant,
+- Abruf- oder Prüfdatum,
+- Beitrag der Quelle zum Befund.
 
-- die erste Aussage mit genauer Quelle,
-- die zweite Aussage mit genauer Quelle,
-- der gemeinsame Sachverhalt,
-- Bezugszeitpunkt oder Gültigkeitszeitraum,
-- Geltungsbereich,
-- die konkrete logische Unvereinbarkeit.
+Eine gemeinsame Quellenart für mehrere unterschiedlich geartete Quellen ist
+unzulässig.
 
-Kein ausreichender Nachweis für `CONFLICT` sind allein:
+Beispiel:
 
-- unterschiedliche Versionsnummern mit möglicherweise unterschiedlicher
-  Bedeutung,
-- eine historische Aussage und ein davon abweichender aktueller Stand,
-- eine Dokumentationsaussage und das bloße Fehlen einer erwarteten
-  Zeichenkette im Quellcode,
-- fehlende Informationen,
-- unterschiedliche Formulierungen,
-- eine nicht durchgeführte Funktionsprüfung.
+- Eine Aussage aus einer README erhält die Quellenart
+  `PROJECT_DOCUMENTATION`.
+- Eine Feststellung aus `package.json` oder dem Programmcode erhält die
+  Quellenart `SOURCE_CODE`.
+- Eine unmittelbar geprüfte Angabe aus einem offiziellen Register erhält die
+  Quellenart `PRIMARY_DOCUMENTATION`.
 
-Ist die Unvereinbarkeit nicht nachgewiesen, wird kein `CONFLICT` gesetzt.
-Der Sachverhalt wird entsprechend seiner tatsächlichen Belegbarkeit als
-`DOCUMENTED`, `INFERRED` oder `UNKNOWN` dokumentiert.
-
+Der Nachweisstatus des gesamten Befunds richtet sich nach der tatsächlich
+durchgeführten Prüfung. Er darf nicht allein aus der belastbarsten verwendeten
+Quellenart abgeleitet werden.
 
 ## Regeln für swk-01
 
@@ -154,7 +148,8 @@ Skizzwerk darf eine Aussage des Ideengebers nicht selbstständig auf
 - Eine nicht durchgeführte Prüfung wird als `nicht durchgeführt` dokumentiert.
 - Aus einer nicht durchgeführten Prüfung darf nicht abgeleitet werden, dass
   diese Prüfung durch den Prozess verboten ist.
-- Eine Prüfung darf nur als `unzulässig` bezeichnet werden, wenn eine  verbindliche Regel sie ausdrücklich verbietet.
+- Eine Prüfung darf nur als `unzulässig` bezeichnet werden, wenn eine
+  verbindliche Regel sie ausdrücklich verbietet.
 - Quellen müssen so angegeben werden, dass der Befund erneut geprüft werden kann.
 
 ## Format eines Befunds
