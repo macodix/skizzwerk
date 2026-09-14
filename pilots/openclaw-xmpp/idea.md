@@ -2,9 +2,9 @@
 document: idea
 process_phase: swk-01
 project: "openclaw-xmpp"
-status: draft
+status: review
 created: 2026-09-13
-last_updated: 2026-09-13
+last_updated: 2026-09-14
 ---
 
 # Projektidee
@@ -38,26 +38,28 @@ mit KI-Agenten unterstützt werden.
 
 ## 3. Verstandenes Ziel
 
-Kennzeichnung der Aussagen nach `rules/evidence.md`: `USER_PROVIDED (Original)`
-stammt aus Abschnitt 1, `USER_PROVIDED (Kontext)` aus Abschnitt 2, `INFERRED`
-ist eine Ableitung durch skizzwerk, `UNKNOWN` ist aus der Eingabe nicht
-ableitbar.
+Kennzeichnung nach `rules/evidence.md`:
 
-Für aktuelle OpenClaw-Versionen soll ein XMPP-Plugin entstehen, das
-Direktnachrichten, OMEMO-Verschlüsselung und Gruppenchats über MUC unterstützt.
-Das Plugin soll auch mit neuen OpenClaw-Versionen nutzbar bleiben. Daneben
-dient das Projekt als Pilot für skizzwerk. `INFERRED`
+- `USER_PROVIDED (Original)`: Aussage aus Abschnitt 1
+- `USER_PROVIDED (Kontext)`: Aussage aus Abschnitt 2
+- `INFERRED`: Ableitung oder Interpretation durch skizzwerk
+- `UNKNOWN`: Sachverhalt, zu dem die Eingabe keine Information enthält
+- `ASM-nnn`: Kennung einer Annahme in `assumptions.md`
+
+Ein XMPP-Plugin für aktuelle OpenClaw-Versionen soll entstehen. Es soll die in
+Abschnitt 7 genannten Funktionen erfüllen und auch mit neuen
+OpenClaw-Versionen nutzbar bleiben. Daneben dient das Projekt als Pilot für
+skizzwerk. `INFERRED`
 
 Diese Darstellung ist eine Interpretation der Originalbeschreibung.
 
 ## 4. Erwarteter Nutzen
 
-- Die Eingabe nennt keinen Nutzen ausdrücklich. `UNKNOWN`
-- OpenClaw kann über XMPP genutzt werden, mit OMEMO-Verschlüsselung und
-  Gruppenchats über MUC. Bestehende Plugins leisteten dies laut Kontext nicht
-  oder waren nicht installierbar. `INFERRED`
-- Das Plugin bleibt bei neuen OpenClaw-Versionen nutzbar. `INFERRED`
-- Das Projekt liefert Erfahrungen für skizzwerk. `INFERRED`
+- Die in Abschnitt 2 beschriebene Lage wird behoben: Bestehende Plugins
+  konnten teils nicht installiert werden oder erfüllten die Anforderungen an
+  Sicherheit oder Kommunikation nicht. `INFERRED`
+- Neue OpenClaw-Versionen machen das Plugin nicht unbrauchbar. `INFERRED`
+- Das Projekt liefert als Pilot Erfahrungen für skizzwerk. `INFERRED`
 
 ## 5. Genannter Projektgegenstand
 
@@ -68,8 +70,6 @@ Diese Darstellung ist eine Interpretation der Originalbeschreibung.
   `USER_PROVIDED (Original)`
 - Vorhandene GitHub-Projekte sollen als mögliche Grundlage untersucht werden.
   `USER_PROVIDED (Original)`
-- Ob die Untersuchung Teil des Projektgegenstands oder nur Vorarbeit ist, geht
-  aus der Eingabe nicht hervor. `UNKNOWN`
 
 ## 6. Genannte Nutzer und beteiligte Systeme
 
@@ -78,13 +78,11 @@ Diese Darstellung ist eine Interpretation der Originalbeschreibung.
 | Martin Henkel | Verfasser der Idee `USER_PROVIDED (Kontext)` |
 | OpenClaw | System, für das das Plugin entwickelt wird `USER_PROVIDED (Original)` |
 | 2 OpenClaw-Installationen (2026.9.4 und 2026.7.1-2) | zurzeit aktiv; Rolle für das Plugin nicht genannt `USER_PROVIDED (Kontext)` |
-| XMPP | Kommunikationsweg des Plugins `USER_PROVIDED (Original)` |
 | eigener XMPP-Server | vorhanden; Rolle für das Plugin nicht genannt `USER_PROVIDED (Kontext)` |
-| bestehende Plugins | teils nicht installierbar, teils ohne OMEMO oder MUC `USER_PROVIDED (Kontext)` |
+| bestehende Plugins | konnten teils nicht installiert werden oder erfüllten nicht die Anforderungen an Sicherheit (OMEMO) oder Kommunikation (Gruppenchats/MUC) `USER_PROVIDED (Kontext)` |
 | vorhandene GitHub-Projekte | mögliche Grundlage `USER_PROVIDED (Original)` |
-| KI-Agenten | können das Aktualisierungsverfahren gegebenenfalls unterstützen `USER_PROVIDED (Original)` |
+| KI-Agenten | können das Verfahren für neue OpenClaw-Versionen gegebenenfalls unterstützen `USER_PROVIDED (Original)` |
 | skizzwerk | Projekt, für das dieses Projekt als Pilot dient `USER_PROVIDED (Kontext)` |
-| Nutzer des Plugins und Chatpartner | nicht genannt `UNKNOWN` |
 
 ## 7. Genannte Funktionen
 
@@ -100,34 +98,33 @@ Diese Darstellung ist eine Interpretation der Originalbeschreibung.
 
 - Das Plugin ist für aktuelle OpenClaw-Versionen bestimmt.
   `USER_PROVIDED (Original)`
-- Direktnachrichten, OMEMO-Verschlüsselung und Gruppenchats über MUC sind als
+- Direktnachrichten, OMEMO-Verschlüsselung und Gruppenchats über MUC sind mit
   „muss“ genannt. `USER_PROVIDED (Original)`
-- Zurzeit sind die OpenClaw-Versionen 2026.9.4 und 2026.7.1-2 im Einsatz.
-  `USER_PROVIDED (Kontext)`
-- Die Unterstützung durch KI-Agenten ist mit „kann ggf.“ genannt, also nicht
-  zwingend. `INFERRED`
 
 ## 9. Ausdrücklich ausgeschlossen
 
-- Die Eingabe nennt keine ausgeschlossenen Inhalte. `UNKNOWN`
+- Abschnitt 1 und 2 nennen keine ausgeschlossenen Inhalte. Ob Inhalte
+  ausgeschlossen sind, ist unbekannt. `UNKNOWN`
 
 ## 10. Unklare Begriffe und mögliche Mehrdeutigkeiten
 
+Die erste Spalte zitiert Abschnitt 1 oder 2. Die Angaben zu Unklarheit und
+möglicher Auswirkung sind Ableitungen. `INFERRED`
+
 | Begriff oder Aussage | Unklarheit | Mögliche Auswirkung |
 |---|---|---|
-| „aktuelle OpenClaw-Versionen“ | Welche Versionen gemeint sind, ist offen. Ob 2026.7.1-2 dazugehört, ist offen. | Umfang der zu unterstützenden Versionen |
-| „neue OpenClaw-Versionen“ | Abgrenzung zu „aktuelle OpenClaw-Versionen“ ist offen. | Umfang des Aktualisierungsverfahrens |
+| „XMPP-Plugin“ | XMPP wird nur in diesem Wort genannt. Welche Rolle XMPP für das Plugin hat, ist nicht beschrieben (siehe ASM-005). | Verständnis des Projektgegenstands |
+| „aktuelle OpenClaw-Versionen“ | Welche Versionen gemeint sind, ist offen (siehe ASM-003). | Umfang der zu unterstützenden Versionen |
+| „neue OpenClaw-Versionen“ | Die Abgrenzung zu „aktuelle OpenClaw-Versionen“ ist offen. | Umfang des Verfahrens für neue Versionen |
 | „automatische Aktualisierung oder Kompatibilitätssicherung“ | Ob beides oder eines von beiden gemeint ist, ist offen. Was aktualisiert wird und was „automatisch“ umfasst, ist offen. | Projektumfang und Aufwand |
 | „Dies kann ggf. auch mit KI-Agenten unterstützt werden“ | Ob KI-Agenten erwünscht oder nur möglich sind, ist offen. | Umfang des Verfahrens |
-| „unterstützen“ (Plugin muss … unterstützen) | Welcher Funktionsumfang je Funktion gemeint ist, ist nicht beschrieben. | Abgrenzung, wann eine Funktion als erfüllt gilt |
-| „Direktnachrichten“ | Zwischen wem die Nachrichten ausgetauscht werden, ist nicht genannt. | Nutzerkreis |
-| „OMEMO-Verschlüsselung“ | Ob sie für Direktnachrichten, Gruppenchats oder beide gilt, ist offen. | Funktionsumfang |
+| „unterstützen“ (Das Plugin muss … unterstützen) | Welcher Funktionsumfang je Funktion gemeint ist, ist nicht beschrieben. | Abgrenzung, wann eine Funktion als erfüllt gilt |
+| „OMEMO-Verschlüsselung“ | Ob sie für Direktnachrichten, Gruppenchats oder beide gilt, ist offen (siehe ASM-004). | Funktionsumfang |
 | „Anforderungen an Sicherheit (OMEMO)“ | Ob Sicherheit über OMEMO hinaus gemeint ist, ist offen. | Umfang der Sicherheitsanforderungen |
-| „als mögliche Grundlage untersucht“ | Ob Übernahme, Weiterentwicklung oder nur Vorlage gemeint ist, ist offen. Welche Projekte gemeint sind, ist offen. | Vorgehen und Umfang der Bestandsuntersuchung |
+| „als mögliche Grundlage untersucht“ | Ob Übernahme, Weiterentwicklung oder nur Vorlage gemeint ist, ist offen. Welche Projekte gemeint sind, ist offen. Ob die Untersuchung Teil des Projektgegenstands oder Vorarbeit ist, ist offen. | Vorgehen und Projektumfang |
 | „entwickeln“ | Ob Neuentwicklung oder Anpassung eines vorhandenen Projekts gemeint ist, ist offen. | Projektumfang |
-| „Ein eigener XMPP-Server ist vorhanden“ | Ob das Plugin mit diesem Server arbeiten soll, ist nicht genannt. | beteiligte Systeme |
-| „2 OpenClaw Installationen … aktiv“ | Ob das Plugin auf beiden Installationen laufen soll, ist nicht genannt. | Umfang der zu unterstützenden Versionen |
-| „konnten z. T. nicht installiert werden“ | Ursache und Bedeutung für dieses Projekt sind nicht genannt. | Bewertung vorhandener Projekte |
+| „Ein eigener XMPP-Server ist vorhanden“ | Ob das Plugin mit diesem Server arbeiten soll, ist nicht genannt (siehe ASM-001). | beteiligte Systeme |
+| „2 OpenClaw Installationen … aktiv“ | Ob das Plugin auf beiden Installationen laufen soll, ist nicht genannt (siehe ASM-002). | Umfang der zu unterstützenden Versionen |
 | „Pilot für das Projekt skizzwerk“ | Ob daraus Vorgaben für dieses Projekt folgen, ist offen. | Vorgehen |
 
 ## 11. Abgrenzung zu Annahmen
@@ -135,15 +132,22 @@ Diese Darstellung ist eine Interpretation der Originalbeschreibung.
 In dieser Datei werden keine stillschweigenden Annahmen als Bestandteil der
 Idee behandelt. Notwendige Annahmen werden in `assumptions.md` erfasst.
 
-Erkannte Annahmen, Status `identified`, Nachweisstatus `ASSUMED`. Sie sind noch
-nicht in `assumptions.md` erfasst, weil diese Datei für das Projekt nicht
-existiert. Kennungen werden bei der Erfassung vergeben.
+Erkannte Annahmen: ASM-001, ASM-002, ASM-003, ASM-004, ASM-005.
 
-- Das Plugin soll mit dem eigenen XMPP-Server betrieben werden.
-- Das Plugin soll auf beiden aktiven OpenClaw-Installationen laufen.
-- „Aktuelle OpenClaw-Versionen“ umfasst mindestens Version 2026.9.4.
-- OMEMO-Verschlüsselung soll auch in Gruppenchats über MUC gelten.
-- Kein vorhandenes GitHub-Projekt erfüllt bereits alle genannten Funktionen.
+### Unbekannte Sachverhalte
+
+Diese Punkte sind keine Annahmen. Die Eingabe enthält dazu keine Information.
+
+- Ob ein vorhandenes GitHub-Projekt alle genannten Funktionen erfüllt, ist
+  unbekannt. `UNKNOWN`
+- Welche bestehenden Plugins erprobt wurden und woran ihre Installation
+  scheiterte, ist unbekannt. `UNKNOWN`
+- Wer das Plugin nutzt und mit wem darüber kommuniziert wird, ist unbekannt.
+  `UNKNOWN`
+- Welchen Nutzen der Ideengeber ausdrücklich erwartet, ist unbekannt.
+  `UNKNOWN`
+- Ob und wie oft neue OpenClaw-Versionen Änderungen bringen, die das Plugin
+  betreffen, ist unbekannt. `UNKNOWN`
 
 ## 12. Prüfergebnis SKW-01
 
@@ -168,9 +172,8 @@ Prüfung gegen die Qualitätsgrenze swk-01 in `rules/quality-gates.md`:
 - [x] keine konkrete technische Lösung ausgewählt
 - [x] offene Punkte sichtbar
 
-Mangel: Die erkannten Annahmen sind nicht nach `rules/assumptions.md` in
-`assumptions.md` erfasst, weil die Datei fehlt. Die Bearbeitung ist deshalb
-nicht abgeschlossen; der Status bleibt `draft`.
+Ergebnis: Alle Kriterien sind erfüllt. Die Annahmen sind mit Kennung in
+`assumptions.md` erfasst. Das Dokument erhält den Status `review`.
 
 ## 13. Freigabestatus
 
