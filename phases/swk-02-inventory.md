@@ -158,8 +158,6 @@ Für jeden vorgesehenen Untersuchungsbereich wird dokumentiert:
 - Wähle keine technische Lösung aus.
 - Formuliere keine neuen Anforderungen.
 - Bewerte noch nicht, welche gefundene Grundlage bevorzugt werden soll.
-- Verändere keine untersuchten externen Systeme, Installationen oder
-  Repositories.
 - Verändere kein untersuchtes externes oder produktiv verwendetes System.
 - Installiere oder aktualisiere keine Software auf einem untersuchten externen
   oder produktiv verwendeten System.
