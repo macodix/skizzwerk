@@ -44,7 +44,6 @@ Kennzeichnung nach `rules/evidence.md`:
 - `USER_PROVIDED (Kontext)`: Aussage aus Abschnitt 2
 - `INFERRED`: Ableitung oder Interpretation durch skizzwerk
 - `UNKNOWN`: Sachverhalt, zu dem die Eingabe keine Information enthält
-- `asm-nnn`: Kennung einer Annahme in `assumptions.md`
 
 Ein XMPP-Plugin für aktuelle OpenClaw-Versionen soll entstehen. Es soll die in
 Abschnitt 7 genannten Funktionen erfüllen und auch mit neuen
@@ -127,8 +126,8 @@ möglicher Auswirkung sind Ableitungen. `INFERRED`
 In dieser Datei werden keine stillschweigenden Annahmen als Bestandteil der
 Idee behandelt. Notwendige Annahmen werden in `assumptions.md` erfasst.
 
-Aktive Annahmen: keine. Die früher erfassten Annahmen asm-001 bis asm-005
-sind in `assumptions.md` als `superseded` geführt. `INFERRED`
+Erkannte Annahmen: keine. Eine projektspezifische `assumptions.md` ist deshalb
+nicht vorhanden. `INFERRED`
 
 ### Unbekannte Sachverhalte
 
@@ -179,15 +178,14 @@ Prüfung gegen die Qualitätsgrenze swk-01 in `rules/quality-gates.md`:
 - [x] offene Punkte sichtbar
 - [x] alle Kennungen entsprechen `rules/identifiers.md`
 - [x] Annahmen von Ableitungen und unbekannten Sachverhalten abgegrenzt
-- [x] jede in `idea.md` referenzierte Annahme existiert in `assumptions.md`
-- [x] vorhandene `assumptions.md` in Übersichts- und Einzelangaben widerspruchsfrei
+- [x] jede in `idea.md` referenzierte Annahme existiert in `assumptions.md` (keine Annahme referenziert)
+- [x] vorhandene `assumptions.md` in Übersichts- und Einzelangaben widerspruchsfrei (entfällt, keine Datei vorhanden)
 - [x] `idea.md` entspricht `templates/idea.md`
-- [x] vorhandene `assumptions.md` entspricht `templates/assumptions.md`
+- [x] vorhandene `assumptions.md` entspricht `templates/assumptions.md` (entfällt, keine Datei vorhanden)
 - [x] ohne erkannte Annahmen keine `assumptions.md` erforderlich
 
-Ergebnis: Alle Kriterien sind erfüllt. Zurzeit ist keine Annahme aktiv. Die
-vorhandene `assumptions.md` enthält nur die als `superseded` geführten
-asm-001 bis asm-005 und bleibt zur Nachvollziehbarkeit erhalten. Das Dokument
+Ergebnis: Alle Kriterien sind erfüllt. Es wurden keine Annahmen erkannt; eine
+projektspezifische `assumptions.md` ist nicht erforderlich. Das Dokument
 erhält den Status `review`.
 
 ## 13. Freigabestatus
