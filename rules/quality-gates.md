@@ -42,17 +42,18 @@ Dokumentabschnitte Text enthalten.
 - `idea.md` der Vorlage `templates/idea.md` entspricht,
 - eine vorhandene `assumptions.md` der Vorlage
   `templates/assumptions.md` entspricht,
-- ohne erkannte Annahmen keine projektspezifische `assumptions.md` erforderlich ist.
+- ohne erkannte Annahmen keine projektspezifische `assumptions.md`
+  erforderlich ist.
 
-Qualitätsgrenze swk-02
+## Qualitätsgrenze swk-02
 
-"swk-02" darf den Status "review" erhalten, wenn:
+`swk-02` darf den Status `review` erhalten, wenn:
 
-- die zugrunde liegende projektspezifische "idea.md" den Status "accepted"
+- die zugrunde liegende projektspezifische `idea.md` den Status `accepted`
   besitzt,
-- der Untersuchungsumfang nachvollziehbar aus der akzeptierten "idea.md"
+- der Untersuchungsumfang nachvollziehbar aus der akzeptierten `idea.md`
   abgeleitet wurde,
-- jeder Untersuchungsbereich einen konkreten Bezug zur "idea.md" besitzt,
+- jeder Untersuchungsbereich einen konkreten Bezug zur `idea.md` besitzt,
 - alle vorgesehenen Untersuchungsbereiche bearbeitet oder ausdrücklich als
   nicht beziehungsweise nur teilweise untersucht dokumentiert wurden,
 - die Gründe für nicht oder nur teilweise untersuchte Bereiche dokumentiert
@@ -64,20 +65,20 @@ Qualitätsgrenze swk-02
 - Versionen, Commits oder Veröffentlichungsstände angegeben sind, soweit sie
   für die Reproduzierbarkeit erforderlich und verfügbar sind,
 - bei jeder Quelle erkennbar ist, welcher Teil tatsächlich untersucht wurde,
-- jeder relevante Befund eine gültige "evd-nnn"-Kennung besitzt,
-- jeder Befund einen Nachweisstatus gemäß "rules/evidence.md" besitzt,
+- jeder relevante Befund eine gültige `evd-nnn`-Kennung besitzt,
+- jeder Befund einen Nachweisstatus gemäß `rules/evidence.md` besitzt,
 - Befundübersicht und Einzelbefunde vollständig und widerspruchsfrei sind,
-- Aussagen des Ideengebers mit "USER_PROVIDED" gekennzeichnet sind,
+- Aussagen des Ideengebers mit `USER_PROVIDED` gekennzeichnet sind,
 - unmittelbar durch Code, Test, Messung oder Primärquelle bestätigte Aussagen
-  nur bei ausreichendem Nachweis mit "VERIFIED" gekennzeichnet sind,
-- Angaben aus Dokumentationen höchstens mit "DOCUMENTED" gekennzeichnet sind,
+  nur bei ausreichendem Nachweis mit `VERIFIED` gekennzeichnet sind,
+- Angaben aus Dokumentationen höchstens mit `DOCUMENTED` gekennzeichnet sind,
   solange keine weitergehende Prüfung vorliegt,
-- Ableitungen mit "INFERRED" gekennzeichnet und aus dokumentierten Befunden
+- Ableitungen mit `INFERRED` gekennzeichnet und aus dokumentierten Befunden
   nachvollziehbar hergeleitet sind,
-- unbekannte Sachverhalte mit "UNKNOWN" gekennzeichnet sind,
-- widersprüchliche Quellen oder Befunde mit "CONFLICT" gekennzeichnet und
+- unbekannte Sachverhalte mit `UNKNOWN` gekennzeichnet sind,
+- widersprüchliche Quellen oder Befunde mit `CONFLICT` gekennzeichnet und
   gegenübergestellt sind,
-- widerlegte Aussagen mit "DISPROVED" gekennzeichnet und durch einen
+- widerlegte Aussagen mit `DISPROVED` gekennzeichnet und durch einen
   belastbaren Gegenbeleg belegt sind,
 - fehlende Informationen nicht durch Annahmen oder plausible Formulierungen
   ersetzt wurden,
@@ -94,9 +95,9 @@ Qualitätsgrenze swk-02
 - keine Architektur- oder Technologieentscheidung getroffen wurde,
 - keine untersuchte externe Installation und kein externes Repository durch
   die Bestandsuntersuchung verändert wurde,
-- "inventory.md" der Vorlage "templates/inventory.md" entspricht,
-- alle Kennungen "rules/identifiers.md" entsprechen,
-- der Dokumentstatus entsprechend "rules/status.md" gesetzt wurde.
+- `inventory.md` der Vorlage `templates/inventory.md` entspricht,
+- alle Kennungen `rules/identifiers.md` entsprechen,
+- der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
 
 ## Nichtbestehen der Qualitätsgrenze
 
@@ -112,9 +113,10 @@ Nach bestandener Qualitätsgrenze erhält das Dokument den Status `review`.
 
 Der Ideengeber prüft anschließend:
 
-- Wurde die Idee richtig verstanden?
-- Fehlt eine ausdrücklich genannte Aussage?
-- Wurde etwas hinzugefügt, das nicht aus der Eingabe folgt?
-- Sind die erkannten Mehrdeutigkeiten tatsächlich vorhanden?
+- Wurde das Phasenergebnis korrekt und vollständig wiedergegeben?
+- Fehlen wesentliche Angaben oder Befunde?
+- Wurde etwas hinzugefügt, das nicht aus den Eingaben oder Nachweisen folgt?
+- Sind Einschränkungen, Unklarheiten und offene Punkte sichtbar?
+- Wurden die Grenzen der jeweiligen Phase eingehalten?
 
 Erst danach darf der Status auf `accepted` gesetzt werden.

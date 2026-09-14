@@ -1,6 +1,6 @@
-swk-02: Bestand untersuchen
+# swk-02: Bestand untersuchen
 
-Zweck
+## Zweck
 
 Der für die Projektidee relevante vorhandene Bestand wird systematisch
 untersucht und nachvollziehbar dokumentiert.
@@ -9,17 +9,17 @@ Die Phase ermittelt, was bereits vorhanden, dokumentiert, nachgewiesen,
 widersprüchlich oder unbekannt ist. Sie bewertet noch nicht, welche Lösung
 gewählt oder wie das Projekt umgesetzt werden soll.
 
-Vorprüfung
+## Vorprüfung
 
 Vor der Bearbeitung ist zu prüfen:
 
-- die projektspezifische "idea.md" existiert,
-- die projektspezifische "idea.md" hat den Status "accepted",
+- die projektspezifische `idea.md` existiert,
+- die projektspezifische `idea.md` hat den Status `accepted`,
 - alle in dieser Phasendatei referenzierten Dateien existieren,
 - keine benötigte Regel oder Vorlage ist leer oder offensichtlich unvollständig,
-- "templates/inventory.md" ist als Vorlage verwendbar,
-- "rules/quality-gates.md" enthält eine Qualitätsgrenze für "swk-02",
-- verwendete Kennungen entsprechen "rules/identifiers.md".
+- `templates/inventory.md` ist als Vorlage verwendbar,
+- `rules/quality-gates.md` enthält eine Qualitätsgrenze für `swk-02`,
+- verwendete Kennungen entsprechen `rules/identifiers.md`.
 
 Bei fehlgeschlagener Vorprüfung werden keine projektspezifischen
 Ergebnisdateien angelegt oder verändert.
@@ -27,16 +27,16 @@ Ergebnisdateien angelegt oder verändert.
 Die festgestellten Mängel werden mit Datei, Fundstelle und Begründung
 dokumentiert.
 
-Eingaben
+## Eingaben
 
 Erforderlich:
 
-- projektspezifische "idea.md" mit Status "accepted"
-- "templates/inventory.md"
-- "rules/evidence.md"
-- "rules/identifiers.md"
-- "rules/status.md"
-- "rules/quality-gates.md"
+- projektspezifische `idea.md` mit Status `accepted`
+- `templates/inventory.md`
+- `rules/evidence.md`
+- `rules/identifiers.md`
+- `rules/status.md`
+- `rules/quality-gates.md`
 
 Zusätzliche Eingaben können sein:
 
@@ -51,13 +51,13 @@ Zusätzliche Eingaben können sein:
 
 Zusätzliche Eingaben müssen mit ihrer Herkunft dokumentiert werden.
 
-Untersuchungsumfang
+## Untersuchungsumfang
 
-Untersucht wird der Bestand, der für die in der akzeptierten "idea.md"
+Untersucht wird der Bestand, der für die in der akzeptierten `idea.md`
 genannten Ziele, Funktionen, Einschränkungen, Systeme und offenen
 Sachverhalte relevant ist.
 
-Der Untersuchungsumfang wird aus der "idea.md" abgeleitet. Er darf nicht
+Der Untersuchungsumfang wird aus der `idea.md` abgeleitet. Er darf nicht
 stillschweigend um neue Anforderungen oder Lösungsziele erweitert werden.
 
 Für jeden vorgesehenen Untersuchungsbereich wird dokumentiert:
@@ -69,12 +69,12 @@ Für jeden vorgesehenen Untersuchungsbereich wird dokumentiert:
 - welche Teile nicht untersucht werden konnten,
 - welche Einschränkungen die Untersuchung besitzt.
 
-Arbeitsauftrag
+## Arbeitsauftrag
 
-1. Lies die vollständige und akzeptierte projektspezifische "idea.md".
+1. Lies die vollständige und akzeptierte projektspezifische `idea.md`.
 
 2. Ermittle daraus die für die Bestandsuntersuchung relevanten:
-   
+
    - vorhandenen Systeme und Installationen,
    - vorhandenen Programme, Komponenten und Projekte,
    - genannten Funktionen und Einschränkungen,
@@ -85,11 +85,11 @@ Arbeitsauftrag
 
 3. Lege den Untersuchungsumfang fest. Begründe jeden aufgenommenen
    Untersuchungsbereich durch einen Verweis auf die projektspezifische
-   "idea.md".
+   `idea.md`.
 
 4. Erfasse die verwendeten Quellen mit:
-   
-   - Quellenart gemäß "rules/evidence.md",
+
+   - Quellenart gemäß `rules/evidence.md`,
    - genauer Bezeichnung,
    - reproduzierbarer Fundstelle,
    - Version, Commit oder Veröffentlichungsstand, soweit verfügbar,
@@ -100,12 +100,12 @@ Arbeitsauftrag
    erforderlich ist.
 
 6. Dokumentiere jeden relevanten Befund mit einer eindeutigen
-   "evd-nnn"-Kennung und dem Format aus "rules/evidence.md".
+   `evd-nnn`-Kennung und dem Format aus `rules/evidence.md`.
 
-7. Ordne jedem Befund einen Nachweisstatus gemäß "rules/evidence.md" zu.
+7. Ordne jedem Befund einen Nachweisstatus gemäß `rules/evidence.md` zu.
 
 8. Trenne eindeutig zwischen:
-   
+
    - Aussagen des Ideengebers,
    - unmittelbar nachgewiesenen Tatsachen,
    - dokumentierten Behauptungen,
@@ -114,22 +114,22 @@ Arbeitsauftrag
    - unbekannten Sachverhalten,
    - widersprüchlichen oder widerlegten Aussagen.
 
-9. Dokumentiere Widersprüche zwischen Quellen mit dem Status "CONFLICT".
+9. Dokumentiere Widersprüche zwischen Quellen mit dem Status `CONFLICT`.
    Stelle die widersprechenden Aussagen und ihre Fundstellen gegenüber.
 
 10. Dokumentiere fehlende oder nicht zugängliche Informationen als
-    "UNKNOWN". Ersetze sie nicht durch Vermutungen.
+    `UNKNOWN`. Ersetze sie nicht durch Vermutungen.
 
 11. Dokumentiere nicht durchgeführte Prüfungen und die daraus entstehenden
     Grenzen der Aussagekraft.
 
-12. Erstelle oder vervollständige die projektspezifische "inventory.md"
-    anhand von "templates/inventory.md".
+12. Erstelle oder vervollständige die projektspezifische `inventory.md`
+    anhand von `templates/inventory.md`.
 
-13. Prüfe das Ergebnis anhand der Qualitätsgrenze für "swk-02" in
-    "rules/quality-gates.md".
+13. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-02` in
+    `rules/quality-gates.md`.
 
-Verbindliche Regeln
+## Verbindliche Regeln
 
 - Erfinde keine Bestandsangaben.
 - Leite aus fehlenden Informationen nicht auf das Fehlen einer Funktion oder
@@ -153,15 +153,15 @@ Verbindliche Regeln
 - Führe keine Installation, Aktualisierung oder sonstige Veränderung eines
   untersuchten Systems allein zur Bestandsaufnahme durch.
 - Setze keine Annahme stillschweigend als Arbeitsgrundlage.
-- Ändere den Dokumentstatus nur entsprechend "rules/status.md" und dem
+- Ändere den Dokumentstatus nur entsprechend `rules/status.md` und dem
   Prüfergebnis.
 
-Abgrenzung zur Bewertung
+## Abgrenzung zur Bewertung
 
-"swk-02" beschreibt den festgestellten Bestand und die Belastbarkeit der
+`swk-02` beschreibt den festgestellten Bestand und die Belastbarkeit der
 Befunde.
 
-Nicht Bestandteil von "swk-02" sind:
+Nicht Bestandteil von `swk-02` sind:
 
 - Bewertung oder Rangfolge möglicher Lösungen,
 - Auswahl eines vorhandenen Projekts oder einer Komponente,
@@ -172,35 +172,35 @@ Nicht Bestandteil von "swk-02" sind:
 
 Diese Arbeiten erfolgen erst in den dafür vorgesehenen späteren Phasen.
 
-Ergebnis
+## Ergebnis
 
-Ergebnis ist eine projektspezifische "inventory.md".
+Ergebnis ist eine projektspezifische `inventory.md`.
 
 Sie enthält mindestens:
 
-- den aus der "idea.md" abgeleiteten Untersuchungsumfang,
+- den aus der `idea.md` abgeleiteten Untersuchungsumfang,
 - die untersuchten Quellen und ihre genauen Fundstellen,
-- die einzelnen Befunde mit "evd-nnn"-Kennungen,
+- die einzelnen Befunde mit `evd-nnn`-Kennungen,
 - den Nachweisstatus jedes Befunds,
 - erkannte Konflikte,
 - unbekannte und nicht untersuchte Sachverhalte,
 - Grenzen der Untersuchung,
-- das Prüfergebnis für "swk-02".
+- das Prüfergebnis für `swk-02`.
 
 Mögliche Dokumentstatus:
 
-- "input": Eine noch nicht untersuchte Bestandsangabe liegt vor.
-- "draft": Die Bestandsuntersuchung wurde begonnen oder weist noch Mängel auf.
-- "review": Die Untersuchung und die interne Prüfung sind abgeschlossen.
-- "accepted": Der Ideengeber hat Umfang und dokumentiertes Ergebnis bestätigt.
-- "blocked": Eine wesentliche Quelle oder notwendige Information ist nicht
+- `input`: Eine noch nicht untersuchte Bestandsangabe liegt vor.
+- `draft`: Die Bestandsuntersuchung wurde begonnen oder weist noch Mängel auf.
+- `review`: Die Untersuchung und die interne Prüfung sind abgeschlossen.
+- `accepted`: Der Ideengeber hat Umfang und dokumentiertes Ergebnis bestätigt.
+- `blocked`: Eine wesentliche Quelle oder notwendige Information ist nicht
   verfügbar und verhindert den sinnvollen Abschluss.
 
-Abschlusskriterien
+## Abschlusskriterien
 
-"swk-02" ist abgeschlossen, wenn:
+`swk-02` ist abgeschlossen, wenn:
 
-- der Untersuchungsumfang aus der akzeptierten "idea.md" nachvollziehbar
+- der Untersuchungsumfang aus der akzeptierten `idea.md` nachvollziehbar
   abgeleitet wurde,
 - alle vorgesehenen Untersuchungsbereiche bearbeitet oder ausdrücklich als
   nicht untersuchbar dokumentiert wurden,
@@ -212,5 +212,5 @@ Abschlusskriterien
 - Grenzen der Untersuchung sichtbar sind,
 - keine Anforderung, Architekturentscheidung oder Lösungsauswahl
   vorweggenommen wurde,
-- die Qualitätsgrenze für "swk-02" erfüllt ist,
-- die projektspezifische "inventory.md" den Status "accepted" erhalten hat.
+- die Qualitätsgrenze für `swk-02` erfüllt ist,
+- die projektspezifische `inventory.md` den Status `accepted` erhalten hat.
