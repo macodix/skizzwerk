@@ -16,6 +16,7 @@ Erforderlich:
 Zusätzliche Eingaben:
 
 - `templates/idea.md`
+- `templates/assumptions.md`
 - `rules/evidence.md`
 - `rules/assumptions.md`
 - `rules/quality-gates.md`
@@ -39,8 +40,12 @@ Zusätzliche Eingaben:
    - Ableitungen,
    - Annahmen,
    - unbekannten Sachverhalten.
-6. Ergänze die fehlenden Abschnitte anhand von `templates/idea.md`.
-7. Prüfe das Ergebnis anhand des Qualitätskatalogs für `swk-01`.
+6. Erfasse jede erkannte Annahme mit eindeutiger Kennung in der
+   projektspezifischen `assumptions.md`.
+7. Verweise in `idea.md` ausschließlich über diese Kennungen auf die
+   erfassten Annahmen.
+8. Ergänze die fehlenden Abschnitte anhand von `templates/idea.md`.
+9. Prüfe das Ergebnis anhand des Qualitätskatalogs für `swk-01`.
 
 ## Verbindliche Regeln
 
@@ -57,7 +62,8 @@ Zusätzliche Eingaben:
 
 ## Ergebnis
 
-Eine vervollständigte projektspezifische `idea.md`.
+- eine vervollständigte projektspezifische `idea.md`
+- eine angelegte oder ergänzte projektspezifische `assumptions.md`
 
 Mögliche Statuswerte:
 
