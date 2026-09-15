@@ -165,12 +165,21 @@ Wenn die Vorprüfung besteht:
 - lies die vollständige akzeptierte projektspezifische `idea.md`,
 - leite den Untersuchungsumfang ausschließlich daraus ab,
 - beachte alle von `phases/swk-02-inventory.md` referenzierten Regeln,
-- verwende `templates/inventory.md`,
+- verwende `templates/inventory.json`,
 - untersuche den relevanten vorhandenen Bestand,
 - dokumentiere alle Quellen reproduzierbar,
 - erfasse jeden relevanten Befund mit einer gültigen `evd-nnn`-Kennung,
 - verwende die Nachweisstatus aus `rules/evidence.md`,
 - dokumentiere nicht oder nur teilweise untersuchte Bereiche,
+- speichere die verbindlichen Befunddaten in der projektspezifischen
+  `inventory.json`,
+- führe `python tools/inventory.py validate pilots/openclaw-xmpp/inventory.json`
+  aus,
+- erzeuge `inventory.md` mit
+  `python tools/inventory.py render pilots/openclaw-xmpp/inventory.json pilots/openclaw-xmpp/inventory.md`,
+- führe danach
+  `python tools/inventory.py check pilots/openclaw-xmpp/inventory.json pilots/openclaw-xmpp/inventory.md`
+  aus,
 - führe abschließend die Qualitätsprüfung für swk-02 durch.
 
 Trenne eindeutig zwischen:
@@ -202,11 +211,15 @@ Prüfe das Ergebnis von swk-02 für `pilots/openclaw-xmpp`.
 Verwende als verbindliche Grundlage:
 - `phases/swk-02-inventory.md`,
 - alle dort referenzierten Regeln,
-- `templates/inventory.md`,
+- `templates/inventory.json`,
+- `tools/inventory.py`,
 - die Qualitätsgrenze für swk-02 in `rules/quality-gates.md`.
 
 Verändere keine Datei.
 Führe keine zusätzliche Bestandsrecherche durch.
+Führe die automatische Prüfung mit
+`python tools/inventory.py check pilots/openclaw-xmpp/inventory.json pilots/openclaw-xmpp/inventory.md`
+aus.
 
 Prüfe insbesondere:
 - ob der Untersuchungsumfang vollständig aus der akzeptierten `idea.md`
@@ -243,6 +256,9 @@ Korrigiere die zuvor festgestellten Mängel im Ergebnis von swk-02 für
 
 Ändere ausschließlich die zuvor benannten Stellen.
 
+Bearbeite ausschließlich die projektspezifische `inventory.json`.
+Bearbeite `inventory.md` nicht direkt.
+
 Führe zusätzliche Recherche nur durch, wenn sie zur Behebung eines konkret
 benannten Mangels erforderlich ist. Dokumentiere dabei jede neue Quelle nach
 `rules/evidence.md`.
@@ -256,6 +272,9 @@ Beachte weiterhin die Grenzen von `phases/swk-02-inventory.md`:
 
 Prüfe das Ergebnis danach erneut vollständig gegen die Qualitätsgrenze für
 swk-02.
+
+Validiere `inventory.json`, erzeuge `inventory.md` neu und prüfe anschließend,
+dass beide Dateien übereinstimmen.
 
 Dokumentiere:
 - welche Stellen geändert wurden,
