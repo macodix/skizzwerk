@@ -1000,7 +1000,7 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/ksmith211/openclaw-xmpp, `README.md` Zeilen 1–3, 14`",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `README.md` Zeilen 1–3, 14",
           "version": "Commit ad1ad44777fc",
           "checked_at": "2026-09-14",
           "contribution": "Beschreibung als DM-Plugin, keine Versionsangabe"
@@ -1044,14 +1044,14 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/ksmith211/openclaw-xmpp, `src/inbound.ts` Zeile 101`",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `src/inbound.ts` Zeile 101",
           "version": "Commit ad1ad44777fc",
           "checked_at": "2026-09-14",
           "contribution": "Verarbeitung von 1:1-Nachrichten"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/ksmith211/openclaw-xmpp, `src/send.ts` Zeile 16`",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `src/send.ts` Zeile 16",
           "version": "Commit ad1ad44777fc",
           "checked_at": "2026-09-14",
           "contribution": "Senden von 1:1-Nachrichten"
@@ -1132,14 +1132,14 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/omemo/OmemoManager.ts` Zeile 11`",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/omemo/OmemoManager.ts` Zeile 11",
           "version": "Commit 428886a5fab2",
           "checked_at": "2026-09-14",
           "contribution": "OMEMO-Namensraum"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/client.ts` Zeile 187`",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/client.ts` Zeile 187",
           "version": "Commit 428886a5fab2",
           "checked_at": "2026-09-14",
           "contribution": "Bedingung `options?.type !== \"groupchat\"` für OMEMO"
@@ -1220,14 +1220,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 3, 94–97`",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 3, 94–97",
           "version": "Commit 4fb1e113150e",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben 1:1 und MUC"
         },
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/kazakhan/openclaw-xmpp, `XMPPAUDIT.md` Zeile 322`",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `XMPPAUDIT.md` Zeile 322",
           "version": "Commit 4fb1e113150e",
           "checked_at": "2026-09-14",
           "contribution": "OMEMO als nicht unterstützt"
@@ -1257,21 +1257,21 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/kazakhan/openclaw-xmpp, `src/startXMPP.ts` Zeilen 513, 761`",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `src/startXMPP.ts` Zeilen 513, 761",
           "version": "Commit 4fb1e113150e",
           "checked_at": "2026-09-14",
           "contribution": "MUC-Namensräume"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/kazakhan/openclaw-xmpp, `index.ts` Zeile 35`",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `index.ts` Zeile 35",
           "version": "Commit 4fb1e113150e",
           "checked_at": "2026-09-14",
           "contribution": "`xmpp.joinRoom`"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/kazakhan/openclaw-xmpp, `src/commands.ts` Zeile 231`",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `src/commands.ts` Zeile 231",
           "version": "Commit 4fb1e113150e",
           "checked_at": "2026-09-14",
           "contribution": "1:1-Nachrichten"
@@ -1308,14 +1308,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 21–23`",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 21–23",
           "version": "Commit 4fb1e113150e",
           "checked_at": "2026-09-14",
           "contribution": "Voraussetzung OpenClaw 2026.8.2+ mit Begründung"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/kazakhan/openclaw-xmpp, `package.json` Zeilen 20–24`",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `package.json` Zeilen 20–24",
           "version": "Commit 4fb1e113150e",
           "checked_at": "2026-09-14",
           "contribution": "deklarierte Felder `compat.pluginApi` und `minGatewayVersion`"
@@ -1352,14 +1352,14 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/icarito/openclaw-xmpp, `package.json` Zeile 80`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `package.json` Zeile 80",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "Paketbeschreibung"
         },
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/icarito/openclaw-xmpp, `README.md` Zeilen 9–11`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `README.md` Zeilen 9–11",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "Hinweis zum Produktivbetrieb"
@@ -1389,21 +1389,21 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/icarito/openclaw-xmpp, `src/client.ts` Zeilen 121, 134`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/client.ts` Zeilen 121, 134",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "MUC-Namensraum und Raumbeitritt"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/icarito/openclaw-xmpp, `src/omemo/types.ts` Zeile 13`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/omemo/types.ts` Zeile 13",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "älterer OMEMO-Namensraum"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/icarito/openclaw-xmpp, `src/omemo/omemo2.ts` Zeile 12`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/omemo/omemo2.ts` Zeile 12",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "`urn:xmpp:omemo:2`"
@@ -1417,7 +1417,7 @@
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/icarito/openclaw-xmpp, `src/send.ts` Zeile 356`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/send.ts` Zeile 356",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "1:1-Nachrichten"
@@ -1447,14 +1447,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/icarito/openclaw-xmpp, `AGENTS.md` Zeile 3`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `AGENTS.md` Zeile 3",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "Versionsangabe 2026.6.9 or newer"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/icarito/openclaw-xmpp, `package.json` Zeilen 85, 113`",
+          "location": "https://github.com/icarito/openclaw-xmpp, `package.json` Zeilen 85, 113",
           "version": "Commit 820213a98cb1",
           "checked_at": "2026-09-14",
           "contribution": "deklarierte Felder `compat.pluginApi` und `devDependencies.openclaw`"
@@ -1485,14 +1485,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/soilDNRA/openclaw-xmpp, `README.md` Zeilen 1–2, 15–18, 44–46, 72`",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `README.md` Zeilen 1–2, 15–18, 44–46, 72",
           "version": "Commit a41df5fc1417",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben, Mindestversion, ClawHub, Hauptquelle"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/soilDNRA/openclaw-xmpp, `package.json` Zeile 41`",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `package.json` Zeile 41",
           "version": "Commit a41df5fc1417",
           "checked_at": "2026-09-14",
           "contribution": "`peerDependencies.openclaw >=2026.8.2`"
@@ -1523,14 +1523,14 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/soilDNRA/openclaw-xmpp, `src/stanzas.ts` Zeile 151`",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `src/stanzas.ts` Zeile 151",
           "version": "Commit a41df5fc1417",
           "checked_at": "2026-09-14",
           "contribution": "1:1-Nachrichten"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/soilDNRA/openclaw-xmpp, `src/setup.ts` Zeile 116`",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `src/setup.ts` Zeile 116",
           "version": "Commit a41df5fc1417",
           "checked_at": "2026-09-14",
           "contribution": "Hinweistext „Group-chat options remain unavailable until the MUC security gate is complete.“"
@@ -1574,14 +1574,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/elmafioso79/xmpp-channel, `README.md` Zeilen 9–10, 211, 223`",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `README.md` Zeilen 9–10, 211, 223",
           "version": "Commit a447455d6cb1",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben einschließlich OMEMO in Gruppenchats"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/elmafioso79/xmpp-channel, `package.json` Zeile 63`",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `package.json` Zeile 63",
           "version": "Commit a447455d6cb1",
           "checked_at": "2026-09-14",
           "contribution": "`peerDependencies.openclaw ^2026.2.2-3`"
@@ -1618,21 +1618,21 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/elmafioso79/xmpp-channel, `src/monitor.ts` Zeile 255`",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `src/monitor.ts` Zeile 255",
           "version": "Commit a447455d6cb1",
           "checked_at": "2026-09-14",
           "contribution": "`joinMuc`"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/elmafioso79/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26`",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26",
           "version": "Commit a447455d6cb1",
           "checked_at": "2026-09-14",
           "contribution": "OMEMO-Namensräume"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/elmafioso79/xmpp-channel, `src/inbound.ts` Zeilen 359, 386`",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `src/inbound.ts` Zeilen 359, 386",
           "version": "Commit a447455d6cb1",
           "checked_at": "2026-09-14",
           "contribution": "1:1-Nachrichten und verschlüsselte Gruppenchat-Nachrichten"
@@ -1669,7 +1669,7 @@
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/watkins-matt/xmpp-channel, `package.json` Zeilen 64–65`",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `package.json` Zeilen 64–65",
           "version": "Commit 1a734552fe19",
           "checked_at": "2026-09-14",
           "contribution": "`peerDependencies.openclaw >=2026.8.2`"
@@ -1706,21 +1706,21 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/watkins-matt/xmpp-channel, `src/monitor.ts` Zeile 292`",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `src/monitor.ts` Zeile 292",
           "version": "Commit 1a734552fe19",
           "checked_at": "2026-09-14",
           "contribution": "MUC"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/watkins-matt/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26`",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26",
           "version": "Commit 1a734552fe19",
           "checked_at": "2026-09-14",
           "contribution": "OMEMO-Namensräume"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/watkins-matt/xmpp-channel, `src/inbound.ts` Zeile 495`",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `src/inbound.ts` Zeile 495",
           "version": "Commit 1a734552fe19",
           "checked_at": "2026-09-14",
           "contribution": "OMEMO-Verarbeitung"
@@ -1750,14 +1750,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 8, 18–19, 32`",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 8, 18–19, 32",
           "version": "Commit 0ba189314a14",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben und Versionsangabe"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `package.json` Zeilen 63–64`",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `package.json` Zeilen 63–64",
           "version": "Commit 0ba189314a14",
           "checked_at": "2026-09-14",
           "contribution": "`peerDependencies.openclaw ^2026.8.2`"
@@ -1787,14 +1787,14 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeile 772`",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeile 772",
           "version": "Commit 0ba189314a14",
           "checked_at": "2026-09-14",
           "contribution": "`joinMuc`"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeilen 988–1105`",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeilen 988–1105",
           "version": "Commit 0ba189314a14",
           "checked_at": "2026-09-14",
           "contribution": "Behandlung verschlüsselter Nachrichten"
@@ -1838,21 +1838,21 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 22–24 („### Removed“ unter „[Unreleased]“)`",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 22–24 („### Removed“ unter „[Unreleased]“)",
           "version": "Commit 0ba189314a14",
           "checked_at": "2026-09-14",
           "contribution": "dokumentierte Entfernung der Ende-zu-Ende-Verschlüsselung"
         },
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 35–107 (Versionen 0.3.1 bis 0.4.0, 2026-02-08 bis 2026-02-12)`",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 35–107 (Versionen 0.3.1 bis 0.4.0, 2026-02-08 bis 2026-02-12)",
           "version": "Commit 0ba189314a14",
           "checked_at": "2026-09-14",
           "contribution": "frühere OMEMO-Einträge"
         },
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 18–19`",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 18–19",
           "version": "Commit 0ba189314a14",
           "checked_at": "2026-09-14",
           "contribution": "aktueller Ausschluss der Ende-zu-Ende-Verschlüsselung"
@@ -1882,14 +1882,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/MrCPA/oc-xmpp, `README.md` Zeilen 5, 9, 30`",
+          "location": "https://github.com/MrCPA/oc-xmpp, `README.md` Zeilen 5, 9, 30",
           "version": "Commit 675775a49f43",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben und Teststand"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/MrCPA/oc-xmpp, `package.json` Zeilen 45–46`",
+          "location": "https://github.com/MrCPA/oc-xmpp, `package.json` Zeilen 45–46",
           "version": "Commit 675775a49f43",
           "checked_at": "2026-09-14",
           "contribution": "`peerDependencies.openclaw \"*\"`"
@@ -1920,14 +1920,14 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/MrCPA/oc-xmpp, `src/inbound.ts` Zeilen 76, 102, 461`",
+          "location": "https://github.com/MrCPA/oc-xmpp, `src/inbound.ts` Zeilen 76, 102, 461",
           "version": "Commit 675775a49f43",
           "checked_at": "2026-09-14",
           "contribution": "MUC und 1:1-Nachrichten"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/MrCPA/oc-xmpp, `src/omemo.ts` Zeilen 17, 207`",
+          "location": "https://github.com/MrCPA/oc-xmpp, `src/omemo.ts` Zeilen 17, 207",
           "version": "Commit 675775a49f43",
           "checked_at": "2026-09-14",
           "contribution": "libsignal-Import und `urn:xmpp:omemo:2`"
@@ -1957,14 +1957,14 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `README.md` Zeilen 9–12, 21–24`",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `README.md` Zeilen 9–12, 21–24",
           "version": "Commit f280515acd43",
           "checked_at": "2026-09-14",
           "contribution": "Ziele und Planungsstand"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `package.json` Zeilen 37–38`",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `package.json` Zeilen 37–38",
           "version": "Commit f280515acd43",
           "checked_at": "2026-09-14",
           "contribution": "`peerDependencies.openclaw >=2026.6.9`"
@@ -1994,14 +1994,14 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeile 306`",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeile 306",
           "version": "Commit f280515acd43",
           "checked_at": "2026-09-14",
           "contribution": "1:1-Nachrichten"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeilen 524–530`",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeilen 524–530",
           "version": "Commit f280515acd43",
           "checked_at": "2026-09-14",
           "contribution": "`joinMuc`"
@@ -2038,7 +2038,7 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/weijia/xmpp-connector, `README.md` Zeilen 7–8, 52`",
+          "location": "https://github.com/weijia/xmpp-connector, `README.md` Zeilen 7–8, 52",
           "version": "Commit 3d7c72e66cd9",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben und Laufzeitangabe"
@@ -2075,7 +2075,7 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/weijia/xmpp-connector, `plugin.ts` Zeile 507`",
+          "location": "https://github.com/weijia/xmpp-connector, `plugin.ts` Zeile 507",
           "version": "Commit 3d7c72e66cd9",
           "checked_at": "2026-09-14",
           "contribution": "1:1-Nachrichten"
@@ -2112,7 +2112,7 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/README.md` Zeilen 10–11`",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/README.md` Zeilen 10–11",
           "version": "Commit a6adb95b35c1",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben"
@@ -2156,21 +2156,21 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/channel.ts` Zeilen 150, 290`",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/channel.ts` Zeilen 150, 290",
           "version": "Commit a6adb95b35c1",
           "checked_at": "2026-09-14",
           "contribution": "`joinRoom`"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/client.ts` Zeile 353`",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/client.ts` Zeile 353",
           "version": "Commit a6adb95b35c1",
           "checked_at": "2026-09-14",
           "contribution": "1:1-Nachrichten"
         },
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/` mit Suche nach `omemo``",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/` mit Suche nach `omemo`",
           "version": "Commit a6adb95b35c1",
           "checked_at": "2026-09-14",
           "contribution": "0 Treffer"
@@ -2200,7 +2200,7 @@
       "sources": [
         {
           "type": "PROJECT_DOCUMENTATION",
-          "location": "https://github.com/rsaisankalp/clawdbotElyments, `README.md` Zeilen 79–96`",
+          "location": "https://github.com/rsaisankalp/clawdbotElyments, `README.md` Zeilen 79–96",
           "version": "Commit f2e1dde49780",
           "checked_at": "2026-09-14",
           "contribution": "Funktionsangaben"
@@ -2244,7 +2244,7 @@
       "sources": [
         {
           "type": "SOURCE_CODE",
-          "location": "https://github.com/rsaisankalp/clawdbotElyments, `src/elyments/xmpp.ts` Zeile 320`",
+          "location": "https://github.com/rsaisankalp/clawdbotElyments, `src/elyments/xmpp.ts` Zeile 320",
           "version": "Commit f2e1dde49780",
           "checked_at": "2026-09-14",
           "contribution": "Nachrichtentyp `groupchat`"

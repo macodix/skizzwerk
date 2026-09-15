@@ -921,7 +921,7 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/ksmith211/openclaw-xmpp, `README.md` Zeilen 1–3, 14` | Commit ad1ad44777fc | 2026-09-14 | Beschreibung als DM-Plugin, keine Versionsangabe |
+| `PROJECT_DOCUMENTATION` | https://github.com/ksmith211/openclaw-xmpp, `README.md` Zeilen 1–3, 14 | Commit ad1ad44777fc | 2026-09-14 | Beschreibung als DM-Plugin, keine Versionsangabe |
 | `SOURCE_CODE` | https://github.com/ksmith211/openclaw-xmpp, `package.json` | Commit ad1ad44777fc | 2026-09-14 | kein `peerDependencies`- und kein `engines`-Feld |
 | `PRIMARY_DOCUMENTATION` | https://registry.npmjs.org/@ksmith221/openclaw-xmpp | Registerstand 2026-09-14 | 2026-09-14 | veröffentlichte Version 0.1.1 vom 2026-02-02 |
 
@@ -960,8 +960,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/ksmith211/openclaw-xmpp, `src/inbound.ts` Zeile 101` | Commit ad1ad44777fc | 2026-09-14 | Verarbeitung von 1:1-Nachrichten |
-| `SOURCE_CODE` | https://github.com/ksmith211/openclaw-xmpp, `src/send.ts` Zeile 16` | Commit ad1ad44777fc | 2026-09-14 | Senden von 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/ksmith211/openclaw-xmpp, `src/inbound.ts` Zeile 101 | Commit ad1ad44777fc | 2026-09-14 | Verarbeitung von 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/ksmith211/openclaw-xmpp, `src/send.ts` Zeile 16 | Commit ad1ad44777fc | 2026-09-14 | Senden von 1:1-Nachrichten |
 | `SOURCE_CODE` | https://github.com/ksmith211/openclaw-xmpp, `src/` mit `grep -rniE 'muc\|omemo\|groupchat'` | Commit ad1ad44777fc | 2026-09-14 | 0 Treffer |
 
 Prüfung:
@@ -1038,8 +1038,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/omemo/OmemoManager.ts` Zeile 11` | Commit 428886a5fab2 | 2026-09-14 | OMEMO-Namensraum |
-| `SOURCE_CODE` | https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/client.ts` Zeile 187` | Commit 428886a5fab2 | 2026-09-14 | Bedingung `options?.type !== "groupchat"` für OMEMO |
+| `SOURCE_CODE` | https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/omemo/OmemoManager.ts` Zeile 11 | Commit 428886a5fab2 | 2026-09-14 | OMEMO-Namensraum |
+| `SOURCE_CODE` | https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/client.ts` Zeile 187 | Commit 428886a5fab2 | 2026-09-14 | Bedingung `options?.type !== "groupchat"` für OMEMO |
 | `SOURCE_CODE` | https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/` mit `grep -rn 'jabber.org/protocol/muc'` | Commit 428886a5fab2 | 2026-09-14 | 0 Treffer |
 
 Prüfung:
@@ -1116,8 +1116,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 3, 94–97` | Commit 4fb1e113150e | 2026-09-14 | Funktionsangaben 1:1 und MUC |
-| `PROJECT_DOCUMENTATION` | https://github.com/kazakhan/openclaw-xmpp, `XMPPAUDIT.md` Zeile 322` | Commit 4fb1e113150e | 2026-09-14 | OMEMO als nicht unterstützt |
+| `PROJECT_DOCUMENTATION` | https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 3, 94–97 | Commit 4fb1e113150e | 2026-09-14 | Funktionsangaben 1:1 und MUC |
+| `PROJECT_DOCUMENTATION` | https://github.com/kazakhan/openclaw-xmpp, `XMPPAUDIT.md` Zeile 322 | Commit 4fb1e113150e | 2026-09-14 | OMEMO als nicht unterstützt |
 
 Prüfung:
 
@@ -1154,9 +1154,9 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `src/startXMPP.ts` Zeilen 513, 761` | Commit 4fb1e113150e | 2026-09-14 | MUC-Namensräume |
-| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `index.ts` Zeile 35` | Commit 4fb1e113150e | 2026-09-14 | `xmpp.joinRoom` |
-| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `src/commands.ts` Zeile 231` | Commit 4fb1e113150e | 2026-09-14 | 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `src/startXMPP.ts` Zeilen 513, 761 | Commit 4fb1e113150e | 2026-09-14 | MUC-Namensräume |
+| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `index.ts` Zeile 35 | Commit 4fb1e113150e | 2026-09-14 | `xmpp.joinRoom` |
+| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `src/commands.ts` Zeile 231 | Commit 4fb1e113150e | 2026-09-14 | 1:1-Nachrichten |
 | `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `src/`, `index.ts` mit `grep -rniE 'omemo\|axolotl'` | Commit 4fb1e113150e | 2026-09-14 | 0 Treffer |
 
 Prüfung:
@@ -1194,8 +1194,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 21–23` | Commit 4fb1e113150e | 2026-09-14 | Voraussetzung OpenClaw 2026.8.2+ mit Begründung |
-| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `package.json` Zeilen 20–24` | Commit 4fb1e113150e | 2026-09-14 | deklarierte Felder `compat.pluginApi` und `minGatewayVersion` |
+| `PROJECT_DOCUMENTATION` | https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 21–23 | Commit 4fb1e113150e | 2026-09-14 | Voraussetzung OpenClaw 2026.8.2+ mit Begründung |
+| `SOURCE_CODE` | https://github.com/kazakhan/openclaw-xmpp, `package.json` Zeilen 20–24 | Commit 4fb1e113150e | 2026-09-14 | deklarierte Felder `compat.pluginApi` und `minGatewayVersion` |
 | `PRIMARY_DOCUMENTATION` | `/usr/lib/node_modules/openclaw/docs/reference/RELEASING.md` Zeile 416 | openclaw@2026.9.4 (3a9d69d) | 2026-09-14 | Bedeutung von `openclaw.compat.pluginApi` als Untergrenze |
 
 Prüfung:
@@ -1233,8 +1233,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `package.json` Zeile 80` | Commit 820213a98cb1 | 2026-09-14 | Paketbeschreibung |
-| `PROJECT_DOCUMENTATION` | https://github.com/icarito/openclaw-xmpp, `README.md` Zeilen 9–11` | Commit 820213a98cb1 | 2026-09-14 | Hinweis zum Produktivbetrieb |
+| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `package.json` Zeile 80 | Commit 820213a98cb1 | 2026-09-14 | Paketbeschreibung |
+| `PROJECT_DOCUMENTATION` | https://github.com/icarito/openclaw-xmpp, `README.md` Zeilen 9–11 | Commit 820213a98cb1 | 2026-09-14 | Hinweis zum Produktivbetrieb |
 
 Prüfung:
 
@@ -1271,11 +1271,11 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/client.ts` Zeilen 121, 134` | Commit 820213a98cb1 | 2026-09-14 | MUC-Namensraum und Raumbeitritt |
-| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/omemo/types.ts` Zeile 13` | Commit 820213a98cb1 | 2026-09-14 | älterer OMEMO-Namensraum |
-| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/omemo/omemo2.ts` Zeile 12` | Commit 820213a98cb1 | 2026-09-14 | `urn:xmpp:omemo:2` |
+| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/client.ts` Zeilen 121, 134 | Commit 820213a98cb1 | 2026-09-14 | MUC-Namensraum und Raumbeitritt |
+| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/omemo/types.ts` Zeile 13 | Commit 820213a98cb1 | 2026-09-14 | älterer OMEMO-Namensraum |
+| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/omemo/omemo2.ts` Zeile 12 | Commit 820213a98cb1 | 2026-09-14 | `urn:xmpp:omemo:2` |
 | `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/omemo/sidecar.py` | Commit 820213a98cb1 | 2026-09-14 | Python-Hilfsprogramm |
-| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/send.ts` Zeile 356` | Commit 820213a98cb1 | 2026-09-14 | 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `src/send.ts` Zeile 356 | Commit 820213a98cb1 | 2026-09-14 | 1:1-Nachrichten |
 
 Prüfung:
 
@@ -1312,8 +1312,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/icarito/openclaw-xmpp, `AGENTS.md` Zeile 3` | Commit 820213a98cb1 | 2026-09-14 | Versionsangabe 2026.6.9 or newer |
-| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `package.json` Zeilen 85, 113` | Commit 820213a98cb1 | 2026-09-14 | deklarierte Felder `compat.pluginApi` und `devDependencies.openclaw` |
+| `PROJECT_DOCUMENTATION` | https://github.com/icarito/openclaw-xmpp, `AGENTS.md` Zeile 3 | Commit 820213a98cb1 | 2026-09-14 | Versionsangabe 2026.6.9 or newer |
+| `SOURCE_CODE` | https://github.com/icarito/openclaw-xmpp, `package.json` Zeilen 85, 113 | Commit 820213a98cb1 | 2026-09-14 | deklarierte Felder `compat.pluginApi` und `devDependencies.openclaw` |
 
 Prüfung:
 
@@ -1351,8 +1351,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/soilDNRA/openclaw-xmpp, `README.md` Zeilen 1–2, 15–18, 44–46, 72` | Commit a41df5fc1417 | 2026-09-14 | Funktionsangaben, Mindestversion, ClawHub, Hauptquelle |
-| `SOURCE_CODE` | https://github.com/soilDNRA/openclaw-xmpp, `package.json` Zeile 41` | Commit a41df5fc1417 | 2026-09-14 | `peerDependencies.openclaw >=2026.8.2` |
+| `PROJECT_DOCUMENTATION` | https://github.com/soilDNRA/openclaw-xmpp, `README.md` Zeilen 1–2, 15–18, 44–46, 72 | Commit a41df5fc1417 | 2026-09-14 | Funktionsangaben, Mindestversion, ClawHub, Hauptquelle |
+| `SOURCE_CODE` | https://github.com/soilDNRA/openclaw-xmpp, `package.json` Zeile 41 | Commit a41df5fc1417 | 2026-09-14 | `peerDependencies.openclaw >=2026.8.2` |
 
 Prüfung:
 
@@ -1390,8 +1390,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/soilDNRA/openclaw-xmpp, `src/stanzas.ts` Zeile 151` | Commit a41df5fc1417 | 2026-09-14 | 1:1-Nachrichten |
-| `SOURCE_CODE` | https://github.com/soilDNRA/openclaw-xmpp, `src/setup.ts` Zeile 116` | Commit a41df5fc1417 | 2026-09-14 | Hinweistext „Group-chat options remain unavailable until the MUC security gate is complete.“ |
+| `SOURCE_CODE` | https://github.com/soilDNRA/openclaw-xmpp, `src/stanzas.ts` Zeile 151 | Commit a41df5fc1417 | 2026-09-14 | 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/soilDNRA/openclaw-xmpp, `src/setup.ts` Zeile 116 | Commit a41df5fc1417 | 2026-09-14 | Hinweistext „Group-chat options remain unavailable until the MUC security gate is complete.“ |
 | `SOURCE_CODE` | https://github.com/soilDNRA/openclaw-xmpp, `src/` mit `grep -rniE 'muc\|omemo'` | Commit a41df5fc1417 | 2026-09-14 | 1 Treffer (`src/setup.ts` Zeile 116), 0 Treffer zu OMEMO |
 | `SOURCE_CODE` | https://git.sdf.org/erici/openclaw-xmpp, Branch `main` über Gitea-API | Commit a41df5fc1417 | 2026-09-14 | gleicher Commit wie der GitHub-Spiegel |
 
@@ -1430,8 +1430,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/elmafioso79/xmpp-channel, `README.md` Zeilen 9–10, 211, 223` | Commit a447455d6cb1 | 2026-09-14 | Funktionsangaben einschließlich OMEMO in Gruppenchats |
-| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `package.json` Zeile 63` | Commit a447455d6cb1 | 2026-09-14 | `peerDependencies.openclaw ^2026.2.2-3` |
+| `PROJECT_DOCUMENTATION` | https://github.com/elmafioso79/xmpp-channel, `README.md` Zeilen 9–10, 211, 223 | Commit a447455d6cb1 | 2026-09-14 | Funktionsangaben einschließlich OMEMO in Gruppenchats |
+| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `package.json` Zeile 63 | Commit a447455d6cb1 | 2026-09-14 | `peerDependencies.openclaw ^2026.2.2-3` |
 | `ISSUE_OR_PR` | https://github.com/elmafioso79/xmpp-channel/pull/4 | – | 2026-09-14 | offener PR „update openclaw plugin json to fit OpenClaw 2026.5.2“ vom 2026-05-03 |
 
 Prüfung:
@@ -1469,9 +1469,9 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `src/monitor.ts` Zeile 255` | Commit a447455d6cb1 | 2026-09-14 | `joinMuc` |
-| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26` | Commit a447455d6cb1 | 2026-09-14 | OMEMO-Namensräume |
-| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `src/inbound.ts` Zeilen 359, 386` | Commit a447455d6cb1 | 2026-09-14 | 1:1-Nachrichten und verschlüsselte Gruppenchat-Nachrichten |
+| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `src/monitor.ts` Zeile 255 | Commit a447455d6cb1 | 2026-09-14 | `joinMuc` |
+| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26 | Commit a447455d6cb1 | 2026-09-14 | OMEMO-Namensräume |
+| `SOURCE_CODE` | https://github.com/elmafioso79/xmpp-channel, `src/inbound.ts` Zeilen 359, 386 | Commit a447455d6cb1 | 2026-09-14 | 1:1-Nachrichten und verschlüsselte Gruppenchat-Nachrichten |
 
 Prüfung:
 
@@ -1509,7 +1509,7 @@ Quellen:
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
 | `PROJECT_DOCUMENTATION` | https://github.com/watkins-matt/xmpp-channel, `README.md` | Commit 1a734552fe19 | 2026-09-14 | identisch mit elmafioso79/xmpp-channel (per `diff` verglichen) |
-| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `package.json` Zeilen 64–65` | Commit 1a734552fe19 | 2026-09-14 | `peerDependencies.openclaw >=2026.8.2` |
+| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `package.json` Zeilen 64–65 | Commit 1a734552fe19 | 2026-09-14 | `peerDependencies.openclaw >=2026.8.2` |
 | `SOURCE_CODE` | GitHub-API `repos/watkins-matt/xmpp-channel` (Fork-Vergleich) | Commit 1a734552fe19 | 2026-09-14 | 28 Commits Vorsprung vor dem Ursprung |
 
 Prüfung:
@@ -1547,9 +1547,9 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `src/monitor.ts` Zeile 292` | Commit 1a734552fe19 | 2026-09-14 | MUC |
-| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26` | Commit 1a734552fe19 | 2026-09-14 | OMEMO-Namensräume |
-| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `src/inbound.ts` Zeile 495` | Commit 1a734552fe19 | 2026-09-14 | OMEMO-Verarbeitung |
+| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `src/monitor.ts` Zeile 292 | Commit 1a734552fe19 | 2026-09-14 | MUC |
+| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26 | Commit 1a734552fe19 | 2026-09-14 | OMEMO-Namensräume |
+| `SOURCE_CODE` | https://github.com/watkins-matt/xmpp-channel, `src/inbound.ts` Zeile 495 | Commit 1a734552fe19 | 2026-09-14 | OMEMO-Verarbeitung |
 
 Prüfung:
 
@@ -1586,8 +1586,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 8, 18–19, 32` | Commit 0ba189314a14 | 2026-09-14 | Funktionsangaben und Versionsangabe |
-| `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `package.json` Zeilen 63–64` | Commit 0ba189314a14 | 2026-09-14 | `peerDependencies.openclaw ^2026.8.2` |
+| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 8, 18–19, 32 | Commit 0ba189314a14 | 2026-09-14 | Funktionsangaben und Versionsangabe |
+| `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `package.json` Zeilen 63–64 | Commit 0ba189314a14 | 2026-09-14 | `peerDependencies.openclaw ^2026.8.2` |
 
 Prüfung:
 
@@ -1624,8 +1624,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeile 772` | Commit 0ba189314a14 | 2026-09-14 | `joinMuc` |
-| `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeilen 988–1105` | Commit 0ba189314a14 | 2026-09-14 | Behandlung verschlüsselter Nachrichten |
+| `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeile 772 | Commit 0ba189314a14 | 2026-09-14 | `joinMuc` |
+| `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeilen 988–1105 | Commit 0ba189314a14 | 2026-09-14 | Behandlung verschlüsselter Nachrichten |
 | `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/muc-identity.ts` | Commit 0ba189314a14 | 2026-09-14 | MUC-Identität |
 | `SOURCE_CODE` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/` mit `grep -rniE 'omemo'` | Commit 0ba189314a14 | 2026-09-14 | 0 Treffer |
 
@@ -1664,9 +1664,9 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 22–24 („### Removed“ unter „[Unreleased]“)` | Commit 0ba189314a14 | 2026-09-14 | dokumentierte Entfernung der Ende-zu-Ende-Verschlüsselung |
-| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 35–107 (Versionen 0.3.1 bis 0.4.0, 2026-02-08 bis 2026-02-12)` | Commit 0ba189314a14 | 2026-09-14 | frühere OMEMO-Einträge |
-| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 18–19` | Commit 0ba189314a14 | 2026-09-14 | aktueller Ausschluss der Ende-zu-Ende-Verschlüsselung |
+| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 22–24 („### Removed“ unter „[Unreleased]“) | Commit 0ba189314a14 | 2026-09-14 | dokumentierte Entfernung der Ende-zu-Ende-Verschlüsselung |
+| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 35–107 (Versionen 0.3.1 bis 0.4.0, 2026-02-08 bis 2026-02-12) | Commit 0ba189314a14 | 2026-09-14 | frühere OMEMO-Einträge |
+| `PROJECT_DOCUMENTATION` | https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 18–19 | Commit 0ba189314a14 | 2026-09-14 | aktueller Ausschluss der Ende-zu-Ende-Verschlüsselung |
 
 Prüfung:
 
@@ -1703,8 +1703,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/MrCPA/oc-xmpp, `README.md` Zeilen 5, 9, 30` | Commit 675775a49f43 | 2026-09-14 | Funktionsangaben und Teststand |
-| `SOURCE_CODE` | https://github.com/MrCPA/oc-xmpp, `package.json` Zeilen 45–46` | Commit 675775a49f43 | 2026-09-14 | `peerDependencies.openclaw "*"` |
+| `PROJECT_DOCUMENTATION` | https://github.com/MrCPA/oc-xmpp, `README.md` Zeilen 5, 9, 30 | Commit 675775a49f43 | 2026-09-14 | Funktionsangaben und Teststand |
+| `SOURCE_CODE` | https://github.com/MrCPA/oc-xmpp, `package.json` Zeilen 45–46 | Commit 675775a49f43 | 2026-09-14 | `peerDependencies.openclaw "*"` |
 
 Prüfung:
 
@@ -1742,8 +1742,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/MrCPA/oc-xmpp, `src/inbound.ts` Zeilen 76, 102, 461` | Commit 675775a49f43 | 2026-09-14 | MUC und 1:1-Nachrichten |
-| `SOURCE_CODE` | https://github.com/MrCPA/oc-xmpp, `src/omemo.ts` Zeilen 17, 207` | Commit 675775a49f43 | 2026-09-14 | libsignal-Import und `urn:xmpp:omemo:2` |
+| `SOURCE_CODE` | https://github.com/MrCPA/oc-xmpp, `src/inbound.ts` Zeilen 76, 102, 461 | Commit 675775a49f43 | 2026-09-14 | MUC und 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/MrCPA/oc-xmpp, `src/omemo.ts` Zeilen 17, 207 | Commit 675775a49f43 | 2026-09-14 | libsignal-Import und `urn:xmpp:omemo:2` |
 
 Prüfung:
 
@@ -1780,8 +1780,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/chitozzz/xmpp-adapter-openclaw, `README.md` Zeilen 9–12, 21–24` | Commit f280515acd43 | 2026-09-14 | Ziele und Planungsstand |
-| `SOURCE_CODE` | https://github.com/chitozzz/xmpp-adapter-openclaw, `package.json` Zeilen 37–38` | Commit f280515acd43 | 2026-09-14 | `peerDependencies.openclaw >=2026.6.9` |
+| `PROJECT_DOCUMENTATION` | https://github.com/chitozzz/xmpp-adapter-openclaw, `README.md` Zeilen 9–12, 21–24 | Commit f280515acd43 | 2026-09-14 | Ziele und Planungsstand |
+| `SOURCE_CODE` | https://github.com/chitozzz/xmpp-adapter-openclaw, `package.json` Zeilen 37–38 | Commit f280515acd43 | 2026-09-14 | `peerDependencies.openclaw >=2026.6.9` |
 
 Prüfung:
 
@@ -1818,8 +1818,8 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeile 306` | Commit f280515acd43 | 2026-09-14 | 1:1-Nachrichten |
-| `SOURCE_CODE` | https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeilen 524–530` | Commit f280515acd43 | 2026-09-14 | `joinMuc` |
+| `SOURCE_CODE` | https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeile 306 | Commit f280515acd43 | 2026-09-14 | 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeilen 524–530 | Commit f280515acd43 | 2026-09-14 | `joinMuc` |
 | `SOURCE_CODE` | https://github.com/chitozzz/xmpp-adapter-openclaw, `src/` mit `grep -rni 'omemo'` | Commit f280515acd43 | 2026-09-14 | 0 Treffer |
 
 Prüfung:
@@ -1857,7 +1857,7 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/weijia/xmpp-connector, `README.md` Zeilen 7–8, 52` | Commit 3d7c72e66cd9 | 2026-09-14 | Funktionsangaben und Laufzeitangabe |
+| `PROJECT_DOCUMENTATION` | https://github.com/weijia/xmpp-connector, `README.md` Zeilen 7–8, 52 | Commit 3d7c72e66cd9 | 2026-09-14 | Funktionsangaben und Laufzeitangabe |
 | `PRIMARY_DOCUMENTATION` | https://registry.npmjs.org/openclaw-xmpp-connector | Registerstand 2026-09-14 | 2026-09-14 | veröffentlichte Version 0.3.0 vom 2026-03-28 |
 
 Prüfung:
@@ -1895,7 +1895,7 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/weijia/xmpp-connector, `plugin.ts` Zeile 507` | Commit 3d7c72e66cd9 | 2026-09-14 | 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/weijia/xmpp-connector, `plugin.ts` Zeile 507 | Commit 3d7c72e66cd9 | 2026-09-14 | 1:1-Nachrichten |
 | `SOURCE_CODE` | https://github.com/weijia/xmpp-connector, `plugin.ts` mit `grep -niE 'muc\|omemo'` | Commit 3d7c72e66cd9 | 2026-09-14 | 0 Treffer |
 
 Prüfung:
@@ -1933,7 +1933,7 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/README.md` Zeilen 10–11` | Commit a6adb95b35c1 | 2026-09-14 | Funktionsangaben |
+| `PROJECT_DOCUMENTATION` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/README.md` Zeilen 10–11 | Commit a6adb95b35c1 | 2026-09-14 | Funktionsangaben |
 | `SOURCE_CODE` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/package.json` | Commit a6adb95b35c1 | 2026-09-14 | `devDependencies.openclaw workspace:*` |
 | `ISSUE_OR_PR` | https://github.com/openclaw/openclaw/pull/9741 | Kopf-Commit 8a4bc43 | 2026-09-14 | Bezug des Zweigs zum geschlossenen PR |
 
@@ -1972,9 +1972,9 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/channel.ts` Zeilen 150, 290` | Commit a6adb95b35c1 | 2026-09-14 | `joinRoom` |
-| `SOURCE_CODE` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/client.ts` Zeile 353` | Commit a6adb95b35c1 | 2026-09-14 | 1:1-Nachrichten |
-| `SOURCE_CODE` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/` mit Suche nach `omemo`` | Commit a6adb95b35c1 | 2026-09-14 | 0 Treffer |
+| `SOURCE_CODE` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/channel.ts` Zeilen 150, 290 | Commit a6adb95b35c1 | 2026-09-14 | `joinRoom` |
+| `SOURCE_CODE` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/client.ts` Zeile 353 | Commit a6adb95b35c1 | 2026-09-14 | 1:1-Nachrichten |
+| `SOURCE_CODE` | https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/` mit Suche nach `omemo` | Commit a6adb95b35c1 | 2026-09-14 | 0 Treffer |
 
 Prüfung:
 
@@ -2011,7 +2011,7 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `PROJECT_DOCUMENTATION` | https://github.com/rsaisankalp/clawdbotElyments, `README.md` Zeilen 79–96` | Commit f2e1dde49780 | 2026-09-14 | Funktionsangaben |
+| `PROJECT_DOCUMENTATION` | https://github.com/rsaisankalp/clawdbotElyments, `README.md` Zeilen 79–96 | Commit f2e1dde49780 | 2026-09-14 | Funktionsangaben |
 | `SOURCE_CODE` | https://github.com/rsaisankalp/clawdbotElyments, `package.json` | Commit f2e1dde49780 | 2026-09-14 | `peerDependencies.clawdbot >=2026.0.0` |
 | `PRIMARY_DOCUMENTATION` | https://registry.npmjs.org/clawdbot-elyments | Registerstand 2026-09-14 | 2026-09-14 | veröffentlichte Version 1.0.0 vom 2026-01-17 |
 
@@ -2050,7 +2050,7 @@ Quellen:
 
 | Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
 |---|---|---|---|---|
-| `SOURCE_CODE` | https://github.com/rsaisankalp/clawdbotElyments, `src/elyments/xmpp.ts` Zeile 320` | Commit f2e1dde49780 | 2026-09-14 | Nachrichtentyp `groupchat` |
+| `SOURCE_CODE` | https://github.com/rsaisankalp/clawdbotElyments, `src/elyments/xmpp.ts` Zeile 320 | Commit f2e1dde49780 | 2026-09-14 | Nachrichtentyp `groupchat` |
 | `SOURCE_CODE` | https://github.com/rsaisankalp/clawdbotElyments, `src/` mit `grep -rniE 'joinRoom\|jabber.org/protocol/muc\|omemo'` | Commit f2e1dde49780 | 2026-09-14 | 0 Treffer |
 
 Prüfung:
