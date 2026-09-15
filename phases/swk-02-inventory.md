@@ -17,7 +17,8 @@ Vor der Bearbeitung ist zu prüfen:
 - die projektspezifische `idea.md` hat den Status `accepted`,
 - alle in dieser Phasendatei referenzierten Dateien existieren,
 - keine benötigte Regel oder Vorlage ist leer oder offensichtlich unvollständig,
-- `templates/inventory.md` ist als Vorlage verwendbar,
+- `templates/inventory.json` ist als Vorlage verwendbar,
+- `tools/inventory.py` ist ausführbar und seine Tests bestehen,
 - `rules/quality-gates.md` enthält eine Qualitätsgrenze für `swk-02`,
 - verwendete Kennungen entsprechen `rules/identifiers.md`.
 
@@ -32,7 +33,8 @@ dokumentiert.
 Erforderlich:
 
 - projektspezifische `idea.md` mit Status `accepted`
-- `templates/inventory.md`
+- `templates/inventory.json`
+- `tools/inventory.py`
 - `rules/evidence.md`
 - `rules/identifiers.md`
 - `rules/status.md`
@@ -133,10 +135,15 @@ Für jeden vorgesehenen Untersuchungsbereich wird dokumentiert:
     - wegen fehlenden Zugriffs nicht möglich,
     - durch eine konkrete Regel unzulässig.
 
-13. Erstelle oder vervollständige die projektspezifische `inventory.md`
-    anhand von `templates/inventory.md`.
+13. Erstelle oder vervollständige die projektspezifische `inventory.json`
+    anhand von `templates/inventory.json`. Diese Datei ist die verbindliche
+    Datenquelle der Bestandsuntersuchung.
 
-14. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-02` in
+14. Validiere `inventory.json` mit `tools/inventory.py` und erzeuge daraus die
+    projektspezifische `inventory.md`. Bearbeite die erzeugte Markdown-Datei
+    nicht direkt.
+
+15. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-02` in
     `rules/quality-gates.md`.
 
 ## Verbindliche Regeln
@@ -175,6 +182,9 @@ Für jeden vorgesehenen Untersuchungsbereich wird dokumentiert:
 - Setze keine Annahme stillschweigend als Arbeitsgrundlage.
 - Ändere den Dokumentstatus nur entsprechend `rules/status.md` und dem
   Prüfergebnis.
+- Bearbeite Befunddaten ausschließlich in `inventory.json`.
+- Erzeuge `inventory.md` ausschließlich mit `tools/inventory.py`.
+- Umgehe oder deaktiviere keine fehlgeschlagene Validierung.
 
 ## Abgrenzung zur Bewertung
 
@@ -194,9 +204,14 @@ Diese Arbeiten erfolgen erst in den dafür vorgesehenen späteren Phasen.
 
 ## Ergebnis
 
-Ergebnis ist eine projektspezifische `inventory.md`.
+Ergebnisse sind:
 
-Sie enthält mindestens:
+- eine projektspezifische `inventory.json` als verbindliche Datenquelle,
+- eine daraus automatisch erzeugte projektspezifische `inventory.md` als
+  lesbare Darstellung.
+
+Die strukturierte Datenquelle und die erzeugte Darstellung enthalten
+mindestens:
 
 - den aus der `idea.md` abgeleiteten Untersuchungsumfang,
 - die untersuchten Quellen und ihre genauen Fundstellen,
@@ -233,4 +248,7 @@ Mögliche Dokumentstatus:
 - keine Anforderung, Architekturentscheidung oder Lösungsauswahl
   vorweggenommen wurde,
 - die Qualitätsgrenze für `swk-02` erfüllt ist,
-- die projektspezifische `inventory.md` den Status `accepted` erhalten hat.
+- `inventory.json` die automatische Validierung besteht,
+- `inventory.md` nachweislich aus der aktuellen `inventory.json` erzeugt wurde,
+- die projektspezifische Bestandsuntersuchung den Status `accepted` erhalten
+  hat.
