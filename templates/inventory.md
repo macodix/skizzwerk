@@ -8,6 +8,11 @@ last_updated: YYYY-MM-DD
 basis: idea.md
 ---
 
+> Legacy-Vorlage für noch nicht migrierte Bestandsuntersuchungen. Neue und
+> überarbeitete Bestandsuntersuchungen verwenden `templates/inventory.json`.
+> Die zugehörige `inventory.md` wird mit `tools/inventory.py` erzeugt und nicht
+> direkt bearbeitet.
+
 # Bestandsuntersuchung
 
 ## 1. Grundlage und Untersuchungsauftrag

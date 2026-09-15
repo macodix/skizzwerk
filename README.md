@@ -10,6 +10,9 @@ Arbeisanweisungen:
 
 - Die verbindlichen Dokumentstatus sind in `rules/status.md` definiert.
 
+- Strukturierte Bestandsuntersuchungen und ihre automatische Prüfung sind in
+  `docs/structured-inventories.md` beschrieben.
+
 Verzeichnisstruktur:
 
 ```
@@ -18,21 +21,30 @@ skizzwerk/
 ├── docs/
 │   ├── concepts.md
 │   ├── prompt-examples.md
+│   └── structured-inventories.md
+├── phases/
+│   ├── swk-01-idea.md
+│   └── swk-02-inventory.md
 ├── rules/
 │   ├── process.md
 │   ├── evidence.md
 │   ├── assumptions.md
-│   ├── identifier.md
+│   ├── identifiers.md
 │   ├── questions.md
 │   ├── status.md
 │   └── quality-gates.md
 ├── templates/
 │   ├── idea.md
 │   ├── inventory.md
+│   ├── inventory.json
 │   ├── assumptions.md
 │   ├── questions.md
 │   ├── decisions.md
 │   └── requirements.md
+├── tools/
+│   └── inventory.py
+├── tests/
+│   └── test_inventory.py
 └── pilots/
     └── openclaw-xmpp/
 ```

@@ -215,3 +215,18 @@ Beispielprompts für die Ausführung und Prüfung einzelner Phasen stehen in
 
 Die Prompts sind Hilfsmittel. Verbindlich bleiben die jeweils referenzierten
 Phasen-, Regel- und Vorlagendateien.
+
+## Maschinenlesbare Ergebnisse und automatische Prüfung
+
+Freie Markdown-Bearbeitung kann formale Fehler wie beschädigte Tabellen,
+uneinheitliche Kennungen und Abweichungen zwischen Übersichten und
+Einzelangaben erzeugen.
+
+Für `swk-02` werden Befunde deshalb strukturiert in `inventory.json`
+gespeichert. `inventory.md` wird automatisch daraus erzeugt.
+
+Ein Validator und die GitHub-CI prüfen alle deterministisch prüfbaren Regeln.
+Eine unabhängige inhaltliche Prüfung bleibt für semantische Aussagen
+erforderlich.
+
+Das Verfahren ist in `docs/structured-inventories.md` beschrieben.

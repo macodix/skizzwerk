@@ -100,6 +100,17 @@ Muss ein bereits akzeptiertes Phasenergebnis ergänzt oder geändert werden:
 - müssen nachfolgende Ergebnisse erneut geprüft werden, wenn ihre Grundlage
   verändert wurde.
 
+## Maschinenlesbare Phasenergebnisse
+
+Wenn eine Phase eine strukturierte Quelldatei und eine daraus erzeugte
+Darstellung festlegt, ist ausschließlich die strukturierte Quelldatei zu
+bearbeiten.
+
+Die erzeugte Darstellung darf nicht manuell geändert werden. Vor einem
+Statuswechsel zu `review` müssen die strukturierte Datei validiert und die
+Darstellung neu erzeugt werden. Eine fehlgeschlagene Validierung verhindert
+den Statuswechsel.
+
 ## Übergang von swk-03 zu swk-04
 
 Der Übergang zu `swk-04` erfolgt, wenn:

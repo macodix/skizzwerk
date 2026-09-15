@@ -1,0 +1,28 @@
+name: Validate inventories
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Validate structured inventories and generated Markdown
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(pilots/*/inventory.json)
+          for input in "${files[@]}"; do
+            output="${input%.json}.md"
+            python tools/inventory.py check "$input" "$output"
+          done
