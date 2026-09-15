@@ -1,0 +1,2388 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "document": "inventory",
+    "process_phase": "swk-02",
+    "project": "openclaw-xmpp",
+    "status": "review",
+    "created": "2026-09-14",
+    "last_updated": "2026-09-15",
+    "basis": "idea.md"
+  },
+  "assignment": "Grundlage ist `pilots/openclaw-xmpp/idea.md` (Commit 4e46961, Status `accepted`, bestätigt am 2026-09-14). Die Untersuchung begann und endete am 2026-09-14; am 2026-09-15 wurde sie ohne neue Bestandsrecherche in das strukturierte Format übertragen. Untersucht wird der vorhandene Bestand zu einer XMPP-Anbindung an OpenClaw: die vorhandenen OpenClaw-Installationen, die Plugin-Schnittstelle der genannten OpenClaw-Versionen und ihre Änderungen, XMPP im Lieferumfang und im Hauptprojekt von OpenClaw, vorhandene öffentliche Projekte sowie die Angaben zum eigenen XMPP-Server und zu bisherigen Versuchen. Kennzeichnung nach `rules/evidence.md`: `USER_PROVIDED` (Aussage des Ideengebers), `VERIFIED` (unmittelbar durch Code, Befehlsausgabe oder Primärquelle bestätigt), `DOCUMENTED` (dokumentierte Behauptung), `INFERRED` (Ableitung), `UNKNOWN` (unbekannt). Es wurden keine Annahmen gesetzt, keine Aussage widerlegt und kein Widerspruch nach den Anforderungen an `CONFLICT` nachgewiesen; die in einer früheren Fassung als `CONFLICT` geführten Befunde evd-026, evd-029, evd-032 und evd-041 sind nach ihrer tatsächlichen Belegbarkeit eingestuft. Die Befunde enthalten keine neuen Anforderungen, keine Rangfolge oder Auswahl möglicher Lösungen und keine Architektur-, Technologie- oder Umsetzungsentscheidung.",
+  "scope": [
+    {
+      "area": "Vorhandene OpenClaw-Installationen",
+      "idea_reference": "idea.md, Abschnitt 2 („2 OpenClaw Installationen … aktiv“), Abschnitt 6, Abschnitt 11",
+      "relevance": "vorhandene Systeme, für die das Plugin bestimmt ist"
+    },
+    {
+      "area": "Plugin- und Kanalschnittstelle von OpenClaw",
+      "idea_reference": "idea.md, Abschnitt 1 („Ein XMPP-Plugin für aktuelle OpenClaw-Versionen“), Abschnitt 5",
+      "relevance": "vorhandene Grundlage, an die ein Plugin anschließt"
+    },
+    {
+      "area": "Versionen und Schnittstellenänderungen zwischen 2026.7.1-2 und 2026.9.4",
+      "idea_reference": "idea.md, Abschnitt 1 („Für neue OpenClaw-Versionen …“), Abschnitt 10 („aktuelle OpenClaw-Versionen“), Abschnitt 11 („Ob und wie oft neue OpenClaw-Versionen Änderungen bringen“)",
+      "relevance": "Bestand zu Häufigkeit und Art von Änderungen"
+    },
+    {
+      "area": "XMPP im Lieferumfang und im Hauptprojekt von OpenClaw",
+      "idea_reference": "idea.md, Abschnitt 1, Abschnitt 5",
+      "relevance": "vorhandene XMPP-Unterstützung durch den Hersteller"
+    },
+    {
+      "area": "Vorhandene öffentliche XMPP-Projekte für OpenClaw",
+      "idea_reference": "idea.md, Abschnitt 1 („Vorhandene GitHub-Projekte sollen als mögliche Grundlage untersucht werden“), Abschnitt 7, Abschnitt 11",
+      "relevance": "ausdrücklich zu untersuchende mögliche Grundlagen"
+    },
+    {
+      "area": "Eigener XMPP-Server",
+      "idea_reference": "idea.md, Abschnitt 2 („Ein eigener XMPP-Server ist vorhanden“), Abschnitt 6, Abschnitt 11",
+      "relevance": "genanntes vorhandenes System"
+    },
+    {
+      "area": "Bisherige Versuche mit bestehenden Plugins",
+      "idea_reference": "idea.md, Abschnitt 2 („bestehende Plugins konnten z. T. nicht installiert werden …“), Abschnitt 11",
+      "relevance": "dokumentierter bisheriger Versuch"
+    }
+  ],
+  "investigation": [
+    {
+      "area": "Vorhandene OpenClaw-Installationen",
+      "examined": [
+        "Version und Dienststatus auf srv001",
+        "lokale Installationsdokumentation unter `/srv/aixlab/docs`"
+      ],
+      "not_examined": [
+        "Konfiguration und installierte Plugins auf srv001: wegen fehlenden Zugriffs nicht möglich",
+        "Installation mit 2026.7.1-2: nicht durchgeführt, da kein Rechner genannt ist"
+      ],
+      "limitations": [
+        "`/var/lib/openclaw/.openclaw` nicht lesbar",
+        "zweite Installation nicht auffindbar (evd-006, evd-007)"
+      ]
+    },
+    {
+      "area": "Plugin- und Kanalschnittstelle von OpenClaw",
+      "examined": [
+        "`package.json`, Typdefinitionen und `docs/plugins/` im Paket 2026.9.4"
+      ],
+      "not_examined": [
+        "Paketinhalt 2026.7.1-2: nicht durchgeführt",
+        "`src/plugins/compat/registry.ts`: nicht durchgeführt",
+        "Website docs.openclaw.ai: nicht durchgeführt"
+      ],
+      "limitations": [
+        "Beschreibung aus Dateien, kein Plugin gebaut",
+        "Vergleich der Versionen beruht auf Registermetadaten und Dokumentation (evd-011, evd-017)"
+      ]
+    },
+    {
+      "area": "Versionen und Schnittstellenänderungen zwischen 2026.7.1-2 und 2026.9.4",
+      "examined": [
+        "npm-Registerdaten",
+        "Git-Tags `v2026.7.1-2` und `v2026.9.4`",
+        "CHANGELOG am Tag `v2026.9.4`, Einträge zu Plugin-SDK und Kanälen"
+      ],
+      "not_examined": [
+        "vollständiges CHANGELOG (rund 24 000 Zeilen): nicht durchgeführt"
+      ],
+      "limitations": [
+        "CHANGELOG am Tag `v2026.9.4` enthält keine Abschnitte 2026.7.1-1 und 2026.7.1-2",
+        "weitere Schnittstellenänderungen sind möglich, aber nicht erfasst (evd-016)"
+      ]
+    },
+    {
+      "area": "XMPP im Lieferumfang und im Hauptprojekt von OpenClaw",
+      "examined": [
+        "`dist/extensions/` und Volltextsuche im Paket 2026.9.4",
+        "`extensions/` auf `main` (Commit df663a946582)",
+        "Status der PRs #9741, #20998, #21015 und des Issues #29046"
+      ],
+      "not_examined": [
+        "Inhalte der PR- und Issue-Diskussionen: nicht durchgeführt"
+      ],
+      "limitations": [
+        "Gründe für die Nichtübernahme sind unbekannt (evd-020)"
+      ]
+    },
+    {
+      "area": "Vorhandene öffentliche XMPP-Projekte für OpenClaw",
+      "examined": [
+        "12 Projekte und 1 Grenzfall auf GitHub: Dokumentation, Paketmetadaten, Quelltext (Klon mit `--depth 1` in getrennter Arbeitsumgebung, nur gelesen)",
+        "npm-Register: Paketdaten und Suche",
+        "GitHub-Suche: `gh search repos` („openclaw xmpp“ 6, „openclaw jabber“ 0, „openclaw prosody“ 0, „openclaw omemo“ 0, „clawdbot xmpp“ 0, „moltbot xmpp“ 0, „openclaw-channel xmpp“ 0, „xmpp openclaw plugin“ 0, „openclaw ejabberd“ 0); `gh api search/repositories` (`xmpp in:name,description,readme openclaw` 176, `xmpp clawdbot in:readme` 10, `xmpp moltbot in:readme` 7, `topic:openclaw topic:xmpp` 4, `omemo openclaw in:readme` 12, `jabber openclaw in:readme` 24, `openclaw xmpp fork:true` 21, `xmpp in:name claw` 5); `gh api search/code` (`openclaw @xmpp/client filename:package.json` 5, `openclaw xmpp filename:openclaw.plugin.json` 2, `openclaw urn:xmpp:omemo` 2, `openclaw muc groupchat xmpp` 19, `\"channels.xmpp\" openclaw` 18); `gh search prs/issues --repo openclaw/openclaw xmpp` (je 7); Stand 2026-09-14",
+        "npm-Suche: https://registry.npmjs.org/-/v1/search mit `openclaw xmpp`, `openclaw jabber`, `openclaw omemo`, `openclaw prosody`, `clawdbot xmpp`, `moltbot xmpp`, `keywords:openclaw` (seitenweise), `keywords:clawdbot`, `keywords:moltbot`, `keywords:openclaw-plugin`, `keywords:openclaw-channel`, `text=xmpp`, `text=omemo`, `text=jabber`; Direktabfragen `@openclaw/xmpp`, `openclaw-xmpp`, `openclaw-channel-xmpp`, `@openclaw/channel-xmpp`, `clawdbot-xmpp`, `moltbot-xmpp`; Stand 2026-09-14"
+      ],
+      "not_examined": [
+        "Build, Tests und Funktionstest der Projekte: nicht durchgeführt; in einer getrennten, entbehrlichen Arbeitsumgebung nach `phases/swk-02-inventory.md` zulässig",
+        "Laden der Projekte unter 2026.7.1-2 und 2026.9.4: nicht durchgeführt",
+        "ClawHub, GitLab, Codeberg und allgemeine Websuche: nicht durchgeführt",
+        "Forks cronus42, kitschmensch, zhgzhg, jerry-harm, indorri: nicht durchgeführt",
+        "geschlossene Issues: nicht durchgeführt",
+        "OMEMO-Beschränkung im Code von MrCPA/oc-xmpp: nicht durchgeführt"
+      ],
+      "limitations": [
+        "Quelltext nur auf Vorhandensein geprüft; Aussagen zu Funktionen reichen höchstens bis `DOCUMENTED` oder bis zum Vorhandensein von Code (evd-052, evd-053)",
+        "GitHub-Codesuche nur auf Standard-Branches; npm `keywords:openclaw`: 134 von 5134 Einträgen nicht abrufbar (Suchgrenze 5000)",
+        "Projektliste auf GitHub und npm beschränkt (evd-054)"
+      ]
+    },
+    {
+      "area": "Eigener XMPP-Server",
+      "examined": [
+        "Suche in `/srv/aixlab/docs`",
+        "Dienstliste auf srv001"
+      ],
+      "not_examined": [
+        "Server selbst: wegen fehlenden Zugriffs nicht möglich, da Standort und Zugang unbekannt"
+      ],
+      "limitations": [
+        "keine Angaben zu Server-Software und Erweiterungen (evd-008)"
+      ]
+    },
+    {
+      "area": "Bisherige Versuche mit bestehenden Plugins",
+      "examined": [
+        "Suche in `/srv/aixlab/docs`",
+        "Versuch, `/var/lib/openclaw/.openclaw` auf srv001 zu lesen"
+      ],
+      "not_examined": [
+        "Plugin-Liste der Installationen: wegen fehlenden Zugriffs nicht möglich",
+        "`openclaw plugins list` auf dem produktiv verwendeten srv001: nicht durchgeführt"
+      ],
+      "limitations": [
+        "die vom Ideengeber erprobten Plugins sind nicht identifizierbar (evd-003, evd-007)"
+      ]
+    }
+  ],
+  "limitations": [
+    "Nicht in den Untersuchungsumfang aufgenommen: Werkzeuge und Verfahren zur automatischen Aktualisierung, auch mit KI-Agenten. `idea.md` Abschnitt 1 nennt ein solches Verfahren als Bedarf, nicht als vorhandenen Bestand; eine Suche danach wäre Lösungsrecherche. Die Änderungen an OpenClaw selbst sind im Bereich Versionen erfasst.",
+    "Nicht in den Untersuchungsumfang aufgenommen: Nutzer des Plugins und Chatpartner. `idea.md` Abschnitt 11 führt dies als unbekannt; es gibt dazu keinen untersuchbaren Bestand.",
+    "Nicht in den Untersuchungsumfang aufgenommen: XMPP-Clients und deren Verschlüsselungsverfahren, weil `idea.md` sie nicht nennt.",
+    "Zeitliche Grenze: Stand 2026-09-14; alle Registerdaten, Commits und Trefferzahlen gelten für diesen Tag. Die Übertragung in das strukturierte Format am 2026-09-15 enthielt keine neue Recherche.",
+    "Technische Grenze: Quelltext nur gelesen und durchsucht; Builds, Tests und das Laden von Plugins in einer getrennten OpenClaw-Instanz wurden nicht durchgeführt.",
+    "Nicht verfügbare Quellen: Konfigurationsverzeichnis `/var/lib/openclaw/.openclaw` auf srv001; Installation mit 2026.7.1-2; eigener XMPP-Server; Aufzeichnungen zu bisherigen Versuchen.",
+    "Nicht mögliche Prüfungen: Prüfungen am eigenen XMPP-Server und an der Konfiguration von srv001 (fehlender Zugriff). Funktions- und Kompatibilitätsprüfungen der Projekte wären in einer getrennten Arbeitsumgebung möglich, wurden aber nicht durchgeführt.",
+    "Sonstige Einschränkung: Suche und Erstauswertung der Projekte und der OpenClaw-Schnittstelle erfolgten in zwei Hilfsaufträgen. Metadaten aller Projekte, Commits, Versionsdaten, Exportpfade, Stabilitätsaussage, Kanalliste, PR-Status und ausgewählte README- und Codestellen wurden von skizzwerk stichprobenartig nachgeprüft, nicht jede Zeilenangabe.",
+    "Kein externes System, keine Installation und kein Repository wurde durch die Bestandsuntersuchung verändert."
+  ],
+  "review": {
+    "precheck_passed": true,
+    "quality_gate_passed": true,
+    "checked_at": "2026-09-15",
+    "checked_by": "skizzwerk",
+    "unmet_criteria": [],
+    "blockage": null
+  },
+  "approval": null,
+  "findings": [
+    {
+      "id": "evd-001",
+      "statement": "Zurzeit sind zwei OpenClaw-Installationen mit den Versionen 2026.9.4 und 2026.7.1-2 aktiv.",
+      "evidence_status": "USER_PROVIDED",
+      "status_reason": "Die Aussage stammt aus der akzeptierten `idea.md` des Ideengebers. Nach `rules/evidence.md` erhält sie `USER_PROVIDED`; skizzwerk setzt sie nicht selbstständig auf `VERIFIED`.",
+      "sources": [
+        {
+          "type": "USER_STATEMENT",
+          "location": "`idea.md` Abschnitt 2, Zeile 31",
+          "version": "`idea.md` Commit 4e46961",
+          "checked_at": "2026-09-14",
+          "contribution": "Aussage des Ideengebers"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "keine; Aussage übernommen"
+        ],
+        "result": "–",
+        "not_performed": [
+          "nicht durchgeführt: Zuordnung der Versionen zu konkreten Rechnern (siehe evd-006)"
+        ],
+        "limitation": "Aussage des Ideengebers, nicht durch skizzwerk bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 6",
+        "significance": "bestimmt die Versionen, deren Bestand untersucht wird"
+      },
+      "conclusion": "Die beiden Versionen bilden den Bezugspunkt für die Versionsuntersuchung."
+    },
+    {
+      "id": "evd-002",
+      "statement": "Ein eigener XMPP-Server ist vorhanden.",
+      "evidence_status": "USER_PROVIDED",
+      "status_reason": "Die Aussage stammt aus der akzeptierten `idea.md` des Ideengebers. Nach `rules/evidence.md` erhält sie `USER_PROVIDED`; skizzwerk setzt sie nicht selbstständig auf `VERIFIED`.",
+      "sources": [
+        {
+          "type": "USER_STATEMENT",
+          "location": "`idea.md` Abschnitt 2, Zeile 30",
+          "version": "`idea.md` Commit 4e46961",
+          "checked_at": "2026-09-14",
+          "contribution": "Aussage des Ideengebers"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "keine; Aussage übernommen"
+        ],
+        "result": "–",
+        "not_performed": [
+          "wegen fehlenden Zugriffs nicht möglich: Untersuchung des Servers (siehe evd-008)"
+        ],
+        "limitation": "Aussage des Ideengebers, nicht durch skizzwerk bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 6",
+        "significance": "beteiligtes System"
+      },
+      "conclusion": "Zum Server liegen keine weiteren Angaben vor."
+    },
+    {
+      "id": "evd-003",
+      "statement": "Bestehende Plugins konnten zum Teil nicht installiert werden oder erfüllten nicht die Anforderungen an Sicherheit (OMEMO) oder Kommunikation (Gruppenchats/MUC).",
+      "evidence_status": "USER_PROVIDED",
+      "status_reason": "Die Aussage stammt aus der akzeptierten `idea.md` des Ideengebers. Nach `rules/evidence.md` erhält sie `USER_PROVIDED`; skizzwerk setzt sie nicht selbstständig auf `VERIFIED`.",
+      "sources": [
+        {
+          "type": "USER_STATEMENT",
+          "location": "`idea.md` Abschnitt 2, Zeilen 32–34",
+          "version": "`idea.md` Commit 4e46961",
+          "checked_at": "2026-09-14",
+          "contribution": "Aussage des Ideengebers"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "keine; Aussage übernommen"
+        ],
+        "result": "–",
+        "not_performed": [
+          "wegen fehlenden Zugriffs nicht möglich: Ermittlung der erprobten Plugins (siehe evd-007)"
+        ],
+        "limitation": "Aussage des Ideengebers, nicht durch skizzwerk bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 11",
+        "significance": "dokumentierter bisheriger Versuch"
+      },
+      "conclusion": "Die erprobten Plugins sind nicht benannt; ein Abgleich mit den Projekten in evd-022 bis evd-051 ist nicht möglich."
+    },
+    {
+      "id": "evd-004",
+      "statement": "Auf dem Rechner srv001 ist OpenClaw 2026.9.4 (Commit 3a9d69d) als globales npm-Paket installiert; der Dienst `openclaw.service` ist aktiv.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Version, Paket und Dienststatus wurden unmittelbar durch Befehlsausgaben auf srv001 bestätigt.",
+      "sources": [
+        {
+          "type": "MANUAL_TEST",
+          "location": "`openclaw --version` auf srv001",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Ausgabe `OpenClaw 2026.9.4 (3a9d69d)`"
+        },
+        {
+          "type": "MANUAL_TEST",
+          "location": "`npm ls -g --depth=0` auf srv001",
+          "version": "openclaw@2026.9.4",
+          "checked_at": "2026-09-14",
+          "contribution": "Ausgabe `openclaw@2026.9.4`"
+        },
+        {
+          "type": "MANUAL_TEST",
+          "location": "`systemctl is-active openclaw` auf srv001",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "Ausgabe `active`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Befehlsausgaben gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "wegen fehlenden Zugriffs nicht möglich: Lesen von Konfiguration und installierten Plugins"
+        ],
+        "limitation": "belegt nur Version und Dienststatus, keine Kanal- oder Plugin-Konfiguration"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 6",
+        "significance": "vorhandene Installation einer der genannten Versionen"
+      },
+      "conclusion": "Eine Installation der Version 2026.9.4 ist auf srv001 vorhanden."
+    },
+    {
+      "id": "evd-005",
+      "statement": "Die lokale Installationsanleitung beschreibt OpenClaw mit dem mitgelieferten WebChat und Authelia sowie ein über ClawHub installiertes Provider-Plugin; XMPP wird dort nicht erwähnt.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation, die nicht mit dem Betriebsstand abgeglichen wurde; sie erhält daher höchstens `DOCUMENTED`.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "`/srv/aixlab/docs/anleitungen/dev-server/09-00-dev-server-install-openclaw.md` Zeilen 3, 32",
+          "version": "kein Git-Stand; Dateistand 2026-08-30, SHA-256-Präfix e559ec29d7d8b2aa",
+          "checked_at": "2026-09-14",
+          "contribution": "Beschreibung von WebChat, Authelia und Installation über npm"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "`/srv/aixlab/docs/sysdoc/srv001/anleitungen/eurouter-provider-openclaw.md` Zeile 14",
+          "version": "kein Git-Stand; Dateistand 2026-08-12, SHA-256-Präfix 5a93f1232b7ebc32",
+          "checked_at": "2026-09-14",
+          "contribution": "Installation eines Provider-Plugins über ClawHub"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "Volltextsuche in `/srv/aixlab/docs` nach xmpp, jabber, prosody, ejabberd, omemo",
+          "version": "Dateistand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "keine XMPP-Treffer außerhalb von `archiv/`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dateien gelesen und durchsucht"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "wegen fehlenden Zugriffs nicht möglich: Abgleich mit der tatsächlichen Konfiguration"
+        ],
+        "limitation": "Dokumentation kann vom Betriebsstand abweichen"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 6",
+        "significance": "dokumentierter Bestand der vorhandenen Installation"
+      },
+      "conclusion": "Die vorhandene Dokumentation enthält keine Angaben zu einer XMPP-Anbindung."
+    },
+    {
+      "id": "evd-006",
+      "statement": "Ob srv001 eine der beiden vom Ideengeber genannten Installationen ist und wo die Installation mit Version 2026.7.1-2 läuft, ist unbekannt.",
+      "evidence_status": "UNKNOWN",
+      "status_reason": "Weder `idea.md` noch die lokale Dokumentation noch der Rechner srv001 enthalten eine Angabe dazu; es liegt keine ausreichende Information vor.",
+      "sources": [
+        {
+          "type": "USER_STATEMENT",
+          "location": "`idea.md` Abschnitt 2, Zeile 31",
+          "version": "`idea.md` Commit 4e46961",
+          "checked_at": "2026-09-14",
+          "contribution": "nennt die Versionen, aber keine Rechner"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "Volltextsuche in `/srv/aixlab/docs`",
+          "version": "Dateistand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "keine Angabe zur zweiten Installation"
+        },
+        {
+          "type": "MANUAL_TEST",
+          "location": "`openclaw --version` auf srv001",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "zeigt nur die lokale Version"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "lokale Dokumentation und Rechner srv001 durchsucht"
+        ],
+        "result": "keine Angabe zur zweiten Installation gefunden",
+        "not_performed": [
+          "nicht durchgeführt: Suche auf weiteren Rechnern, weil keine weiteren Rechner genannt sind"
+        ],
+        "limitation": "Angabe fehlt in allen zugänglichen Quellen"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 11",
+        "significance": "Umfang der vorhandenen Installationen"
+      },
+      "conclusion": "Die Installation mit 2026.7.1-2 ist nicht untersucht."
+    },
+    {
+      "id": "evd-007",
+      "statement": "Welche Plugins in den vorhandenen Installationen installiert oder erprobt wurden und woran ihre Installation scheiterte, ist unbekannt.",
+      "evidence_status": "UNKNOWN",
+      "status_reason": "Das Konfigurationsverzeichnis ist nicht lesbar und keine Dokumentation beschreibt die Versuche; es liegt keine ausreichende Information vor.",
+      "sources": [
+        {
+          "type": "MANUAL_TEST",
+          "location": "`ls /var/lib/openclaw/.openclaw` auf srv001",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "Ausgabe `Permission denied`"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "Volltextsuche in `/srv/aixlab/docs`",
+          "version": "Dateistand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "keine Aufzeichnung zu früheren Plugin-Versuchen"
+        },
+        {
+          "type": "USER_STATEMENT",
+          "location": "`idea.md` Abschnitt 2, Zeilen 32–34",
+          "version": "`idea.md` Commit 4e46961",
+          "checked_at": "2026-09-14",
+          "contribution": "nennt Versuche ohne Plugin-Namen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Verzeichnis zu lesen versucht; Dokumentation durchsucht"
+        ],
+        "result": "Zugriff verweigert; keine Dokumentation",
+        "not_performed": [
+          "wegen fehlenden Zugriffs nicht möglich: Lesen der Plugin-Liste",
+          "nicht durchgeführt: `openclaw plugins list` auf dem produktiv verwendeten srv001"
+        ],
+        "limitation": "keine zugängliche Quelle"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 11",
+        "significance": "dokumentierter bisheriger Versuch"
+      },
+      "conclusion": "Die bisherigen Versuche sind nicht nachvollziehbar dokumentiert."
+    },
+    {
+      "id": "evd-008",
+      "statement": "Software, Standort und unterstützte XMPP-Erweiterungen des eigenen XMPP-Servers sind unbekannt.",
+      "evidence_status": "UNKNOWN",
+      "status_reason": "Keine zugängliche Quelle enthält Angaben zum Server; das Fehlen eines Dienstes auf srv001 ist kein Nachweis über einen Server an anderer Stelle.",
+      "sources": [
+        {
+          "type": "USER_STATEMENT",
+          "location": "`idea.md` Abschnitt 2, Zeile 30",
+          "version": "`idea.md` Commit 4e46961",
+          "checked_at": "2026-09-14",
+          "contribution": "nennt den Server ohne weitere Angaben"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "Volltextsuche in `/srv/aixlab/docs` nach xmpp, prosody, ejabberd",
+          "version": "Dateistand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "keine Dokumentation außerhalb von `archiv/`"
+        },
+        {
+          "type": "MANUAL_TEST",
+          "location": "`systemctl list-units --type=service` auf srv001, gefiltert nach prosody, ejabberd, xmpp",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "kein Dienst mit diesen Namen auf srv001"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dokumentation und Dienstliste auf srv001 durchsucht"
+        ],
+        "result": "keine Angaben",
+        "not_performed": [
+          "wegen fehlenden Zugriffs nicht möglich: Untersuchung des Servers selbst, da Standort unbekannt"
+        ],
+        "limitation": "keine zugängliche Quelle zum Server"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 11",
+        "significance": "beteiligtes System"
+      },
+      "conclusion": "Der XMPP-Server ist nicht untersucht."
+    },
+    {
+      "id": "evd-009",
+      "statement": "Die Versionen 2026.7.1-2 (veröffentlicht 2026-07-18T03:53:48Z, Tag-Commit 0790d9f593ad) und 2026.9.4 (veröffentlicht 2026-09-11T02:44:59Z, Tag-Commit 3a9d69db306c) sind im npm-Register veröffentlicht; `latest` ist 2026.9.4, `extended-stable` ist 2026.6.35.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Veröffentlichungsdaten und Dist-Tags stammen unmittelbar aus dem npm-Register als Primärquelle; die Tags wurden über die GitHub-API auf Commits aufgelöst.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/openclaw (`time`, `dist-tags`)",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "Veröffentlichungsdaten und Dist-Tags"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/openclaw/openclaw Tags `v2026.7.1-2` und `v2026.9.4`",
+          "version": "Tag-Objekte be8b8a9e8838 und 8bec206f3c1f",
+          "checked_at": "2026-09-14",
+          "contribution": "Auflösung der Tags auf die Commits 0790d9f593ad und 3a9d69db306c"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Registerdaten mit `jq` ausgewertet; Tags über die GitHub-API aufgelöst"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Laden des Paketinhalts von 2026.7.1-2"
+        ],
+        "limitation": "Register ist Primärquelle für Veröffentlichungen"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 („aktuelle OpenClaw-Versionen“), Abschnitt 10",
+        "significance": "Einordnung der genannten Versionen"
+      },
+      "conclusion": "Beide genannten Versionen existieren; 2026.9.4 ist die zum Untersuchungszeitpunkt neueste stabile Version."
+    },
+    {
+      "id": "evd-010",
+      "statement": "Zwischen 2026.7.1-2 und 2026.9.4 wurden 17 Versionen veröffentlicht: 2026.8.1, 2026.8.2, 2026.9.1, 2026.9.2, 2026.9.3, neun Beta-Versionen und 2026.6.33 bis 2026.6.35.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Zählung wurde unmittelbar aus den Veröffentlichungszeiten des npm-Registers ermittelt.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/openclaw (`time`)",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "Veröffentlichungszeiten aller Versionen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Veröffentlichungszeiten mit `jq` gefiltert"
+        ],
+        "result": "17 Einträge",
+        "not_performed": [
+          "nicht erforderlich: weitere Prüfung"
+        ],
+        "limitation": "Zählung nach Veröffentlichungsdatum, nicht nach Versionsnummer"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 („neue OpenClaw-Versionen“), Abschnitt 11",
+        "significance": "Häufigkeit neuer Versionen"
+      },
+      "conclusion": "Im Zeitraum von knapp acht Wochen erschienen fünf stabile Versionen."
+    },
+    {
+      "id": "evd-011",
+      "statement": "Die Exportpfade `./plugin-sdk` und `./extension-api` sind in 2026.7.1-2 und 2026.7.2-beta.3 vorhanden, ab 2026.7.2-beta.4 und in 2026.9.4 nicht mehr.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Exportpfade wurden unmittelbar in den Paketmetadaten des npm-Registers verglichen.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/openclaw (`versions[\"2026.7.1-2\"].exports`, `versions[\"2026.7.2-beta.3\"].exports`, `versions[\"2026.7.2-beta.4\"].exports`, `versions[\"2026.9.4\"].exports`)",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "vorhandene und fehlende Exportpfade je Version"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "`exports` der Versionen mit `jq` verglichen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Vergleich der Paketinhalte"
+        ],
+        "limitation": "belegt die Paketmetadaten, nicht das Laufzeitverhalten"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 11",
+        "significance": "Änderungen an der Plugin-Schnittstelle"
+      },
+      "conclusion": "Die Plugin-Schnittstelle unterscheidet sich zwischen den beiden genannten Versionen in ihren Exportpfaden."
+    },
+    {
+      "id": "evd-012",
+      "statement": "Das Paket 2026.9.4 exportiert Unterpfade `openclaw/plugin-sdk/*`, darunter `channel-core`, `channel-contract`, `channel-entry-contract` und `plugin-entry`; `channel-core.d.ts` exportiert u. a. `ChannelPlugin` und `defineChannelPluginEntry`.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Exporte und Typnamen wurden unmittelbar in den Dateien des installierten Pakets gelesen.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "`/usr/lib/node_modules/openclaw/package.json` Zeilen 1068, 1072, 1076, 1396",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Exportpfade für Kanal-Plugins"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "`/usr/lib/node_modules/openclaw/dist/plugin-sdk/channel-core.d.ts` Zeile 10",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "exportierte Typen und Funktionen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dateien im installierten Paket gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Bau eines Plugins gegen die Schnittstelle"
+        ],
+        "limitation": "belegt vorhandene Exporte und Typen, nicht deren Verhalten"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 5",
+        "significance": "vorhandene Schnittstelle für Kanal-Plugins"
+      },
+      "conclusion": "Für Kanal-Plugins ist in 2026.9.4 eine eigene SDK-Schnittstelle vorhanden."
+    },
+    {
+      "id": "evd-013",
+      "statement": "Laut Dokumentation braucht jedes native Plugin eine `openclaw.plugin.json`; die Felder `openclaw.compat.pluginApi` und `openclaw.install.minHostVersion` werden bei npm-Installationen zur Versionsauswahl ausgewertet.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage steht in der offiziellen Dokumentation; das Installationsverhalten wurde nicht praktisch geprüft.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/plugins/manifest.md` Zeile 20",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Pflicht der `openclaw.plugin.json`"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/plugins/building-plugins.md` Zeilen 79–86",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Kompatibilitätsfelder in `package.json`"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/tools/plugin.md` Zeilen 141–147",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Auswertung bei npm-Installationen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dokumentation gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Test des Installationsverhaltens"
+        ],
+        "limitation": "Dokumentationsaussage"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 5",
+        "significance": "dokumentierter Plugin- und Kompatibilitätsmechanismus"
+      },
+      "conclusion": "Die Kompatibilitätsangaben eines Plugins werden laut Dokumentation bei der Installation berücksichtigt."
+    },
+    {
+      "id": "evd-014",
+      "statement": "Laut Dokumentation sind alle Plugin-APIs experimentell und können sich zwischen OpenClaw-Versionen ändern; Plugin-Autoren sollen die Version festlegen und jede als kompatibel angegebene Version testen.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage steht wörtlich in der offiziellen Dokumentation; sie ist eine Herstelleraussage, kein geprüftes Verhalten.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/plugins/sdk-overview.md` Zeilen 25–36",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "wörtlich: „These contracts can change between OpenClaw releases.“"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dokumentation gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht erforderlich: praktische Prüfung einer Herstelleraussage zur Stabilität"
+        ],
+        "limitation": "Dokumentationsaussage"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Verfahren für neue Versionen), Abschnitt 11",
+        "significance": "dokumentierte Stabilität der Schnittstelle"
+      },
+      "conclusion": "Die Hersteller-Dokumentation sagt keine stabile Plugin-Schnittstelle zu."
+    },
+    {
+      "id": "evd-015",
+      "statement": "Laut Dokumentation sind `openclaw/plugin-sdk`, `openclaw/plugin-sdk/compat` und `openclaw/extension-api` entfernt; Plugins, die sie importieren, laden nicht mehr. Alte Verträge laufen befristet über Kompatibilitätsadapter.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage steht in der offiziellen Dokumentation; das Ladeverhalten wurde nicht praktisch geprüft.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/plugins/sdk-migration.md` Zeilen 19–22, 37–49",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "entfernte Einstiegspfade und Folge für Plugins"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/plugins/compatibility.md` Zeilen 14–33",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Kompatibilitätsadapter mit Status und Entfernungsfristen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dokumentation gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Lesen von `src/plugins/compat/registry.ts`",
+          "nicht durchgeführt: Test des Ladeverhaltens"
+        ],
+        "limitation": "Dokumentationsaussage"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 11",
+        "significance": "dokumentierte Folgen von Schnittstellenänderungen"
+      },
+      "conclusion": "Die Dokumentation beschreibt Änderungen, die ältere Plugins am Laden hindern."
+    },
+    {
+      "id": "evd-016",
+      "statement": "Das CHANGELOG nennt für 2026.9.3 mehrere als „Breaking“ gekennzeichnete Änderungen am Plugin-SDK und für 2026.8.1 bis 2026.9.4 Abkündigungen von SDK-Pfaden mit Entfernungsterminen 2026-09-01 und 2026-09-08.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf dem offiziellen CHANGELOG; Vollständigkeit und Umsetzung wurden nicht geprüft.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://github.com/openclaw/openclaw/blob/v2026.9.4/CHANGELOG.md, Abschnitt 2026.9.3 („Breaking — SDK aliases“, „Breaking — approval SDK“)",
+          "version": "Commit 3a9d69db306c",
+          "checked_at": "2026-09-14",
+          "contribution": "Breaking Changes am Plugin-SDK"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://github.com/openclaw/openclaw/blob/v2026.9.4/CHANGELOG.md, Abschnitte 2026.8.1 („Upcoming deprecations (2026-09-01)“), 2026.8.2 und 2026.9.2",
+          "version": "Commit 3a9d69db306c",
+          "checked_at": "2026-09-14",
+          "contribution": "Abkündigungen mit Entfernungsterminen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Einträge mit Bezug zu Plugin-SDK und Kanälen durchsucht"
+        ],
+        "result": "15 zitierte Einträge, davon 4 „Breaking“ in 2026.9.3",
+        "not_performed": [
+          "nicht durchgeführt: vollständiges Lesen des CHANGELOG (rund 24 000 Zeilen)"
+        ],
+        "limitation": "Dokumentationsaussage; die Abschnitte 2026.7.1-1 und 2026.7.1-2 fehlen im CHANGELOG am Tag `v2026.9.4`"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 11",
+        "significance": "Häufigkeit von Schnittstellenänderungen"
+      },
+      "conclusion": "Im untersuchten Zeitraum sind Schnittstellenänderungen dokumentiert."
+    },
+    {
+      "id": "evd-017",
+      "statement": "Zwischen 2026.7.1-2 und 2026.9.4 hat sich die Plugin-Schnittstelle so geändert, dass Plugins, die die entfernten Pfade nutzen, unter 2026.9.4 laut Dokumentation nicht laden.",
+      "evidence_status": "INFERRED",
+      "status_reason": "Die Aussage verbindet den geprüften Wegfall der Exportpfade (evd-011) mit den dokumentierten Folgen (evd-015, evd-016). Sie ist nachvollziehbar abgeleitet, aber nicht praktisch geprüft.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/openclaw (`versions[*].exports`)",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "Wegfall der Exportpfade, siehe evd-011"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/plugins/sdk-migration.md` Zeilen 19–22",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "dokumentierte Folge, siehe evd-015"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://github.com/openclaw/openclaw/blob/v2026.9.4/CHANGELOG.md",
+          "version": "Commit 3a9d69db306c",
+          "checked_at": "2026-09-14",
+          "contribution": "dokumentierte Änderungen, siehe evd-016"
+        },
+        {
+          "type": "ANALYSIS",
+          "location": "Verknüpfung von evd-011, evd-015 und evd-016",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "Ableitung"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Ableitung aus den genannten Befunden"
+        ],
+        "result": "–",
+        "not_performed": [
+          "nicht durchgeführt: Laden eines Plugins unter beiden Versionen"
+        ],
+        "limitation": "Ableitung aus Registerdaten und Dokumentation"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 10 („aktuelle OpenClaw-Versionen“), Abschnitt 11",
+        "significance": "Bestand zu Änderungen zwischen den genannten Versionen"
+      },
+      "conclusion": "Die beiden genannten Versionen stellen nicht dieselbe Plugin-Schnittstelle bereit."
+    },
+    {
+      "id": "evd-018",
+      "statement": "Das Paket 2026.9.4 enthält unter `dist/extensions/` 60 Erweiterungen, darunter keine für XMPP; die Suche nach `xmpp`, `jabber`, `omemo`, `muc` trifft nur Fremdbibliotheken (URL-Schema, MIME-Typ).",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Verzeichnisinhalt und Suchtreffer wurden unmittelbar im installierten Paket ermittelt.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "`/usr/lib/node_modules/openclaw/dist/extensions/`",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "60 Ordner, keiner mit xmpp im Namen"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "Volltextsuche mit Wortgrenzen in `/usr/lib/node_modules/openclaw/` ohne `node_modules`; Treffer u. a. `dist/worker/worker.mjs` Zeile 31129",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Treffer nur in Fremdbibliotheken"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Verzeichnis gelistet und nachgezählt; Volltextsuche"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht erforderlich: weitere Prüfung"
+        ],
+        "limitation": "gilt nur für das installierte Paket, nicht für nachinstallierbare Plugins"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 5",
+        "significance": "vorhandene XMPP-Unterstützung im Lieferumfang"
+      },
+      "conclusion": "OpenClaw 2026.9.4 liefert keinen XMPP-Kanal mit."
+    },
+    {
+      "id": "evd-019",
+      "statement": "Die Kanalübersicht der Dokumentation nennt mitgelieferte und offizielle Kanal-Plugins, aber kein XMPP- oder Jabber-Plugin.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf der offiziellen Dokumentation; sie beschreibt den dokumentierten, nicht den tatsächlich verfügbaren Bestand.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/channels/index.md` Zeilen 38–69",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Liste der dokumentierten Kanäle ohne XMPP"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Datei gelesen, nach xmpp und jabber gesucht"
+        ],
+        "result": "keine Treffer",
+        "not_performed": [
+          "nicht durchgeführt: Vergleich mit docs.openclaw.ai"
+        ],
+        "limitation": "Dokumentationsaussage"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 5",
+        "significance": "offiziell dokumentierte Kanäle"
+      },
+      "conclusion": "Ein offizielles XMPP-Plugin ist nicht dokumentiert."
+    },
+    {
+      "id": "evd-020",
+      "statement": "Im Repository `openclaw/openclaw` enthält `extensions/` auf `main` kein XMPP-Verzeichnis; die Pull Requests #9741, #20998 und #21015 für XMPP wurden ohne Merge geschlossen; Issue #29046 „[Feature]: XMPP support“ ist mit `not_planned` geschlossen.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Verzeichnisbaum und Status wurden unmittelbar über die GitHub-API gelesen. Bestätigt sind nur Verzeichnisinhalt und Status, nicht die Inhalte der Diskussionen.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/openclaw/openclaw/tree/main/extensions",
+          "version": "Commit df663a946582",
+          "checked_at": "2026-09-14",
+          "contribution": "167 Einträge, keiner mit xmpp oder jabber"
+        },
+        {
+          "type": "ISSUE_OR_PR",
+          "location": "https://github.com/openclaw/openclaw/pull/9741",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "geschlossen 2026-02-06, `merged=false`"
+        },
+        {
+          "type": "ISSUE_OR_PR",
+          "location": "https://github.com/openclaw/openclaw/pull/20998",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "geschlossen 2026-02-20, `merged=false`"
+        },
+        {
+          "type": "ISSUE_OR_PR",
+          "location": "https://github.com/openclaw/openclaw/pull/21015",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "geschlossen 2026-02-28, `merged=false`"
+        },
+        {
+          "type": "ISSUE_OR_PR",
+          "location": "https://github.com/openclaw/openclaw/issues/29046",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "geschlossen, `state_reason: not_planned`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "GitHub-API: Verzeichnisbaum, Status, `merged`, `closed_at`, `state_reason`"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Auswertung der Diskussionen"
+        ],
+        "limitation": "belegt nur den Status, nicht die Gründe"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 („Vorhandene GitHub-Projekte“), Abschnitt 5",
+        "significance": "vorhandene Upstream-Arbeiten zu XMPP"
+      },
+      "conclusion": "Es gab Beiträge für XMPP im Hauptprojekt, die nicht übernommen wurden."
+    },
+    {
+      "id": "evd-021",
+      "statement": "OpenClaw hieß laut Projektdokumentation zuvor Warelay, Clawdbot und Moltbot; seit dem 30. Januar 2026 heißt es OpenClaw.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Namensfolge steht in der offiziellen Dokumentation; die Umleitung der alten Repository-Namen stützt sie, bestätigt aber nicht die Daten.",
+      "sources": [
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/start/lore.md` Zeilen 14–24",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Namensfolge und Datum"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://github.com/openclaw/openclaw/blob/main/VISION.md Zeile 13",
+          "version": "Commit df663a946582",
+          "checked_at": "2026-09-14",
+          "contribution": "Namensfolge"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "GitHub-API `repos/clawdbot/clawdbot` und `repos/moltbot/moltbot`",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "HTTP 301 auf das Repository `openclaw/openclaw`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dateien gelesen; Umleitung über die GitHub-API geprüft"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht erforderlich: weitere Prüfung"
+        ],
+        "limitation": "Dokumentationsaussage"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 („Vorhandene GitHub-Projekte“)",
+        "significance": "Suchbegriffe für ältere Projekte"
+      },
+      "conclusion": "Ältere Projekte können unter den früheren Namen geführt sein; diese Namen wurden in die Suche aufgenommen."
+    },
+    {
+      "id": "evd-022",
+      "statement": "ksmith211/openclaw-xmpp: Die README beschreibt ein Kanal-Plugin nur für Direktnachrichten; MUC, OMEMO und eine OpenClaw-Version werden nicht genannt. Auf npm ist `@ksmith221/openclaw-xmpp` 0.1.1 veröffentlicht.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `README.md` Zeilen 1–3, 14`",
+          "version": "Commit ad1ad44777fc",
+          "checked_at": "2026-09-14",
+          "contribution": "Beschreibung als DM-Plugin, keine Versionsangabe"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `package.json`",
+          "version": "Commit ad1ad44777fc",
+          "checked_at": "2026-09-14",
+          "contribution": "kein `peerDependencies`- und kein `engines`-Feld"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/@ksmith221/openclaw-xmpp",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "veröffentlichte Version 0.1.1 vom 2026-02-02"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-023",
+      "statement": "ksmith211/openclaw-xmpp: Code für 1:1-Nachrichten ist vorhanden (`type: \"chat\"`); Zeichenketten zu MUC, groupchat und OMEMO kommen in `src/` nicht vor; keine Testdateien.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `src/inbound.ts` Zeile 101`",
+          "version": "Commit ad1ad44777fc",
+          "checked_at": "2026-09-14",
+          "contribution": "Verarbeitung von 1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `src/send.ts` Zeile 16`",
+          "version": "Commit ad1ad44777fc",
+          "checked_at": "2026-09-14",
+          "contribution": "Senden von 1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/ksmith211/openclaw-xmpp, `src/` mit `grep -rniE 'muc|omemo|groupchat'`",
+          "version": "Commit ad1ad44777fc",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: keine",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-024",
+      "statement": "toughworm/Openclaw-XMPP-Plugin: Die README nennt Senden und Empfangen von 1:1- und Gruppenchat-Nachrichten, OMEMO nur für 1:1 im älteren Namensraum `eu.siacs.conversations.axolotl`, verschlüsselten Gruppenchat als offen und keine OpenClaw-Version. Sie beschreibt außerdem Dateipfade unter `extensions/xmpp/`, Testskripte `test-omemo-*.ts` und die Installation mit `openclaw plugins install @openclaw/xmpp`.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `README.md` Zeilen 100–102, 133, 137, 214–215",
+          "version": "Commit 428886a5fab2",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `README.md` Zeilen 13–24, 54, 190–196",
+          "version": "Commit 428886a5fab2",
+          "checked_at": "2026-09-14",
+          "contribution": "beschriebene Pfade, Testskripte und Installationsbefehl"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `package.json`",
+          "version": "Commit 428886a5fab2",
+          "checked_at": "2026-09-14",
+          "contribution": "kein `peerDependencies`- und kein `engines`-Feld"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-025",
+      "statement": "toughworm/Openclaw-XMPP-Plugin: OMEMO-Code im Namensraum `eu.siacs.conversations.axolotl` ist vorhanden und wird bei `groupchat` übersprungen; die Zeichenkette `http://jabber.org/protocol/muc` für einen Raumbeitritt kommt in `src/` nicht vor.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/omemo/OmemoManager.ts` Zeile 11`",
+          "version": "Commit 428886a5fab2",
+          "checked_at": "2026-09-14",
+          "contribution": "OMEMO-Namensraum"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/client.ts` Zeile 187`",
+          "version": "Commit 428886a5fab2",
+          "checked_at": "2026-09-14",
+          "contribution": "Bedingung `options?.type !== \"groupchat\"` für OMEMO"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `src/` mit `grep -rn 'jabber.org/protocol/muc'`",
+          "version": "Commit 428886a5fab2",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `test/jid-normalization.test.ts`, `test/omemo-lookup.test.ts`",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-026",
+      "statement": "toughworm/Openclaw-XMPP-Plugin: Im untersuchten Repository-Stand liegen die Programmdateien unter `src/` und nicht unter `extensions/xmpp/`, die in evd-024 genannten Testskripte `test-omemo-*.ts` sind nicht vorhanden, und `@openclaw/xmpp` ist im npm-Register nicht veröffentlicht.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Dateiliste und npm-Register wurden unmittelbar geprüft. Die README-Angaben, mit denen verglichen wurde, stehen als dokumentierte Aussage in evd-024. Kein `CONFLICT`: Die README beschreibt einen Verzeichnisaufbau unter `extensions/xmpp/`, also einen anderen Geltungsbereich als dieses Repository, und `openclaw plugins install` kann laut Hilfe auch andere Quellen als npm verwenden. Ebenso ist das Fehlen eines Raumbeitritts im Code allein kein Konflikt mit der Gruppenchat-Angabe (siehe evd-024, evd-025).",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/toughworm/Openclaw-XMPP-Plugin, `git ls-files`",
+          "version": "Commit 428886a5fab2",
+          "checked_at": "2026-09-14",
+          "contribution": "tatsächlich vorhandene Dateien unter `src/` und `test/`"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/@openclaw%2fxmpp",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "HTTP 404"
+        },
+        {
+          "type": "MANUAL_TEST",
+          "location": "`openclaw plugins install --help` auf srv001",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Hilfe nennt Pfad, Archiv, npm, git, `clawhub:` und Marketplace als Quellen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Dateiliste und npm-Register mit den README-Angaben aus evd-024 abgeglichen; Hilfe des Installationsbefehls gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation nach README in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Die README beschreibt vermutlich einen anderen Aufbau; welchen, ist nicht geprüft"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 („Vorhandene GitHub-Projekte“), Abschnitt 7",
+        "significance": "Belastbarkeit der Projektangaben"
+      },
+      "conclusion": "Die README beschreibt nicht durchgehend den untersuchten Repository-Stand."
+    },
+    {
+      "id": "evd-027",
+      "statement": "kazakhan/openclaw-xmpp: Die README nennt 1:1 und MUC; `XMPPAUDIT.md` führt OMEMO (XEP-0384) als „Not Supported“.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 3, 94–97`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben 1:1 und MUC"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `XMPPAUDIT.md` Zeile 322`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "OMEMO als nicht unterstützt"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-028",
+      "statement": "kazakhan/openclaw-xmpp: Code für MUC (`muc`-Namensraum, `joinRoom`) und 1:1 ist vorhanden; OMEMO-Zeichenketten kommen nicht vor.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `src/startXMPP.ts` Zeilen 513, 761`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "MUC-Namensräume"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `index.ts` Zeile 35`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "`xmpp.joinRoom`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `src/commands.ts` Zeile 231`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `src/`, `index.ts` mit `grep -rniE 'omemo|axolotl'`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `tests/` mit 33 Dateien",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-029",
+      "statement": "kazakhan/openclaw-xmpp: Die README nennt „OpenClaw 2026.8.2+“ als Voraussetzung und begründet das mit den in 2026.8.x eingeführten Prüfungen „capability-consent“ und `contracts.tools`; `package.json` deklariert `compat.pluginApi \">=2026.6.1\"` und `minGatewayVersion \"2026.6.1\"`.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Beide Angaben sind dokumentierte bzw. deklarierte Projektangaben ohne praktische Prüfung. Kein `CONFLICT`: Die Angaben haben unterschiedliche Bedeutung. Die README nennt eine Voraussetzung für bestimmte Prüfungen, `compat.pluginApi` ist laut OpenClaw-Dokumentation eine Untergrenze der Plugin-API (`docs/reference/RELEASING.md` Zeile 416). Unterschiedliche Versionsangaben mit möglicherweise unterschiedlicher Bedeutung reichen nach `rules/evidence.md` nicht für `CONFLICT`.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `README.md` Zeilen 21–23`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "Voraussetzung OpenClaw 2026.8.2+ mit Begründung"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/kazakhan/openclaw-xmpp, `package.json` Zeilen 20–24`",
+          "version": "Commit 4fb1e113150e",
+          "checked_at": "2026-09-14",
+          "contribution": "deklarierte Felder `compat.pluginApi` und `minGatewayVersion`"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/reference/RELEASING.md` Zeile 416",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Bedeutung von `openclaw.compat.pluginApi` als Untergrenze"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Angaben gelesen und ihre Bedeutung verglichen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Laden des Plugins unter 2026.6.1, 2026.7.1-2 und 2026.9.4 in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Welche Version tatsächlich mindestens nötig ist, ist offen"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 10 („aktuelle OpenClaw-Versionen“)",
+        "significance": "dokumentierte Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Das Projekt enthält zwei Versionsangaben mit unterschiedlichem Bezug."
+    },
+    {
+      "id": "evd-030",
+      "statement": "icarito/openclaw-xmpp: Die Paketbeschreibung nennt 1:1-Chat, MUC-Räume und Ad-hoc-Befehle; die README sagt, der Produktivbetrieb lade einen separat abgeglichenen Verzeichnisbaum.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/icarito/openclaw-xmpp, `package.json` Zeile 80`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "Paketbeschreibung"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/icarito/openclaw-xmpp, `README.md` Zeilen 9–11`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "Hinweis zum Produktivbetrieb"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-031",
+      "statement": "icarito/openclaw-xmpp: Code für MUC, für OMEMO im älteren Namensraum und in `urn:xmpp:omemo:2` sowie ein Python-Hilfsprogramm `src/omemo/sidecar.py` sind vorhanden.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/client.ts` Zeilen 121, 134`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "MUC-Namensraum und Raumbeitritt"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/omemo/types.ts` Zeile 13`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "älterer OMEMO-Namensraum"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/omemo/omemo2.ts` Zeile 12`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "`urn:xmpp:omemo:2`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/omemo/sidecar.py`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "Python-Hilfsprogramm"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/icarito/openclaw-xmpp, `src/send.ts` Zeile 356`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "1:1-Nachrichten"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `src/tests/` mit 6 Dateien, u. a. `omemo.test.ts`",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-032",
+      "statement": "icarito/openclaw-xmpp: `AGENTS.md` beschreibt das Plugin „for OpenClaw 2026.6.9 or newer“; `package.json` deklariert `compat.pluginApi \">=2026.7.1\"` und als Entwicklungsabhängigkeit `openclaw ^2026.7.1`.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Beide Angaben sind dokumentierte bzw. deklarierte Projektangaben ohne praktische Prüfung. Kein `CONFLICT`: `AGENTS.md` ist eine Arbeitsanleitung für Entwickler, `compat.pluginApi` eine maschinenlesbare Untergrenze der Plugin-API; ob beide denselben Geltungsbereich und denselben Bezugszeitpunkt haben, ist nicht belegt. Unterschiedliche Versionsangaben reichen nach `rules/evidence.md` allein nicht für `CONFLICT`.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/icarito/openclaw-xmpp, `AGENTS.md` Zeile 3`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "Versionsangabe 2026.6.9 or newer"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/icarito/openclaw-xmpp, `package.json` Zeilen 85, 113`",
+          "version": "Commit 820213a98cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "deklarierte Felder `compat.pluginApi` und `devDependencies.openclaw`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Angaben gelesen und ihre Bedeutung verglichen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Laden des Plugins unter 2026.6.9, 2026.7.1-2 und 2026.9.4 in einer getrennten Arbeitsumgebung",
+          "nicht durchgeführt: Prüfung der Git-Historie von `AGENTS.md`"
+        ],
+        "limitation": "Welche Version tatsächlich mindestens nötig ist, ist offen"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 10 („aktuelle OpenClaw-Versionen“)",
+        "significance": "dokumentierte Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Das Projekt enthält zwei Versionsangaben mit unterschiedlichem Bezug."
+    },
+    {
+      "id": "evd-033",
+      "statement": "soilDNRA/openclaw-xmpp: Die README beschreibt nur Direktchats, nennt MUC und OMEMO ausdrücklich als nicht unterstützt und OpenClaw 2026.8.2 als Mindestversion; sie verweist auf ClawHub `openclaw-xmpp@0.1.2-beta.2` und auf die Hauptquelle https://git.sdf.org/erici/openclaw-xmpp.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `README.md` Zeilen 1–2, 15–18, 44–46, 72`",
+          "version": "Commit a41df5fc1417",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben, Mindestversion, ClawHub, Hauptquelle"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `package.json` Zeile 41`",
+          "version": "Commit a41df5fc1417",
+          "checked_at": "2026-09-14",
+          "contribution": "`peerDependencies.openclaw >=2026.8.2`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung",
+          "nicht durchgeführt: Prüfung des ClawHub-Eintrags"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-034",
+      "statement": "soilDNRA/openclaw-xmpp: Code für 1:1 ist vorhanden; OMEMO kommt in `src/` nicht vor; MUC kommt nur in einem Hinweistext vor, nach dem Gruppenchat-Optionen bis zum Abschluss einer „MUC security gate“ nicht verfügbar sind; die Hauptquelle auf git.sdf.org hat denselben Commit.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `src/stanzas.ts` Zeile 151`",
+          "version": "Commit a41df5fc1417",
+          "checked_at": "2026-09-14",
+          "contribution": "1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `src/setup.ts` Zeile 116`",
+          "version": "Commit a41df5fc1417",
+          "checked_at": "2026-09-14",
+          "contribution": "Hinweistext „Group-chat options remain unavailable until the MUC security gate is complete.“"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/soilDNRA/openclaw-xmpp, `src/` mit `grep -rniE 'muc|omemo'`",
+          "version": "Commit a41df5fc1417",
+          "checked_at": "2026-09-14",
+          "contribution": "1 Treffer (`src/setup.ts` Zeile 116), 0 Treffer zu OMEMO"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://git.sdf.org/erici/openclaw-xmpp, Branch `main` über Gitea-API",
+          "version": "Commit a41df5fc1417",
+          "checked_at": "2026-09-14",
+          "contribution": "gleicher Commit wie der GitHub-Spiegel"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `test/` mit 12 Dateien, `.github/workflows/ci.yml`",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-035",
+      "statement": "elmafioso79/xmpp-channel: Die README nennt 1:1- und Gruppenchat sowie OMEMO einschließlich Gruppenchats im älteren Namensraum; `peerDependencies` verlangt `openclaw ^2026.2.2-3`. Ein offener Pull Request #4 betrifft die Anpassung an OpenClaw 2026.5.2.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `README.md` Zeilen 9–10, 211, 223`",
+          "version": "Commit a447455d6cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben einschließlich OMEMO in Gruppenchats"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `package.json` Zeile 63`",
+          "version": "Commit a447455d6cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "`peerDependencies.openclaw ^2026.2.2-3`"
+        },
+        {
+          "type": "ISSUE_OR_PR",
+          "location": "https://github.com/elmafioso79/xmpp-channel/pull/4",
+          "version": "–",
+          "checked_at": "2026-09-14",
+          "contribution": "offener PR „update openclaw plugin json to fit OpenClaw 2026.5.2“ vom 2026-05-03"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-036",
+      "statement": "elmafioso79/xmpp-channel: Code für MUC (`joinMuc`) und für OMEMO bei `groupchat` ist vorhanden; keine Testdateien.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `src/monitor.ts` Zeile 255`",
+          "version": "Commit a447455d6cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "`joinMuc`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26`",
+          "version": "Commit a447455d6cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "OMEMO-Namensräume"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/elmafioso79/xmpp-channel, `src/inbound.ts` Zeilen 359, 386`",
+          "version": "Commit a447455d6cb1",
+          "checked_at": "2026-09-14",
+          "contribution": "1:1-Nachrichten und verschlüsselte Gruppenchat-Nachrichten"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: keine",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-037",
+      "statement": "watkins-matt/xmpp-channel: Fork von elmafioso79/xmpp-channel, 28 Commits voraus; die README ist identisch mit dem Ursprung; `peerDependencies` verlangt `openclaw >=2026.8.2`.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `README.md`",
+          "version": "Commit 1a734552fe19",
+          "checked_at": "2026-09-14",
+          "contribution": "identisch mit elmafioso79/xmpp-channel (per `diff` verglichen)"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `package.json` Zeilen 64–65`",
+          "version": "Commit 1a734552fe19",
+          "checked_at": "2026-09-14",
+          "contribution": "`peerDependencies.openclaw >=2026.8.2`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "GitHub-API `repos/watkins-matt/xmpp-channel` (Fork-Vergleich)",
+          "version": "Commit 1a734552fe19",
+          "checked_at": "2026-09-14",
+          "contribution": "28 Commits Vorsprung vor dem Ursprung"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-038",
+      "statement": "watkins-matt/xmpp-channel: Code für MUC und OMEMO ist vorhanden.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `src/monitor.ts` Zeile 292`",
+          "version": "Commit 1a734552fe19",
+          "checked_at": "2026-09-14",
+          "contribution": "MUC"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `src/omemo/types.ts` Zeilen 13, 26`",
+          "version": "Commit 1a734552fe19",
+          "checked_at": "2026-09-14",
+          "contribution": "OMEMO-Namensräume"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/watkins-matt/xmpp-channel, `src/inbound.ts` Zeile 495`",
+          "version": "Commit 1a734552fe19",
+          "checked_at": "2026-09-14",
+          "contribution": "OMEMO-Verarbeitung"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `src/payload-filter.test.ts`, `src/sdk-contract.test.ts`",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-039",
+      "statement": "Programmatore-Web/openclaw-xmpp-channel: Fork von watkins-matt/xmpp-channel; die README nennt 1:1 und fest eingestellte MUC-Räume, schließt Ende-zu-Ende-Verschlüsselung aus und nennt OpenClaw 2026.8.2 oder neuer.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 8, 18–19, 32`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben und Versionsangabe"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `package.json` Zeilen 63–64`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "`peerDependencies.openclaw ^2026.8.2`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-040",
+      "statement": "Programmatore-Web/openclaw-xmpp-channel: Code für MUC ist vorhanden; OMEMO-Zeichenketten kommen nicht vor; verschlüsselte Nachrichten werden verworfen.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeile 772`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "`joinMuc`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/monitor.ts` Zeilen 988–1105`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "Behandlung verschlüsselter Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/muc-identity.ts`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "MUC-Identität"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `src/` mit `grep -rniE 'omemo'`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `test/` mit 33 Dateien",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-041",
+      "statement": "Programmatore-Web/openclaw-xmpp-channel: Das CHANGELOG beschreibt OMEMO-Funktionen in den Versionen 0.3.x vom Februar 2026 und führt unter „[Unreleased]“ die Entfernung der Ende-zu-Ende-Verschlüsselung auf; die README des untersuchten Stands schließt Ende-zu-Ende-Verschlüsselung aus.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf CHANGELOG und README ohne praktische Prüfung. Kein `CONFLICT`: Die OMEMO-Einträge betreffen frühere Versionen, die README den aktuellen Stand; das CHANGELOG dokumentiert die Entfernung selbst. Eine historische Aussage und ein abweichender aktueller Stand reichen nach `rules/evidence.md` nicht für `CONFLICT`.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 22–24 („### Removed“ unter „[Unreleased]“)`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "dokumentierte Entfernung der Ende-zu-Ende-Verschlüsselung"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `CHANGELOG.md` Zeilen 35–107 (Versionen 0.3.1 bis 0.4.0, 2026-02-08 bis 2026-02-12)`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "frühere OMEMO-Einträge"
+        },
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/Programmatore-Web/openclaw-xmpp-channel, `README.md` Zeilen 18–19`",
+          "version": "Commit 0ba189314a14",
+          "checked_at": "2026-09-14",
+          "contribution": "aktueller Ausschluss der Ende-zu-Ende-Verschlüsselung"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "CHANGELOG-Abschnitte nach Version und Datum mit README verglichen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht erforderlich: weitere Prüfung zur zeitlichen Einordnung"
+        ],
+        "limitation": "Dokumentationsaussage"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (OMEMO), Abschnitt 7",
+        "significance": "dokumentierte Entwicklung eines vorhandenen Projekts"
+      },
+      "conclusion": "Das Projekt hatte laut CHANGELOG OMEMO-Funktionen und hat sie laut eigener Dokumentation entfernt."
+    },
+    {
+      "id": "evd-042",
+      "statement": "MrCPA/oc-xmpp: Die README nennt Direktnachrichten und Räume, OMEMO nur für Direktnachrichten und Live-Tests als noch offen; `peerDependencies` verlangt `openclaw \"*\"`.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/MrCPA/oc-xmpp, `README.md` Zeilen 5, 9, 30`",
+          "version": "Commit 675775a49f43",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben und Teststand"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/MrCPA/oc-xmpp, `package.json` Zeilen 45–46`",
+          "version": "Commit 675775a49f43",
+          "checked_at": "2026-09-14",
+          "contribution": "`peerDependencies.openclaw \"*\"`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung",
+          "nicht durchgeführt: Prüfung der Beschränkung von OMEMO auf Direktnachrichten im Code"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-043",
+      "statement": "MrCPA/oc-xmpp: Code für MUC und für OMEMO in `urn:xmpp:omemo:2` ist vorhanden.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/MrCPA/oc-xmpp, `src/inbound.ts` Zeilen 76, 102, 461`",
+          "version": "Commit 675775a49f43",
+          "checked_at": "2026-09-14",
+          "contribution": "MUC und 1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/MrCPA/oc-xmpp, `src/omemo.ts` Zeilen 17, 207`",
+          "version": "Commit 675775a49f43",
+          "checked_at": "2026-09-14",
+          "contribution": "libsignal-Import und `urn:xmpp:omemo:2`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `tests/` mit 6 Dateien, u. a. `omemo-wire.test.ts`",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-044",
+      "statement": "chitozzz/xmpp-adapter-openclaw: Die README nennt 1:1 und MUC als Ziel und das Projekt als in Planung; `peerDependencies` verlangt `openclaw >=2026.6.9`; OMEMO wird nicht genannt.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `README.md` Zeilen 9–12, 21–24`",
+          "version": "Commit f280515acd43",
+          "checked_at": "2026-09-14",
+          "contribution": "Ziele und Planungsstand"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `package.json` Zeilen 37–38`",
+          "version": "Commit f280515acd43",
+          "checked_at": "2026-09-14",
+          "contribution": "`peerDependencies.openclaw >=2026.6.9`"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-045",
+      "statement": "chitozzz/xmpp-adapter-openclaw: Code für 1:1 und MUC (`joinMuc`) ist vorhanden; OMEMO-Zeichenketten kommen nicht vor.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeile 306`",
+          "version": "Commit f280515acd43",
+          "checked_at": "2026-09-14",
+          "contribution": "1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `src/xmpp-client.ts` Zeilen 524–530`",
+          "version": "Commit f280515acd43",
+          "checked_at": "2026-09-14",
+          "contribution": "`joinMuc`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/chitozzz/xmpp-adapter-openclaw, `src/` mit `grep -rni 'omemo'`",
+          "version": "Commit f280515acd43",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `test/smoke.js`",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-046",
+      "statement": "weijia/xmpp-connector: Die README nennt Senden und Empfangen von Nachrichten, keine OpenClaw-Version, weder MUC noch OMEMO; auf npm ist `openclaw-xmpp-connector` 0.3.0 veröffentlicht.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/weijia/xmpp-connector, `README.md` Zeilen 7–8, 52`",
+          "version": "Commit 3d7c72e66cd9",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben und Laufzeitangabe"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/openclaw-xmpp-connector",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "veröffentlichte Version 0.3.0 vom 2026-03-28"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-047",
+      "statement": "weijia/xmpp-connector: Code für 1:1 ist vorhanden; MUC- und OMEMO-Zeichenketten kommen nicht vor; keine Testdateien.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/weijia/xmpp-connector, `plugin.ts` Zeile 507`",
+          "version": "Commit 3d7c72e66cd9",
+          "checked_at": "2026-09-14",
+          "contribution": "1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/weijia/xmpp-connector, `plugin.ts` mit `grep -niE 'muc|omemo'`",
+          "version": "Commit 3d7c72e66cd9",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: keine",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-048",
+      "statement": "processone/openclaw, Zweig xmpp-support: Die README der Erweiterung nennt 1:1 und MUC; OMEMO wird nicht genannt; der Zweig ist Grundlage des geschlossenen PR #9741 und hängt von `openclaw workspace:*` ab.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/README.md` Zeilen 10–11`",
+          "version": "Commit a6adb95b35c1",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/package.json`",
+          "version": "Commit a6adb95b35c1",
+          "checked_at": "2026-09-14",
+          "contribution": "`devDependencies.openclaw workspace:*`"
+        },
+        {
+          "type": "ISSUE_OR_PR",
+          "location": "https://github.com/openclaw/openclaw/pull/9741",
+          "version": "Kopf-Commit 8a4bc43",
+          "checked_at": "2026-09-14",
+          "contribution": "Bezug des Zweigs zum geschlossenen PR"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt; Dateien über die GitHub-API geladen, nicht geklont"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-049",
+      "statement": "processone/openclaw, Zweig xmpp-support: Code für 1:1 und MUC (`joinRoom`) ist vorhanden; OMEMO-Zeichenketten kommen nicht vor.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/channel.ts` Zeilen 150, 290`",
+          "version": "Commit a6adb95b35c1",
+          "checked_at": "2026-09-14",
+          "contribution": "`joinRoom`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/client.ts` Zeile 353`",
+          "version": "Commit a6adb95b35c1",
+          "checked_at": "2026-09-14",
+          "contribution": "1:1-Nachrichten"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/processone/openclaw/tree/xmpp-support/extensions/xmpp, `extensions/xmpp/src/` mit Suche nach `omemo``",
+          "version": "Commit a6adb95b35c1",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: `src/client.test.ts`, `src/actions.test.ts`",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-050",
+      "statement": "rsaisankalp/clawdbotElyments: Die README beschreibt eine Anbindung von Clawdbot an die XMPP-basierte Plattform Elyments mit Direktnachrichten; `peerDependencies` verlangt `clawdbot >=2026.0.0`; auf npm ist `clawdbot-elyments` 1.0.0 veröffentlicht.",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Die Aussage beruht auf Projektdokumentation und deklarierten Paketangaben. Nach `rules/evidence.md` erhalten README-Angaben höchstens `DOCUMENTED`; eine praktische Prüfung liegt nicht vor.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "https://github.com/rsaisankalp/clawdbotElyments, `README.md` Zeilen 79–96`",
+          "version": "Commit f2e1dde49780",
+          "checked_at": "2026-09-14",
+          "contribution": "Funktionsangaben"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/rsaisankalp/clawdbotElyments, `package.json`",
+          "version": "Commit f2e1dde49780",
+          "checked_at": "2026-09-14",
+          "contribution": "`peerDependencies.clawdbot >=2026.0.0`"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "https://registry.npmjs.org/clawdbot-elyments",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "veröffentlichte Version 1.0.0 vom 2026-01-17"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "README und Paketmetadaten gelesen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "nicht durchgeführt: Installation und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "Projektangaben, nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 (Direktnachrichten, OMEMO, MUC, GitHub-Projekte), Abschnitt 7",
+        "significance": "dokumentierte Funktionen und Versionsangaben eines vorhandenen Projekts"
+      },
+      "conclusion": "Die dokumentierten Funktionen sind nicht praktisch geprüft."
+    },
+    {
+      "id": "evd-051",
+      "statement": "rsaisankalp/clawdbotElyments: Code verarbeitet den Nachrichtentyp `groupchat`, enthält aber keinen Raumbeitritt; OMEMO-Zeichenketten kommen nicht vor; keine Testdateien.",
+      "evidence_status": "VERIFIED",
+      "status_reason": "Die Aussage beschränkt sich auf im gelesenen Quelltext vorhandene oder nicht gefundene Zeichenketten und Dateien. Das ist unmittelbar durch den Quelltext bestätigt. Über die Funktionsfähigkeit sagt die Aussage nichts.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/rsaisankalp/clawdbotElyments, `src/elyments/xmpp.ts` Zeile 320`",
+          "version": "Commit f2e1dde49780",
+          "checked_at": "2026-09-14",
+          "contribution": "Nachrichtentyp `groupchat`"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "https://github.com/rsaisankalp/clawdbotElyments, `src/` mit `grep -rniE 'joinRoom|jabber.org/protocol/muc|omemo'`",
+          "version": "Commit f2e1dde49780",
+          "checked_at": "2026-09-14",
+          "contribution": "0 Treffer"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Quelltext in einer getrennten Arbeitsumgebung per `git clone --depth 1` gelesen und nach Namensräumen und Bezeichnern durchsucht"
+        ],
+        "result": "wie in der Aussage; Tests: keine",
+        "not_performed": [
+          "nicht durchgeführt: Build, Ausführen der Tests und Funktionstest in einer getrennten Arbeitsumgebung"
+        ],
+        "limitation": "belegt nur vorhandenen Code; 0 Treffer belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen einer Funktion"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 7",
+        "significance": "im Quelltext vorhandene Implementierungsteile"
+      },
+      "conclusion": "Vorhandener Code ist nicht als funktionsfähig nachgewiesen."
+    },
+    {
+      "id": "evd-052",
+      "statement": "Ob eines der untersuchten Projekte Direktnachrichten, OMEMO-Verschlüsselung und Gruppenchats über MUC tatsächlich funktionsfähig bereitstellt, ist unbekannt.",
+      "evidence_status": "UNKNOWN",
+      "status_reason": "Für die Funktionsfähigkeit liegen nur Dokumentationsangaben (`DOCUMENTED`) und vorhandener Quelltext (`VERIFIED` nur für das Vorhandensein) vor. Eine Funktionsprüfung wurde nicht durchgeführt; damit fehlt eine ausreichende Information.",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "README-Angaben der Projekte, siehe evd-022 bis evd-051",
+          "version": "Commits wie dort angegeben",
+          "checked_at": "2026-09-14",
+          "contribution": "dokumentierte Funktionen"
+        },
+        {
+          "type": "SOURCE_CODE",
+          "location": "Quelltext der Projekte, siehe evd-022 bis evd-051",
+          "version": "Commits wie dort angegeben",
+          "checked_at": "2026-09-14",
+          "contribution": "vorhandener Code ohne Funktionsnachweis"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "keine Funktionsprüfung"
+        ],
+        "result": "–",
+        "not_performed": [
+          "nicht durchgeführt: Build, Tests und Funktionstest der Projekte in einer getrennten, entbehrlichen Arbeitsumgebung mit eigener OpenClaw-Instanz und Test-XMPP-Server. Nach `phases/swk-02-inventory.md` wäre das zulässig, wenn es kein produktives System verändert und keine produktiven Zugangsdaten nutzt. Wegen fehlenden Zugriffs nicht möglich: Test gegen den eigenen XMPP-Server, da dieser nicht bekannt ist (siehe evd-008)."
+        ],
+        "limitation": "Aussagen zu Funktionen reichen höchstens bis `DOCUMENTED` oder bis zum Vorhandensein von Code"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 11 (erster unbekannter Sachverhalt)",
+        "significance": "offener Sachverhalt aus `idea.md`"
+      },
+      "conclusion": "Der in `idea.md` genannte unbekannte Sachverhalt bleibt unbekannt."
+    },
+    {
+      "id": "evd-053",
+      "statement": "Ob die untersuchten Projekte unter OpenClaw 2026.7.1-2 oder 2026.9.4 laden und laufen, ist unbekannt; es liegen nur deklarierte Versionsangaben vor.",
+      "evidence_status": "UNKNOWN",
+      "status_reason": "Deklarierte Versionsbereiche sind nach der OpenClaw-Dokumentation keine Kompatibilitätsnachweise (evd-014); ein Laden wurde nicht geprüft. Es liegt keine ausreichende Information vor.",
+      "sources": [
+        {
+          "type": "SOURCE_CODE",
+          "location": "`package.json` der Projekte, siehe evd-022 bis evd-051",
+          "version": "Commits wie dort angegeben",
+          "checked_at": "2026-09-14",
+          "contribution": "deklarierte Versionsangaben"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "`/usr/lib/node_modules/openclaw/docs/plugins/sdk-overview.md` Zeilen 25–36",
+          "version": "openclaw@2026.9.4 (3a9d69d)",
+          "checked_at": "2026-09-14",
+          "contribution": "Hinweis, jede Host-Version zu testen"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "keine Installationsprüfung"
+        ],
+        "result": "–",
+        "not_performed": [
+          "nicht durchgeführt: Laden der Projekte in einer getrennten OpenClaw-Instanz der Versionen 2026.7.1-2 und 2026.9.4"
+        ],
+        "limitation": "deklarierte Versionsbereiche sind keine Kompatibilitätsnachweise"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1, Abschnitt 10 („aktuelle OpenClaw-Versionen“)",
+        "significance": "Kompatibilität des vorhandenen Bestands"
+      },
+      "conclusion": "Die Kompatibilität der Projekte mit den genannten Versionen ist nicht belegt."
+    },
+    {
+      "id": "evd-054",
+      "statement": "Ob es XMPP-Anbindungen für OpenClaw außerhalb von GitHub und npm gibt, etwa auf ClawHub, GitLab oder Codeberg, ist unbekannt.",
+      "evidence_status": "UNKNOWN",
+      "status_reason": "Die Suche umfasste nur GitHub und npm; für andere Plattformen liegt keine Information vor.",
+      "sources": [
+        {
+          "type": "ANALYSIS",
+          "location": "Suchanfragen auf GitHub (siehe Abschnitt 4, Quelle „GitHub-Suche“)",
+          "version": "Trefferzahlen am 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "abgedeckter Suchraum GitHub"
+        },
+        {
+          "type": "PRIMARY_DOCUMENTATION",
+          "location": "Suchanfragen im npm-Register (siehe Abschnitt 4, Quelle „npm-Register, Suche“)",
+          "version": "Registerstand 2026-09-14",
+          "checked_at": "2026-09-14",
+          "contribution": "abgedeckter Suchraum npm"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "GitHub- und npm-Suche durchgeführt"
+        ],
+        "result": "–",
+        "not_performed": [
+          "nicht durchgeführt: Suche auf ClawHub, GitLab, Codeberg und allgemeine Websuche"
+        ],
+        "limitation": "Suche auf zwei Plattformen beschränkt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 1 („Vorhandene GitHub-Projekte“)",
+        "significance": "Vollständigkeit der Projektliste"
+      },
+      "conclusion": "Die Projektliste ist auf GitHub und npm beschränkt."
+    }
+  ]
+}
