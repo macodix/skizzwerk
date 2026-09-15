@@ -117,9 +117,14 @@ Dokumentabschnitte Text enthalten.
 - keine Architektur- oder Technologieentscheidung getroffen wurde,
 - keine untersuchte externe Installation und kein externes Repository durch
   die Bestandsuntersuchung verändert wurde,
-- `inventory.md` der Vorlage `templates/inventory.md` entspricht,
 - alle Kennungen `rules/identifiers.md` entsprechen,
-- der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
+- der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde,
+- eine projektspezifische `inventory.json` vorhanden ist,
+- `inventory.json` der Vorlage `templates/inventory.json` entspricht,
+- `inventory.json` die Validierung durch `tools/inventory.py` ohne Fehler
+  besteht,
+- `inventory.md` aus der aktuellen `inventory.json` erzeugt wurde,
+- die automatisch erzeugte `inventory.md` nicht manuell verändert wurde.
 
 ## Nichtbestehen der Qualitätsgrenze
 
