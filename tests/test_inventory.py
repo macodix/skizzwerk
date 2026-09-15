@@ -71,6 +71,31 @@ class InventoryTests(unittest.TestCase):
         data["findings"][0]["conflict"] = {"statement_1": "a"}
         self.assertTrue(any("allowed only" in error for error in inventory.validate(data)))
 
+    def test_balanced_backticks_are_valid(self):
+        data = valid_data()
+        data["findings"][0]["sources"][0]["location"] = "`README.md` Zeilen 1–3, 14"
+        self.assertEqual([], inventory.validate(data))
+
+    def test_unbalanced_backticks_in_source_location(self):
+        data = valid_data()
+        data["findings"][0]["sources"][0]["location"] = "`README.md` Zeilen 1–3, 14`"
+        errors = inventory.validate(data)
+        self.assertIn("findings[0].sources[0].location: unbalanced backticks", errors)
+
+    def test_unbalanced_backticks_in_text_fields(self):
+        data = valid_data()
+        data["assignment"] = "Bestand `untersuchen"
+        data["scope"][0]["relevance"] = "genannt`"
+        data["limitations"] = ["`Grenze"]
+        data["findings"][0]["statement"] = "README nennt `MUC"
+        data["findings"][0]["verification"]["not_performed"] = ["Funktionstest`"]
+        data["review"]["blockage"] = "`offen"
+        errors = inventory.validate(data)
+        for location in ("assignment", "scope[0].relevance", "limitations[0]",
+                         "findings[0].statement", "findings[0].verification.not_performed[0]",
+                         "review.blockage"):
+            self.assertIn(f"{location}: unbalanced backticks", errors)
+
     def test_renderer_escapes_table_separator(self):
         data = valid_data()
         data["findings"][0]["statement"] = "A | B"

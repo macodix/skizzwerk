@@ -42,7 +42,13 @@ def text(value: Any, location: str, errors: list[str]) -> str:
     if not isinstance(value, str) or not value.strip():
         errors.append(f"{location}: non-empty string required")
         return ""
+    check_backticks(value, location, errors)
     return value.strip()
+
+
+def check_backticks(value: str, location: str, errors: list[str]) -> None:
+    if value.count("`") % 2:
+        errors.append(f"{location}: unbalanced backticks")
 
 
 def text_list(value: Any, location: str, errors: list[str], allow_empty: bool = False) -> list[str]:
@@ -92,6 +98,8 @@ def validate(data: dict[str, Any]) -> list[str]:
         if not isinstance(review.get(key), bool):
             errors.append(f"review.{key}: boolean required")
     text_list(review.get("unmet_criteria"), "review.unmet_criteria", errors, allow_empty=True)
+    if isinstance(review.get("blockage"), str):
+        check_backticks(review["blockage"], "review.blockage", errors)
     if meta.get("status") in {"review", "accepted"}:
         if review.get("precheck_passed") is not True or review.get("quality_gate_passed") is not True:
             errors.append("review: passed precheck and quality gate required for review/accepted")
