@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "document": "inventory",
+    "process_phase": "swk-02",
+    "project": "project-name",
+    "status": "input",
+    "created": "YYYY-MM-DD",
+    "last_updated": "YYYY-MM-DD",
+    "basis": "idea.md"
+  },
+  "assignment": "Beschreibung des Untersuchungsauftrags",
+  "scope": [
+    {
+      "area": "Untersuchungsbereich",
+      "idea_reference": "idea.md, Abschnitt",
+      "relevance": "Begründung"
+    }
+  ],
+  "investigation": [
+    {
+      "area": "Untersuchungsbereich",
+      "examined": ["untersuchter Teil"],
+      "not_examined": [],
+      "limitations": []
+    }
+  ],
+  "limitations": [],
+  "review": {
+    "precheck_passed": false,
+    "quality_gate_passed": false,
+    "checked_at": null,
+    "checked_by": null,
+    "unmet_criteria": [],
+    "blockage": null
+  },
+  "approval": null,
+  "findings": [
+    {
+      "id": "evd-001",
+      "statement": "Aussage des Befunds",
+      "evidence_status": "DOCUMENTED",
+      "status_reason": "Begründung des Nachweisstatus",
+      "sources": [
+        {
+          "type": "PROJECT_DOCUMENTATION",
+          "location": "README.md, Abschnitt Features",
+          "version": "Commit abc123",
+          "checked_at": "YYYY-MM-DD",
+          "contribution": "Dokumentierte Funktionsangabe"
+        }
+      ],
+      "verification": {
+        "performed": ["README gelesen"],
+        "result": "Funktionsangabe vorhanden",
+        "not_performed": ["Funktionstest"],
+        "limitation": "Funktion nicht praktisch bestätigt"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt",
+        "significance": "Bedeutung für das Projekt"
+      },
+      "conclusion": "Folgerung innerhalb der Grenzen von swk-02"
+    }
+  ]
+}
