@@ -2,9 +2,9 @@
 document: inventory
 process_phase: swk-02
 project: "openclaw-xmpp"
-status: review
+status: accepted
 created: 2026-09-14
-last_updated: 2026-09-15
+last_updated: 2026-09-16
 basis: idea.md
 ---
 
@@ -2213,7 +2213,7 @@ Nicht erfüllte Kriterien:
 
 ## 8. Freigabestatus
 
-- Dokumentstatus: `review`
-- angenommen am: –
-- angenommen durch: –
-- Anmerkungen: –
+- Dokumentstatus: `accepted`
+- angenommen am: 2026-09-16
+- angenommen durch: Martin Henkel
+- Anmerkungen: Bestandsuntersuchung durch den Ideengeber geprüft und akzeptiert.

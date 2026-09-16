@@ -4,9 +4,9 @@
     "document": "inventory",
     "process_phase": "swk-02",
     "project": "openclaw-xmpp",
-    "status": "review",
+    "status": "accepted",
     "created": "2026-09-14",
-    "last_updated": "2026-09-15",
+    "last_updated": "2026-09-16",
     "basis": "idea.md"
   },
   "assignment": "Grundlage ist `pilots/openclaw-xmpp/idea.md` (Commit 4e46961, Status `accepted`, bestätigt am 2026-09-14). Die Untersuchung begann und endete am 2026-09-14; am 2026-09-15 wurde sie ohne neue Bestandsrecherche in das strukturierte Format übertragen. Untersucht wird der vorhandene Bestand zu einer XMPP-Anbindung an OpenClaw: die vorhandenen OpenClaw-Installationen, die Plugin-Schnittstelle der genannten OpenClaw-Versionen und ihre Änderungen, XMPP im Lieferumfang und im Hauptprojekt von OpenClaw, vorhandene öffentliche Projekte sowie die Angaben zum eigenen XMPP-Server und zu bisherigen Versuchen. Kennzeichnung nach `rules/evidence.md`: `USER_PROVIDED` (Aussage des Ideengebers), `VERIFIED` (unmittelbar durch Code, Befehlsausgabe oder Primärquelle bestätigt), `DOCUMENTED` (dokumentierte Behauptung), `INFERRED` (Ableitung), `UNKNOWN` (unbekannt). Es wurden keine Annahmen gesetzt, keine Aussage widerlegt und kein Widerspruch nach den Anforderungen an `CONFLICT` nachgewiesen; die in einer früheren Fassung als `CONFLICT` geführten Befunde evd-026, evd-029, evd-032 und evd-041 sind nach ihrer tatsächlichen Belegbarkeit eingestuft. Die Befunde enthalten keine neuen Anforderungen, keine Rangfolge oder Auswahl möglicher Lösungen und keine Architektur-, Technologie- oder Umsetzungsentscheidung.",
@@ -176,7 +176,11 @@
     "unmet_criteria": [],
     "blockage": null
   },
-  "approval": null,
+  "approval": {
+    "accepted_at": "2026-09-16",
+    "accepted_by": "Martin Henkel",
+    "note": "Bestandsuntersuchung durch den Ideengeber geprüft und akzeptiert."
+  },
   "findings": [
     {
       "id": "evd-001",
