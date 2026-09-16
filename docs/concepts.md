@@ -108,16 +108,27 @@ bevorzugten Lösung, Architektur-, Technologie- oder Umsetzungsentscheidung.
 
 Ergebnis ist die projektspezifische `assessment.md`.
 
-### Spätere Phasen
+### swk-04: Entscheidungsfragen erstellen
 
-Die Prozessübersicht nennt anschließend:
+Die in der akzeptierten Bewertung aus `swk-03` dokumentierten
+Entscheidungsbedarfe werden als klar abgegrenzte Fragen strukturiert.
 
-- `swk-04`: Entscheidungsfragen erstellen.
+Dabei werden:
 
-Die konkrete Bearbeitung von `swk-04` beginnt erst, nachdem seine
-Phasendateien, Vorlagen und Qualitätsgrenzen definiert wurden.
+- Entscheidungsbedarf von bloßen Wissenslücken getrennt,
+- dokumentierte Optionen den jeweiligen Entscheidungsfragen zugeordnet,
+- bekannte Vor- und Nachteile beziehungsweise Einschränkungen aus `swk-03`
+  übernommen,
+- entscheidungsrelevante unbekannte Sachverhalte sichtbar gehalten,
+- Abhängigkeiten zwischen Entscheidungen dokumentiert,
+- notwendiger Rückkehr- oder weiterer Klärungsbedarf erkannt.
 
-## Trennung von Untersuchung, Bewertung und Entscheidung
+`swk-04` erweitert die Bewertung aus `swk-03` nicht und trifft keine
+Entscheidung im Namen des Ideengebers.
+
+Ergebnis ist die projektspezifische `questions.md`.
+
+## Trennung von Untersuchung, Bewertung und Entscheidungsfragen
 
 Die Bestandsuntersuchung in `swk-02` beantwortet Fragen wie:
 
@@ -136,11 +147,23 @@ Die Bewertung in `swk-03` beantwortet Fragen wie:
 - Welche Unterschiede zwischen Alternativen sind für spätere Entscheidungen relevant?
 - Welche Wissenslücken verhindern eine belastbare Bewertung?
 
-Die Bewertung benennt Entscheidungsbedarf, trifft aber keine Auswahl einer
-bevorzugten Lösung.
+`swk-03` darf die Bedeutung dokumentierter Unterschiede bewerten, aber keine
+Alternative als verbindliche Lösung auswählen.
+
+`swk-04` beantwortet andere Fragen:
+
+- Welche Entscheidung ist auf Grundlage der Bewertung tatsächlich erforderlich?
+- Welche bereits dokumentierten Optionen gehören zu dieser Entscheidung?
+- Welche entscheidungsrelevanten Informationen sind bekannt oder unbekannt?
+- Welche Entscheidungen hängen voneinander ab?
+- Muss vor einer Entscheidung noch untersucht oder geklärt werden?
+
+`swk-04` strukturiert den Entscheidungsbedarf, trifft die Entscheidung aber
+nicht selbst.
 
 Diese Trennung verhindert, dass eine gefundene Möglichkeit bereits während
-der Recherche oder Bewertung stillschweigend zur verbindlichen Lösung wird.
+der Recherche oder Bewertung stillschweigend zur verbindlichen Lösung wird
+oder eine KI aus einer Entscheidungsfrage selbst eine Entscheidung macht.
 
 ## Zentrale Schutzmechanismen
 
@@ -249,10 +272,10 @@ Einzelangaben erzeugen.
 Für `swk-02` werden Befunde deshalb strukturiert in `inventory.json`
 gespeichert. `inventory.md` wird automatisch daraus erzeugt.
 
-Für den ersten Entwurf von `swk-03` ist `assessment.md` ein direkt bearbeitetes
-Markdown-Dokument. Ob auch für Bewertungen eine strukturierte Quelldatei und
-automatische Validierung erforderlich sind, wird im Pilot geprüft und nicht
-vorab unterstellt.
+Für die ersten Entwürfe von `swk-03` und `swk-04` sind `assessment.md` und
+`questions.md` direkt bearbeitete Markdown-Dokumente. Ob auch für diese
+Phasen strukturierte Quelldateien und automatische Validierung erforderlich
+sind, wird im Pilot geprüft und nicht vorab unterstellt.
 
 Ein Validator und die GitHub-CI prüfen die für `swk-02` deterministisch
 prüfbaren Regeln. Eine unabhängige inhaltliche Prüfung bleibt für semantische
