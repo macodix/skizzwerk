@@ -126,6 +126,36 @@ Dokumentabschnitte Text enthalten.
 - `inventory.md` aus der aktuellen `inventory.json` erzeugt wurde,
 - die automatisch erzeugte `inventory.md` nicht manuell verändert wurde.
 
+## Qualitätsgrenze swk-03
+
+`swk-03` darf den Status `review` erhalten, wenn:
+
+- die zugrunde liegende projektspezifische `idea.md` den Status `accepted` besitzt,
+- die zugrunde liegende projektspezifische `inventory.json` den Status `accepted` besitzt,
+- die Bewertung ausschließlich auf der akzeptierten `idea.md` und `inventory.json` beruht,
+- keine neue Bestandsrecherche durchgeführt wurde,
+- jeder Bewertungsaspekt einen konkreten Bezug zur `idea.md` besitzt,
+- jede Bewertung die verwendeten `evd-nnn`-Befunde nennt,
+- die Belastbarkeit der Bewertung die Belastbarkeit ihrer Befundgrundlage nicht überschreitet,
+- dokumentierte Behauptungen nicht als nachgewiesene Tatsachen dargestellt werden,
+- unbekannte Sachverhalte und nicht durchgeführte Prüfungen sichtbar bleiben,
+- ein fehlender Nachweis nicht als Nachweis einer fehlenden Funktion behandelt wird,
+- eine dokumentierte Funktion nicht ohne geeigneten Nachweis als praktisch bestätigt behandelt wird,
+- positive Beiträge und Einschränkungen nur dokumentiert werden, soweit sie aus Befunden ableitbar sind,
+- Vergleiche zwischen Alternativen dieselben relevanten Bewertungsaspekte verwenden,
+- keine numerischen Scores, Gewichtungen, Rangfolgen oder Gesamtnoten ohne ausdrücklich definierte Bewertungsmethode verwendet werden,
+- keine bevorzugte Alternative als verbindliche Lösung ausgewählt wird,
+- keine neue Anforderung formuliert wird,
+- keine Architektur-, Technologie- oder Umsetzungsentscheidung getroffen wird,
+- keine Annahme stillschweigend als Bewertungsgrundlage gesetzt wird,
+- jeder wesentliche offene Punkt darauf geprüft wurde, ob weitere Bestandsuntersuchung erforderlich und erfolgversprechend ist,
+- jeder erforderliche Rückkehrpunkt zu `swk-02` mit Sachverhalt, betroffenen Befunden, Bedeutung, zusätzlicher Untersuchung und Prüfweg dokumentiert ist,
+- wesentliche nicht durch weitere Bestandsuntersuchung klärbare Punkte für spätere Phasen sichtbar dokumentiert sind,
+- Punkte mit Entscheidungsbedarf benannt werden, ohne die Entscheidung vorwegzunehmen,
+- die projektspezifische `assessment.md` der Vorlage `templates/assessment.md` entspricht,
+- alle Kennungen `rules/identifiers.md` entsprechen,
+- der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
+
 ## Nichtbestehen der Qualitätsgrenze
 
 Wird mindestens ein erforderliches Kriterium nicht erfüllt:
