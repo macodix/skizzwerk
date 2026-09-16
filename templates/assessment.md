@@ -8,6 +8,7 @@ last_updated: YYYY-MM-DD
 basis:
   - idea.md
   - inventory.json
+  - assumptions.md # nur wenn vorhanden
 ---
 
 # Bewertung der Befunde
@@ -20,6 +21,7 @@ Kurze Beschreibung des Bewertungsauftrags und der verwendeten akzeptierten Einga
 
 - akzeptierte `idea.md`:
 - akzeptierte `inventory.json`:
+- projektspezifische `assumptions.md`, sofern vorhanden:
 - Stand der Bestandsuntersuchung:
 
 ## 3. Bewertungsaspekte
@@ -85,7 +87,17 @@ Wenn keine Rückkehr erforderlich ist: `keine`.
 
 ## 8. Später zu entscheidende Punkte
 
-- Punkt, der eine spätere Entscheidung benötigt
+Für jeden Entscheidungsbedarf:
+
+### Entscheidungsbedarf
+
+- Gegenstand:
+- Bezug zur `idea.md`:
+- relevante Befunde: `evd-nnn` / keine
+- relevante Annahmen: `asm-nnn` / keine
+- Begründung des Entscheidungsbedarfs:
+- dokumentierte Optionen, soweit vorhanden:
+- offene entscheidungsrelevante Sachverhalte:
 
 Keine Entscheidung in dieser Phase treffen.
 
