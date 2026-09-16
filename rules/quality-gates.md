@@ -132,7 +132,15 @@ Dokumentabschnitte Text enthalten.
 
 - die zugrunde liegende projektspezifische `idea.md` den Status `accepted` besitzt,
 - die zugrunde liegende projektspezifische `inventory.json` den Status `accepted` besitzt,
-- die Bewertung ausschließlich auf der akzeptierten `idea.md` und `inventory.json` beruht,
+- eine vorhandene projektspezifische `assumptions.md` berücksichtigt wurde,
+- die Bewertung ausschließlich auf der akzeptierten `idea.md`, der akzeptierten
+  `inventory.json` und gegebenenfalls der projektspezifischen `assumptions.md`
+  beruht,
+- Annahmen nicht als Befunde oder Tatsachen behandelt werden,
+- vorhandene Annahmen mit wesentlicher Auswirkung darauf geprüft wurden, ob sie
+  nach `rules/assumptions.md` einen Entscheidungsbedarf erzeugen,
+- ein aus einer Annahme entstehender Entscheidungsbedarf mit der zugehörigen
+  `asm-nnn`-Kennung dokumentiert ist,
 - keine neue Bestandsrecherche durchgeführt wurde,
 - jeder Bewertungsaspekt einen konkreten Bezug zur `idea.md` besitzt,
 - jede Bewertung die verwendeten `evd-nnn`-Befunde nennt,
@@ -163,18 +171,28 @@ Dokumentabschnitte Text enthalten.
 - die zugrunde liegende projektspezifische `idea.md` den Status `accepted` besitzt,
 - die zugrunde liegende projektspezifische `inventory.json` den Status `accepted` besitzt,
 - die zugrunde liegende projektspezifische `assessment.md` den Status `accepted` besitzt,
+- `rules/questions.md` beachtet wurde,
 - jeder Entscheidungsbedarf aus der akzeptierten `assessment.md` hergeleitet ist,
+- die Prüfung eines übergebenen Entscheidungsbedarfs auf die formale
+  Unterscheidung zwischen Entscheidung und Wissenslücke beschränkt bleibt,
+- keine fachliche Neubewertung von Alternativen aus `swk-03` durchgeführt wird,
 - keine bloße Wissenslücke ohne Auswahlbedarf als Entscheidungsfrage behandelt wird,
 - jede Entscheidungsfrage eine gültige `que-nnn`-Kennung besitzt,
 - jede Entscheidungsfrage klar abgegrenzt und als konkrete Frage formuliert ist,
 - jede Entscheidungsfrage ihren Bezug zur `assessment.md` nennt,
 - relevante `evd-nnn`-Befunde genannt sind, soweit sie für die Entscheidung benötigt werden,
+- relevante `asm-nnn`-Annahmen genannt sind, soweit der Entscheidungsbedarf aus
+  einer Annahme mit wesentlicher Auswirkung hervorgeht,
 - jede dokumentierte Option auf akzeptierte Vorphasenergebnisse zurückgeführt werden kann,
 - keine Option frei ergänzt oder erfunden wurde,
 - bekannte Vor- und Nachteile beziehungsweise Einschränkungen nicht über die akzeptierte Bewertung hinaus erweitert wurden,
 - unbekannte entscheidungsrelevante Sachverhalte sichtbar bleiben,
 - fehlende Informationen darauf geprüft wurden, ob sie durch Bestandsuntersuchung klärbar sind,
-- notwendiger Rückkehrbedarf zu `swk-02` über `swk-03` dokumentiert ist,
+- notwendiger Rückkehrbedarf zunächst zu `swk-03` dokumentiert ist,
+- ein weiterer Rückweg von `swk-03` zu `swk-02` nur nach den dort definierten
+  Rückkehrkriterien erfolgt,
+- akzeptierte Vorphasenergebnisse bei Änderungen entsprechend
+  `rules/process.md` erneut Qualitätsprüfung und menschliche Freigabe durchlaufen,
 - Abhängigkeiten zwischen Entscheidungsfragen dokumentiert sind,
 - Folgen einer Vertagung nur dokumentiert werden, soweit sie aus akzeptierten Vorphasenergebnissen ableitbar sind,
 - keine Option als bevorzugt, empfohlen oder ausgewählt dargestellt wird,
