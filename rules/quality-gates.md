@@ -126,6 +126,84 @@ Dokumentabschnitte Text enthalten.
 - `inventory.md` aus der aktuellen `inventory.json` erzeugt wurde,
 - die automatisch erzeugte `inventory.md` nicht manuell verändert wurde.
 
+## Qualitätsgrenze swk-03
+
+`swk-03` darf den Status `review` erhalten, wenn:
+
+- die zugrunde liegende projektspezifische `idea.md` den Status `accepted` besitzt,
+- die zugrunde liegende projektspezifische `inventory.json` den Status `accepted` besitzt,
+- eine vorhandene projektspezifische `assumptions.md` berücksichtigt wurde,
+- die Bewertung ausschließlich auf der akzeptierten `idea.md`, der akzeptierten
+  `inventory.json` und gegebenenfalls der projektspezifischen `assumptions.md`
+  beruht,
+- Annahmen nicht als Befunde oder Tatsachen behandelt werden,
+- vorhandene Annahmen mit wesentlicher Auswirkung darauf geprüft wurden, ob sie
+  nach `rules/assumptions.md` einen Entscheidungsbedarf erzeugen,
+- ein aus einer Annahme entstehender Entscheidungsbedarf mit der zugehörigen
+  `asm-nnn`-Kennung dokumentiert ist,
+- keine neue Bestandsrecherche durchgeführt wurde,
+- jeder Bewertungsaspekt einen konkreten Bezug zur `idea.md` besitzt,
+- jede Bewertung die verwendeten `evd-nnn`-Befunde nennt,
+- die Belastbarkeit der Bewertung die Belastbarkeit ihrer Befundgrundlage nicht überschreitet,
+- dokumentierte Behauptungen nicht als nachgewiesene Tatsachen dargestellt werden,
+- unbekannte Sachverhalte und nicht durchgeführte Prüfungen sichtbar bleiben,
+- ein fehlender Nachweis nicht als Nachweis einer fehlenden Funktion behandelt wird,
+- eine dokumentierte Funktion nicht ohne geeigneten Nachweis als praktisch bestätigt behandelt wird,
+- positive Beiträge und Einschränkungen nur dokumentiert werden, soweit sie aus Befunden ableitbar sind,
+- Vergleiche zwischen Alternativen dieselben relevanten Bewertungsaspekte verwenden,
+- keine numerischen Scores, Gewichtungen, Rangfolgen oder Gesamtnoten ohne ausdrücklich definierte Bewertungsmethode verwendet werden,
+- keine bevorzugte Alternative als verbindliche Lösung ausgewählt wird,
+- keine neue Anforderung formuliert wird,
+- keine Architektur-, Technologie- oder Umsetzungsentscheidung getroffen wird,
+- keine Annahme stillschweigend als Bewertungsgrundlage gesetzt wird,
+- jeder wesentliche offene Punkt darauf geprüft wurde, ob weitere Bestandsuntersuchung erforderlich und erfolgversprechend ist,
+- jeder erforderliche Rückkehrpunkt zu `swk-02` mit Sachverhalt, betroffenen Befunden, Bedeutung, zusätzlicher Untersuchung und Prüfweg dokumentiert ist,
+- wesentliche nicht durch weitere Bestandsuntersuchung klärbare Punkte für spätere Phasen sichtbar dokumentiert sind,
+- Punkte mit Entscheidungsbedarf benannt werden, ohne die Entscheidung vorwegzunehmen,
+- die projektspezifische `assessment.md` der Vorlage `templates/assessment.md` entspricht,
+- alle Kennungen `rules/identifiers.md` entsprechen,
+- der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
+
+## Qualitätsgrenze swk-04
+
+`swk-04` darf den Status `review` erhalten, wenn:
+
+- die zugrunde liegende projektspezifische `idea.md` den Status `accepted` besitzt,
+- die zugrunde liegende projektspezifische `inventory.json` den Status `accepted` besitzt,
+- die zugrunde liegende projektspezifische `assessment.md` den Status `accepted` besitzt,
+- `rules/questions.md` beachtet wurde,
+- jeder Entscheidungsbedarf aus der akzeptierten `assessment.md` hergeleitet ist,
+- die Prüfung eines übergebenen Entscheidungsbedarfs auf die formale
+  Unterscheidung zwischen Entscheidung und Wissenslücke beschränkt bleibt,
+- keine fachliche Neubewertung von Alternativen aus `swk-03` durchgeführt wird,
+- keine bloße Wissenslücke ohne Auswahlbedarf als Entscheidungsfrage behandelt wird,
+- jede Entscheidungsfrage eine gültige `que-nnn`-Kennung besitzt,
+- jede Entscheidungsfrage klar abgegrenzt und als konkrete Frage formuliert ist,
+- jede Entscheidungsfrage ihren Bezug zur `assessment.md` nennt,
+- relevante `evd-nnn`-Befunde genannt sind, soweit sie für die Entscheidung benötigt werden,
+- relevante `asm-nnn`-Annahmen genannt sind, soweit der Entscheidungsbedarf aus
+  einer Annahme mit wesentlicher Auswirkung hervorgeht,
+- jede dokumentierte Option auf akzeptierte Vorphasenergebnisse zurückgeführt werden kann,
+- keine Option frei ergänzt oder erfunden wurde,
+- bekannte Vor- und Nachteile beziehungsweise Einschränkungen nicht über die akzeptierte Bewertung hinaus erweitert wurden,
+- unbekannte entscheidungsrelevante Sachverhalte sichtbar bleiben,
+- fehlende Informationen darauf geprüft wurden, ob sie durch Bestandsuntersuchung klärbar sind,
+- notwendiger Rückkehrbedarf zunächst zu `swk-03` dokumentiert ist,
+- ein weiterer Rückweg von `swk-03` zu `swk-02` nur nach den dort definierten
+  Rückkehrkriterien erfolgt,
+- akzeptierte Vorphasenergebnisse bei Änderungen entsprechend
+  `rules/process.md` erneut Qualitätsprüfung und menschliche Freigabe durchlaufen,
+- Abhängigkeiten zwischen Entscheidungsfragen dokumentiert sind,
+- Folgen einer Vertagung nur dokumentiert werden, soweit sie aus akzeptierten Vorphasenergebnissen ableitbar sind,
+- keine Option als bevorzugt, empfohlen oder ausgewählt dargestellt wird,
+- keine Entscheidung durch die KI getroffen wird,
+- keine neue Anforderung formuliert wird,
+- keine Architektur-, Technologie- oder Umsetzungsentscheidung getroffen wird,
+- keine wesentliche Annahme stillschweigend als entschieden vorausgesetzt wird,
+- die projektspezifische `questions.md` der Vorlage `templates/questions.md` entspricht,
+- alle Kennungen `rules/identifiers.md` entsprechen,
+- der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
+
 ## Nichtbestehen der Qualitätsgrenze
 
 Wird mindestens ein erforderliches Kriterium nicht erfüllt:

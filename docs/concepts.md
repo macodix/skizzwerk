@@ -87,17 +87,51 @@ Lösung geeignet oder vorzuziehen ist.
 
 Ergebnis ist die projektspezifische `inventory.md`.
 
-### Spätere Phasen
+### swk-03: Befunde bewerten
 
-Die Prozessübersicht nennt anschließend:
+Die akzeptierten Befunde aus `swk-02` werden hinsichtlich ihrer Bedeutung für
+die akzeptierte Projektidee bewertet.
 
-- `swk-03`: Befunde bewerten,
-- `swk-04`: Entscheidungsfragen erstellen.
+Dabei werden:
 
-Die konkrete Bearbeitung dieser Phasen beginnt erst, nachdem ihre
-Phasendateien, Vorlagen und Qualitätsgrenzen definiert wurden.
+- Bewertungsaspekte aus der `idea.md` abgeleitet,
+- relevante `evd-nnn`-Befunde den Bewertungsaspekten zugeordnet,
+- positive Beiträge und Einschränkungen aus der Befundlage abgeleitet,
+- vorhandene Alternativen sachbezogen gegenübergestellt,
+- wesentliche unbekannte oder nicht ausreichend untersuchte Sachverhalte
+  sichtbar gehalten,
+- relevante `asm-nnn` mit wesentlicher Auswirkung auf möglichen
+  Entscheidungsbedarf geprüft,
+- notwendige Rückkehrpunkte zu `swk-02` erkannt,
+- spätere Entscheidungsbedarfe benannt.
 
-## Trennung von Untersuchung und Bewertung
+`swk-03` recherchiert keinen neuen Bestand und trifft noch keine Auswahl einer
+bevorzugten Lösung, Architektur-, Technologie- oder Umsetzungsentscheidung.
+
+Ergebnis ist die projektspezifische `assessment.md`.
+
+### swk-04: Entscheidungsfragen erstellen
+
+Die in der akzeptierten Bewertung aus `swk-03` dokumentierten
+Entscheidungsbedarfe werden als klar abgegrenzte Fragen strukturiert.
+
+Dabei werden:
+
+- Entscheidungsbedarf von bloßen Wissenslücken getrennt,
+- dokumentierte Optionen den jeweiligen Entscheidungsfragen zugeordnet,
+- bekannte Vor- und Nachteile beziehungsweise Einschränkungen aus `swk-03`
+  übernommen,
+- gegebenenfalls zugehörige `asm-nnn` referenziert,
+- entscheidungsrelevante unbekannte Sachverhalte sichtbar gehalten,
+- Abhängigkeiten zwischen Entscheidungen dokumentiert,
+- notwendiger Rückkehr- oder weiterer Klärungsbedarf erkannt.
+
+`swk-04` erweitert die Bewertung aus `swk-03` nicht und trifft keine
+Entscheidung im Namen des Ideengebers.
+
+Ergebnis ist die projektspezifische `questions.md`.
+
+## Trennung von Untersuchung, Bewertung und Entscheidungsfragen
 
 Die Bestandsuntersuchung in `swk-02` beantwortet Fragen wie:
 
@@ -108,15 +142,39 @@ Die Bestandsuntersuchung in `swk-02` beantwortet Fragen wie:
 - Was wurde nicht oder nur teilweise untersucht?
 - Was bleibt unbekannt?
 
-Die spätere Bewertung beantwortet andere Fragen:
+Die Bewertung in `swk-03` beantwortet Fragen wie:
 
-- Welcher Befund ist für das Projekt geeignet?
-- Welche Vor- und Nachteile bestehen?
-- Welche Lücken sind wesentlich?
-- Welche Alternative soll weiterverfolgt werden?
+- Welche Befunde sind für die Projektidee wesentlich?
+- Welche vorhandenen Grundlagen tragen zu genannten Funktionen und Einschränkungen bei?
+- Welche belegten Einschränkungen und Risiken bestehen?
+- Welche Unterschiede zwischen Alternativen sind für spätere Entscheidungen relevant?
+- Welche Wissenslücken verhindern eine belastbare Bewertung?
+- Welche wesentlichen Annahmen erzeugen möglichen Entscheidungsbedarf?
+
+`swk-03` darf die Bedeutung dokumentierter Unterschiede bewerten, aber keine
+Alternative als verbindliche Lösung auswählen.
+
+`swk-04` beantwortet andere Fragen:
+
+- Welche Entscheidung ist auf Grundlage der Bewertung tatsächlich erforderlich?
+- Welche bereits dokumentierten Optionen gehören zu dieser Entscheidung?
+- Welche entscheidungsrelevanten Informationen sind bekannt oder unbekannt?
+- Welche Entscheidungen hängen voneinander ab?
+- Muss vor einer Entscheidung noch untersucht oder geklärt werden?
+
+`swk-04` strukturiert den Entscheidungsbedarf, trifft die Entscheidung aber
+nicht selbst.
+
+Eine Wissenslücke ist nicht allein deshalb eine Entscheidungsfrage. Ist eine
+fehlende Information durch weitere Bestandsuntersuchung klärbar, wird der
+Rückkehrbedarf dokumentiert. Eine bereits akzeptierte Vorphase wird dabei
+nicht stillschweigend geändert; ihre Überarbeitung folgt den Regeln in
+`rules/process.md` und durchläuft erneut Qualitätsprüfung und menschliche
+Freigabe.
 
 Diese Trennung verhindert, dass eine gefundene Möglichkeit bereits während
-der Recherche stillschweigend zur bevorzugten Lösung wird.
+der Recherche oder Bewertung stillschweigend zur verbindlichen Lösung wird
+oder eine KI aus einer Entscheidungsfrage selbst eine Entscheidung macht.
 
 ## Zentrale Schutzmechanismen
 
@@ -134,6 +192,24 @@ oder Anforderungen behandelt werden.
 Unbekannte Sachverhalte sind nicht automatisch Annahmen. Eine Annahme entsteht
 erst, wenn eine unbestätigte Aussage als vorläufige Arbeitsgrundlage verwendet
 werden soll.
+
+Annahmen mit wesentlicher Auswirkung können Entscheidungsbedarf erzeugen. Sie
+werden in `assumptions.md` verwaltet und bei Bedarf über ihre `asm-nnn`-Kennung
+in `assessment.md` und `questions.md` referenziert. Sie werden dadurch weder
+zu Befunden noch zu Tatsachen.
+
+### Entscheidungsfragen
+
+`rules/questions.md` enthält die phasenübergreifenden Regeln für
+Entscheidungsfragen.
+
+Eine `que-nnn` dokumentiert, was entschieden werden muss. Sie ist keine
+Entscheidung und darf weder eine bevorzugte Option vorgeben noch eine reine
+Wissenslücke in eine Auswahlfrage umdeuten.
+
+Die eigentliche Entscheidung wird erst in einer später dafür definierten
+Phase als `dec-nnn` dokumentiert. Diese spätere Entscheidungsphase ist im
+aktuellen Prozessstand noch nicht definiert.
 
 ### Nachweise
 
@@ -189,7 +265,7 @@ Die verbindlichen Statuswerte stehen in `rules/status.md`.
 |---|---|
 | `input` | Die Eingabe wurde erfasst, aber noch nicht bearbeitet. |
 | `draft` | Das Dokument wird bearbeitet oder weist noch Mängel auf. |
-| `review` | Bearbeitung und interne Prüfung sind abgeschlossen. |
+| `review` | Bearbeitung und interne Prüfungen sind abgeschlossen. |
 | `accepted` | Der Ideengeber hat den Inhalt ausdrücklich bestätigt. |
 | `blocked` | Eine wesentliche Information oder Entscheidung fehlt. |
 | `superseded` | Das Dokument wurde durch eine neue Fassung ersetzt. |
@@ -213,6 +289,10 @@ Die Pilotprojekte müssen zeigen:
 Beispielprompts für die Ausführung und Prüfung einzelner Phasen stehen in
 `docs/prompt-examples.md`.
 
+Für den Pilot `openclaw-xmpp` enthält diese Datei zusätzlich einen konkreten
+Startprompt für den ersten Testlauf von `swk-03`. Dieser Prompt ist ein
+Hilfsmittel für den Pilot und keine verbindliche Prozessregel.
+
 Die Prompts sind Hilfsmittel. Verbindlich bleiben die jeweils referenzierten
 Phasen-, Regel- und Vorlagendateien.
 
@@ -225,8 +305,14 @@ Einzelangaben erzeugen.
 Für `swk-02` werden Befunde deshalb strukturiert in `inventory.json`
 gespeichert. `inventory.md` wird automatisch daraus erzeugt.
 
-Ein Validator und die GitHub-CI prüfen alle deterministisch prüfbaren Regeln.
-Eine unabhängige inhaltliche Prüfung bleibt für semantische Aussagen
-erforderlich.
+Für die ersten Entwürfe von `swk-03` und `swk-04` sind `assessment.md` und
+`questions.md` direkt bearbeitete Markdown-Dokumente. Ob auch für diese
+Phasen strukturierte Quelldateien und automatische Validierung erforderlich
+sind, wird im Pilot geprüft und nicht vorab unterstellt.
 
-Das Verfahren ist in `docs/structured-inventories.md` beschrieben.
+Ein Validator und die GitHub-CI prüfen die für `swk-02` deterministisch
+prüfbaren Regeln. Eine unabhängige inhaltliche Prüfung bleibt für semantische
+Aussagen erforderlich.
+
+Das strukturierte Verfahren für `swk-02` ist in
+`docs/structured-inventories.md` beschrieben.

@@ -17,6 +17,7 @@ flowchart TD
     B --> C["swk-03: Befunde bewerten"]
     C --> D["swk-04: Entscheidungsfragen erstellen"]
     C -->|Bestand unvollständig| B
+    D -->|Bestandsfrage erkannt| C
 ```
 
 ## Allgemeine Regeln für Phasenübergänge
@@ -115,12 +116,29 @@ den Statuswechsel.
 
 Der Übergang zu `swk-04` erfolgt, wenn:
 
-- die Bewertung der Befunde entsprechend der Phasendatei für `swk-03`
+- die Bewertung der Befunde entsprechend `phases/swk-03-assessment.md`
   abgeschlossen ist,
 - keine für die Bewertung notwendige und durch weitere Bestandsuntersuchung
   klärbare Lücke besteht,
+- alle in `assessment.md` dokumentierten späteren Entscheidungsbedarfe klar
+  von reinen Wissenslücken getrennt sind,
 - die Qualitätsgrenze für `swk-03` erfüllt ist,
-- das Ergebnisdokument von `swk-03` den Status `accepted` besitzt.
+- die projektspezifische `assessment.md` den Status `accepted` besitzt.
 
-Die genaue Bearbeitung von `swk-04` richtet sich nach der zugehörigen
-Phasendatei.
+`swk-04` übernimmt die in `assessment.md` dokumentierten Entscheidungsbedarfe
+und strukturiert sie als Entscheidungsfragen. Die Bewertung selbst wird in
+`swk-04` nicht erweitert oder wiederholt.
+
+## Rückkehr aus swk-04
+
+Erkennt `swk-04`, dass eine vermeintliche Entscheidungsfrage tatsächlich nur
+wegen fehlender Bestandsinformation offen ist, darf diese Lücke nicht durch
+eine Entscheidung oder Annahme ersetzt werden.
+
+Ist die fehlende Information durch Bestandsuntersuchung klärbar, wird der
+Rückkehrbedarf dokumentiert und die Bearbeitung führt über `swk-03` zurück zu
+`swk-02`. Nach einer Änderung des akzeptierten Bestands müssen die davon
+betroffenen Ergebnisse von `swk-03` erneut geprüft werden.
+
+Ist die fehlende Information keine Bestandsfrage, bleibt sie als offene
+Klärung dokumentiert.
