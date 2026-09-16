@@ -9,6 +9,7 @@ basis:
   - idea.md
   - inventory.json
   - assessment.md
+  - assumptions.md # nur wenn in assessment.md referenziert
 ---
 
 # Entscheidungsfragen
@@ -22,6 +23,7 @@ Kurze Beschreibung des Auftrags und der verwendeten akzeptierten Eingaben.
 - akzeptierte `idea.md`:
 - akzeptierte `inventory.json`:
 - akzeptierte `assessment.md`:
+- projektspezifische `assumptions.md`, sofern referenziert:
 
 ## 3. Übersicht
 
@@ -43,7 +45,11 @@ Bezug zur `assessment.md`:
 
 Relevante Befunde:
 
-- `evd-nnn`
+- `evd-nnn` / keine
+
+Relevante Annahmen:
+
+- `asm-nnn` / keine
 
 Dokumentierte Optionen:
 
@@ -75,7 +81,9 @@ Fehlende Informationen:
 
 Erforderliche Behandlung fehlender Informationen:
 
-- Rückkehr zu swk-02 über swk-03 / spätere Klärung / keine
+- Rückkehr zu swk-03; dort gegebenenfalls Rückkehr zu swk-02 nach `rules/process.md`
+- spätere Klärung
+- keine
 
 Status der Entscheidungsfrage:
 
@@ -85,7 +93,11 @@ Status der Entscheidungsfrage:
 
 | Entscheidungsfrage | Fehlende Information | Bestandsfrage? | Behandlung |
 |---|---|---|---|
-| `que-nnn` | ... | ja/nein | Rückkehr zu swk-02 über swk-03 / spätere Klärung |
+| `que-nnn` | ... | ja/nein | Rückkehr zu swk-03 / spätere Klärung |
+
+Bei Rückkehr zu swk-03 wird ein weiterer Rückweg zu swk-02 ausschließlich
+nach den Kriterien in `rules/process.md` und `phases/swk-03-assessment.md`
+entschieden.
 
 Wenn kein Rückkehr- oder Klärungsbedarf besteht: `keiner`.
 
