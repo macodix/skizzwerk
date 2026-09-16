@@ -307,3 +307,131 @@ Nimm keine weiteren inhaltlichen Änderungen oder Nachforschungen vor.
 Wenn eine Voraussetzung nicht erfüllt ist, ändere keine Datei und nenne den
 konkreten Hinderungsgrund.
 ```
+
+## Phase swk-03 starten
+
+```text
+Führe die Phase swk-03 nach `phases/swk-03-assessment.md` für
+`pilots/openclaw-xmpp` aus.
+
+Führe zuerst die in der Phasendatei vorgeschriebene Vorprüfung aus.
+
+Wenn die Vorprüfung scheitert:
+- lege keine projektspezifische `assessment.md` an,
+- verändere keine projektspezifische Ergebnisdatei,
+- nenne jeden Mangel mit Datei und Fundstelle,
+- beende die Ausführung von swk-03.
+
+Wenn die Vorprüfung besteht:
+- lies die vollständige akzeptierte `idea.md`,
+- lies die vollständige akzeptierte `inventory.json`,
+- verwende ausschließlich diese akzeptierten projektspezifischen Eingaben,
+- leite Bewertungsaspekte nur aus der `idea.md` ab,
+- ordne jedem Bewertungsaspekt konkrete `evd-nnn`-Befunde zu,
+- dokumentiere positive Beiträge, Einschränkungen, unbekannte Punkte und ihre
+  Bedeutung für spätere Entscheidungen,
+- vergleiche Alternativen nur auf derselben dokumentierten Befundgrundlage,
+- prüfe wesentliche Lücken auf eine notwendige Rückkehr zu swk-02,
+- verwende `templates/assessment.md`,
+- führe abschließend die Qualitätsprüfung für swk-03 durch.
+
+Führe keine neue Bestandsrecherche durch.
+Formuliere keine neuen Anforderungen.
+Verwende keine Rangfolge oder Gesamtnote ohne definierte Bewertungsmethode.
+Wähle keine bevorzugte Lösung aus.
+Triff keine Architektur-, Technologie- oder Umsetzungsentscheidung.
+Setze keine Annahme stillschweigend als Bewertungsgrundlage.
+
+Setze den Dokumentstatus nur entsprechend dem Prüfergebnis.
+Setze den Status niemals selbstständig auf `accepted`.
+```
+
+## Ergebnis von swk-03 prüfen
+
+```text
+Prüfe das Ergebnis von swk-03 für `pilots/openclaw-xmpp`.
+
+Verwende als verbindliche Grundlage:
+- `phases/swk-03-assessment.md`,
+- alle dort referenzierten Regeln,
+- `templates/assessment.md`,
+- die Qualitätsgrenze für swk-03 in `rules/quality-gates.md`,
+- die akzeptierte `idea.md`,
+- die akzeptierte `inventory.json`.
+
+Verändere keine Datei.
+Führe keine zusätzliche Bestandsrecherche durch.
+
+Prüfe insbesondere:
+- ob jeder Bewertungsaspekt aus `idea.md` ableitbar ist,
+- ob jede Bewertung auf konkret genannten `evd-nnn`-Befunden beruht,
+- ob die Belastbarkeit der Bewertung die Befundlage nicht überschreitet,
+- ob `UNKNOWN` und nicht durchgeführte Prüfungen sichtbar bleiben,
+- ob Vergleiche dieselben relevanten Aspekte verwenden,
+- ob keine Rangfolge, Gesamtnote oder bevorzugte Lösung ohne Prozessgrundlage
+  erzeugt wurde,
+- ob notwendige Rückkehrpunkte zu swk-02 erkannt wurden,
+- ob Entscheidungsbedarf nur benannt und nicht bereits entschieden wurde.
+
+Nenne jeden festgestellten Mangel mit:
+- Datei,
+- genauer Überschrift oder Bewertungsaspekt,
+- verletzter Regel oder nicht erfülltem Qualitätskriterium,
+- konkreter Begründung.
+
+Nenne abschließend, ob der Status `review` nach den verbindlichen Regeln
+zulässig ist.
+```
+
+## Festgestellte Mängel in swk-03 korrigieren
+
+```text
+Korrigiere die zuvor festgestellten Mängel im Ergebnis von swk-03 für
+`pilots/openclaw-xmpp`.
+
+Ändere ausschließlich die zuvor benannten Stellen in `assessment.md`.
+
+Führe keine neue Bestandsrecherche durch. Wenn ein Mangel nur durch zusätzliche
+Bestandsuntersuchung behoben werden kann, dokumentiere stattdessen einen
+Rückkehrpunkt zu swk-02.
+
+Beachte weiterhin die Grenzen von `phases/swk-03-assessment.md`:
+- keine neuen Anforderungen,
+- keine stillschweigenden Annahmen,
+- keine Rangfolge oder Gesamtnote ohne definierte Bewertungsmethode,
+- keine Auswahl einer bevorzugten Lösung,
+- keine Architektur-, Technologie- oder Umsetzungsentscheidung.
+
+Prüfe das Ergebnis danach erneut vollständig gegen die Qualitätsgrenze für
+swk-03.
+
+Dokumentiere:
+- welche Stellen geändert wurden,
+- welches Qualitätskriterium damit erfüllt wurde,
+- welche Mängel gegebenenfalls bestehen bleiben.
+
+Setze den Status nur entsprechend `rules/status.md`.
+Setze den Status niemals selbstständig auf `accepted`.
+```
+
+## Menschliche Freigabe von swk-03 dokumentieren
+
+```text
+Ich habe die projektspezifische `assessment.md` für
+`pilots/openclaw-xmpp` geprüft und bestätige die Bewertung ausdrücklich.
+
+Prüfe vor der Änderung:
+- ob das Dokument den Status `review` besitzt,
+- ob das dokumentierte Prüfergebnis die Qualitätsgrenze für swk-03 als
+  bestanden ausweist.
+
+Wenn beide Voraussetzungen erfüllt sind:
+- setze den Dokumentstatus auf `accepted`,
+- aktualisiere das Änderungsdatum,
+- dokumentiere meine Freigabe im Abschnitt `Freigabestatus`.
+
+Nimm keine weiteren inhaltlichen Änderungen oder Nachforschungen vor.
+
+Wenn eine Voraussetzung nicht erfüllt ist, ändere keine Datei und nenne den
+konkreten Hinderungsgrund.
+```
