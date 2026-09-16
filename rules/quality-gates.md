@@ -156,6 +156,36 @@ Dokumentabschnitte Text enthalten.
 - alle Kennungen `rules/identifiers.md` entsprechen,
 - der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
 
+## Qualitätsgrenze swk-04
+
+`swk-04` darf den Status `review` erhalten, wenn:
+
+- die zugrunde liegende projektspezifische `idea.md` den Status `accepted` besitzt,
+- die zugrunde liegende projektspezifische `inventory.json` den Status `accepted` besitzt,
+- die zugrunde liegende projektspezifische `assessment.md` den Status `accepted` besitzt,
+- jeder Entscheidungsbedarf aus der akzeptierten `assessment.md` hergeleitet ist,
+- keine bloße Wissenslücke ohne Auswahlbedarf als Entscheidungsfrage behandelt wird,
+- jede Entscheidungsfrage eine gültige `que-nnn`-Kennung besitzt,
+- jede Entscheidungsfrage klar abgegrenzt und als konkrete Frage formuliert ist,
+- jede Entscheidungsfrage ihren Bezug zur `assessment.md` nennt,
+- relevante `evd-nnn`-Befunde genannt sind, soweit sie für die Entscheidung benötigt werden,
+- jede dokumentierte Option auf akzeptierte Vorphasenergebnisse zurückgeführt werden kann,
+- keine Option frei ergänzt oder erfunden wurde,
+- bekannte Vor- und Nachteile beziehungsweise Einschränkungen nicht über die akzeptierte Bewertung hinaus erweitert wurden,
+- unbekannte entscheidungsrelevante Sachverhalte sichtbar bleiben,
+- fehlende Informationen darauf geprüft wurden, ob sie durch Bestandsuntersuchung klärbar sind,
+- notwendiger Rückkehrbedarf zu `swk-02` über `swk-03` dokumentiert ist,
+- Abhängigkeiten zwischen Entscheidungsfragen dokumentiert sind,
+- Folgen einer Vertagung nur dokumentiert werden, soweit sie aus akzeptierten Vorphasenergebnissen ableitbar sind,
+- keine Option als bevorzugt, empfohlen oder ausgewählt dargestellt wird,
+- keine Entscheidung durch die KI getroffen wird,
+- keine neue Anforderung formuliert wird,
+- keine Architektur-, Technologie- oder Umsetzungsentscheidung getroffen wird,
+- keine wesentliche Annahme stillschweigend als entschieden vorausgesetzt wird,
+- die projektspezifische `questions.md` der Vorlage `templates/questions.md` entspricht,
+- alle Kennungen `rules/identifiers.md` entsprechen,
+- der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
+
 ## Nichtbestehen der Qualitätsgrenze
 
 Wird mindestens ein erforderliches Kriterium nicht erfüllt:
