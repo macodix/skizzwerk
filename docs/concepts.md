@@ -87,17 +87,37 @@ Lösung geeignet oder vorzuziehen ist.
 
 Ergebnis ist die projektspezifische `inventory.md`.
 
+### swk-03: Befunde bewerten
+
+Die akzeptierten Befunde aus `swk-02` werden hinsichtlich ihrer Bedeutung für
+die akzeptierte Projektidee bewertet.
+
+Dabei werden:
+
+- Bewertungsaspekte aus der `idea.md` abgeleitet,
+- relevante `evd-nnn`-Befunde den Bewertungsaspekten zugeordnet,
+- positive Beiträge und Einschränkungen aus der Befundlage abgeleitet,
+- vorhandene Alternativen sachbezogen gegenübergestellt,
+- wesentliche unbekannte oder nicht ausreichend untersuchte Sachverhalte
+  sichtbar gehalten,
+- notwendige Rückkehrpunkte zu `swk-02` erkannt,
+- spätere Entscheidungsbedarfe benannt.
+
+`swk-03` recherchiert keinen neuen Bestand und trifft noch keine Auswahl einer
+bevorzugten Lösung, Architektur-, Technologie- oder Umsetzungsentscheidung.
+
+Ergebnis ist die projektspezifische `assessment.md`.
+
 ### Spätere Phasen
 
 Die Prozessübersicht nennt anschließend:
 
-- `swk-03`: Befunde bewerten,
 - `swk-04`: Entscheidungsfragen erstellen.
 
-Die konkrete Bearbeitung dieser Phasen beginnt erst, nachdem ihre
+Die konkrete Bearbeitung von `swk-04` beginnt erst, nachdem seine
 Phasendateien, Vorlagen und Qualitätsgrenzen definiert wurden.
 
-## Trennung von Untersuchung und Bewertung
+## Trennung von Untersuchung, Bewertung und Entscheidung
 
 Die Bestandsuntersuchung in `swk-02` beantwortet Fragen wie:
 
@@ -108,15 +128,19 @@ Die Bestandsuntersuchung in `swk-02` beantwortet Fragen wie:
 - Was wurde nicht oder nur teilweise untersucht?
 - Was bleibt unbekannt?
 
-Die spätere Bewertung beantwortet andere Fragen:
+Die Bewertung in `swk-03` beantwortet Fragen wie:
 
-- Welcher Befund ist für das Projekt geeignet?
-- Welche Vor- und Nachteile bestehen?
-- Welche Lücken sind wesentlich?
-- Welche Alternative soll weiterverfolgt werden?
+- Welche Befunde sind für die Projektidee wesentlich?
+- Welche vorhandenen Grundlagen tragen zu genannten Funktionen und Einschränkungen bei?
+- Welche belegten Einschränkungen und Risiken bestehen?
+- Welche Unterschiede zwischen Alternativen sind für spätere Entscheidungen relevant?
+- Welche Wissenslücken verhindern eine belastbare Bewertung?
+
+Die Bewertung benennt Entscheidungsbedarf, trifft aber keine Auswahl einer
+bevorzugten Lösung.
 
 Diese Trennung verhindert, dass eine gefundene Möglichkeit bereits während
-der Recherche stillschweigend zur bevorzugten Lösung wird.
+der Recherche oder Bewertung stillschweigend zur verbindlichen Lösung wird.
 
 ## Zentrale Schutzmechanismen
 
@@ -189,7 +213,7 @@ Die verbindlichen Statuswerte stehen in `rules/status.md`.
 |---|---|
 | `input` | Die Eingabe wurde erfasst, aber noch nicht bearbeitet. |
 | `draft` | Das Dokument wird bearbeitet oder weist noch Mängel auf. |
-| `review` | Bearbeitung und interne Prüfung sind abgeschlossen. |
+| `review` | Bearbeitung und interne Prüfungen sind abgeschlossen. |
 | `accepted` | Der Ideengeber hat den Inhalt ausdrücklich bestätigt. |
 | `blocked` | Eine wesentliche Information oder Entscheidung fehlt. |
 | `superseded` | Das Dokument wurde durch eine neue Fassung ersetzt. |
@@ -225,8 +249,14 @@ Einzelangaben erzeugen.
 Für `swk-02` werden Befunde deshalb strukturiert in `inventory.json`
 gespeichert. `inventory.md` wird automatisch daraus erzeugt.
 
-Ein Validator und die GitHub-CI prüfen alle deterministisch prüfbaren Regeln.
-Eine unabhängige inhaltliche Prüfung bleibt für semantische Aussagen
-erforderlich.
+Für den ersten Entwurf von `swk-03` ist `assessment.md` ein direkt bearbeitetes
+Markdown-Dokument. Ob auch für Bewertungen eine strukturierte Quelldatei und
+automatische Validierung erforderlich sind, wird im Pilot geprüft und nicht
+vorab unterstellt.
 
-Das Verfahren ist in `docs/structured-inventories.md` beschrieben.
+Ein Validator und die GitHub-CI prüfen die für `swk-02` deterministisch
+prüfbaren Regeln. Eine unabhängige inhaltliche Prüfung bleibt für semantische
+Aussagen erforderlich.
+
+Das strukturierte Verfahren für `swk-02` ist in
+`docs/structured-inventories.md` beschrieben.
