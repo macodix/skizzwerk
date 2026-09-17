@@ -27,13 +27,17 @@ Kurze Beschreibung des Auftrags und der verwendeten akzeptierten Eingaben.
 
 ## 3. Übersicht
 
-| Kennung | Entscheidungsfrage | Bezug zur assessment.md | Status |
-|---|---|---|---|
-| `que-nnn` | ... | Abschnitt / Punkt | offen |
+| Kennung | Entscheidungsbedarf | Entscheidungsfrage | Bezug zur assessment.md | Status |
+|---|---|---|---|---|
+| `que-nnn` | `dnd-nnn` | ... | Abschnitt / Punkt | offen |
 
 ## 4. Entscheidungsfragen
 
 ### que-nnn: Kurztitel
+
+Zugehöriger Entscheidungsbedarf:
+
+- `dnd-nnn`
 
 Entscheidungsfrage:
 
@@ -91,9 +95,9 @@ Status der Entscheidungsfrage:
 
 ## 5. Rückkehr- und Klärungsbedarf
 
-| Entscheidungsfrage | Fehlende Information | Bestandsfrage? | Behandlung |
-|---|---|---|---|
-| `que-nnn` | ... | ja/nein | Rückkehr zu swk-03 / spätere Klärung |
+| Entscheidungsfrage | Entscheidungsbedarf | Fehlende Information | Bestandsfrage? | Behandlung |
+|---|---|---|---|---|
+| `que-nnn` | `dnd-nnn` | ... | ja/nein | Rückkehr zu swk-03 / spätere Klärung |
 
 Bei Rückkehr zu swk-03 wird ein weiterer Rückweg zu swk-02 ausschließlich
 nach den Kriterien in `rules/process.md` und `phases/swk-03-assessment.md`
