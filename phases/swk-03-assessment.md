@@ -8,7 +8,7 @@ hinsichtlich ihrer Bedeutung für die akzeptierte Projektidee bewertet.
 Die Phase beantwortet insbesondere:
 
 - welche Befunde für die Projektziele, Funktionen und Einschränkungen relevant sind,
-- welche vorhandenen Grundlagen die genannten Anforderungen ganz, teilweise oder nicht erkennbar abdecken,
+- welche vorhandenen Grundlagen die genannten Funktionen und Einschränkungen ganz, teilweise oder nicht erkennbar abdecken,
 - welche wesentlichen Lücken, Risiken und offenen Sachverhalte bestehen,
 - welche Unterschiede zwischen untersuchten Alternativen für spätere Entscheidungen relevant sind,
 - ob die Bestandsgrundlage für eine belastbare Bewertung ausreicht.
@@ -28,7 +28,9 @@ Vor der Bearbeitung ist zu prüfen:
 - alle in dieser Phasendatei referenzierten Dateien existieren,
 - keine benötigte Regel oder Vorlage ist leer oder offensichtlich unvollständig,
 - `rules/quality-gates.md` enthält eine Qualitätsgrenze für `swk-03`,
-- verwendete Kennungen entsprechen `rules/identifiers.md`.
+- die in den Eingaben bereits vorhandenen Kennungen entsprechen `rules/identifiers.md`.
+
+Die Einzelkriterien der Vorprüfung werden im Prüfergebnis dokumentiert.
 
 Bei fehlgeschlagener Vorprüfung wird kein projektspezifisches Ergebnis von
 swk-03 angelegt oder verändert.
@@ -44,6 +46,7 @@ Erforderlich:
 - `rules/process.md`,
 - `rules/evidence.md`,
 - `rules/assumptions.md`,
+- `rules/questions.md`,
 - `rules/identifiers.md`,
 - `rules/status.md`,
 - `rules/quality-gates.md`,
@@ -105,7 +108,7 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
    - feststellbare positive Beiträge,
    - feststellbare Einschränkungen oder Nachteile,
    - unbekannte oder nicht ausreichend untersuchte Punkte,
-   - Bedeutung für spätere Entscheidungen.
+   - Bedeutung für spätere Entscheidungen oder Klärungen.
 
 5. Prüfe vorhandene `asm-nnn`-Annahmen mit wesentlicher Auswirkung darauf, ob
    sie nach `rules/assumptions.md` eine Entscheidung benötigen. Dokumentiere
@@ -113,7 +116,9 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
    `asm-nnn`-Kennung, ohne die Annahme als Befund oder Tatsache zu behandeln.
 
 6. Vergleiche Alternativen nur dort, wo dieselben relevanten Aspekte auf Basis
-   dokumentierter Befunde gegenübergestellt werden können.
+   dokumentierter Befunde gegenübergestellt werden können. Die Darstellung darf
+   an die Zahl der Alternativen angepasst werden, solange die Kriterienbasis
+   identisch bleibt.
 
 7. Verwende keine numerischen Scores, Gewichtungen oder Rangfolgen, solange
    diese nicht ausdrücklich als Teil des Prozesses oder durch den Ideengeber
@@ -126,9 +131,10 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
 
    - die vorhandene Bestandsgrundlage für die Bewertung ausreicht,
    - weitere Bestandsuntersuchung in swk-02 den Sachverhalt klären kann,
-   - der Sachverhalt nicht durch weitere Bestandsuntersuchung klärbar ist und
-     deshalb einer späteren Entscheidung oder Anforderungsklärung vorbehalten
-     bleibt.
+   - eine Präzisierung oder Bestätigung der Projektidee durch den Ideengeber
+     erforderlich ist,
+   - oder tatsächlich eine spätere Auswahl, Festlegung oder ausdrückliche
+     Bestätigung zwischen dokumentierten Optionen erforderlich ist.
 
 10. Dokumentiere erforderliche Rückkehrpunkte zu swk-02 mit:
 
@@ -138,10 +144,18 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
    - zusätzlich benötigter Untersuchung,
    - voraussichtlich verfügbaren Quellen oder Prüfwegen.
 
-11. Erstelle oder vervollständige die projektspezifische `assessment.md`
+11. Trenne spätere Anforderungsklärungen von echten Entscheidungsbedarfen.
+    Eine bloße Wissenslücke oder offene Präzisierung der Projektidee erhält
+    keine Kennung für Entscheidungsbedarf.
+
+12. Jeder echte Entscheidungsbedarf erhält eine gültige `dnd-nnn`-Kennung nach
+    `rules/identifiers.md`. Ein `dnd-nnn` bezeichnet nur den festgestellten
+    Bedarf; die Entscheidungsfrage entsteht erst in swk-04 als `que-nnn`.
+
+13. Erstelle oder vervollständige die projektspezifische `assessment.md`
     anhand von `templates/assessment.md`.
 
-12. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
+14. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
     `rules/quality-gates.md`.
 
 ## Verbindliche Regeln
@@ -150,6 +164,8 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
 - Verwende ausschließlich die akzeptierte `idea.md`, die akzeptierte
   `inventory.json` und gegebenenfalls die projektspezifische `assumptions.md`
   als projektspezifische Grundlage.
+- Beachte `rules/questions.md` bei der Abgrenzung von Wissenslücke,
+  Anforderungsklärung und Entscheidungsbedarf.
 - Behandle Annahmen nicht als Befunde oder Tatsachen.
 - Führe in swk-03 keine neue Bestandsrecherche durch.
 - Verändere keine Befunde aus swk-02.
@@ -166,6 +182,7 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
   Bewertungsaspekt und die vorhandene Befundlage.
 - Ein fehlender Nachweis ist nicht gleichbedeutend mit fehlender Funktion.
 - Eine dokumentierte Funktion ist nicht automatisch praktisch bestätigt.
+- Erfinde keine eigenen Kennungsarten.
 - Ändere den Dokumentstatus nur entsprechend `rules/status.md` und dem
   Prüfergebnis.
 
@@ -183,8 +200,12 @@ Keine Rückkehr ist allein deshalb erforderlich, weil ein Sachverhalt mit
 `UNKNOWN` gekennzeichnet ist.
 
 Kann ein wesentlicher Sachverhalt nicht durch weitere Bestandsuntersuchung
-geklärt werden, bleibt er offen und wird für die spätere Behandlung sichtbar
-dokumentiert.
+geklärt werden, bleibt er offen und wird entweder als Anforderungsklärung oder
+als späterer Entscheidungsbedarf dokumentiert.
+
+Solange mindestens ein erforderlicher Rückkehrpunkt zu `swk-02` offen ist, ist
+die Qualitätsgrenze von `swk-03` nicht bestanden. `assessment.md` darf dann
+nicht den Status `review` erhalten.
 
 ## Abgrenzung zu swk-04
 
@@ -195,7 +216,8 @@ Zulässig sind:
 - sachbezogene Gegenüberstellungen,
 - dokumentierte Vor- und Nachteile,
 - Feststellung relevanter Lücken und Risiken,
-- Benennung von Punkten, die eine Entscheidung benötigen,
+- Benennung erforderlicher Anforderungsklärungen,
+- Benennung echter Entscheidungsbedarfe als `dnd-nnn`,
 - Benennung von Entscheidungsbedarf aus vorhandenen `asm-nnn`-Annahmen mit
   wesentlicher Auswirkung.
 
@@ -205,7 +227,8 @@ Nicht Bestandteil von swk-03 sind:
 - Festlegung einer Architektur oder Technologie,
 - Entscheidung zwischen offenen Alternativen,
 - Formulierung verbindlicher neuer Anforderungen,
-- Setzen wesentlicher Annahmen als Arbeitsgrundlage.
+- Setzen wesentlicher Annahmen als Arbeitsgrundlage,
+- Formulierung einer `que-nnn`-Entscheidungsfrage.
 
 Diese Punkte werden in den dafür vorgesehenen späteren Phasen behandelt.
 
@@ -222,7 +245,8 @@ Sie enthält mindestens:
 - dokumentierte Vor- und Nachteile beziehungsweise Einschränkungen,
 - wesentliche unbekannte und nicht ausreichend untersuchte Sachverhalte,
 - gegebenenfalls Rückkehrpunkte zu swk-02,
-- Punkte, die in einer späteren Phase entschieden werden müssen,
+- erforderliche Anforderungsklärungen,
+- echte spätere Entscheidungsbedarfe als `dnd-nnn`,
 - dabei gegebenenfalls Verweise auf entscheidungsrelevante `asm-nnn`,
 - das Prüfergebnis für swk-03.
 
@@ -241,7 +265,8 @@ swk-03 ist abgeschlossen, wenn:
 - keine neue Bestandsrecherche durchgeführt wurde,
 - keine neue Anforderung erfunden wurde,
 - keine Lösung ausgewählt oder Architekturentscheidung getroffen wurde,
-- alle wesentlichen bewertungsrelevanten Lücken entweder als Rückkehrpunkt zu
-  swk-02 oder als später zu behandelnder offener Punkt dokumentiert wurden,
+- alle wesentlichen offenen Punkte als Rückkehrpunkt, Anforderungsklärung oder
+  echter Entscheidungsbedarf korrekt klassifiziert sind,
+- kein erforderlicher Rückkehrpunkt zu `swk-02` mehr offen ist,
 - die Qualitätsgrenze für `swk-03` erfüllt ist,
 - die projektspezifische `assessment.md` den Status `accepted` erhalten hat.
