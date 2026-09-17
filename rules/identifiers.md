@@ -10,6 +10,7 @@ Beispiele:
 - `swk-01`
 - `asm-001`
 - `evd-001`
+- `dnd-001`
 - `que-001`
 - `dec-001`
 - `req-001`
@@ -26,3 +27,16 @@ Eine Kennung besteht aus:
 
 Nummern werden mindestens dreistellig geschrieben, sofern die jeweilige
 Kennungsart nichts anderes festlegt.
+
+## Festgelegte Präfixe
+
+- `swk`: Prozessphase
+- `asm`: Annahme
+- `evd`: Befund oder Nachweis
+- `dnd`: in `swk-03` festgestellter Entscheidungsbedarf
+- `que`: in `swk-04` formulierte Entscheidungsfrage
+- `dec`: dokumentierte Entscheidung einer späteren Entscheidungsphase
+- `req`: Anforderung
+
+Ein `dnd-nnn` dokumentiert nur, dass eine spätere Entscheidung erforderlich
+ist. Es ist weder eine Entscheidungsfrage noch eine getroffene Entscheidung.

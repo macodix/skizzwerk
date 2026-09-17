@@ -103,21 +103,25 @@ Dabei werden:
 - relevante `asm-nnn` mit wesentlicher Auswirkung auf möglichen
   Entscheidungsbedarf geprüft,
 - notwendige Rückkehrpunkte zu `swk-02` erkannt,
-- spätere Entscheidungsbedarfe benannt.
+- Anforderungsklärungen von echten Entscheidungsbedarfen getrennt,
+- echte spätere Entscheidungsbedarfe als `dnd-nnn` benannt.
 
 `swk-03` recherchiert keinen neuen Bestand und trifft noch keine Auswahl einer
 bevorzugten Lösung, Architektur-, Technologie- oder Umsetzungsentscheidung.
+
+Solange ein erforderlicher Rückkehrpunkt zu `swk-02` offen ist, ist swk-03
+nicht review-fähig.
 
 Ergebnis ist die projektspezifische `assessment.md`.
 
 ### swk-04: Entscheidungsfragen erstellen
 
-Die in der akzeptierten Bewertung aus `swk-03` dokumentierten
-Entscheidungsbedarfe werden als klar abgegrenzte Fragen strukturiert.
+Die in der akzeptierten Bewertung aus `swk-03` dokumentierten `dnd-nnn`
+werden als klar abgegrenzte `que-nnn` strukturiert.
 
 Dabei werden:
 
-- Entscheidungsbedarf von bloßen Wissenslücken getrennt,
+- Entscheidungsbedarf von bloßen Wissenslücken und Anforderungsklärungen getrennt,
 - dokumentierte Optionen den jeweiligen Entscheidungsfragen zugeordnet,
 - bekannte Vor- und Nachteile beziehungsweise Einschränkungen aus `swk-03`
   übernommen,
@@ -131,7 +135,7 @@ Entscheidung im Namen des Ideengebers.
 
 Ergebnis ist die projektspezifische `questions.md`.
 
-## Trennung von Untersuchung, Bewertung und Entscheidungsfragen
+## Trennung von Untersuchung, Bewertung, Klärung und Entscheidungsfragen
 
 Die Bestandsuntersuchung in `swk-02` beantwortet Fragen wie:
 
@@ -149,14 +153,20 @@ Die Bewertung in `swk-03` beantwortet Fragen wie:
 - Welche belegten Einschränkungen und Risiken bestehen?
 - Welche Unterschiede zwischen Alternativen sind für spätere Entscheidungen relevant?
 - Welche Wissenslücken verhindern eine belastbare Bewertung?
-- Welche wesentlichen Annahmen erzeugen möglichen Entscheidungsbedarf?
+- Welche offenen Punkte benötigen eine Präzisierung der Projektidee?
+- Welche Punkte benötigen tatsächlich eine spätere Auswahl, Festlegung oder ausdrückliche Bestätigung?
 
 `swk-03` darf die Bedeutung dokumentierter Unterschiede bewerten, aber keine
 Alternative als verbindliche Lösung auswählen.
 
+Eine Anforderungsklärung ist keine Entscheidungsfrage. Sie dient dazu, eine
+bereits vorhandene, aber unklare oder unvollständige Aussage der Projektidee
+durch den Ideengeber zu präzisieren. Erst wenn danach eine echte Auswahl oder
+Festlegung erforderlich bleibt, entsteht ein `dnd-nnn`.
+
 `swk-04` beantwortet andere Fragen:
 
-- Welche Entscheidung ist auf Grundlage der Bewertung tatsächlich erforderlich?
+- Welche `dnd-nnn` sollen als konkrete `que-nnn` formuliert werden?
 - Welche bereits dokumentierten Optionen gehören zu dieser Entscheidung?
 - Welche entscheidungsrelevanten Informationen sind bekannt oder unbekannt?
 - Welche Entscheidungen hängen voneinander ab?
@@ -198,14 +208,19 @@ werden in `assumptions.md` verwaltet und bei Bedarf über ihre `asm-nnn`-Kennung
 in `assessment.md` und `questions.md` referenziert. Sie werden dadurch weder
 zu Befunden noch zu Tatsachen.
 
-### Entscheidungsfragen
+### Entscheidungsbedarf und Entscheidungsfragen
+
+Ein in `swk-03` festgestellter echter Entscheidungsbedarf erhält eine
+`dnd-nnn`-Kennung. Diese Kennung bedeutet nur, dass später etwas entschieden
+werden muss.
 
 `rules/questions.md` enthält die phasenübergreifenden Regeln für
 Entscheidungsfragen.
 
-Eine `que-nnn` dokumentiert, was entschieden werden muss. Sie ist keine
-Entscheidung und darf weder eine bevorzugte Option vorgeben noch eine reine
-Wissenslücke in eine Auswahlfrage umdeuten.
+Eine `que-nnn` dokumentiert in `swk-04`, was zu einem `dnd-nnn` konkret
+entschieden werden muss. Sie ist keine Entscheidung und darf weder eine
+bevorzugte Option vorgeben noch eine reine Wissenslücke oder
+Anforderungsklärung in eine Auswahlfrage umdeuten.
 
 Die eigentliche Entscheidung wird erst in einer später dafür definierten
 Phase als `dec-nnn` dokumentiert. Diese spätere Entscheidungsphase ist im
@@ -240,6 +255,9 @@ erhalten darf.
 Ein vollständig ausgefülltes Dokument besteht die Qualitätsgrenze nicht
 automatisch. Entscheidend ist, ob alle inhaltlichen Kriterien erfüllt sind.
 
+Für `swk-03` gilt zusätzlich: Ein dokumentierter erforderlicher Rückkehrpunkt
+zu `swk-02` verhindert den Status `review`, solange er offen ist.
+
 ### Menschliche Freigabe
 
 Die KI darf ein Dokument nach bestandener Qualitätsgrenze auf `review`
@@ -267,8 +285,8 @@ Die verbindlichen Statuswerte stehen in `rules/status.md`.
 | `draft` | Das Dokument wird bearbeitet oder weist noch Mängel auf. |
 | `review` | Bearbeitung und interne Prüfungen sind abgeschlossen. |
 | `accepted` | Der Ideengeber hat den Inhalt ausdrücklich bestätigt. |
-| `blocked` | Eine wesentliche Information oder Entscheidung fehlt. |
-| `superseded` | Das Dokument wurde durch eine neue Fassung ersetzt. |
+| `blocked` | Die Bearbeitung kann wegen einer wesentlichen fehlenden Information oder Entscheidung nicht fortgesetzt werden. |
+| `superseded` | Das Dokument wurde durch eine neuere Fassung ersetzt. |
 
 ## Grenzen der Schutzmechanismen
 
@@ -283,6 +301,29 @@ Die Pilotprojekte müssen zeigen:
 - ob die Ergebnisse für den Ideengeber nachvollziehbar bleiben,
 - ob zusätzliche unabhängige Prüfungen notwendig sind,
 - ob der Workflow mehr Zeit spart als verursacht.
+
+## Pilotbefunde aus openclaw-xmpp
+
+Der erste praktische Durchlauf von `swk-03` am Pilot `openclaw-xmpp` hat
+mehrere konkrete Prozessprobleme sichtbar gemacht:
+
+- offene Rückkehrpunkte waren mit dem Status `review` nicht eindeutig
+  ausgeschlossen,
+- die Vorlage für Alternativen skalierte nur auf zwei Alternativen,
+- die Vorprüfung war nur als Gesamtwert dokumentierbar,
+- die Abgrenzung zwischen Anforderungsklärung und Entscheidungsbedarf war
+  nicht ausreichend explizit,
+- für den in `swk-03` festgestellten Entscheidungsbedarf fehlte eine definierte
+  Kennungsart,
+- die Vorprüfung formulierte unklar, welche Kennungen zu prüfen sind,
+- `rules/questions.md` war in `swk-03` nicht als Eingabe referenziert.
+
+Diese Punkte wurden als Prozessänderungen übernommen. Der Pilot zeigte außerdem,
+dass bei einer umfangreichen `assessment.md` formale Vollständigkeitsfehler bei
+Befundreferenzen ohne zusätzliche Prüfung leicht unentdeckt bleiben können.
+Ob daraus eine strukturierte Quelldatei und ein Validator für `swk-03`
+entstehen sollen, bleibt eine ausdrücklich noch zu prüfende Prozessänderung und
+wird nicht durch diesen Befund allein festgelegt.
 
 ## Beispielaufträge
 
@@ -305,14 +346,16 @@ Einzelangaben erzeugen.
 Für `swk-02` werden Befunde deshalb strukturiert in `inventory.json`
 gespeichert. `inventory.md` wird automatisch daraus erzeugt.
 
-Für die ersten Entwürfe von `swk-03` und `swk-04` sind `assessment.md` und
-`questions.md` direkt bearbeitete Markdown-Dokumente. Ob auch für diese
-Phasen strukturierte Quelldateien und automatische Validierung erforderlich
-sind, wird im Pilot geprüft und nicht vorab unterstellt.
+Für `swk-03` und `swk-04` sind `assessment.md` und `questions.md` derzeit
+direkt bearbeitete Markdown-Dokumente. Der erste swk-03-Pilot hat gezeigt,
+dass eine zusätzliche formale Prüfung insbesondere für Kennungen und
+Befundreferenzen nützlich sein kann. Ob dafür eine strukturierte Quelldatei,
+ein Validator oder eine leichtere Prüfmechanik eingeführt wird, ist noch nicht
+entschieden.
 
-Ein Validator und die GitHub-CI prüfen die für `swk-02` deterministisch
-prüfbaren Regeln. Eine unabhängige inhaltliche Prüfung bleibt für semantische
-Aussagen erforderlich.
+Ein Validator und die GitHub-CI prüfen derzeit nur die für `swk-02`
+deterministisch prüfbaren Regeln. Eine unabhängige inhaltliche Prüfung bleibt
+für semantische Aussagen erforderlich.
 
 Das strukturierte Verfahren für `swk-02` ist in
 `docs/structured-inventories.md` beschrieben.

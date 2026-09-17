@@ -314,7 +314,8 @@ konkreten Hinderungsgrund.
 Führe die Phase swk-03 nach `phases/swk-03-assessment.md` für
 `pilots/openclaw-xmpp` aus.
 
-Führe zuerst die in der Phasendatei vorgeschriebene Vorprüfung aus.
+Führe zuerst die in der Phasendatei vorgeschriebene Vorprüfung aus und
+dokumentiere jedes Einzelkriterium.
 
 Wenn die Vorprüfung scheitert:
 - lege keine projektspezifische `assessment.md` an,
@@ -329,13 +330,19 @@ Wenn die Vorprüfung besteht:
 - leite Bewertungsaspekte nur aus der `idea.md` ab,
 - ordne jedem Bewertungsaspekt konkrete `evd-nnn`-Befunde zu,
 - dokumentiere positive Beiträge, Einschränkungen, unbekannte Punkte und ihre
-  Bedeutung für spätere Entscheidungen,
+  Bedeutung für spätere Entscheidungen oder Klärungen,
 - prüfe relevante `asm-nnn` mit wesentlicher Auswirkung darauf, ob daraus
   Entscheidungsbedarf entsteht,
+- trenne Wissenslücken, Anforderungsklärungen und echte Entscheidungsbedarfe,
+- kennzeichne echte Entscheidungsbedarfe mit `dnd-nnn`,
 - vergleiche Alternativen nur auf derselben dokumentierten Befundgrundlage,
 - prüfe wesentliche Lücken auf eine notwendige Rückkehr zu swk-02,
 - verwende `templates/assessment.md`,
 - führe abschließend die Qualitätsprüfung für swk-03 durch.
+
+Solange mindestens ein erforderlicher Rückkehrpunkt zu swk-02 offen ist,
+ist die Qualitätsgrenze nicht bestanden und `assessment.md` darf nicht den
+Status `review` erhalten.
 
 Führe keine neue Bestandsrecherche durch.
 Formuliere keine neuen Anforderungen.
@@ -343,118 +350,51 @@ Verwende keine Rangfolge oder Gesamtnote ohne definierte Bewertungsmethode.
 Wähle keine bevorzugte Lösung aus.
 Triff keine Architektur-, Technologie- oder Umsetzungsentscheidung.
 Setze keine Annahme stillschweigend als Bewertungsgrundlage.
+Erfinde keine Kennungsart.
 
 Setze den Dokumentstatus nur entsprechend dem Prüfergebnis.
 Setze den Status niemals selbstständig auf `accepted`.
 ```
 
-## Pilotprompt swk-03: openclaw-xmpp mit Claude
+## Pilotprompt swk-03: openclaw-xmpp nach erstem Pilotlauf
 
-Dieser Prompt ist für den ersten praktischen Test von `swk-03` am Pilot
-`openclaw-xmpp` gedacht. Ziel ist sowohl ein fachliches `assessment.md` als
-auch die Prüfung, ob die neue Phase in der Praxis ausreichend klar und
-vollständig definiert ist.
+Dieser Prompt dient der erneuten Prüfung und Korrektur des ersten
+`swk-03`-Pilot-Ergebnisses nach den aus dem Pilot abgeleiteten Prozesskorrekturen.
 
 ```text
-Wir testen die Phase swk-03 des skizzwerk-Prozesses am Pilotprojekt
-`openclaw-xmpp`.
+Prüfe und korrigiere `pilots/openclaw-xmpp/assessment.md` gegen den aktuellen
+Stand von `phases/swk-03-assessment.md`, `rules/quality-gates.md`,
+`rules/questions.md`, `rules/identifiers.md` und `templates/assessment.md`.
 
-Verbindliches Repository:
-https://github.com/macodix/skizzwerk
+Führe keine neue Bestandsrecherche durch und ändere keine akzeptierte
+Vorphasendatei.
 
-Arbeite auf dem Branch `swk-03-draft`.
+Prüfe insbesondere:
+- ob offene erforderliche Rückkehrpunkte zu swk-02 vorhanden sind; wenn ja,
+  darf der Status nicht `review` sein,
+- ob jeder offene Punkt korrekt als Wissenslücke, Anforderungsklärung oder
+  echter Entscheidungsbedarf klassifiziert ist,
+- ob echte Entscheidungsbedarfe eine gültige `dnd-nnn`-Kennung besitzen,
+- ob keine frei erfundenen Kennungsarten wie `E1`, `E2` usw. verwendet werden,
+- ob Anforderungsklärungen nicht als Entscheidungsbedarf umetikettiert wurden,
+- ob Gegenüberstellungen beliebig vieler Alternativen dieselbe Kriterienbasis
+  verwenden,
+- ob die Einzelkriterien der Vorprüfung vollständig dokumentiert sind.
 
-Verbindliche Grundlage sind insbesondere:
-- `phases/swk-03-assessment.md`,
-- `rules/process.md`,
-- `rules/evidence.md`,
-- `rules/assumptions.md`,
-- `rules/questions.md`,
-- `rules/identifiers.md`,
-- `rules/status.md`,
-- die Qualitätsgrenze für swk-03 in `rules/quality-gates.md`,
-- `templates/assessment.md`,
-- `pilots/openclaw-xmpp/idea.md`,
-- `pilots/openclaw-xmpp/inventory.json`,
-- die daraus erzeugte `pilots/openclaw-xmpp/inventory.md`,
-- eine projektspezifische `pilots/openclaw-xmpp/assumptions.md`, falls sie existiert.
+Ändere nur `pilots/openclaw-xmpp/assessment.md`.
 
-Führe zuerst ausschließlich die Vorprüfung aus, die in
-`phases/swk-03-assessment.md` vorgeschrieben ist.
+Wenn offene erforderliche Rückkehrpunkte zu swk-02 bestehen:
+- setze die Qualitätsgrenze auf `nein`,
+- dokumentiere die nicht erfüllten Kriterien,
+- setze den Dokumentstatus auf `draft` oder bei tatsächlicher Blockade auf
+  `blocked`, nicht auf `review`.
 
-Wenn die Vorprüfung scheitert:
-- lege keine `assessment.md` an und verändere keine projektspezifische Datei,
-- nenne für jeden Mangel die genaue Datei und Fundstelle,
-- nenne die verletzte Regel oder fehlende Voraussetzung,
-- beende die Ausführung von swk-03.
-
-Wenn die Vorprüfung besteht, führe swk-03 vollständig aus.
-
-Dabei gelten insbesondere folgende Grenzen:
-- Keine neue Bestandsrecherche durchführen.
-- Keine Befunde aus `inventory.json` verändern oder neu einstufen.
-- Keine neuen Anforderungen formulieren.
-- Keine unbekannten Sachverhalte durch Vermutungen ersetzen.
-- Keine Annahme als Tatsache oder Befund behandeln.
-- Keine neue Annahme stillschweigend setzen.
-- Keine Architektur-, Technologie- oder Umsetzungsentscheidung treffen.
-- Keine Alternative als bevorzugte oder verbindliche Lösung auswählen.
-- Keine Rangfolge, Gewichtung, Gesamtnote oder numerischen Scores verwenden,
-  sofern dafür keine ausdrücklich definierte Methode existiert.
-
-Erstelle `pilots/openclaw-xmpp/assessment.md` nach
-`templates/assessment.md`.
-
-Für jeden Bewertungsaspekt:
-- nenne den konkreten Bezug zur akzeptierten `idea.md`,
-- nenne die verwendeten `evd-nnn`-Befunde,
-- trenne feststellbare positive Beiträge von Einschränkungen und Nachteilen,
-- halte `UNKNOWN`, nicht durchgeführte Prüfungen und Untersuchungsgrenzen sichtbar,
-- kennzeichne über einzelne Befunde hinausgehende Aussagen als Ableitung,
-- dokumentiere die Bedeutung für spätere Entscheidungen.
-
-Prüfe zusätzlich vorhandene `asm-nnn` mit wesentlicher Auswirkung. Wenn daraus
-Entscheidungsbedarf entsteht, referenziere die Annahme ausdrücklich im
-entsprechenden später zu entscheidenden Punkt. Die Annahme bleibt weiterhin
-in `assumptions.md` verwaltet.
-
-Prüfe bei jeder wesentlichen Wissenslücke ausdrücklich:
-1. Ist sie für die Bewertung wesentlich?
-2. Kann sie durch weitere Bestandsuntersuchung geklärt oder genauer abgegrenzt werden?
-3. Muss deshalb nach den Regeln zu swk-02 zurückgekehrt werden?
-
-Dokumentiere einen Rückkehrpunkt nur, wenn alle Voraussetzungen aus
-`phases/swk-03-assessment.md` erfüllt sind.
-
-Führe am Ende die vollständige Qualitätsprüfung für swk-03 aus.
-Setze `assessment.md` höchstens auf `review`; niemals selbstständig auf
-`accepted`.
-
-Da dies ein Pilotlauf der neuen Phase ist, erstelle zusätzlich KEINE neue
-Prozessdatei und ändere KEINE Datei unter `phases/`, `rules/`, `templates/`
-oder `docs/`.
-
-Berichte stattdessen nach der fachlichen Bearbeitung separat über beobachtete
-Prozessprobleme. Trenne dabei strikt:
-
-A. Fachliches Ergebnis des Piloten
-- Ergebnis und Status von `assessment.md`
-- notwendige Rückkehrpunkte zu swk-02
-- späterer Entscheidungsbedarf
-
-B. Beobachtete Probleme der Phase swk-03
-Für jedes Problem:
-- betroffene Prozessdatei,
-- genaue Überschrift oder Regel,
-- beobachtetes Problem,
-- konkrete Auswirkung während des Pilotlaufs,
-- ob es sich um einen nachgewiesenen Widerspruch, eine Lücke, eine Unklarheit
-  oder lediglich einen Verbesserungsvorschlag handelt.
-
-Schlage Prozessänderungen nur vor. Führe sie während dieses Pilotlaufs nicht
-aus.
-
-Erfinde keine fehlenden Prozessregeln.
+Berichte anschließend getrennt:
+A. welche fachlichen Stellen in `assessment.md` geändert wurden,
+B. welche offenen Rückkehrpunkte bestehen,
+C. welche Anforderungsklärungen bestehen,
+D. welche gültigen `dnd-nnn` verbleiben,
+E. ob swk-03 nach der Korrektur review-fähig ist.
 ```
 
 ## Ergebnis von swk-03 prüfen
@@ -483,10 +423,13 @@ Prüfe insbesondere:
   geprüft wurden,
 - ob `UNKNOWN` und nicht durchgeführte Prüfungen sichtbar bleiben,
 - ob Vergleiche dieselben relevanten Aspekte verwenden,
-- ob keine Rangfolge, Gesamtnote oder bevorzugte Lösung ohne Prozessgrundlage
-  erzeugt wurde,
+- ob Wissenslücken, Anforderungsklärungen und Entscheidungsbedarfe getrennt sind,
+- ob jeder echte Entscheidungsbedarf eine gültige `dnd-nnn` besitzt,
+- ob keine nicht definierte Kennungsart verwendet wird,
 - ob notwendige Rückkehrpunkte zu swk-02 erkannt wurden,
-- ob Entscheidungsbedarf nur benannt und nicht bereits entschieden wurde.
+- ob bei offenen erforderlichen Rückkehrpunkten der Status `review` unterbleibt,
+- ob keine Rangfolge, Gesamtnote oder bevorzugte Lösung ohne Prozessgrundlage
+  erzeugt wurde.
 
 Nenne jeden festgestellten Mangel mit:
 - Datei,
@@ -516,8 +459,9 @@ oder den Änderungsvorschlag.
 Prüfe das korrigierte Ergebnis danach erneut vollständig gegen die
 Qualitätsgrenze für swk-03.
 
-Setze den Status höchstens auf `review` und niemals selbstständig auf
-`accepted`.
+Bei offenen erforderlichen Rückkehrpunkten zu swk-02 darf der Status nicht
+`review` sein.
+Setze den Status niemals selbstständig auf `accepted`.
 ```
 
 ## Menschliche Freigabe von swk-03 dokumentieren
@@ -529,9 +473,10 @@ Ich habe die projektspezifische `assessment.md` für
 Prüfe vor der Änderung:
 - ob `assessment.md` den Status `review` besitzt,
 - ob das dokumentierte Prüfergebnis die Qualitätsgrenze für swk-03 als
-  bestanden ausweist.
+  bestanden ausweist,
+- ob kein erforderlicher Rückkehrpunkt zu swk-02 offen ist.
 
-Wenn beide Voraussetzungen erfüllt sind:
+Wenn alle Voraussetzungen erfüllt sind:
 - setze den Dokumentstatus auf `accepted`,
 - aktualisiere das Änderungsdatum,
 - dokumentiere meine Freigabe im Abschnitt `Freigabestatus`.

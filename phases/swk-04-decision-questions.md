@@ -3,7 +3,7 @@
 ## Zweck
 
 Die in der akzeptierten Bewertung aus `swk-03` als entscheidungsrelevant
-dokumentierten Punkte werden in klar abgegrenzte Entscheidungsfragen
+dokumentierten `dnd-nnn` werden in klar abgegrenzte Entscheidungsfragen
 überführt.
 
 Die Phase beantwortet insbesondere:
@@ -57,12 +57,12 @@ Erforderlich:
 
 ## Entscheidungsgrundlage
 
-Eine Entscheidungsfrage darf nur entstehen, wenn ihr Entscheidungsbedarf aus
-der akzeptierten `assessment.md` hervorgeht.
+Eine Entscheidungsfrage darf nur entstehen, wenn ihr Entscheidungsbedarf als
+`dnd-nnn` aus der akzeptierten `assessment.md` hervorgeht.
 
-Jede Entscheidungsfrage muss auf die zugehörige Bewertung und soweit relevant
-auf die zugrunde liegenden `evd-nnn`-Befunde sowie auf betroffene `asm-nnn`
-verweisen.
+Jede Entscheidungsfrage muss auf die zugehörige `dnd-nnn`, die Bewertung und
+soweit relevant auf die zugrunde liegenden `evd-nnn`-Befunde sowie auf
+betroffene `asm-nnn` verweisen.
 
 Optionen dürfen nur aufgenommen werden, wenn sie in den akzeptierten
 Vorphasenergebnissen dokumentiert oder daraus unmittelbar und nachvollziehbar
@@ -77,19 +77,20 @@ werden.
    referenzierten relevanten Stellen aus `idea.md`, `inventory.json` und
    gegebenenfalls `assumptions.md`.
 
-2. Ermittle alle Punkte, die in `assessment.md` ausdrücklich als später zu
-   entscheiden dokumentiert sind.
+2. Ermittle alle in `assessment.md` dokumentierten `dnd-nnn`.
 
-3. Prüfe für jeden solchen Punkt ausschließlich formal, ob der dokumentierte
+3. Prüfe für jeden `dnd-nnn` ausschließlich formal, ob der dokumentierte
    Entscheidungsbedarf tatsächlich eine Auswahl, Festlegung oder ausdrückliche
-   Bestätigung verlangt oder ob er erkennbar nur eine Wissenslücke beschreibt.
-   Nimm keine neue fachliche Bewertung der Alternativen vor.
+   Bestätigung verlangt oder ob er erkennbar nur eine Wissenslücke oder
+   Anforderungsklärung beschreibt. Nimm keine neue fachliche Bewertung der
+   Alternativen vor.
 
-4. Formuliere für jeden bestätigten Entscheidungsbedarf genau eine klar
-   abgegrenzte Entscheidungsfrage.
+4. Formuliere für jeden bestätigten `dnd-nnn` genau eine klar abgegrenzte
+   `que-nnn`-Entscheidungsfrage.
 
 5. Dokumentiere je Entscheidungsfrage:
 
+   - zugehörige `dnd-nnn`,
    - Bezug zur `assessment.md`,
    - gegebenenfalls relevante `evd-nnn`-Befunde,
    - gegebenenfalls relevante `asm-nnn`-Annahmen,
@@ -112,8 +113,9 @@ werden.
    akzeptierte Vorphasenergebnisse durchlaufen erneut Qualitätsprüfung und
    menschliche Freigabe.
 
-9. Wenn fehlende Informationen keine Bestandsfrage sind, dokumentiere sie als
-   offene Klärung für eine spätere geeignete Phase oder für den Ideengeber.
+9. Wenn ein übergebener `dnd-nnn` tatsächlich nur eine Anforderungsklärung
+   beschreibt, dokumentiere den Mangel als Rückkehrbedarf zu `swk-03`. Erzeuge
+   daraus keine `que-nnn`.
 
 10. Erstelle oder vervollständige die projektspezifische `questions.md` anhand
     von `templates/questions.md`.
@@ -128,26 +130,27 @@ werden.
 - Erfinde keine Optionen.
 - Erfinde keine Anforderungen, Tatsachen oder Bewertungskriterien.
 - Verändere keine akzeptierten Ergebnisse früherer Phasen.
-- Formuliere eine Entscheidungsfrage nur, wenn ihr Bedarf aus der akzeptierten
-  `assessment.md` hervorgeht.
+- Formuliere eine Entscheidungsfrage nur für eine gültige `dnd-nnn` aus der
+  akzeptierten `assessment.md`.
 - Halte bekannte Tatsachen, dokumentierte Behauptungen, Ableitungen, Annahmen
   und unbekannte Sachverhalte getrennt.
 - Stelle keine Option als bevorzugt, empfohlen oder ausgewählt dar.
 - Triff keine Entscheidung im Namen des Ideengebers.
 - Triff keine Architektur-, Technologie- oder Umsetzungsentscheidung.
 - Setze keine wesentliche Annahme stillschweigend als entschieden voraus.
-- Verlange keine Entscheidung, wenn tatsächlich weitere Untersuchung statt
-  einer Auswahl erforderlich ist.
+- Verlange keine Entscheidung, wenn tatsächlich weitere Untersuchung oder
+  Anforderungsklärung erforderlich ist.
 - Ändere den Dokumentstatus nur entsprechend `rules/status.md` und dem
   Prüfergebnis.
 
 ## Abgrenzung zu swk-03
 
 `swk-03` bewertet Befunde und dokumentiert die Bedeutung von Unterschieden,
-Lücken, Risiken, offenen Punkten und entscheidungsrelevanten Annahmen.
+Lücken, Risiken, offenen Punkten und entscheidungsrelevanten Annahmen. Echte
+spätere Entscheidungsbedarfe erhalten dort `dnd-nnn`-Kennungen.
 
-`swk-04` übernimmt ausschließlich die in der akzeptierten Bewertung erkannten
-Entscheidungsbedarfe und strukturiert sie als Entscheidungsfragen.
+`swk-04` übernimmt ausschließlich diese `dnd-nnn` und strukturiert sie als
+`que-nnn`-Entscheidungsfragen.
 
 `swk-04` prüft nur, ob ein übergebener Punkt tatsächlich die Form einer
 Entscheidung besitzt. Es bewertet die vorhandenen Alternativen nicht erneut und
@@ -158,8 +161,8 @@ besser belegt als Alternative B" gehört, sofern durch die Befunde gedeckt, in
 `swk-03`.
 
 Eine Frage wie "Welche der dokumentierten Alternativen soll für den weiteren
-Entwurf zugrunde gelegt werden?" gehört in `swk-04`, sofern die Auswahl nach
-`swk-03` tatsächlich erforderlich ist.
+Entwurf zugrunde gelegt werden?" gehört in `swk-04`, sofern dafür ein gültiger
+`dnd-nnn` aus `swk-03` vorliegt.
 
 ## Ergebnis
 
@@ -168,8 +171,9 @@ Ergebnis ist eine projektspezifische `questions.md`.
 Sie enthält mindestens:
 
 - die verwendete Entscheidungsgrundlage,
-- alle bestätigten Entscheidungsbedarfe,
-- je Entscheidungsbedarf eine gültige `que-nnn`-Kennung,
+- alle bestätigten `dnd-nnn`,
+- je bestätigtem Entscheidungsbedarf eine gültige `que-nnn`-Kennung,
+- den Bezug jeder `que-nnn` zur zugehörigen `dnd-nnn`,
 - Bezug zur `assessment.md`,
 - dokumentierte Optionen,
 - gegebenenfalls Verweise auf relevante `evd-nnn` und `asm-nnn`,
@@ -184,8 +188,11 @@ Sie enthält mindestens:
 
 `swk-04` ist abgeschlossen, wenn:
 
-- jede Entscheidungsfrage aus der akzeptierten `assessment.md` hergeleitet ist,
-- keine bloße Wissenslücke fälschlich als Entscheidungsfrage behandelt wurde,
+- jede Entscheidungsfrage aus einer gültigen `dnd-nnn` der akzeptierten
+  `assessment.md` hergeleitet ist,
+- jede `que-nnn` auf ihre `dnd-nnn` verweist,
+- keine bloße Wissenslücke oder Anforderungsklärung fälschlich als
+  Entscheidungsfrage behandelt wurde,
 - keine fachliche Neubewertung aus `swk-03` wiederholt oder erweitert wurde,
 - jede Entscheidungsfrage klar abgegrenzt ist,
 - alle dokumentierten Optionen auf akzeptierte Vorphasenergebnisse
