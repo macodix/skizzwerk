@@ -100,6 +100,7 @@ Dabei werden:
 - vorhandene Alternativen sachbezogen gegenübergestellt,
 - wesentliche unbekannte oder nicht ausreichend untersuchte Sachverhalte
   sichtbar gehalten,
+- Nachweisgrenzen sichtbar gehalten,
 - relevante `asm-nnn` mit wesentlicher Auswirkung auf möglichen
   Entscheidungsbedarf geprüft,
 - notwendige Rückkehrpunkte zu `swk-02` erkannt,
@@ -110,7 +111,9 @@ Dabei werden:
 bevorzugten Lösung, Architektur-, Technologie- oder Umsetzungsentscheidung.
 
 Solange ein erforderlicher Rückkehrpunkt zu `swk-02` offen ist, ist swk-03
-nicht review-fähig.
+nicht review-fähig. Eine fehlende praktische Prüfung ist jedoch nicht allein
+schon ein Rückkehrgrund, wenn dafür zunächst neue erhebliche Test-, Integrations-
+oder Prüfinfrastruktur entworfen oder aufgebaut werden müsste.
 
 Ergebnis ist die projektspezifische `assessment.md`.
 
@@ -155,6 +158,7 @@ Die Bewertung in `swk-03` beantwortet Fragen wie:
 - Welche Wissenslücken verhindern eine belastbare Bewertung?
 - Welche offenen Punkte benötigen eine Präzisierung der Projektidee?
 - Welche Punkte benötigen tatsächlich eine spätere Auswahl, Festlegung oder ausdrückliche Bestätigung?
+- Welche Aussagen bleiben mangels praktischer Prüfung nur dokumentiert oder unbekannt?
 
 `swk-03` darf die Bedeutung dokumentierter Unterschiede bewerten, aber keine
 Alternative als verbindliche Lösung auswählen.
@@ -163,6 +167,31 @@ Eine Anforderungsklärung ist keine Entscheidungsfrage. Sie dient dazu, eine
 bereits vorhandene, aber unklare oder unvollständige Aussage der Projektidee
 durch den Ideengeber zu präzisieren. Erst wenn danach eine echte Auswahl oder
 Festlegung erforderlich bleibt, entsteht ein `dnd-nnn`.
+
+### Nachweisgrenzen und spätere Verifikation
+
+skizzwerk dient in den frühen Phasen der Entwicklung einer Idee zu einer
+belastbaren Spezifikation beziehungsweise einem belastbaren Softwaredesign.
+Deshalb darf der Prozess nicht stillschweigend verlangen, dass bereits vor der
+Spezifikation umfangreiche Implementierungs-, Integrations- oder
+Abnahmeinfrastruktur aufgebaut wird.
+
+Eine fehlende praktische Funktions-, Integrations- oder Kompatibilitätsprüfung
+bleibt als Nachweisgrenze sichtbar. Sie erzeugt nur dann einen Rückkehrpunkt zu
+`swk-02`, wenn die Prüfung mit vorhandenen oder mit vertretbarem Aufwand
+zugänglichen Quellen beziehungsweise bereits vorhandenen Prüfmöglichkeiten
+möglich und für die Bewertung wesentlich ist.
+
+Müsste für die Prüfung erst neue erhebliche Test-, Integrations- oder
+Prüfinfrastruktur entworfen oder aufgebaut werden, ist dies kein automatischer
+Rückkehrgrund. Die fehlende praktische Bestätigung wird dokumentiert und einer
+späteren geeigneten Phase für Umsetzung, Verifikation oder Abnahme zugeordnet.
+
+Damit bleibt beispielsweise zulässig, eine vorhandene Komponente auf Basis von
+Code, Dokumentation und bekannten Einschränkungen als mögliche Grundlage zu
+bewerten, ohne ihre tatsächliche Funktionsfähigkeit zu behaupten. Die spätere
+Spezifikation kann anschließend festlegen, welche Testumgebung und welche
+Abnahmekriterien für die Umsetzung benötigt werden.
 
 `swk-04` beantwortet andere Fragen:
 
@@ -256,7 +285,10 @@ Ein vollständig ausgefülltes Dokument besteht die Qualitätsgrenze nicht
 automatisch. Entscheidend ist, ob alle inhaltlichen Kriterien erfüllt sind.
 
 Für `swk-03` gilt zusätzlich: Ein dokumentierter erforderlicher Rückkehrpunkt
-zu `swk-02` verhindert den Status `review`, solange er offen ist.
+zu `swk-02` verhindert den Status `review`, solange er offen ist. Eine bloße
+Nachweisgrenze verhindert `review` dagegen nicht, wenn sie korrekt dokumentiert
+ist und keine mit vertretbarem Aufwand noch ausstehende Bestandsuntersuchung
+verbirgt.
 
 ### Menschliche Freigabe
 
@@ -316,46 +348,18 @@ mehrere konkrete Prozessprobleme sichtbar gemacht:
 - für den in `swk-03` festgestellten Entscheidungsbedarf fehlte eine definierte
   Kennungsart,
 - die Vorprüfung formulierte unklar, welche Kennungen zu prüfen sind,
-- `rules/questions.md` war in `swk-03` nicht als Eingabe referenziert.
+- `rules/questions.md` war in `swk-03` nicht als Eingabe referenziert,
+- die zunächst verwendete Rückkehrregel konnte umfangreiche praktische Tests
+  und damit den Aufbau neuer Testinfrastruktur bereits während der
+  Spezifikationsarbeit erzwingen.
 
-Diese Punkte wurden als Prozessänderungen übernommen. Der Pilot zeigte außerdem,
-dass bei einer umfangreichen `assessment.md` formale Vollständigkeitsfehler bei
-Befundreferenzen ohne zusätzliche Prüfung leicht unentdeckt bleiben können.
-Ob daraus eine strukturierte Quelldatei und ein Validator für `swk-03`
-entstehen sollen, bleibt eine ausdrücklich noch zu prüfende Prozessänderung und
-wird nicht durch diesen Befund allein festgelegt.
+Die ersten Punkte wurden als Prozessänderungen übernommen. Für den letzten Punkt
+wurde die Grenze zwischen Bestandsuntersuchung und späterer praktischer
+Verifikation präzisiert: Neue erhebliche Test-, Integrations- oder
+Prüfinfrastruktur ist kein automatischer Bestandteil von swk-02 oder swk-03.
 
-## Beispielaufträge
-
-Beispielprompts für die Ausführung und Prüfung einzelner Phasen stehen in
-`docs/prompt-examples.md`.
-
-Für den Pilot `openclaw-xmpp` enthält diese Datei zusätzlich einen konkreten
-Startprompt für den ersten Testlauf von `swk-03`. Dieser Prompt ist ein
-Hilfsmittel für den Pilot und keine verbindliche Prozessregel.
-
-Die Prompts sind Hilfsmittel. Verbindlich bleiben die jeweils referenzierten
-Phasen-, Regel- und Vorlagendateien.
-
-## Maschinenlesbare Ergebnisse und automatische Prüfung
-
-Freie Markdown-Bearbeitung kann formale Fehler wie beschädigte Tabellen,
-uneinheitliche Kennungen und Abweichungen zwischen Übersichten und
-Einzelangaben erzeugen.
-
-Für `swk-02` werden Befunde deshalb strukturiert in `inventory.json`
-gespeichert. `inventory.md` wird automatisch daraus erzeugt.
-
-Für `swk-03` und `swk-04` sind `assessment.md` und `questions.md` derzeit
-direkt bearbeitete Markdown-Dokumente. Der erste swk-03-Pilot hat gezeigt,
-dass eine zusätzliche formale Prüfung insbesondere für Kennungen und
-Befundreferenzen nützlich sein kann. Ob dafür eine strukturierte Quelldatei,
-ein Validator oder eine leichtere Prüfmechanik eingeführt wird, ist noch nicht
-entschieden.
-
-Ein Validator und die GitHub-CI prüfen derzeit nur die für `swk-02`
-deterministisch prüfbaren Regeln. Eine unabhängige inhaltliche Prüfung bleibt
-für semantische Aussagen erforderlich.
-
-Das strukturierte Verfahren für `swk-02` ist in
-`docs/structured-inventories.md` beschrieben.
+Der Pilot zeigte außerdem, dass bei einer umfangreichen `assessment.md` formale
+Vollständigkeitsfehler bei Befundreferenzen ohne zusätzliche Prüfung leicht
+unentdeckt bleiben können. Ob daraus eine strukturierte Quelldatei und ein
+Validator für `swk-03` entstehen sollen, bleibt eine ausdrücklich noch zu
+prüfende Prozessänderung.
