@@ -130,9 +130,13 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
 9. Prüfe für jeden wesentlichen offenen Punkt, ob:
 
    - die vorhandene Bestandsgrundlage für die Bewertung ausreicht,
-   - weitere Bestandsuntersuchung in swk-02 den Sachverhalt klären kann,
+   - weitere Bestandsuntersuchung in swk-02 den Sachverhalt mit vorhandenen oder
+     mit vertretbarem Aufwand zugänglichen Quellen beziehungsweise bereits
+     vorhandenen Prüfmöglichkeiten klären kann,
    - eine Präzisierung oder Bestätigung der Projektidee durch den Ideengeber
      erforderlich ist,
+   - eine weitergehende praktische Verifikation erst durch den Aufbau neuer
+     erheblicher Test-, Integrations- oder Prüfinfrastruktur möglich wäre,
    - oder tatsächlich eine spätere Auswahl, Festlegung oder ausdrückliche
      Bestätigung zwischen dokumentierten Optionen erforderlich ist.
 
@@ -144,18 +148,25 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
    - zusätzlich benötigter Untersuchung,
    - voraussichtlich verfügbaren Quellen oder Prüfwegen.
 
-11. Trenne spätere Anforderungsklärungen von echten Entscheidungsbedarfen.
+11. Eine Rückkehr zu swk-02 ist nicht allein deshalb erforderlich, weil eine
+    praktische Funktions-, Integrations- oder Kompatibilitätsprüfung zusätzliche
+    erhebliche Test- oder Prüfinfrastruktur voraussetzen würde, die im Projekt
+    noch nicht spezifiziert oder vorhanden ist. In diesem Fall bleibt die
+    fehlende praktische Bestätigung als Nachweisgrenze sichtbar und wird für
+    spätere Verifikation, Umsetzung oder Abnahme dokumentiert.
+
+12. Trenne spätere Anforderungsklärungen von echten Entscheidungsbedarfen.
     Eine bloße Wissenslücke oder offene Präzisierung der Projektidee erhält
     keine Kennung für Entscheidungsbedarf.
 
-12. Jeder echte Entscheidungsbedarf erhält eine gültige `dnd-nnn`-Kennung nach
+13. Jeder echte Entscheidungsbedarf erhält eine gültige `dnd-nnn`-Kennung nach
     `rules/identifiers.md`. Ein `dnd-nnn` bezeichnet nur den festgestellten
     Bedarf; die Entscheidungsfrage entsteht erst in swk-04 als `que-nnn`.
 
-13. Erstelle oder vervollständige die projektspezifische `assessment.md`
+14. Erstelle oder vervollständige die projektspezifische `assessment.md`
     anhand von `templates/assessment.md`.
 
-14. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
+15. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
     `rules/quality-gates.md`.
 
 ## Verbindliche Regeln
@@ -182,6 +193,9 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
   Bewertungsaspekt und die vorhandene Befundlage.
 - Ein fehlender Nachweis ist nicht gleichbedeutend mit fehlender Funktion.
 - Eine dokumentierte Funktion ist nicht automatisch praktisch bestätigt.
+- Der Aufbau neuer erheblicher Test-, Integrations- oder Prüfinfrastruktur ist
+  nicht Bestandteil von swk-03 und wird durch swk-03 nicht stillschweigend als
+  Voraussetzung für die Spezifikation eingeführt.
 - Erfinde keine eigenen Kennungsarten.
 - Ändere den Dokumentstatus nur entsprechend `rules/status.md` und dem
   Prüfergebnis.
@@ -193,15 +207,21 @@ Eine Rückkehr zu `swk-02` ist erforderlich, wenn ein Sachverhalt:
 - für die Bewertung wesentlich ist,
 - mit der vorhandenen Bestandsgrundlage nicht nachvollziehbar bewertet werden
   kann,
-- und durch weitere Bestandsuntersuchung voraussichtlich geklärt oder genauer
-  abgegrenzt werden kann.
+- und durch weitere Bestandsuntersuchung mit vorhandenen oder mit vertretbarem
+  Aufwand zugänglichen Quellen beziehungsweise bereits vorhandenen
+  Prüfmöglichkeiten voraussichtlich geklärt oder genauer abgegrenzt werden kann.
 
 Keine Rückkehr ist allein deshalb erforderlich, weil ein Sachverhalt mit
 `UNKNOWN` gekennzeichnet ist.
 
-Kann ein wesentlicher Sachverhalt nicht durch weitere Bestandsuntersuchung
-geklärt werden, bleibt er offen und wird entweder als Anforderungsklärung oder
-als späterer Entscheidungsbedarf dokumentiert.
+Keine Rückkehr ist allein deshalb erforderlich, weil ein praktischer Nachweis
+nur nach Entwurf oder Aufbau neuer erheblicher Test-, Integrations- oder
+Prüfinfrastruktur möglich wäre. Diese Grenze wird als fehlende praktische
+Bestätigung dokumentiert und in einer späteren geeigneten Phase behandelt.
+
+Kann ein wesentlicher Sachverhalt nicht durch weitere Bestandsuntersuchung im
+obigen Sinn geklärt werden, bleibt er offen und wird als Nachweisgrenze,
+Anforderungsklärung oder späterer Entscheidungsbedarf dokumentiert.
 
 Solange mindestens ein erforderlicher Rückkehrpunkt zu `swk-02` offen ist, ist
 die Qualitätsgrenze von `swk-03` nicht bestanden. `assessment.md` darf dann
@@ -216,6 +236,7 @@ Zulässig sind:
 - sachbezogene Gegenüberstellungen,
 - dokumentierte Vor- und Nachteile,
 - Feststellung relevanter Lücken und Risiken,
+- Dokumentation fehlender praktischer Bestätigung als Nachweisgrenze,
 - Benennung erforderlicher Anforderungsklärungen,
 - Benennung echter Entscheidungsbedarfe als `dnd-nnn`,
 - Benennung von Entscheidungsbedarf aus vorhandenen `asm-nnn`-Annahmen mit
@@ -228,7 +249,9 @@ Nicht Bestandteil von swk-03 sind:
 - Entscheidung zwischen offenen Alternativen,
 - Formulierung verbindlicher neuer Anforderungen,
 - Setzen wesentlicher Annahmen als Arbeitsgrundlage,
-- Formulierung einer `que-nnn`-Entscheidungsfrage.
+- Formulierung einer `que-nnn`-Entscheidungsfrage,
+- Entwurf oder Aufbau neuer erheblicher Test-, Integrations- oder
+  Prüfinfrastruktur.
 
 Diese Punkte werden in den dafür vorgesehenen späteren Phasen behandelt.
 
@@ -244,6 +267,7 @@ Sie enthält mindestens:
 - Bewertung je Aspekt,
 - dokumentierte Vor- und Nachteile beziehungsweise Einschränkungen,
 - wesentliche unbekannte und nicht ausreichend untersuchte Sachverhalte,
+- dokumentierte Nachweisgrenzen, insbesondere fehlende praktische Bestätigung,
 - gegebenenfalls Rückkehrpunkte zu swk-02,
 - erforderliche Anforderungsklärungen,
 - echte spätere Entscheidungsbedarfe als `dnd-nnn`,
@@ -265,8 +289,12 @@ swk-03 ist abgeschlossen, wenn:
 - keine neue Bestandsrecherche durchgeführt wurde,
 - keine neue Anforderung erfunden wurde,
 - keine Lösung ausgewählt oder Architekturentscheidung getroffen wurde,
-- alle wesentlichen offenen Punkte als Rückkehrpunkt, Anforderungsklärung oder
-  echter Entscheidungsbedarf korrekt klassifiziert sind,
+- alle wesentlichen offenen Punkte als Rückkehrpunkt, Nachweisgrenze,
+  Anforderungsklärung oder echter Entscheidungsbedarf korrekt klassifiziert sind,
 - kein erforderlicher Rückkehrpunkt zu `swk-02` mehr offen ist,
+- fehlende praktische Tests nicht als durchgeführt oder bestanden dargestellt
+  werden,
+- fehlende erhebliche Test- oder Prüfinfrastruktur nicht stillschweigend als
+  Voraussetzung für den Abschluss von swk-03 eingeführt wurde,
 - die Qualitätsgrenze für `swk-03` erfüllt ist,
 - die projektspezifische `assessment.md` den Status `accepted` erhalten hat.
