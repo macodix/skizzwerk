@@ -48,7 +48,7 @@ Feststellbare Einschränkungen oder Nachteile:
 Unbekannte oder nicht ausreichend untersuchte Punkte:
 - ...
 
-Bedeutung für spätere Entscheidungen:
+Bedeutung für spätere Entscheidungen oder Klärungen:
 - ...
 
 Ableitung:
@@ -59,17 +59,24 @@ Ableitung:
 Nur verwenden, wenn mehrere Alternativen anhand derselben relevanten Aspekte
 und dokumentierter Befunde gegenübergestellt werden können.
 
-| Aspekt | Alternative A | Alternative B | Befundgrundlage |
-|---|---|---|---|
-| ... | ... | ... | evd-nnn, evd-nnn |
+Die Darstellung darf an die Anzahl der Alternativen angepasst werden. Zulässig
+sind insbesondere eine breite Tabelle oder mehrere Tabellen mit identischen
+Bewertungsaspekten. Die Darstellung darf keine unterschiedliche Kriterienbasis
+für einzelne Alternativen erzeugen.
+
+Beispiel:
+
+| Aspekt | Alternative A | Alternative B | weitere Alternativen ... | Befundgrundlage |
+|---|---|---|---|---|
+| ... | ... | ... | ... | evd-nnn, evd-nnn |
 
 Keine Rangfolge und keine Gesamtnote ohne ausdrücklich definierte Bewertungsmethode.
 
 ## 6. Wesentliche Lücken und offene Sachverhalte
 
-| Sachverhalt | Bedeutung für Bewertung | Durch swk-02 klärbar? | Behandlung |
-|---|---|---|---|
-| ... | ... | ja/nein | Rückkehr zu swk-02 / spätere Phase |
+| Sachverhalt | Art | Bedeutung für Bewertung | Durch swk-02 klärbar? | Behandlung |
+|---|---|---|---|---|
+| ... | Wissenslücke / Anforderungsklärung / möglicher Entscheidungsbedarf | ... | ja/nein | Rückkehr zu swk-02 / Klärung mit Ideengeber / spätere Phase |
 
 ## 7. Rückkehrpunkte zu swk-02
 
@@ -85,11 +92,27 @@ Für jeden erforderlichen Rückkehrpunkt:
 
 Wenn keine Rückkehr erforderlich ist: `keine`.
 
-## 8. Später zu entscheidende Punkte
+## 8. Späterer Klärungs- und Entscheidungsbedarf
 
-Für jeden Entscheidungsbedarf:
+### 8.1 Anforderungsklärungen
 
-### Entscheidungsbedarf
+Für Punkte, die eine Präzisierung oder Bestätigung der Projektidee durch den
+Ideengeber benötigen, aber noch keine Auswahl zwischen dokumentierten Optionen
+sind:
+
+- Gegenstand:
+- Bezug zur `idea.md`:
+- relevante Befunde: `evd-nnn` / keine
+- offene Klärung:
+- Auswirkung auf spätere Bewertung oder Entscheidung:
+
+Wenn keine Anforderungsklärung erforderlich ist: `keine`.
+
+### 8.2 Entscheidungsbedarfe
+
+Für jeden echten Entscheidungsbedarf:
+
+### dnd-nnn: Kurztitel
 
 - Gegenstand:
 - Bezug zur `idea.md`:
@@ -99,12 +122,32 @@ Für jeden Entscheidungsbedarf:
 - dokumentierte Optionen, soweit vorhanden:
 - offene entscheidungsrelevante Sachverhalte:
 
+Ein `dnd-nnn` darf nur angelegt werden, wenn tatsächlich eine spätere Auswahl,
+Festlegung oder ausdrückliche Bestätigung erforderlich ist. Eine reine
+Wissenslücke oder Anforderungsklärung erhält keine `dnd-nnn`-Kennung.
+
 Keine Entscheidung in dieser Phase treffen.
 
 ## 9. Prüfergebnis swk-03
 
-- Vorprüfung bestanden: ja/nein
+### 9.1 Vorprüfung
+
+| Kriterium | Ergebnis | Nachweis / Anmerkung |
+|---|---|---|
+| `idea.md` vorhanden und `accepted` | ja/nein | ... |
+| `inventory.json` vorhanden und `accepted` | ja/nein | ... |
+| `inventory.md` vorhanden und aktuell erzeugt | ja/nein | ... |
+| vorhandene `assumptions.md` berücksichtigt | ja/nein/nicht vorhanden | ... |
+| referenzierte Regeln und Vorlagen vorhanden und verwendbar | ja/nein | ... |
+| Qualitätsgrenze swk-03 vorhanden | ja/nein | ... |
+| Kennungen der Eingaben entsprechen `rules/identifiers.md` | ja/nein | ... |
+
+- Vorprüfung insgesamt bestanden: ja/nein
+
+### 9.2 Qualitätsprüfung
+
 - Qualitätsgrenze swk-03 bestanden: ja/nein
+- offene erforderliche Rückkehrpunkte zu swk-02: ja/nein
 - nicht erfüllte Kriterien:
 - Blockade:
 
