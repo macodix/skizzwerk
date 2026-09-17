@@ -133,9 +133,12 @@ Dokumentabschnitte Text enthalten.
 - die zugrunde liegende projektspezifische `idea.md` den Status `accepted` besitzt,
 - die zugrunde liegende projektspezifische `inventory.json` den Status `accepted` besitzt,
 - eine vorhandene projektspezifische `assumptions.md` berücksichtigt wurde,
+- die Einzelkriterien der Vorprüfung dokumentiert und vollständig bestanden sind,
 - die Bewertung ausschließlich auf der akzeptierten `idea.md`, der akzeptierten
   `inventory.json` und gegebenenfalls der projektspezifischen `assumptions.md`
   beruht,
+- `rules/questions.md` bei der Abgrenzung von Wissenslücken,
+  Anforderungsklärungen und Entscheidungsbedarfen beachtet wurde,
 - Annahmen nicht als Befunde oder Tatsachen behandelt werden,
 - vorhandene Annahmen mit wesentlicher Auswirkung darauf geprüft wurden, ob sie
   nach `rules/assumptions.md` einen Entscheidungsbedarf erzeugen,
@@ -151,15 +154,24 @@ Dokumentabschnitte Text enthalten.
 - eine dokumentierte Funktion nicht ohne geeigneten Nachweis als praktisch bestätigt behandelt wird,
 - positive Beiträge und Einschränkungen nur dokumentiert werden, soweit sie aus Befunden ableitbar sind,
 - Vergleiche zwischen Alternativen dieselben relevanten Bewertungsaspekte verwenden,
+- die Darstellungsform einer Gegenüberstellung an die Zahl der Alternativen
+  angepasst werden darf, ohne die Kriterienbasis zu verändern,
 - keine numerischen Scores, Gewichtungen, Rangfolgen oder Gesamtnoten ohne ausdrücklich definierte Bewertungsmethode verwendet werden,
 - keine bevorzugte Alternative als verbindliche Lösung ausgewählt wird,
 - keine neue Anforderung formuliert wird,
 - keine Architektur-, Technologie- oder Umsetzungsentscheidung getroffen wird,
 - keine Annahme stillschweigend als Bewertungsgrundlage gesetzt wird,
-- jeder wesentliche offene Punkt darauf geprüft wurde, ob weitere Bestandsuntersuchung erforderlich und erfolgversprechend ist,
+- jeder wesentliche offene Punkt darauf geprüft wurde, ob weitere
+  Bestandsuntersuchung, Anforderungsklärung oder eine spätere Entscheidung
+  erforderlich ist,
 - jeder erforderliche Rückkehrpunkt zu `swk-02` mit Sachverhalt, betroffenen Befunden, Bedeutung, zusätzlicher Untersuchung und Prüfweg dokumentiert ist,
-- wesentliche nicht durch weitere Bestandsuntersuchung klärbare Punkte für spätere Phasen sichtbar dokumentiert sind,
-- Punkte mit Entscheidungsbedarf benannt werden, ohne die Entscheidung vorwegzunehmen,
+- kein erforderlicher Rückkehrpunkt zu `swk-02` mehr offen ist,
+- reine Wissenslücken und Anforderungsklärungen nicht als Entscheidungsbedarf
+  umetikettiert wurden,
+- jeder echte Entscheidungsbedarf eine gültige `dnd-nnn`-Kennung besitzt,
+- keine nicht definierte Kennungsart verwendet wurde,
+- wesentliche nicht durch weitere Bestandsuntersuchung klärbare Punkte als
+  Anforderungsklärung oder späterer Entscheidungsbedarf sichtbar dokumentiert sind,
 - die projektspezifische `assessment.md` der Vorlage `templates/assessment.md` entspricht,
 - alle Kennungen `rules/identifiers.md` entsprechen,
 - der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
@@ -173,6 +185,9 @@ Dokumentabschnitte Text enthalten.
 - die zugrunde liegende projektspezifische `assessment.md` den Status `accepted` besitzt,
 - `rules/questions.md` beachtet wurde,
 - jeder Entscheidungsbedarf aus der akzeptierten `assessment.md` hergeleitet ist,
+- jeder übernommene Entscheidungsbedarf eine gültige `dnd-nnn`-Kennung besitzt,
+- jede daraus formulierte Entscheidungsfrage auf die zugehörige `dnd-nnn`
+  verweist,
 - die Prüfung eines übergebenen Entscheidungsbedarfs auf die formale
   Unterscheidung zwischen Entscheidung und Wissenslücke beschränkt bleibt,
 - keine fachliche Neubewertung von Alternativen aus `swk-03` durchgeführt wird,
