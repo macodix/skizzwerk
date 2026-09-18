@@ -87,6 +87,28 @@ Kann ein wesentlicher Sachverhalt nicht durch weitere Bestandsuntersuchung
 geklärt werden, wird er nicht durch eine Annahme ersetzt. Seine weitere
 Behandlung richtet sich nach den dafür vorgesehenen späteren Phasen.
 
+## Anforderungsklärungen in swk-03
+
+Erkennt `swk-03` eine notwendige Präzisierung oder Bestätigung einer bereits
+vorhandenen Aussage der Projektidee, wird sie nach
+`rules/clarifications.md` als `clr-nnn` in der projektspezifischen
+`clarifications.md` dokumentiert und mit dem Ideengeber geklärt.
+
+Eine normale Anforderungsklärung ergänzt die akzeptierte `idea.md` um eine
+nachvollziehbare Aussage des Ideengebers, ohne die akzeptierte `idea.md`
+selbst zu verändern. Nach der Antwort werden die betroffenen Teile von
+`assessment.md` aktualisiert und die Qualitätsgrenze von `swk-03` erneut
+geprüft.
+
+Widerspricht die Antwort der akzeptierten `idea.md`, verändert sie den
+Projektgegenstand materiell oder führt sie eine neue, bisher nicht angelegte
+Projektanforderung ein, ist sie keine bloße Präzisierung. Dann wird der
+betroffene frühere Prozessstand bestimmt und nach dem folgenden
+Änderungslebenszyklus erneut bearbeitet.
+
+Anforderungsklärungen dürfen nicht als Ersatz für Wissenslücken, Annahmen,
+Entscheidungsbedarfe oder Entscheidungen verwendet werden.
+
 ## Aktualisierung eines akzeptierten Phasenergebnisses
 
 Muss ein bereits akzeptiertes Phasenergebnis ergänzt oder geändert werden:
@@ -122,6 +144,9 @@ Der Übergang zu `swk-04` erfolgt, wenn:
   klärbare Lücke besteht,
 - alle in `assessment.md` dokumentierten späteren Entscheidungsbedarfe klar
   von reinen Wissenslücken getrennt sind,
+- alle für den Abschluss erforderlichen Anforderungsklärungen beantwortet und
+  nach `rules/clarifications.md` in `clarifications.md` dokumentiert sowie in
+  der Bewertung berücksichtigt sind,
 - die Qualitätsgrenze für `swk-03` erfüllt ist,
 - die projektspezifische `assessment.md` den Status `accepted` besitzt.
 
