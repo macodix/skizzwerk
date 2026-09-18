@@ -139,6 +139,8 @@ Dokumentabschnitte Text enthalten.
   beruht,
 - `rules/questions.md` bei der Abgrenzung von Wissenslücken,
   Anforderungsklärungen und Entscheidungsbedarfen beachtet wurde,
+- `rules/clarifications.md` bei Durchführung und Dokumentation von
+  Anforderungsklärungen beachtet wurde,
 - Annahmen nicht als Befunde oder Tatsachen behandelt werden,
 - vorhandene Annahmen mit wesentlicher Auswirkung darauf geprüft wurden, ob sie
   nach `rules/assumptions.md` einen Entscheidungsbedarf erzeugen,
@@ -178,11 +180,23 @@ Dokumentabschnitte Text enthalten.
 - kein erforderlicher Rückkehrpunkt zu `swk-02` mehr offen ist,
 - reine Wissenslücken und Anforderungsklärungen nicht als Entscheidungsbedarf
   umetikettiert wurden,
+- jede erforderliche Anforderungsklärung eine gültige `clr-nnn`-Kennung besitzt
+  und in der projektspezifischen `clarifications.md` dokumentiert ist,
+- jede beantwortete `clr-nnn` die Antwort des Ideengebers als `USER_PROVIDED`
+  dokumentiert und ihre Auswirkung auf `assessment.md` nachvollziehbar behandelt,
+- keine für den Abschluss erforderliche `clr-nnn` unbeantwortet ist,
+- Antworten auf `clr-nnn` nicht stillschweigend in die akzeptierte `idea.md`
+  eingearbeitet wurden,
+- bei Widerspruch zur akzeptierten `idea.md` oder materieller Änderung des
+  Projektgegenstands der Rückwirkungsweg nach `rules/clarifications.md` und
+  `rules/process.md` dokumentiert wurde,
 - jeder echte Entscheidungsbedarf eine gültige `dnd-nnn`-Kennung besitzt,
 - keine nicht definierte Kennungsart verwendet wurde,
 - wesentliche nicht durch weitere Bestandsuntersuchung klärbare Punkte als
   Nachweisgrenze, Anforderungsklärung oder späterer Entscheidungsbedarf sichtbar dokumentiert sind,
 - die projektspezifische `assessment.md` der Vorlage `templates/assessment.md` entspricht,
+- eine bei vorhandenen Anforderungsklärungen erforderliche projektspezifische
+  `clarifications.md` der Vorlage `templates/clarifications.md` entspricht,
 - alle Kennungen `rules/identifiers.md` entsprechen,
 - der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
 
