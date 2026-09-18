@@ -4,7 +4,7 @@ process_phase: swk-03
 project: "openclaw-xmpp"
 status: review
 created: 2026-09-16
-last_updated: 2026-09-17
+last_updated: 2026-09-18
 basis:
   - idea.md
   - inventory.json
@@ -60,30 +60,280 @@ Entscheidungsfrage. `que-nnn` entsteht erst in swk-04.
 
 ## 4. Bewertung nach Aspekten
 
-Die fachlichen Bewertungen aus dem ersten Pilotdurchlauf bleiben unverändert.
-Ihre Aussagekraft bleibt auf die akzeptierten Befunde und deren Nachweisstatus
-begrenzt. Insbesondere gilt weiterhin:
+### Direktnachrichten
 
-- vorhandener Code ist kein Nachweis praktischer Funktionsfähigkeit,
-- dokumentierte Kompatibilitätsangaben sind kein praktischer Lade- oder
-  Integrationstest,
-- fehlende Treffer im Quelltext sind kein Nachweis fehlender Funktion,
-- `UNKNOWN`, nicht durchgeführte Prüfungen und Untersuchungsgrenzen bleiben
-  sichtbar.
+Bezug zur `idea.md`:
+Abschnitt 7 nennt Direktnachrichten als Funktion, Abschnitt 8 führt sie unter den
+mit „muss“ genannten Funktionen. Abschnitt 10 hält offen, welcher Funktionsumfang
+mit „unterstützen“ gemeint ist.
 
-Die vollständigen aspektbezogenen Bewertungen und Ableitungen aus dem
-vorherigen Pilotstand gelten fort; durch diese Überarbeitung wird lediglich die
-prozessuale Einordnung der offenen Punkte korrigiert.
+Verwendete Befunde:
+- `evd-022`, `evd-023`, `evd-024`, `evd-025`, `evd-027`, `evd-028`, `evd-030`, `evd-031`, `evd-033`, `evd-034`, `evd-035`, `evd-036`, `evd-037`, `evd-038`, `evd-039`, `evd-040`, `evd-042`, `evd-043`, `evd-044`, `evd-045`, `evd-046`, `evd-047`, `evd-048`, `evd-049`, `evd-050`, `evd-051`, `evd-052`
+
+Feststellbare positive Beiträge:
+- In allen dreizehn untersuchten Projekten ist Code für 1:1-Nachrichten vorhanden: `evd-023`, `evd-025`, `evd-028`, `evd-031`, `evd-034`, `evd-036`, `evd-038`, `evd-040`, `evd-043`, `evd-045`, `evd-047`, `evd-049`, `evd-051`.
+- Die Dokumentation der Projekte nennt Direktnachrichten durchgängig als Funktion: `evd-022`, `evd-024`, `evd-027`, `evd-030`, `evd-033`, `evd-035`, `evd-037`, `evd-039`, `evd-042`, `evd-044`, `evd-046`, `evd-048`, `evd-050`.
+
+Feststellbare Einschränkungen oder Nachteile:
+- Die Angaben sind dokumentierte Behauptungen und vorhandener Code; keine dieser Angaben ist praktisch bestätigt (`evd-052`).
+- `rsaisankalp/clawdbotElyments` bindet nicht OpenClaw, sondern Clawdbot an eine andere Plattform an (`evd-050`); es ist für diesen Aspekt nur als Grenzfall erfasst.
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Ob Direktnachrichten in einem der Projekte funktionsfähig sind, ist unbekannt (`evd-052`).
+- Welcher Funktionsumfang nach `idea.md` Abschnitt 10 unter „unterstützen“ zu verstehen ist, ist nicht beschrieben; ein Abgleich mit den Befunden ist deshalb nur auf der Ebene „Code vorhanden“ möglich.
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- Direktnachrichten unterscheiden die vorhandenen Projekte nicht; sie sind für eine spätere Auswahl kein trennendes Merkmal, solange kein Funktionsnachweis vorliegt.
+
+Ableitung:
+- Aus `evd-023`, `evd-025`, `evd-028`, `evd-031`, `evd-034`, `evd-036`, `evd-038`, `evd-040`, `evd-043`, `evd-045`, `evd-047`, `evd-049` und `evd-051` folgt, dass diese Funktion in allen untersuchten Projekten angelegt ist. Die Ableitung reicht nur bis zum Vorhandensein von Code; `evd-052` begrenzt ihre Belastbarkeit.
+
+### OMEMO-Verschlüsselung
+
+Bezug zur `idea.md`:
+Abschnitt 7 nennt OMEMO-Verschlüsselung als Funktion, Abschnitt 8 führt sie unter
+den mit „muss“ genannten Funktionen. Abschnitt 2 nennt Sicherheit (OMEMO) als
+Anforderung, an der bestehende Plugins scheiterten. Abschnitt 10 hält offen, ob
+OMEMO für Direktnachrichten, für Gruppenchats oder für beides gelten soll.
+
+Verwendete Befunde:
+- `evd-023`, `evd-024`, `evd-025`, `evd-027`, `evd-028`, `evd-030`, `evd-031`, `evd-033`, `evd-034`, `evd-035`, `evd-036`, `evd-038`, `evd-039`, `evd-040`, `evd-041`, `evd-042`, `evd-043`, `evd-044`, `evd-045`, `evd-047`, `evd-049`, `evd-051`, `evd-052`
+
+Feststellbare positive Beiträge:
+- In fünf Projekten ist OMEMO-Code vorhanden: `toughworm/Openclaw-XMPP-Plugin` (`evd-025`), `icarito/openclaw-xmpp` (`evd-031`), `elmafioso79/xmpp-channel` (`evd-036`), `watkins-matt/xmpp-channel` (`evd-038`), `MrCPA/oc-xmpp` (`evd-043`).
+- Zwei davon enthalten Code für den neueren Namensraum `urn:xmpp:omemo:2`: `evd-031`, `evd-043`.
+- In `elmafioso79/xmpp-channel` ist OMEMO-Code auch für `groupchat` vorhanden (`evd-036`), in `watkins-matt/xmpp-channel` ist OMEMO-Code vorhanden (`evd-038`).
+
+Feststellbare Einschränkungen oder Nachteile:
+- In acht Projekten kommen OMEMO-Zeichenketten im untersuchten Quelltext nicht vor: `evd-028`, `evd-034`, `evd-040`, `evd-045`, `evd-047`, `evd-049`, `evd-051`, `evd-023`.
+- `kazakhan/openclaw-xmpp` führt OMEMO in der eigenen Prüfliste als „Not Supported“ (`evd-027`), `soilDNRA/openclaw-xmpp` nennt OMEMO ausdrücklich als nicht unterstützt (`evd-033`), `Programmatore-Web/openclaw-xmpp-channel` schließt Ende-zu-Ende-Verschlüsselung aus und hat sie laut eigenem CHANGELOG entfernt (`evd-039`, `evd-041`).
+- `toughworm/Openclaw-XMPP-Plugin` überspringt OMEMO bei `groupchat` (`evd-025`); die eigene Dokumentation nennt verschlüsselten Gruppenchat als offen (`evd-024`).
+- `MrCPA/oc-xmpp` beschränkt OMEMO nach eigener Dokumentation auf Direktnachrichten und nennt Live-Tests als noch offen (`evd-042`).
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Ob OMEMO in einem der Projekte funktionsfähig ist, ist unbekannt (`evd-052`).
+- Ob die im Code von `MrCPA/oc-xmpp` angelegte Beschränkung auf Direktnachrichten zutrifft, wurde nicht geprüft (`evd-043`, dokumentierte nicht durchgeführte Prüfung).
+- Ein fehlender Treffer nach OMEMO-Zeichenketten belegt nur das Fehlen der gesuchten Zeichenketten, nicht das Fehlen der Funktion (`evd-023`, `evd-028`, `evd-034`, `evd-040`, `evd-045`, `evd-047`, `evd-049`, `evd-051`).
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- OMEMO trennt die untersuchten Projekte deutlicher als Direktnachrichten; die Befundlage unterscheidet Projekte mit vorhandenem OMEMO-Code, Projekte mit ausdrücklichem Ausschluss und Projekte ohne Aussage.
+- Die in `idea.md` Abschnitt 10 offene Frage, ob OMEMO auch in Gruppenchats gelten soll, wirkt unmittelbar darauf, welche Projekte für diesen Aspekt überhaupt in Betracht kommen. Sie ist in Abschnitt 8.1 als Anforderungsklärung aufgeführt.
+
+Ableitung:
+- Aus `evd-025`, `evd-036`, `evd-038`, `evd-039`, `evd-041` und `evd-042` folgt, dass OMEMO in Gruppenchats in den untersuchten Projekten seltener angelegt ist als OMEMO in Direktnachrichten. Die Aussage bleibt auf vorhandenen Code und dokumentierte Angaben beschränkt; `evd-052` begrenzt ihre Belastbarkeit.
+
+### Gruppenchats über MUC
+
+Bezug zur `idea.md`:
+Abschnitt 7 nennt Gruppenchats über MUC als Funktion, Abschnitt 8 führt sie unter
+den mit „muss“ genannten Funktionen. Abschnitt 2 nennt Kommunikation
+(Gruppenchats/MUC) als Anforderung, an der bestehende Plugins scheiterten.
+
+Verwendete Befunde:
+- `evd-008`, `evd-023`, `evd-024`, `evd-025`, `evd-027`, `evd-028`, `evd-030`, `evd-031`, `evd-033`, `evd-034`, `evd-035`, `evd-036`, `evd-037`, `evd-038`, `evd-039`, `evd-040`, `evd-042`, `evd-043`, `evd-044`, `evd-045`, `evd-047`, `evd-048`, `evd-049`, `evd-051`, `evd-052`
+
+Feststellbare positive Beiträge:
+- In acht Projekten ist Code für MUC einschließlich eines Raumbeitritts vorhanden: `evd-028`, `evd-031`, `evd-036`, `evd-038`, `evd-040`, `evd-043`, `evd-045`, `evd-049`.
+- Die Dokumentation nennt MUC oder Räume in `evd-027`, `evd-030`, `evd-035`, `evd-037`, `evd-039`, `evd-042`, `evd-044`, `evd-048`.
+
+Feststellbare Einschränkungen oder Nachteile:
+- In vier Projekten kommen MUC-Zeichenketten nicht vor oder nur in einem Hinweistext: `evd-023`, `evd-034`, `evd-047`, `evd-051`.
+- `soilDNRA/openclaw-xmpp` nennt MUC ausdrücklich als nicht unterstützt und führt Gruppenchat-Optionen als bis zum Abschluss einer „MUC security gate“ nicht verfügbar (`evd-033`, `evd-034`).
+- `toughworm/Openclaw-XMPP-Plugin` verarbeitet zwar `groupchat`, enthält aber keinen Raumbeitritt (`evd-025`), obwohl die Dokumentation Gruppenchat nennt (`evd-024`).
+- `Programmatore-Web/openclaw-xmpp-channel` unterstützt laut Dokumentation nur fest eingestellte MUC-Räume (`evd-039`).
+- `rsaisankalp/clawdbotElyments` verarbeitet `groupchat` ohne Raumbeitritt (`evd-051`).
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Ob MUC in einem der Projekte funktionsfähig ist, ist unbekannt (`evd-052`).
+- Ob der eigene XMPP-Server MUC bereitstellt, ist nicht untersucht (`evd-008`).
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- MUC trennt die untersuchten Projekte in solche mit angelegtem Raumbeitritt und solche ohne. Zusammen mit OMEMO ist dies der Aspekt mit den größten Unterschieden zwischen den Alternativen.
+
+Ableitung:
+- Aus `evd-025`, `evd-051` und `evd-034` folgt, dass die Verarbeitung des Nachrichtentyps `groupchat` und ein Raumbeitritt in den Befunden getrennt zu betrachten sind. Die Aussage stützt sich nur auf vorhandenen Code; ob ein Raumbeitritt für den gewünschten Betrieb nötig ist, wurde in `idea.md` nicht beschrieben.
+
+### XMPP im Lieferumfang und im Hauptprojekt von OpenClaw
+
+Bezug zur `idea.md`:
+Abschnitt 1 nennt als Gegenstand ein XMPP-Plugin für aktuelle OpenClaw-Versionen,
+Abschnitt 5 nennt dessen Entwicklung als Projektgegenstand.
+
+Verwendete Befunde:
+- `evd-005`, `evd-018`, `evd-019`, `evd-020`, `evd-054`
+
+Feststellbare positive Beiträge:
+- Keine, die sich auf eine vorhandene XMPP-Unterstützung durch den Hersteller stützen ließen.
+
+Feststellbare Einschränkungen oder Nachteile:
+- OpenClaw 2026.9.4 liefert keinen XMPP-Kanal mit (`evd-018`), und die Kanalübersicht der Dokumentation nennt kein XMPP-Plugin (`evd-019`).
+- Im Hauptprojekt wurden drei Pull Requests für XMPP ohne Übernahme geschlossen, das Issue „[Feature]: XMPP support“ ist als `not_planned` geschlossen (`evd-020`).
+- Die lokale Installationsdokumentation erwähnt XMPP nicht (`evd-005`).
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Die Gründe für die Nichtübernahme der Pull Requests wurden nicht ausgewertet (`evd-020`, dokumentierte nicht durchgeführte Prüfung).
+- Ob es XMPP-Anbindungen außerhalb von GitHub und npm gibt, etwa auf ClawHub, ist unbekannt (`evd-054`).
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- Eine XMPP-Anbindung muss nach der vorliegenden Befundlage aus einem Projekt außerhalb des Lieferumfangs kommen oder neu entstehen. Welcher Weg gewählt wird, ist in Abschnitt 8.2 als `dnd-001` aufgeführt und wird hier nicht entschieden.
+
+Ableitung:
+- Aus `evd-018`, `evd-019` und `evd-020` folgt, dass zum Untersuchungszeitpunkt keine vom Hersteller getragene XMPP-Anbindung vorliegt. Der geschlossene Feature-Wunsch (`evd-020`) belegt nur den Status, nicht die künftige Ausrichtung des Herstellers.
+
+### Anbindungspunkt für ein Plugin in den genannten Versionen
+
+Bezug zur `idea.md`:
+Abschnitt 1 nennt „aktuelle OpenClaw-Versionen“ als Ziel, Abschnitt 8 nennt dies
+als Einschränkung, Abschnitt 2 nennt die aktiven Versionen 2026.9.4 und
+2026.7.1-2, Abschnitt 10 hält offen, welche Versionen gemeint sind.
+
+Verwendete Befunde:
+- `evd-001`, `evd-004`, `evd-006`, `evd-009`, `evd-011`, `evd-012`, `evd-013`, `evd-022`, `evd-029`, `evd-032`, `evd-033`, `evd-035`, `evd-037`, `evd-039`, `evd-042`, `evd-044`, `evd-046`, `evd-048`, `evd-050`, `evd-053`
+
+Feststellbare positive Beiträge:
+- In 2026.9.4 ist eine Schnittstelle für Kanal-Plugins vorhanden (`evd-012`), und die Dokumentation beschreibt Manifest und Kompatibilitätsfelder (`evd-013`).
+- Beide vom Ideengeber genannten Versionen sind im npm-Register veröffentlicht (`evd-009`); eine Installation der Version 2026.9.4 ist auf srv001 vorhanden und aktiv (`evd-004`).
+- Mehrere Projekte deklarieren Versionsbereiche, die 2026.8.2 oder neuer einschließen: `evd-033`, `evd-037`, `evd-039`; weitere nennen ältere Untergrenzen: `evd-029`, `evd-032`, `evd-035`, `evd-044`.
+
+Feststellbare Einschränkungen oder Nachteile:
+- Ob die Projekte unter 2026.7.1-2 oder 2026.9.4 laden, ist unbekannt; es liegen nur deklarierte Angaben vor (`evd-053`).
+- Zwei Projekte machen keine Angabe zur OpenClaw-Version (`evd-022`, `evd-046`), eines deklariert `openclaw "*"` (`evd-042`), eines hängt von einer Arbeitsbereichsversion ab (`evd-048`), eines bezieht sich auf Clawdbot (`evd-050`).
+- Innerhalb einzelner Projekte bestehen unterschiedliche Versionsangaben mit unterschiedlichem Bezug (`evd-029`, `evd-032`).
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Welche Versionen „aktuelle OpenClaw-Versionen“ umfassen soll, ist nach `idea.md` Abschnitt 10 offen.
+- Wo die Installation mit 2026.7.1-2 läuft, ist unbekannt (`evd-006`).
+- Der Paketinhalt von 2026.7.1-2 wurde nicht geladen (`evd-011`, dokumentierte nicht durchgeführte Prüfung).
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- Der Umfang der zu unterstützenden Versionen bestimmt, welche Projekte nach ihren deklarierten Angaben überhaupt in Betracht kommen. Er ist in Abschnitt 8.1 als Anforderungsklärung aufgeführt.
+
+Ableitung:
+- Aus `evd-009`, `evd-012` und `evd-013` folgt, dass für 2026.9.4 ein dokumentierter Anbindungspunkt für Kanal-Plugins vorliegt. Für 2026.7.1-2 liegt kein entsprechender Befund aus dem Paketinhalt vor (`evd-011`), sodass die Aussage nicht auf diese Version übertragen werden kann.
+
+### Verfahren für neue OpenClaw-Versionen
+
+Bezug zur `idea.md`:
+Abschnitt 1 nennt den Bedarf an einem Verfahren zur automatischen Aktualisierung
+oder Kompatibilitätssicherung für neue OpenClaw-Versionen, Abschnitt 7 führt es
+als genannte Funktion, Abschnitt 11 hält offen, ob und wie oft neue Versionen
+Änderungen bringen, die das Plugin betreffen.
+
+Verwendete Befunde:
+- `evd-010`, `evd-011`, `evd-013`, `evd-014`, `evd-015`, `evd-016`, `evd-017`
+
+Feststellbare positive Beiträge:
+- Die Kompatibilitätsangaben eines Plugins werden laut Dokumentation bei der Installation ausgewertet (`evd-013`).
+- Die Dokumentation beschreibt Kompatibilitätsadapter mit Status und Entfernungsfristen (`evd-015`), das CHANGELOG nennt Abkündigungen mit Terminen (`evd-016`).
+
+Feststellbare Einschränkungen oder Nachteile:
+- Alle Plugin-APIs sind laut Hersteller experimentell und können sich zwischen Versionen ändern; Plugin-Autoren sollen jede angegebene Host-Version testen (`evd-014`).
+- Zwischen den beiden genannten Versionen sind 17 Versionen erschienen, davon fünf stabile (`evd-010`).
+- Einstiegspfade der Plugin-Schnittstelle sind im untersuchten Zeitraum weggefallen (`evd-011`), und Plugins, die entfernte Pfade nutzen, laden laut Dokumentation nicht mehr (`evd-015`, `evd-017`).
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Das CHANGELOG wurde nicht vollständig gelesen (`evd-016`, dokumentierte nicht durchgeführte Prüfung); weitere Schnittstellenänderungen sind damit nicht ausgeschlossen.
+- Ob und wie oft künftige Versionen das Plugin betreffen, ist nach `idea.md` Abschnitt 11 unbekannt; die Befunde belegen nur die Vergangenheit.
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- Die Befundlage zeigt einen laufenden Änderungsbedarf an der Schnittstelle. Der Zuschnitt des in `idea.md` genannten Verfahrens, einschließlich der Frage nach KI-Agenten (`idea.md` Abschnitt 10), ist in Abschnitt 8.1 als Anforderungsklärung aufgeführt.
+
+Ableitung:
+- Aus `evd-010`, `evd-011`, `evd-014`, `evd-015` und `evd-016` folgt, dass ein Plugin für dieses Umfeld wiederkehrend an neue Versionen angepasst werden muss. Die Ableitung beschreibt den dokumentierten Bestand und enthält keine Aussage darüber, wie ein solches Verfahren auszusehen hat.
+
+### Belastbarkeit der Angaben vorhandener Projekte
+
+Bezug zur `idea.md`:
+Abschnitt 1 verlangt, vorhandene GitHub-Projekte als mögliche Grundlage zu
+untersuchen. Abschnitt 10 hält offen, ob Übernahme, Weiterentwicklung oder
+Nutzung als Vorlage gemeint ist.
+
+Verwendete Befunde:
+- `evd-024`, `evd-026`, `evd-027`, `evd-028`, `evd-029`, `evd-030`, `evd-031`, `evd-032`, `evd-033`, `evd-034`, `evd-035`, `evd-036`, `evd-039`, `evd-040`, `evd-041`, `evd-042`, `evd-052`, `evd-053`, `evd-054`
+
+Feststellbare positive Beiträge:
+- Für jedes Projekt liegen getrennte Befunde zu dokumentierten Angaben und zu vorhandenem Code vor, sodass beide Ebenen unterscheidbar sind.
+- Einzelne Projekte dokumentieren ihre Grenzen ausdrücklich: `evd-027` (OMEMO „Not Supported“), `evd-033` (MUC und OMEMO nicht unterstützt), `evd-039` und `evd-041` (Ende-zu-Ende-Verschlüsselung ausgeschlossen und entfernt), `evd-042` (Live-Tests offen).
+
+Feststellbare Einschränkungen oder Nachteile:
+- Bei `toughworm/Openclaw-XMPP-Plugin` beschreibt die Dokumentation Pfade und Testskripte, die im untersuchten Stand nicht vorliegen, und ein npm-Paket, das nicht veröffentlicht ist (`evd-026`).
+- Bei `kazakhan/openclaw-xmpp` und `icarito/openclaw-xmpp` stehen Versionsangaben mit unterschiedlichem Bezug nebeneinander (`evd-029`, `evd-032`).
+- Bei `icarito/openclaw-xmpp` lädt der Produktivbetrieb nach eigener Angabe einen separat abgeglichenen Verzeichnisbaum, nicht das untersuchte Repository (`evd-030`).
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Funktionsfähigkeit (`evd-052`) und Ladefähigkeit unter den genannten Versionen (`evd-053`) sind unbekannt.
+- Projekte außerhalb von GitHub und npm sind nicht erfasst (`evd-054`).
+- Geschlossene Issues und mehrere Forks wurden nicht untersucht (dokumentierte Untersuchungsgrenzen in `inventory.json`).
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- Die Belastbarkeit der Projektangaben ist unterschiedlich. Für eine spätere Entscheidung über eine Grundlage ist sichtbar, welche Angaben geprüft und welche nur dokumentiert sind.
+
+Ableitung:
+- Aus `evd-026`, `evd-029`, `evd-030` und `evd-032` folgt, dass Dokumentationsangaben einzelner Projekte nicht durchgehend den untersuchten Stand beschreiben. Die Aussage gilt nur für die genannten Projekte und die dort geprüften Stellen.
+
+### Betriebsumfeld: eigener XMPP-Server und bisherige Versuche
+
+Bezug zur `idea.md`:
+Abschnitt 2 nennt einen eigenen XMPP-Server, zwei aktive Installationen und
+gescheiterte Versuche mit bestehenden Plugins. Abschnitt 6 führt Server und
+Installationen als beteiligte Systeme, Abschnitt 11 hält ihre Rolle offen.
+
+Verwendete Befunde:
+- `evd-002`, `evd-003`, `evd-004`, `evd-005`, `evd-006`, `evd-007`, `evd-008`
+
+Feststellbare positive Beiträge:
+- Eine aktive Installation der Version 2026.9.4 ist belegt (`evd-004`), sodass für diese Version eine Umgebung vorhanden ist.
+
+Feststellbare Einschränkungen oder Nachteile:
+- Die Angaben zum Server (`evd-002`) und zu den gescheiterten Versuchen (`evd-003`) sind Aussagen des Ideengebers und wurden nicht bestätigt.
+- Die lokale Dokumentation beschreibt keine XMPP-Anbindung (`evd-005`).
+
+Unbekannte oder nicht ausreichend untersuchte Punkte:
+- Software, Standort und unterstützte Erweiterungen des Servers sind unbekannt (`evd-008`).
+- Die erprobten Plugins und die Ursachen der gescheiterten Installationen sind unbekannt, weil das Konfigurationsverzeichnis nicht lesbar war (`evd-007`).
+- Die Zuordnung der zweiten Installation ist unbekannt (`evd-006`).
+
+Bedeutung für spätere Entscheidungen oder Klärungen:
+- Ohne Angaben zum Server lässt sich nicht beurteilen, ob dort MUC verfügbar ist und welche Voraussetzungen für OMEMO gelten. Die Rolle des Servers ist in Abschnitt 8.1 als Anforderungsklärung aufgeführt.
+
+Ableitung:
+- Aus `evd-007` und `evd-008` folgt, dass die Erfahrungen aus den bisherigen Versuchen für die Bewertung nicht nutzbar sind. Ein fehlender Nachweis bedeutet dabei nicht, dass die Versuche nicht stattgefunden haben; `evd-003` bleibt eine Aussage des Ideengebers.
 
 ## 5. Gegenüberstellung vorhandener Alternativen
 
-Die vorhandene Gegenüberstellung der untersuchten Projekte bleibt fachlich
-unverändert. Sie verwendet für alle Alternativen dieselben fünf Aspekte und
-enthält keine Rangfolge und keine Gesamtnote.
+Gegenübergestellt werden die untersuchten Projekte anhand derselben Aspekte, für
+die Befunde vorliegen. Die Tabelle enthält keine Rangfolge und keine Gesamtnote.
+„Code vorhanden“ bedeutet nur, dass entsprechender Quelltext gefunden wurde;
+Funktionsfähigkeit ist für kein Projekt nachgewiesen (`evd-052`), und die
+Ladefähigkeit unter den genannten Versionen ist unbekannt (`evd-053`).
 
-Die Gegenüberstellung ist ausdrücklich keine praktische Funktions- oder
-Kompatibilitätsbestätigung. Funktionsfähigkeit (`evd-052`) und Ladefähigkeit
-unter den genannten Versionen (`evd-053`) bleiben nicht praktisch bestätigt.
+| Aspekt | ksmith211/openclaw-xmpp | toughworm/Openclaw-XMPP-Plugin | kazakhan/openclaw-xmpp | icarito/openclaw-xmpp | Befundgrundlage |
+|---|---|---|---|---|---|
+| 1:1-Code | vorhanden | vorhanden | vorhanden | vorhanden | evd-023, evd-025, evd-028, evd-031 |
+| MUC-Code mit Raumbeitritt | nicht gefunden | nicht gefunden | vorhanden | vorhanden | evd-023, evd-025, evd-028, evd-031 |
+| OMEMO-Code | nicht gefunden | vorhanden, bei groupchat übersprungen | nicht gefunden | vorhanden, auch `urn:xmpp:omemo:2` | evd-023, evd-025, evd-028, evd-031 |
+| deklarierte OpenClaw-Version | keine Angabe | keine Angabe | README 2026.8.2+, Paket >=2026.6.1 | Paket >=2026.7.1, AGENTS.md 2026.6.9 | evd-022, evd-024, evd-029, evd-032 |
+| Testdateien im Repository | keine | 2 | 33 | 6 | evd-023, evd-025, evd-028, evd-031 |
+
+| Aspekt | soilDNRA/openclaw-xmpp | elmafioso79/xmpp-channel | watkins-matt/xmpp-channel | Programmatore-Web/openclaw-xmpp-channel | Befundgrundlage |
+|---|---|---|---|---|---|
+| 1:1-Code | vorhanden | vorhanden | vorhanden | vorhanden | evd-034, evd-036, evd-038, evd-040 |
+| MUC-Code mit Raumbeitritt | nicht gefunden, nur Hinweistext | vorhanden | vorhanden | vorhanden, feste Räume | evd-034, evd-036, evd-038, evd-039, evd-040 |
+| OMEMO-Code | nicht gefunden, ausdrücklich nicht unterstützt | vorhanden, auch bei groupchat | vorhanden | nicht gefunden, ausdrücklich ausgeschlossen | evd-033, evd-034, evd-036, evd-038, evd-039, evd-040, evd-041 |
+| deklarierte OpenClaw-Version | >=2026.8.2 | ^2026.2.2-3 | >=2026.8.2 | ^2026.8.2 | evd-033, evd-035, evd-037, evd-039 |
+| Testdateien im Repository | 12 und CI | keine | 2 | 33 | evd-034, evd-036, evd-038, evd-040 |
+
+| Aspekt | MrCPA/oc-xmpp | chitozzz/xmpp-adapter-openclaw | weijia/xmpp-connector | processone/openclaw, Zweig xmpp-support | Befundgrundlage |
+|---|---|---|---|---|---|
+| 1:1-Code | vorhanden | vorhanden | vorhanden | vorhanden | evd-043, evd-045, evd-047, evd-049 |
+| MUC-Code mit Raumbeitritt | vorhanden | vorhanden | nicht gefunden | vorhanden | evd-043, evd-045, evd-047, evd-049 |
+| OMEMO-Code | vorhanden, `urn:xmpp:omemo:2` | nicht gefunden | nicht gefunden | nicht gefunden | evd-043, evd-045, evd-047, evd-049 |
+| deklarierte OpenClaw-Version | `*` | >=2026.6.9 | keine Angabe | Arbeitsbereichsversion | evd-042, evd-044, evd-046, evd-048 |
+| Testdateien im Repository | 6 | 1 | keine | 2 | evd-043, evd-045, evd-047, evd-049 |
+
+`rsaisankalp/clawdbotElyments` ist nicht in die Gegenüberstellung aufgenommen,
+weil es nach `evd-050` Clawdbot an eine andere Plattform anbindet und damit nicht
+denselben Bewertungsaspekten unterliegt.
 
 ## 6. Wesentliche Lücken, Nachweisgrenzen und offene Sachverhalte
 
@@ -91,13 +341,13 @@ unter den genannten Versionen (`evd-053`) bleiben nicht praktisch bestätigt.
 |---|---|---|---|---|
 | Funktionsfähigkeit der Projekte für 1:1, OMEMO und MUC (`evd-052`) | Nachweisgrenze | wesentlich für spätere Verifikation; die aktuelle Bewertung bleibt auf dokumentierte Angaben und vorhandenen Code beschränkt | nein, nicht ohne Aufbau einer geeigneten erheblichen Test-/Integrationsumgebung | spätere Verifikation/Umsetzung; kein Rückkehrpunkt zu swk-02 |
 | Ladefähigkeit der Projekte unter 2026.7.1-2 und 2026.9.4 (`evd-053`) | Nachweisgrenze | relevant für spätere Integrations- und Kompatibilitätsprüfung | nein, nicht ohne geeignete isolierte OpenClaw-Testinstanzen und weitere Testinfrastruktur | spätere Verifikation/Umsetzung; kein Rückkehrpunkt zu swk-02 |
-| Vollständigkeit der Projektliste außerhalb von GitHub und npm (`evd-054`) | dokumentierte Untersuchungsgrenze | begrenzt die Vollständigkeit der bekannten Alternativen | nicht zwingend; die Beschränkung auf GitHub/npm war in der akzeptierten swk-02-Bestandsuntersuchung ausdrücklich dokumentiert und akzeptiert | als Untersuchungsgrenze sichtbar halten; kein Rückkehrpunkt zu swk-02 |
+| Vollständigkeit der Projektliste außerhalb von GitHub und npm (`evd-054`) | Wissenslücke | begrenzt die Vollständigkeit der bekannten Alternativen; die erfassten Alternativen sind mit der vorhandenen Bestandsgrundlage dennoch nachvollziehbar bewertbar | voraussichtlich ja (Suche auf ClawHub, GitLab, Codeberg), aber keine Rückkehr: das Kriterium „mit der vorhandenen Bestandsgrundlage nicht nachvollziehbar bewertbar“ aus `phases/swk-03-assessment.md`, Abschnitt „Rückkehr zu swk-02“, ist nicht erfüllt | als Untersuchungsgrenze sichtbar halten; kein Rückkehrpunkt zu swk-02 |
 | Umfang der geforderten Funktionen, insbesondere OMEMO in Gruppenchats | Anforderungsklärung | wesentlich; bestimmt, welche Grundlagen fachlich passen | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
 | Bedeutung von „unterstützen“ je Funktion | Anforderungsklärung | wesentlich für spätere Spezifikation und Abnahme | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
 | Umfang der zu unterstützenden OpenClaw-Versionen | Anforderungsklärung | wesentlich für die spätere Spezifikation | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
 | Rolle des eigenen XMPP-Servers | Anforderungsklärung | wesentlich für spätere Betriebs- und Integrationsanforderungen | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
 | Zuschnitt des Verfahrens für neue OpenClaw-Versionen | Anforderungsklärung | wesentlich für den Projektgegenstand | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
-| Erprobte Plugins und Ursachen gescheiterter Installationen | Wissenslücke | hilfreich zur Einordnung bisheriger Erfahrungen, aber für die Spezifikation derzeit nicht blockierend | nein; nur durch weitere Angaben des Ideengebers | Klärung mit Ideengeber |
+| Erprobte Plugins und Ursachen gescheiterter Installationen (`evd-003`, `evd-007`) | Anforderungsklärung | hilfreich zur Einordnung bisheriger Erfahrungen, aber für die Spezifikation derzeit nicht blockierend | nein; präzisiert die Aussage in `idea.md` Abschnitt 2 und ist nur durch den Ideengeber möglich | Klärung mit Ideengeber (Abschnitt 8.1) |
 | Grundlage der Umsetzung: vorhandenes Projekt oder Neuentwicklung | echter Entscheidungsbedarf | bestimmt den späteren Entwurfs- und Umsetzungsweg | nein; spätere Auswahl zwischen dokumentierten Optionen | `dnd-001` |
 
 ## 7. Rückkehrpunkte zu swk-02
@@ -209,11 +459,12 @@ Begründung:
 - Für diese Tests müsste zunächst erhebliche neue Test-/Integrationsinfrastruktur entworfen oder aufgebaut werden; dies ist nach der präzisierten Prozessgrenze kein automatischer Rückkehrgrund zu swk-02.
 - Die Beschränkung der Projektsuche auf GitHub und npm war bereits als Untersuchungsgrenze in swk-02 dokumentiert und akzeptiert.
 - Anforderungsklärungen und `dnd-001` sind getrennt.
+- Abschnitt 4 enthält je Bewertungsaspekt Bezug zur `idea.md`, verwendete `evd-nnn`, positive Beiträge, Einschränkungen, unbekannte Punkte, Bedeutung und Ableitung; Abschnitt 5 stellt alle Alternativen anhand derselben fünf Aspekte gegenüber.
 - Keine Lösung wurde ausgewählt und keine Architektur-, Technologie- oder Umsetzungsentscheidung getroffen.
 
 ## 10. Freigabestatus
 
 - Ergebnis: `review`
-- geprüft am: 2026-09-17
+- geprüft am: 2026-09-18
 - geprüft durch: skizzwerk
-- Anmerkungen: Die Qualitätsgrenze swk-03 ist nach der präzisierten Prozessgrenze bestanden. Fehlende praktische Funktions- und Kompatibilitätsprüfungen bleiben als Nachweisgrenzen für spätere Verifikation/Umsetzung dokumentiert. Vor einer menschlichen Freigabe sind die Anforderungsklärungen in Abschnitt 8.1 mit dem Ideengeber zu besprechen; soweit diese Klärungen den Inhalt der Bewertung verändern, ist `assessment.md` anschließend erneut zu prüfen.
+- Anmerkungen: Die Qualitätsgrenze swk-03 ist nach der präzisierten Prozessgrenze bestanden. Am 2026-09-18 wurden die Abschnitte 4 und 5 wiederhergestellt, weil sie nur noch auf einen früheren Stand verwiesen, und in Abschnitt 6 zwei Einordnungen an die in `phases/swk-03-assessment.md` definierten Klassen angepasst. Fehlende praktische Funktions- und Kompatibilitätsprüfungen bleiben als Nachweisgrenzen für spätere Verifikation/Umsetzung dokumentiert. Vor einer menschlichen Freigabe sind die Anforderungsklärungen in Abschnitt 8.1 mit dem Ideengeber zu besprechen; soweit diese Klärungen den Inhalt der Bewertung verändern, ist `assessment.md` anschließend erneut zu prüfen.
