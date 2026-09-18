@@ -2,12 +2,13 @@
 document: assessment
 process_phase: swk-03
 project: "openclaw-xmpp"
-status: review
+status: draft
 created: 2026-09-16
 last_updated: 2026-09-18
 basis:
   - idea.md
   - inventory.json
+  - clarifications.md
 ---
 
 # Bewertung der Befunde
@@ -342,12 +343,12 @@ denselben Bewertungsaspekten unterliegt.
 | Funktionsfähigkeit der Projekte für 1:1, OMEMO und MUC (`evd-052`) | Nachweisgrenze | wesentlich für spätere Verifikation; die aktuelle Bewertung bleibt auf dokumentierte Angaben und vorhandenen Code beschränkt | nein, nicht ohne Aufbau einer geeigneten erheblichen Test-/Integrationsumgebung | spätere Verifikation/Umsetzung; kein Rückkehrpunkt zu swk-02 |
 | Ladefähigkeit der Projekte unter 2026.7.1-2 und 2026.9.4 (`evd-053`) | Nachweisgrenze | relevant für spätere Integrations- und Kompatibilitätsprüfung | nein, nicht ohne geeignete isolierte OpenClaw-Testinstanzen und weitere Testinfrastruktur | spätere Verifikation/Umsetzung; kein Rückkehrpunkt zu swk-02 |
 | Vollständigkeit der Projektliste außerhalb von GitHub und npm (`evd-054`) | Wissenslücke | begrenzt die Vollständigkeit der bekannten Alternativen; die erfassten Alternativen sind mit der vorhandenen Bestandsgrundlage dennoch nachvollziehbar bewertbar | voraussichtlich ja (Suche auf ClawHub, GitLab, Codeberg), aber keine Rückkehr: das Kriterium „mit der vorhandenen Bestandsgrundlage nicht nachvollziehbar bewertbar“ aus `phases/swk-03-assessment.md`, Abschnitt „Rückkehr zu swk-02“, ist nicht erfüllt | als Untersuchungsgrenze sichtbar halten; kein Rückkehrpunkt zu swk-02 |
-| Umfang der geforderten Funktionen, insbesondere OMEMO in Gruppenchats | Anforderungsklärung | wesentlich; bestimmt, welche Grundlagen fachlich passen | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
-| Bedeutung von „unterstützen“ je Funktion | Anforderungsklärung | wesentlich für spätere Spezifikation und Abnahme | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
-| Umfang der zu unterstützenden OpenClaw-Versionen | Anforderungsklärung | wesentlich für die spätere Spezifikation | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
-| Rolle des eigenen XMPP-Servers | Anforderungsklärung | wesentlich für spätere Betriebs- und Integrationsanforderungen | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
-| Zuschnitt des Verfahrens für neue OpenClaw-Versionen | Anforderungsklärung | wesentlich für den Projektgegenstand | nein; Präzisierung der Projektidee | Klärung mit Ideengeber |
-| Erprobte Plugins und Ursachen gescheiterter Installationen (`evd-003`, `evd-007`) | Anforderungsklärung | hilfreich zur Einordnung bisheriger Erfahrungen, aber für die Spezifikation derzeit nicht blockierend | nein; präzisiert die Aussage in `idea.md` Abschnitt 2 und ist nur durch den Ideengeber möglich | Klärung mit Ideengeber (Abschnitt 8.1) |
+| Umfang der geforderten Funktionen, insbesondere OMEMO in Gruppenchats | Anforderungsklärung | wesentlich; bestimmt, welche Grundlagen fachlich passen | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-001` in `clarifications.md` |
+| Bedeutung von „unterstützen“ je Funktion | Anforderungsklärung | wesentlich für spätere Spezifikation und Abnahme | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-002` in `clarifications.md` |
+| Umfang der zu unterstützenden OpenClaw-Versionen | Anforderungsklärung | wesentlich für die spätere Spezifikation | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-003` in `clarifications.md` |
+| Rolle des eigenen XMPP-Servers | Anforderungsklärung | wesentlich für spätere Betriebs- und Integrationsanforderungen | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-004` in `clarifications.md` |
+| Zuschnitt des Verfahrens für neue OpenClaw-Versionen | Anforderungsklärung | wesentlich für den Projektgegenstand | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-005` in `clarifications.md` |
+| Erprobte Plugins und Ursachen gescheiterter Installationen (`evd-003`, `evd-007`) | Anforderungsklärung | hilfreich zur Einordnung bisheriger Erfahrungen, aber für die Spezifikation derzeit nicht blockierend | nein; präzisiert die Aussage in `idea.md` Abschnitt 2 und ist nur durch den Ideengeber möglich | Klärung mit Ideengeber, `clr-006` in `clarifications.md` |
 | Grundlage der Umsetzung: vorhandenes Projekt oder Neuentwicklung | echter Entscheidungsbedarf | bestimmt den späteren Entwurfs- und Umsetzungsweg | nein; spätere Auswahl zwischen dokumentierten Optionen | `dnd-001` |
 
 ## 7. Rückkehrpunkte zu swk-02
@@ -374,45 +375,14 @@ Rückkehr zu swk-02.
 
 ### 8.1 Anforderungsklärungen
 
-#### Umfang der geforderten Funktionen, insbesondere OMEMO in Gruppenchats
+Die vollständige Frage und Antwort stehen in `pilots/openclaw-xmpp/clarifications.md`.
 
-- Gegenstand: Ob OMEMO-Verschlüsselung nur für Direktnachrichten oder auch für Gruppenchats über MUC gelten soll und welcher Funktionsumfang je Funktion als „unterstützt“ gilt.
-- Bezug zur `idea.md`: Abschnitt 7, Abschnitt 8, Abschnitt 10
-- relevante Befunde: `evd-024`, `evd-025`, `evd-031`, `evd-036`, `evd-038`, `evd-039`, `evd-041`, `evd-042`
-- offene Klärung: Präzisierung durch den Ideengeber.
-- Auswirkung: Die Präzisierung bestimmt die spätere Spezifikation und beeinflusst die Auswahl einer möglichen Grundlage.
-
-#### Umfang der zu unterstützenden OpenClaw-Versionen
-
-- Gegenstand: Welche Versionen „aktuelle OpenClaw-Versionen“ umfassen und ob beide in `idea.md` genannten Installationen unterstützt werden sollen.
-- Bezug zur `idea.md`: Abschnitt 1, Abschnitt 8, Abschnitt 10, Abschnitt 11
-- relevante Befunde: `evd-001`, `evd-004`, `evd-006`, `evd-009`, `evd-011`, `evd-012`, `evd-053`
-- offene Klärung: Festlegung des Versionsbezugs durch den Ideengeber.
-- Auswirkung: Bestimmt den späteren Spezifikations- und Kompatibilitätsumfang.
-
-#### Rolle des eigenen XMPP-Servers
-
-- Gegenstand: Ob das Plugin mit dem vorhandenen eigenen XMPP-Server betrieben werden soll und welche Rolle dieser für Entwicklung, Betrieb und spätere Tests besitzt.
-- Bezug zur `idea.md`: Abschnitt 2, Abschnitt 6, Abschnitt 11
-- relevante Befunde: `evd-002`, `evd-008`
-- offene Klärung: Rolle des Servers durch den Ideengeber präzisieren; technische Servereigenschaften werden erst dann zum Spezifikationsgegenstand, wenn sie für das Plugin tatsächlich relevant sind.
-- Auswirkung: Verhindert, dass vorzeitig Anforderungen an eine Test- oder Betriebsumgebung erfunden werden.
-
-#### Zuschnitt des Verfahrens für neue OpenClaw-Versionen
-
-- Gegenstand: Ob automatische Aktualisierung, Kompatibilitätssicherung oder beides gemeint ist und ob eine Unterstützung durch KI-Agenten erwünscht ist.
-- Bezug zur `idea.md`: Abschnitt 1, Abschnitt 7, Abschnitt 10
-- relevante Befunde: `evd-010`, `evd-011`, `evd-013`, `evd-014`, `evd-015`, `evd-016`, `evd-017`
-- offene Klärung: Präzisierung des Projektgegenstands durch den Ideengeber.
-- Auswirkung: Bestimmt spätere Anforderungen an Wartung und Kompatibilität.
-
-#### Erprobte Plugins und Ursachen der gescheiterten Installationen
-
-- Gegenstand: Welche Plugins bereits erprobt wurden und woran die Versuche scheiterten.
-- Bezug zur `idea.md`: Abschnitt 2, Abschnitt 11
-- relevante Befunde: `evd-003`, `evd-007`
-- offene Klärung: Angabe durch den Ideengeber, soweit noch erinnerlich oder dokumentierbar.
-- Auswirkung: Hilft bei der Einordnung bisheriger Erfahrungen, blockiert die Spezifikation aber nicht.
+- `clr-001`: Umfang von OMEMO — Status: offen — Auswirkung auf Bewertung: Aspekt „OMEMO-Verschlüsselung“, Gegenüberstellung in Abschnitt 5, offene Sachverhalte von `dnd-001`
+- `clr-002`: Bedeutung von „unterstützen“ je Funktion — Status: offen — Auswirkung auf Bewertung: Aspekte „Direktnachrichten“, „OMEMO-Verschlüsselung“, „Gruppenchats über MUC“
+- `clr-003`: Umfang der zu unterstützenden OpenClaw-Versionen — Status: offen — Auswirkung auf Bewertung: Aspekte „Anbindungspunkt für ein Plugin in den genannten Versionen“ und „Betriebsumfeld“, offene Sachverhalte von `dnd-001`
+- `clr-004`: Rolle des eigenen XMPP-Servers — Status: offen — Auswirkung auf Bewertung: Aspekte „Gruppenchats über MUC“ und „Betriebsumfeld“
+- `clr-005`: Verfahren für neue OpenClaw-Versionen — Status: offen — Auswirkung auf Bewertung: Aspekt „Verfahren für neue OpenClaw-Versionen“
+- `clr-006`: Erprobte Plugins und Ursachen der gescheiterten Installationen — Status: offen — Auswirkung auf Bewertung: Aspekt „Betriebsumfeld“; für den Abschluss nicht erforderlich
 
 ### 8.2 Entscheidungsbedarfe
 
@@ -446,10 +416,12 @@ Keine Entscheidung in dieser Phase treffen.
 
 ### 9.2 Qualitätsprüfung
 
-- Qualitätsgrenze swk-03 bestanden: ja
+- Qualitätsgrenze swk-03 bestanden: nein
 - offene erforderliche Rückkehrpunkte zu swk-02: nein
-- nicht erfüllte Kriterien: keine
-- Blockade: keine
+- offene erforderliche Anforderungsklärungen: ja (`clr-001` bis `clr-005`)
+- nicht erfüllte Kriterien:
+  - „keine für den Abschluss erforderliche `clr-nnn` unbeantwortet ist“ (`rules/quality-gates.md`, Qualitätsgrenze swk-03): `clr-001` bis `clr-005` sind offen.
+- Blockade: keine Blockade im Sinne von `rules/status.md`; die Klärungen werden mit dem Ideengeber durchgeführt.
 
 Begründung:
 
@@ -464,7 +436,7 @@ Begründung:
 
 ## 10. Freigabestatus
 
-- Ergebnis: `review`
+- Ergebnis: `draft`
 - geprüft am: 2026-09-18
 - geprüft durch: skizzwerk
-- Anmerkungen: Die Qualitätsgrenze swk-03 ist nach der präzisierten Prozessgrenze bestanden. Am 2026-09-18 wurden die Abschnitte 4 und 5 wiederhergestellt, weil sie nur noch auf einen früheren Stand verwiesen, und in Abschnitt 6 zwei Einordnungen an die in `phases/swk-03-assessment.md` definierten Klassen angepasst. Fehlende praktische Funktions- und Kompatibilitätsprüfungen bleiben als Nachweisgrenzen für spätere Verifikation/Umsetzung dokumentiert. Vor einer menschlichen Freigabe sind die Anforderungsklärungen in Abschnitt 8.1 mit dem Ideengeber zu besprechen; soweit diese Klärungen den Inhalt der Bewertung verändern, ist `assessment.md` anschließend erneut zu prüfen.
+- Anmerkungen: Nach Einführung von `rules/clarifications.md` sind die Anforderungsklärungen als `clr-001` bis `clr-006` in `clarifications.md` angelegt. `clr-001` bis `clr-005` sind für den Abschluss erforderlich und noch offen; die Qualitätsgrenze swk-03 ist deshalb nicht bestanden, und das Dokument steht nach `rules/status.md` wieder auf `draft`. Nach den Antworten werden die betroffenen Teile nach `rules/clarifications.md`, Abschnitt „Rückwirkung auf swk-03“, geprüft und die Qualitätsgrenze erneut vollständig geprüft.
