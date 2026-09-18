@@ -47,10 +47,12 @@ Erforderlich:
 - `rules/evidence.md`,
 - `rules/assumptions.md`,
 - `rules/questions.md`,
+- `rules/clarifications.md`,
 - `rules/identifiers.md`,
 - `rules/status.md`,
 - `rules/quality-gates.md`,
-- `templates/assessment.md`.
+- `templates/assessment.md`,
+- `templates/clarifications.md`.
 
 ## Bewertungsgrundlage
 
@@ -155,18 +157,27 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
     fehlende praktische Bestätigung als Nachweisgrenze sichtbar und wird für
     spätere Verifikation, Umsetzung oder Abnahme dokumentiert.
 
-12. Trenne spätere Anforderungsklärungen von echten Entscheidungsbedarfen.
-    Eine bloße Wissenslücke oder offene Präzisierung der Projektidee erhält
-    keine Kennung für Entscheidungsbedarf.
+12. Trenne Anforderungsklärungen von Wissenslücken, Annahmen und echten
+    Entscheidungsbedarfen. Jede erforderliche Anforderungsklärung erhält eine
+    `clr-nnn`-Kennung und wird nach `rules/clarifications.md` in der
+    projektspezifischen `clarifications.md` dokumentiert.
 
-13. Jeder echte Entscheidungsbedarf erhält eine gültige `dnd-nnn`-Kennung nach
+13. Führe offene `clr-nnn` mit dem Ideengeber durch. Übernimm seine Antwort
+    ausschließlich als `USER_PROVIDED`. Erfinde keine Antwort und leite aus
+    einer unvollständigen Antwort keine Annahme ab. Prüfe danach die betroffenen
+    Teile von `assessment.md` erneut. Widerspricht die Antwort der akzeptierten
+    `idea.md` oder verändert sie den Projektgegenstand materiell, behandle sie
+    nach `rules/clarifications.md` und `rules/process.md` als Rückwirkung auf
+    einen früheren Prozessstand statt als normale Präzisierung.
+
+14. Jeder echte Entscheidungsbedarf erhält eine gültige `dnd-nnn`-Kennung nach
     `rules/identifiers.md`. Ein `dnd-nnn` bezeichnet nur den festgestellten
     Bedarf; die Entscheidungsfrage entsteht erst in swk-04 als `que-nnn`.
 
-14. Erstelle oder vervollständige die projektspezifische `assessment.md`
+15. Erstelle oder vervollständige die projektspezifische `assessment.md`
     anhand von `templates/assessment.md`.
 
-15. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
+16. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
     `rules/quality-gates.md`.
 
 ## Verbindliche Regeln
@@ -177,6 +188,8 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
   als projektspezifische Grundlage.
 - Beachte `rules/questions.md` bei der Abgrenzung von Wissenslücke,
   Anforderungsklärung und Entscheidungsbedarf.
+- Beachte `rules/clarifications.md` für Kennung, Durchführung, Dokumentation und
+  Rückwirkung von Anforderungsklärungen.
 - Behandle Annahmen nicht als Befunde oder Tatsachen.
 - Führe in swk-03 keine neue Bestandsrecherche durch.
 - Verändere keine Befunde aus swk-02.
@@ -269,7 +282,8 @@ Sie enthält mindestens:
 - wesentliche unbekannte und nicht ausreichend untersuchte Sachverhalte,
 - dokumentierte Nachweisgrenzen, insbesondere fehlende praktische Bestätigung,
 - gegebenenfalls Rückkehrpunkte zu swk-02,
-- erforderliche Anforderungsklärungen,
+- erforderliche Anforderungsklärungen mit `clr-nnn` und Verweis auf die
+  projektspezifische `clarifications.md`,
 - echte spätere Entscheidungsbedarfe als `dnd-nnn`,
 - dabei gegebenenfalls Verweise auf entscheidungsrelevante `asm-nnn`,
 - das Prüfergebnis für swk-03.
@@ -291,6 +305,9 @@ swk-03 ist abgeschlossen, wenn:
 - keine Lösung ausgewählt oder Architekturentscheidung getroffen wurde,
 - alle wesentlichen offenen Punkte als Rückkehrpunkt, Nachweisgrenze,
   Anforderungsklärung oder echter Entscheidungsbedarf korrekt klassifiziert sind,
+- alle für den Abschluss erforderlichen Anforderungsklärungen als `clr-nnn`
+  dokumentiert, beantwortet und in den betroffenen Bewertungen berücksichtigt
+  sind,
 - kein erforderlicher Rückkehrpunkt zu `swk-02` mehr offen ist,
 - fehlende praktische Tests nicht als durchgeführt oder bestanden dargestellt
   werden,
