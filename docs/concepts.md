@@ -165,8 +165,18 @@ Alternative als verbindliche Lösung auswählen.
 
 Eine Anforderungsklärung ist keine Entscheidungsfrage. Sie dient dazu, eine
 bereits vorhandene, aber unklare oder unvollständige Aussage der Projektidee
-durch den Ideengeber zu präzisieren. Erst wenn danach eine echte Auswahl oder
-Festlegung erforderlich bleibt, entsteht ein `dnd-nnn`.
+durch den Ideengeber zu präzisieren. Jede Anforderungsklärung erhält eine
+`clr-nnn`-Kennung und wird in der projektspezifischen `clarifications.md`
+dokumentiert. Die Antwort bleibt als `USER_PROVIDED` von Befunden, Ableitungen
+und Annahmen unterscheidbar. Erst wenn danach eine echte Auswahl oder Festlegung
+erforderlich bleibt, entsteht ein `dnd-nnn`.
+
+Eine normale Präzisierung verändert die akzeptierte `idea.md` nicht. Sie ergänzt
+ihre Aussage nachvollziehbar über `clr-nnn`; anschließend werden die betroffenen
+Teile von `assessment.md` und die Qualitätsgrenze von swk-03 erneut geprüft.
+Widerspricht eine Antwort der akzeptierten Idee oder verändert sie den
+Projektgegenstand materiell, greift dagegen der Änderungslebenszyklus für den
+betroffenen früheren Prozessstand.
 
 ### Nachweisgrenzen und spätere Verifikation
 
@@ -222,6 +232,16 @@ oder eine KI aus einer Entscheidungsfrage selbst eine Entscheidung macht.
 Aussagen des Ideengebers werden von Interpretationen und externen Befunden
 getrennt. Die KI darf Originalaussagen nicht überschreiben oder nachträglich
 als eigene Ableitung darstellen.
+
+### Anforderungsklärungen
+
+`rules/clarifications.md` trennt spätere Präzisierungen durch den Ideengeber von
+Wissenslücken, Annahmen und Entscheidungen. `clarifications.md` enthält
+vollständige Frage, Antwort, Herkunft und Rückwirkung; `assessment.md`
+referenziert die jeweilige `clr-nnn`.
+
+Diese Datei ist kein allgemeines Fragenprotokoll. Wissenslücken, Annahmen und
+Entscheidungen bleiben in ihren eigenen Prozessmechanismen.
 
 ### Annahmen
 
@@ -351,12 +371,17 @@ mehrere konkrete Prozessprobleme sichtbar gemacht:
 - `rules/questions.md` war in `swk-03` nicht als Eingabe referenziert,
 - die zunächst verwendete Rückkehrregel konnte umfangreiche praktische Tests
   und damit den Aufbau neuer Testinfrastruktur bereits während der
-  Spezifikationsarbeit erzwingen.
+  Spezifikationsarbeit erzwingen,
+- für in swk-03 erkannte Anforderungsklärungen fehlten Kennung, dauerhaftes
+  Projektdokument, Antwortlebenszyklus und definierte Rückwirkung auf die
+  Bewertung.
 
 Die ersten Punkte wurden als Prozessänderungen übernommen. Für den letzten Punkt
 wurde die Grenze zwischen Bestandsuntersuchung und späterer praktischer
 Verifikation präzisiert: Neue erhebliche Test-, Integrations- oder
 Prüfinfrastruktur ist kein automatischer Bestandteil von swk-02 oder swk-03.
+Für Anforderungsklärungen wurde ein eigener `clr-nnn`-Lebenszyklus eingeführt,
+der `idea.md`, Wissenslücken, Annahmen und Entscheidungen getrennt hält.
 
 Der Pilot zeigte außerdem, dass bei einer umfangreichen `assessment.md` formale
 Vollständigkeitsfehler bei Befundreferenzen ohne zusätzliche Prüfung leicht
