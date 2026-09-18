@@ -243,6 +243,13 @@ referenziert die jeweilige `clr-nnn`.
 Diese Datei ist kein allgemeines Fragenprotokoll. Wissenslücken, Annahmen und
 Entscheidungen bleiben in ihren eigenen Prozessmechanismen.
 
+### Anforderungsklärungen
+
+`rules/clarifications.md` hält Anforderungsklärungen getrennt von Wissenslücken,
+Annahmen und Entscheidungen. `clarifications.md` ist kein allgemeines
+Fragenprotokoll, sondern enthält ausschließlich `clr-nnn` mit Frage, Antwort,
+Herkunft und Rückwirkung auf die Bewertung.
+
 ### Annahmen
 
 `rules/assumptions.md` verhindert, dass unbestätigte Annahmen als Tatsachen
