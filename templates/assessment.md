@@ -9,6 +9,8 @@ basis:
   - idea.md
   - inventory.json
   - assumptions.md # nur wenn vorhanden
+  - clarifications.md # nur wenn vorhanden
+  - clarifications.md # nur wenn vorhanden
 ---
 
 # Bewertung der Befunde
@@ -98,13 +100,9 @@ Wenn keine Rückkehr erforderlich ist: `keine`.
 
 Für Punkte, die eine Präzisierung oder Bestätigung der Projektidee durch den
 Ideengeber benötigen, aber noch keine Auswahl zwischen dokumentierten Optionen
-sind:
+sind. Die vollständige Frage und Antwort stehen in `clarifications.md`.
 
-- Gegenstand:
-- Bezug zur `idea.md`:
-- relevante Befunde: `evd-nnn` / keine
-- offene Klärung:
-- Auswirkung auf spätere Bewertung oder Entscheidung:
+- `clr-nnn`: Gegenstand — Status: offen / beantwortet — Auswirkung auf Bewertung: ...
 
 Wenn keine Anforderungsklärung erforderlich ist: `keine`.
 
@@ -148,6 +146,8 @@ Keine Entscheidung in dieser Phase treffen.
 
 - Qualitätsgrenze swk-03 bestanden: ja/nein
 - offene erforderliche Rückkehrpunkte zu swk-02: ja/nein
+- offene erforderliche Anforderungsklärungen: ja/nein
+- offene erforderliche Anforderungsklärungen: ja/nein
 - nicht erfüllte Kriterien:
 - Blockade:
 

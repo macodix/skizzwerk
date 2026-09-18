@@ -10,6 +10,7 @@ Beispiele:
 - `swk-01`
 - `asm-001`
 - `evd-001`
+- `clr-001`
 - `dnd-001`
 - `que-001`
 - `dec-001`
@@ -33,6 +34,7 @@ Kennungsart nichts anderes festlegt.
 - `swk`: Prozessphase
 - `asm`: Annahme
 - `evd`: Befund oder Nachweis
+- `clr`: Anforderungsklärung durch den Ideengeber
 - `dnd`: in `swk-03` festgestellter Entscheidungsbedarf
 - `que`: in `swk-04` formulierte Entscheidungsfrage
 - `dec`: dokumentierte Entscheidung einer späteren Entscheidungsphase
