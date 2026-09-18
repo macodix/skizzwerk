@@ -10,6 +10,7 @@ basis:
   - inventory.json
   - assumptions.md # nur wenn vorhanden
   - clarifications.md # nur wenn vorhanden
+  - clarifications.md # nur wenn vorhanden
 ---
 
 # Bewertung der Befunde
@@ -145,6 +146,7 @@ Keine Entscheidung in dieser Phase treffen.
 
 - Qualitätsgrenze swk-03 bestanden: ja/nein
 - offene erforderliche Rückkehrpunkte zu swk-02: ja/nein
+- offene erforderliche Anforderungsklärungen: ja/nein
 - offene erforderliche Anforderungsklärungen: ja/nein
 - nicht erfüllte Kriterien:
 - Blockade:
