@@ -162,8 +162,18 @@ Dokumentabschnitte Text enthalten.
 - keine Architektur-, Technologie- oder Umsetzungsentscheidung getroffen wird,
 - keine Annahme stillschweigend als Bewertungsgrundlage gesetzt wird,
 - jeder wesentliche offene Punkt darauf geprüft wurde, ob weitere
-  Bestandsuntersuchung, Anforderungsklärung oder eine spätere Entscheidung
-  erforderlich ist,
+  Bestandsuntersuchung, Anforderungsklärung, spätere Entscheidung oder eine
+  spätere praktische Verifikation erforderlich ist,
+- ein Rückkehrpunkt zu `swk-02` nur dann als erforderlich eingestuft wurde,
+  wenn er mit vorhandenen oder mit vertretbarem Aufwand zugänglichen Quellen
+  beziehungsweise bereits vorhandenen Prüfmöglichkeiten voraussichtlich
+  geklärt oder genauer abgegrenzt werden kann,
+- eine fehlende praktische Funktions-, Integrations- oder
+  Kompatibilitätsprüfung nicht allein deshalb einen Rückkehrpunkt erzeugt,
+  weil dafür erst neue erhebliche Test-, Integrations- oder Prüfinfrastruktur
+  entworfen oder aufgebaut werden müsste,
+- solche fehlenden praktischen Prüfungen stattdessen als Nachweisgrenze sichtbar
+  dokumentiert und einer späteren geeigneten Phase zugeordnet sind,
 - jeder erforderliche Rückkehrpunkt zu `swk-02` mit Sachverhalt, betroffenen Befunden, Bedeutung, zusätzlicher Untersuchung und Prüfweg dokumentiert ist,
 - kein erforderlicher Rückkehrpunkt zu `swk-02` mehr offen ist,
 - reine Wissenslücken und Anforderungsklärungen nicht als Entscheidungsbedarf
@@ -171,7 +181,7 @@ Dokumentabschnitte Text enthalten.
 - jeder echte Entscheidungsbedarf eine gültige `dnd-nnn`-Kennung besitzt,
 - keine nicht definierte Kennungsart verwendet wurde,
 - wesentliche nicht durch weitere Bestandsuntersuchung klärbare Punkte als
-  Anforderungsklärung oder späterer Entscheidungsbedarf sichtbar dokumentiert sind,
+  Nachweisgrenze, Anforderungsklärung oder späterer Entscheidungsbedarf sichtbar dokumentiert sind,
 - die projektspezifische `assessment.md` der Vorlage `templates/assessment.md` entspricht,
 - alle Kennungen `rules/identifiers.md` entsprechen,
 - der Dokumentstatus entsprechend `rules/status.md` gesetzt wurde.
