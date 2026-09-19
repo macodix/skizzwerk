@@ -424,11 +424,12 @@ Keine Entscheidung in dieser Phase treffen.
 ### 9.2 Qualitätsprüfung
 
 - Qualitätsgrenze swk-03 bestanden: nein
-- offene erforderliche Rückkehrpunkte zu swk-02: nein
+- offene erforderliche Rückkehrpunkte zu swk-02: ja (Zuordnung der zweiten OpenClaw-Installation)
 - offene erforderliche Anforderungsklärungen: ja (`clr-001` bis `clr-005`)
 - nicht erfüllte Kriterien:
+  - der dokumentierte Rückkehrpunkt zu swk-02 zur Zuordnung der zweiten OpenClaw-Installation ist offen.
   - „keine für den Abschluss erforderliche `clr-nnn` unbeantwortet ist“ (`rules/quality-gates.md`, Qualitätsgrenze swk-03): `clr-001` bis `clr-005` sind offen.
-- Blockade: keine Blockade im Sinne von `rules/status.md`; die Klärungen werden mit dem Ideengeber durchgeführt.
+- Blockade: keine Blockade im Sinne von `rules/status.md`; vor Abschluss von swk-03 ist zunächst der dokumentierte Rückkehrpunkt zu swk-02 zu bearbeiten und anschließend sind die erforderlichen Anforderungsklärungen durchzuführen.
 
 Begründung:
 
@@ -446,4 +447,4 @@ Begründung:
 - Ergebnis: `draft`
 - geprüft am: 2026-09-18
 - geprüft durch: skizzwerk
-- Anmerkungen: Nach Einführung von `rules/clarifications.md` sind die Anforderungsklärungen als `clr-001` bis `clr-006` in `clarifications.md` angelegt. `clr-001` bis `clr-005` sind für den Abschluss erforderlich und noch offen; die Qualitätsgrenze swk-03 ist deshalb nicht bestanden, und das Dokument steht nach `rules/status.md` wieder auf `draft`. Nach den Antworten werden die betroffenen Teile nach `rules/clarifications.md`, Abschnitt „Rückwirkung auf swk-03“, geprüft und die Qualitätsgrenze erneut vollständig geprüft.
+- Anmerkungen: `clr-001` bis `clr-005` sind echte Anforderungsklärungen und für den Abschluss erforderlich. Die frühere `clr-006` wurde als Wissenslücke/Bestandsinformation reklassifiziert und aus `clarifications.md` entfernt; die Tatsachenfrage aus `clr-003` zur zweiten OpenClaw-Installation wurde ebenfalls herausgelöst. Für deren Zuordnung besteht ein offener Rückkehrpunkt zu swk-02. Nach Aktualisierung und erneuter Freigabe der Bestandsgrundlage wird swk-03 erneut geprüft; anschließend werden die offenen Anforderungsklärungen durchgeführt.
