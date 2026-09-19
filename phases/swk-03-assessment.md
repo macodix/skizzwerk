@@ -137,12 +137,21 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
      vorhandenen Prüfmöglichkeiten klären kann,
    - eine Präzisierung oder Bestätigung der Projektidee durch den Ideengeber
      erforderlich ist,
+   - eine fehlende Bestands- oder Kontextinformation durch eine
+     Tatsachenaussage des Ideengebers geklärt werden kann,
    - eine weitergehende praktische Verifikation erst durch den Aufbau neuer
      erheblicher Test-, Integrations- oder Prüfinfrastruktur möglich wäre,
    - oder tatsächlich eine spätere Auswahl, Festlegung oder ausdrückliche
      Bestätigung zwischen dokumentierten Optionen erforderlich ist.
 
-10. Dokumentiere erforderliche Rückkehrpunkte zu swk-02 mit:
+10. Behandle eine für die Bewertung wesentliche fehlende Bestands- oder
+    Kontextinformation, die durch eine Tatsachenaussage des Ideengebers
+    geklärt werden kann, als Wissenslücke und Rückkehrpunkt zu swk-02, nicht
+    als Anforderungsklärung. Die spätere Aussage wird in swk-02 nach
+    `rules/evidence.md` als `USER_PROVIDED` / `USER_STATEMENT` und eigener
+    `evd-nnn` in `inventory.json` aufgenommen.
+
+11. Dokumentiere erforderliche Rückkehrpunkte zu swk-02 mit:
 
    - betroffenem Sachverhalt,
    - betroffenen Befunden,
@@ -150,19 +159,19 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
    - zusätzlich benötigter Untersuchung,
    - voraussichtlich verfügbaren Quellen oder Prüfwegen.
 
-11. Eine Rückkehr zu swk-02 ist nicht allein deshalb erforderlich, weil eine
+12. Eine Rückkehr zu swk-02 ist nicht allein deshalb erforderlich, weil eine
     praktische Funktions-, Integrations- oder Kompatibilitätsprüfung zusätzliche
     erhebliche Test- oder Prüfinfrastruktur voraussetzen würde, die im Projekt
     noch nicht spezifiziert oder vorhanden ist. In diesem Fall bleibt die
     fehlende praktische Bestätigung als Nachweisgrenze sichtbar und wird für
     spätere Verifikation, Umsetzung oder Abnahme dokumentiert.
 
-12. Trenne Anforderungsklärungen von Wissenslücken, Annahmen und echten
+13. Trenne Anforderungsklärungen von Wissenslücken, Annahmen und echten
     Entscheidungsbedarfen. Jede erforderliche Anforderungsklärung erhält eine
     `clr-nnn`-Kennung und wird nach `rules/clarifications.md` in der
     projektspezifischen `clarifications.md` dokumentiert.
 
-13. Führe offene `clr-nnn` mit dem Ideengeber durch. Übernimm seine Antwort
+14. Führe offene `clr-nnn` mit dem Ideengeber durch. Übernimm seine Antwort
     ausschließlich als `USER_PROVIDED`. Erfinde keine Antwort und leite aus
     einer unvollständigen Antwort keine Annahme ab. Prüfe danach die betroffenen
     Teile von `assessment.md` erneut. Widerspricht die Antwort der akzeptierten
@@ -170,14 +179,14 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
     nach `rules/clarifications.md` und `rules/process.md` als Rückwirkung auf
     einen früheren Prozessstand statt als normale Präzisierung.
 
-14. Jeder echte Entscheidungsbedarf erhält eine gültige `dnd-nnn`-Kennung nach
+15. Jeder echte Entscheidungsbedarf erhält eine gültige `dnd-nnn`-Kennung nach
     `rules/identifiers.md`. Ein `dnd-nnn` bezeichnet nur den festgestellten
     Bedarf; die Entscheidungsfrage entsteht erst in swk-04 als `que-nnn`.
 
-15. Erstelle oder vervollständige die projektspezifische `assessment.md`
+16. Erstelle oder vervollständige die projektspezifische `assessment.md`
     anhand von `templates/assessment.md`.
 
-16. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
+17. Prüfe das Ergebnis anhand der Qualitätsgrenze für `swk-03` in
     `rules/quality-gates.md`.
 
 ## Verbindliche Regeln
@@ -190,6 +199,9 @@ stillschweigend als zusätzliche Anforderungen eingeführt werden.
   Anforderungsklärung und Entscheidungsbedarf.
 - Beachte `rules/clarifications.md` für Kennung, Durchführung, Dokumentation und
   Rückwirkung von Anforderungsklärungen.
+- Behandle Tatsachen- und Kontextfragen an den Ideengeber nicht als
+  Anforderungsklärung. Wesentliche neue Bestandsinformationen werden über
+  `swk-02` in die Evidenzbasis aufgenommen.
 - Behandle Annahmen nicht als Befunde oder Tatsachen.
 - Führe in swk-03 keine neue Bestandsrecherche durch.
 - Verändere keine Befunde aus swk-02.

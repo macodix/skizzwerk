@@ -132,6 +132,23 @@ Nicht aus der Eingabe ableitbare Sachverhalte erhalten:
 Skizzwerk darf eine Aussage des Ideengebers nicht selbstständig auf
 `VERIFIED` setzen.
 
+## Nachträgliche Tatsachenaussagen des Ideengebers
+
+Wird ab `swk-02` eine projektbezogene Tatsachen- oder Kontextangabe des
+Ideengebers erhoben, bleibt sie eine Aussage des Ideengebers:
+
+- Nachweisstatus: `USER_PROVIDED`
+- Quellenart: `USER_STATEMENT`
+
+Sie wird nicht allein aufgrund der Aussage des Ideengebers auf `VERIFIED`
+hochgestuft.
+
+Wird eine solche für die Bewertung wesentliche Information erst in `swk-03`
+erkannt, darf sie nicht als Anforderungsklärung oder freie Ergänzung der
+`assessment.md` dokumentiert werden. Sie wird über den in
+`rules/process.md` definierten Rückkehrweg in `swk-02` als Befund in die
+Bestandsgrundlage aufgenommen.
+
 ## Regeln ab swk-02
 
 - README-Angaben erhalten höchstens `DOCUMENTED`.

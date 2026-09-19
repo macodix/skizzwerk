@@ -4,7 +4,7 @@ process_phase: swk-03
 project: "openclaw-xmpp"
 status: draft
 created: 2026-09-16
-last_updated: 2026-09-18
+last_updated: 2026-09-19
 basis:
   - idea.md
   - inventory.json
@@ -348,14 +348,21 @@ denselben Bewertungsaspekten unterliegt.
 | Umfang der zu unterstützenden OpenClaw-Versionen | Anforderungsklärung | wesentlich für die spätere Spezifikation | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-003` in `clarifications.md` |
 | Rolle des eigenen XMPP-Servers | Anforderungsklärung | wesentlich für spätere Betriebs- und Integrationsanforderungen | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-004` in `clarifications.md` |
 | Zuschnitt des Verfahrens für neue OpenClaw-Versionen | Anforderungsklärung | wesentlich für den Projektgegenstand | nein; Präzisierung der Projektidee | Klärung mit Ideengeber, `clr-005` in `clarifications.md` |
-| Erprobte Plugins und Ursachen gescheiterter Installationen (`evd-003`, `evd-007`) | Anforderungsklärung | hilfreich zur Einordnung bisheriger Erfahrungen, aber für die Spezifikation derzeit nicht blockierend | nein; präzisiert die Aussage in `idea.md` Abschnitt 2 und ist nur durch den Ideengeber möglich | Klärung mit Ideengeber, `clr-006` in `clarifications.md` |
+| Zuordnung der zweiten OpenClaw-Installation (`evd-006`) | Wissenslücke / Bestandsinformation | für die Bewertung des konkreten Betriebsumfelds relevant | ja; Tatsachenaussage des Ideengebers ist als `USER_PROVIDED`-Befund in swk-02 aufzunehmen | Rückkehrpunkt zu swk-02; nicht Bestandteil von `clr-003` |
+| Erprobte Plugins und Ursachen gescheiterter Installationen (`evd-003`, `evd-007`) | Wissenslücke / Bestandsinformation | hilfreich zur Einordnung bisheriger Erfahrungen, aber für die aktuelle Bewertung nicht wesentlich | durch Ideengeber grundsätzlich klärbar, derzeit aber kein erforderlicher Rückkehrpunkt | als Wissenslücke sichtbar halten; kein `clr-nnn` |
 | Grundlage der Umsetzung: vorhandenes Projekt oder Neuentwicklung | echter Entscheidungsbedarf | bestimmt den späteren Entwurfs- und Umsetzungsweg | nein; spätere Auswahl zwischen dokumentierten Optionen | `dnd-001` |
 
 ## 7. Rückkehrpunkte zu swk-02
 
-`keine`.
+### Zuordnung der zweiten OpenClaw-Installation
 
-Die zuvor dokumentierten Rückkehrpunkte wurden nach der präzisierten
+- Sachverhalt: `evd-006` dokumentiert die zweite aktive Installation mit Version 2026.7.1-2, ihre Zuordnung ist unbekannt.
+- Bedeutung: Die konkrete Bestands- und Kontextinformation ist für die Bewertung des Betriebsumfelds und der zu unterstützenden Installationen relevant.
+- Benötigte Untersuchung: Tatsachenaussage des Ideengebers zur Zuordnung beziehungsweise zum Standort der Installation.
+- Prüfweg: Aussage des Ideengebers als `USER_PROVIDED` / `USER_STATEMENT` mit eigener `evd-nnn` in `inventory.json`; danach Validierung, erneute swk-02-Qualitätsprüfung und menschliche Freigabe.
+- Status: offen.
+
+Die übrigen zuvor dokumentierten Grenzen wurden nach der präzisierten
 Prozessgrenze erneut bewertet:
 
 - Die praktische Funktionsprüfung ist eine Nachweisgrenze für spätere
@@ -369,7 +376,8 @@ Prozessgrenze erneut bewertet:
   dokumentiert.
 
 Keine dieser drei Grenzen erzwingt nach dem aktuellen Prozessstand eine
-Rückkehr zu swk-02.
+Rückkehr zu swk-02. Der oben dokumentierte Rückkehrpunkt betrifft dagegen eine
+wesentliche, durch den Ideengeber klärbare Bestandsinformation.
 
 ## 8. Späterer Klärungs- und Entscheidungsbedarf
 
@@ -379,10 +387,9 @@ Die vollständige Frage und Antwort stehen in `pilots/openclaw-xmpp/clarificatio
 
 - `clr-001`: Umfang von OMEMO — Status: offen — Auswirkung auf Bewertung: Aspekt „OMEMO-Verschlüsselung“, Gegenüberstellung in Abschnitt 5, offene Sachverhalte von `dnd-001`
 - `clr-002`: Bedeutung von „unterstützen“ je Funktion — Status: offen — Auswirkung auf Bewertung: Aspekte „Direktnachrichten“, „OMEMO-Verschlüsselung“, „Gruppenchats über MUC“
-- `clr-003`: Umfang der zu unterstützenden OpenClaw-Versionen — Status: offen — Auswirkung auf Bewertung: Aspekte „Anbindungspunkt für ein Plugin in den genannten Versionen“ und „Betriebsumfeld“, offene Sachverhalte von `dnd-001`
+- `clr-003`: Umfang der zu unterstützenden OpenClaw-Versionen — Status: offen — Auswirkung auf Bewertung: Aspekt „Anbindungspunkt für ein Plugin in den genannten Versionen“, offene Sachverhalte von `dnd-001`
 - `clr-004`: Rolle des eigenen XMPP-Servers — Status: offen — Auswirkung auf Bewertung: Aspekte „Gruppenchats über MUC“ und „Betriebsumfeld“
 - `clr-005`: Verfahren für neue OpenClaw-Versionen — Status: offen — Auswirkung auf Bewertung: Aspekt „Verfahren für neue OpenClaw-Versionen“
-- `clr-006`: Erprobte Plugins und Ursachen der gescheiterten Installationen — Status: offen — Auswirkung auf Bewertung: Aspekt „Betriebsumfeld“; für den Abschluss nicht erforderlich
 
 ### 8.2 Entscheidungsbedarfe
 
@@ -417,11 +424,12 @@ Keine Entscheidung in dieser Phase treffen.
 ### 9.2 Qualitätsprüfung
 
 - Qualitätsgrenze swk-03 bestanden: nein
-- offene erforderliche Rückkehrpunkte zu swk-02: nein
+- offene erforderliche Rückkehrpunkte zu swk-02: ja (Zuordnung der zweiten OpenClaw-Installation)
 - offene erforderliche Anforderungsklärungen: ja (`clr-001` bis `clr-005`)
 - nicht erfüllte Kriterien:
+  - der dokumentierte Rückkehrpunkt zu swk-02 zur Zuordnung der zweiten OpenClaw-Installation ist offen.
   - „keine für den Abschluss erforderliche `clr-nnn` unbeantwortet ist“ (`rules/quality-gates.md`, Qualitätsgrenze swk-03): `clr-001` bis `clr-005` sind offen.
-- Blockade: keine Blockade im Sinne von `rules/status.md`; die Klärungen werden mit dem Ideengeber durchgeführt.
+- Blockade: keine Blockade im Sinne von `rules/status.md`; vor Abschluss von swk-03 ist zunächst der dokumentierte Rückkehrpunkt zu swk-02 zu bearbeiten und anschließend sind die erforderlichen Anforderungsklärungen durchzuführen.
 
 Begründung:
 
@@ -439,4 +447,4 @@ Begründung:
 - Ergebnis: `draft`
 - geprüft am: 2026-09-18
 - geprüft durch: skizzwerk
-- Anmerkungen: Nach Einführung von `rules/clarifications.md` sind die Anforderungsklärungen als `clr-001` bis `clr-006` in `clarifications.md` angelegt. `clr-001` bis `clr-005` sind für den Abschluss erforderlich und noch offen; die Qualitätsgrenze swk-03 ist deshalb nicht bestanden, und das Dokument steht nach `rules/status.md` wieder auf `draft`. Nach den Antworten werden die betroffenen Teile nach `rules/clarifications.md`, Abschnitt „Rückwirkung auf swk-03“, geprüft und die Qualitätsgrenze erneut vollständig geprüft.
+- Anmerkungen: `clr-001` bis `clr-005` sind echte Anforderungsklärungen und für den Abschluss erforderlich. Die frühere `clr-006` wurde als Wissenslücke/Bestandsinformation reklassifiziert und aus `clarifications.md` entfernt; die Tatsachenfrage aus `clr-003` zur zweiten OpenClaw-Installation wurde ebenfalls herausgelöst. Für deren Zuordnung besteht ein offener Rückkehrpunkt zu swk-02. Nach Aktualisierung und erneuter Freigabe der Bestandsgrundlage wird swk-03 erneut geprüft; anschließend werden die offenen Anforderungsklärungen durchgeführt.
