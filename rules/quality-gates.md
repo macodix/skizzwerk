@@ -180,6 +180,12 @@ Dokumentabschnitte Text enthalten.
 - kein erforderlicher Rückkehrpunkt zu `swk-02` mehr offen ist,
 - reine Wissenslücken und Anforderungsklärungen nicht als Entscheidungsbedarf
   umetikettiert wurden,
+- für die Bewertung wesentliche Tatsachen- oder Kontextfragen an den
+  Ideengeber nicht als `clr-nnn` geführt werden, sondern als Rückkehrbedarf
+  zu `swk-02` dokumentiert sind,
+- nachträglich erhobene Tatsachenaussagen des Ideengebers nur über eine
+  aktualisierte Bestandsgrundlage mit `USER_PROVIDED` / `USER_STATEMENT` und
+  eigener `evd-nnn` in die Bewertung eingehen,
 - jede erforderliche Anforderungsklärung eine gültige `clr-nnn`-Kennung besitzt
   und in der projektspezifischen `clarifications.md` dokumentiert ist,
 - jede beantwortete `clr-nnn` die Antwort des Ideengebers als `USER_PROVIDED`
