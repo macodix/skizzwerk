@@ -87,6 +87,19 @@ Kann ein wesentlicher Sachverhalt nicht durch weitere Bestandsuntersuchung
 geklärt werden, wird er nicht durch eine Annahme ersetzt. Seine weitere
 Behandlung richtet sich nach den dafür vorgesehenen späteren Phasen.
 
+Kann eine für die Bewertung wesentliche Bestands- oder Kontextinformation durch
+eine Tatsachenaussage des Ideengebers geklärt werden, ist dies keine
+Anforderungsklärung. `swk-03` dokumentiert den Rückkehrbedarf zu `swk-02`.
+Die Aussage wird dort als Befund mit eigener `evd-nnn`-Kennung, Nachweisstatus
+`USER_PROVIDED` und Quellenart `USER_STATEMENT` in `inventory.json` aufgenommen.
+Das aktualisierte Bestandsdokument durchläuft erneut Validierung,
+Qualitätsgrenze und menschliche Freigabe. Anschließend werden die davon
+betroffenen Bewertungen in `swk-03` erneut geprüft.
+
+Nicht jede fehlende Kontextangabe erzwingt eine Rückkehr. Ist die Information
+für die nachvollziehbare Bewertung nicht wesentlich, bleibt die Wissenslücke
+sichtbar dokumentiert.
+
 ## Anforderungsklärungen in swk-03
 
 Erkennt `swk-03` eine notwendige Präzisierung oder Bestätigung einer bereits
