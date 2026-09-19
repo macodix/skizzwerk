@@ -3,7 +3,7 @@ document: clarifications
 project: "openclaw-xmpp"
 status: draft
 created: 2026-09-18
-last_updated: 2026-09-18
+last_updated: 2026-09-19
 ---
 
 # Anforderungsklärungen
@@ -20,7 +20,6 @@ Diese Datei enthält ausschließlich Anforderungsklärungen nach
 | `clr-003` | Umfang der zu unterstützenden OpenClaw-Versionen | offen |
 | `clr-004` | Rolle des eigenen XMPP-Servers | offen |
 | `clr-005` | Verfahren für neue OpenClaw-Versionen | offen |
-| `clr-006` | Erprobte Plugins und Ursachen der gescheiterten Installationen | offen |
 
 ## Klärungen
 
@@ -52,14 +51,14 @@ Diese Datei enthält ausschließlich Anforderungsklärungen nach
 
 ### clr-003: Umfang der zu unterstützenden OpenClaw-Versionen
 
-- Gegenstand: Welche Versionen „aktuelle OpenClaw-Versionen“ umfassen, ob beide genannten Installationen unterstützt werden sollen und wo diese laufen.
+- Gegenstand: Welche Versionen „aktuelle OpenClaw-Versionen“ umfassen und ob beide genannten Installationen unterstützt werden sollen.
 - Bezug zur `idea.md`: Abschnitt 1 („aktuelle OpenClaw-Versionen“), Abschnitt 2 („2 OpenClaw Installationen, Versionen 2026.9.4 und 2026.7.1-2, aktiv“), Abschnitt 10
 - relevante Befunde: `evd-001`, `evd-004`, `evd-006`, `evd-009`, `evd-011`, `evd-012`, `evd-053`
-- Ausgangsfrage: a) Welche Versionen meinst du mit „aktuelle OpenClaw-Versionen“? b) Soll das Plugin auf beiden in Abschnitt 2 genannten Installationen laufen, also 2026.9.4 und 2026.7.1-2? c) Ist srv001 eine dieser beiden Installationen, und wo läuft die mit 2026.7.1-2?
+- Ausgangsfrage: a) Welche Versionen meinst du mit „aktuelle OpenClaw-Versionen“? b) Soll das Plugin auf beiden in Abschnitt 2 genannten Installationen laufen, also 2026.9.4 und 2026.7.1-2?
 - Antwort des Ideengebers: noch nicht vorhanden
 - Herkunft der Antwort: noch nicht vorhanden
 - Status: offen
-- Auswirkung auf `assessment.md`: betrifft Abschnitt 4 „Anbindungspunkt für ein Plugin in den genannten Versionen“ und „Betriebsumfeld“ sowie die offenen Sachverhalte von `dnd-001`
+- Auswirkung auf `assessment.md`: betrifft Abschnitt 4 „Anbindungspunkt für ein Plugin in den genannten Versionen“ sowie die offenen Sachverhalte von `dnd-001`
 - Folgeprozess: noch nicht bestimmbar
 - Anmerkungen: für den Abschluss von swk-03 erforderlich
 
@@ -89,15 +88,3 @@ Diese Datei enthält ausschließlich Anforderungsklärungen nach
 - Folgeprozess: noch nicht bestimmbar
 - Anmerkungen: für den Abschluss von swk-03 erforderlich
 
-### clr-006: Erprobte Plugins und Ursachen der gescheiterten Installationen
-
-- Gegenstand: Welche Plugins bereits erprobt wurden und woran ihre Installation scheiterte.
-- Bezug zur `idea.md`: Abschnitt 2 („bestehende Plugins konnten z. T. nicht installiert werden …“), Abschnitt 11
-- relevante Befunde: `evd-003`, `evd-007`
-- Ausgangsfrage: Welche Plugins hast du erprobt, und woran ist die Installation jeweils gescheitert?
-- Antwort des Ideengebers: noch nicht vorhanden
-- Herkunft der Antwort: noch nicht vorhanden
-- Status: offen
-- Auswirkung auf `assessment.md`: betrifft Abschnitt 4 „Betriebsumfeld“ und die Einordnung der Projekte in Abschnitt 5
-- Folgeprozess: noch nicht bestimmbar
-- Anmerkungen: für den Abschluss von swk-03 nicht erforderlich; nach `assessment.md` Abschnitt 6 hilfreich zur Einordnung, aber nicht blockierend
