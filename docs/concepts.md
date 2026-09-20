@@ -334,6 +334,16 @@ Wird ein akzeptiertes Ergebnis überarbeitet, muss die neue Fassung erneut
 geprüft und menschlich bestätigt werden. Die bisherige Fassung bleibt
 nachvollziehbar erhalten.
 
+Bei der erneuten Freigabe muss der Ideengeber nicht die vollständige
+maschinenlesbare Quelldatei oder das gesamte Ergebnis erneut prüfen. skizzwerk
+legt eine menschenlesbare Änderungsübersicht vor, die den zuvor akzeptierten
+Stand mit der neuen Fassung abgrenzt, die fachliche und prozessuale Bedeutung
+der Änderungen nennt, das erneut ausgeführte Quality Gate ausweist und
+Auswirkungen auf nachfolgende Phasen sichtbar macht. Bei strukturierten
+Phasenergebnissen bleibt die strukturierte Datei die verbindliche Datenbasis;
+die menschliche Prüfung stützt sich auf die erzeugte lesbare Darstellung und
+die Änderungsübersicht.
+
 ## Dokumentstatus
 
 Die verbindlichen Statuswerte stehen in `rules/status.md`.

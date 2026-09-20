@@ -136,6 +136,35 @@ Muss ein bereits akzeptiertes Phasenergebnis ergänzt oder geändert werden:
 - müssen nachfolgende Ergebnisse erneut geprüft werden, wenn ihre Grundlage
   verändert wurde.
 
+## Menschliche Prüfung geänderter akzeptierter Phasenergebnisse
+
+Wird ein bereits akzeptiertes Phasenergebnis erneut zur menschlichen Freigabe
+vorgelegt, darf die Freigabe nicht voraussetzen, dass der Ideengeber die
+vollständige strukturierte Quelldatei oder das vollständige Ergebnis erneut
+manuell durcharbeitet.
+
+Vor der Freigabe muss eine menschenlesbare Änderungsübersicht vorgelegt werden.
+Sie enthält mindestens:
+
+- die eindeutig bezeichnete bisher akzeptierte Fassung,
+- die zu prüfende neue Fassung,
+- neu hinzugekommene, geänderte und entfallene Inhalte,
+- die fachliche beziehungsweise prozessuale Bedeutung dieser Änderungen,
+- unveränderte Bereiche, soweit dies zur Abgrenzung erforderlich ist,
+- das Ergebnis der erneut ausgeführten Qualitätsgrenze,
+- erkennbare Auswirkungen auf nachfolgende Phasenergebnisse.
+
+Bei Phasen mit strukturierter Quelldatei und erzeugter menschenlesbarer
+Darstellung ist die strukturierte Quelldatei weiterhin die verbindliche
+Datenbasis. Die menschliche Freigabe erfolgt jedoch auf Grundlage der
+menschenlesbaren Darstellung und der Änderungsübersicht. Die strukturierte
+Quelldatei muss dafür nicht manuell geprüft werden.
+
+Die Änderungsübersicht ist eine Prüfhilfe und kein eigenständiges
+Phasenergebnis. Sie darf keine Anforderungen, Befunde, Annahmen, Bewertungen
+oder Entscheidungen enthalten, die nicht bereits im zu prüfenden
+Phasenergebnis dokumentiert sind.
+
 ## Maschinenlesbare Phasenergebnisse
 
 Wenn eine Phase eine strukturierte Quelldatei und eine daraus erzeugte
