@@ -15,6 +15,9 @@ Dokumentabschnitte Text enthalten.
 - Ein Dokument mit wesentlichen Mängeln darf nicht den Status `review` erhalten.
 - Ein Dokument darf nur durch ausdrückliche menschliche Bestätigung den Status
   `accepted` erhalten.
+- Wird ein bereits akzeptiertes Phasenergebnis geändert, muss vor der erneuten
+  menschlichen Bestätigung eine menschenlesbare Änderungsübersicht nach
+  `rules/process.md` vorliegen.
 - Ein blockierter Abschluss muss mit einer konkreten Begründung dokumentiert werden.
 
 ## Qualitätsgrenze swk-01
