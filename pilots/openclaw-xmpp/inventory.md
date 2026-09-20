@@ -2,9 +2,9 @@
 document: inventory
 process_phase: swk-02
 project: "openclaw-xmpp"
-status: accepted
+status: review
 created: 2026-09-14
-last_updated: 2026-09-16
+last_updated: 2026-09-20
 basis: idea.md
 ---
 
@@ -14,7 +14,7 @@ basis: idea.md
 
 ## 1. Grundlage und Untersuchungsauftrag
 
-Grundlage ist `pilots/openclaw-xmpp/idea.md` (Commit 4e46961, Status `accepted`, bestätigt am 2026-09-14). Die Untersuchung begann und endete am 2026-09-14; am 2026-09-15 wurde sie ohne neue Bestandsrecherche in das strukturierte Format übertragen. Untersucht wird der vorhandene Bestand zu einer XMPP-Anbindung an OpenClaw: die vorhandenen OpenClaw-Installationen, die Plugin-Schnittstelle der genannten OpenClaw-Versionen und ihre Änderungen, XMPP im Lieferumfang und im Hauptprojekt von OpenClaw, vorhandene öffentliche Projekte sowie die Angaben zum eigenen XMPP-Server und zu bisherigen Versuchen. Kennzeichnung nach `rules/evidence.md`: `USER_PROVIDED` (Aussage des Ideengebers), `VERIFIED` (unmittelbar durch Code, Befehlsausgabe oder Primärquelle bestätigt), `DOCUMENTED` (dokumentierte Behauptung), `INFERRED` (Ableitung), `UNKNOWN` (unbekannt). Es wurden keine Annahmen gesetzt, keine Aussage widerlegt und kein Widerspruch nach den Anforderungen an `CONFLICT` nachgewiesen; die in einer früheren Fassung als `CONFLICT` geführten Befunde evd-026, evd-029, evd-032 und evd-041 sind nach ihrer tatsächlichen Belegbarkeit eingestuft. Die Befunde enthalten keine neuen Anforderungen, keine Rangfolge oder Auswahl möglicher Lösungen und keine Architektur-, Technologie- oder Umsetzungsentscheidung.
+Grundlage ist `pilots/openclaw-xmpp/idea.md` (Commit 4e46961, Status `accepted`, bestätigt am 2026-09-14). Die Untersuchung begann und endete am 2026-09-14; am 2026-09-15 wurde sie ohne neue Bestandsrecherche in das strukturierte Format übertragen. Untersucht wird der vorhandene Bestand zu einer XMPP-Anbindung an OpenClaw: die vorhandenen OpenClaw-Installationen, die Plugin-Schnittstelle der genannten OpenClaw-Versionen und ihre Änderungen, XMPP im Lieferumfang und im Hauptprojekt von OpenClaw, vorhandene öffentliche Projekte sowie die Angaben zum eigenen XMPP-Server und zu bisherigen Versuchen. Kennzeichnung nach `rules/evidence.md`: `USER_PROVIDED` (Aussage des Ideengebers), `VERIFIED` (unmittelbar durch Code, Befehlsausgabe oder Primärquelle bestätigt), `DOCUMENTED` (dokumentierte Behauptung), `INFERRED` (Ableitung), `UNKNOWN` (unbekannt). Es wurden keine Annahmen gesetzt, keine Aussage widerlegt und kein Widerspruch nach den Anforderungen an `CONFLICT` nachgewiesen; die in einer früheren Fassung als `CONFLICT` geführten Befunde evd-026, evd-029, evd-032 und evd-041 sind nach ihrer tatsächlichen Belegbarkeit eingestuft. Die Befunde enthalten keine neuen Anforderungen, keine Rangfolge oder Auswahl möglicher Lösungen und keine Architektur-, Technologie- oder Umsetzungsentscheidung. Am 2026-09-20 wurde die Untersuchung gezielt um den Rückkehrpunkt aus swk-03 zur Zuordnung der Installationen ergänzt; die bisher akzeptierte Fassung bleibt als Commit ac59af5 nachvollziehbar erhalten.
 
 ## 2. Untersuchungsumfang
 
@@ -39,6 +39,7 @@ Grundlage ist `pilots/openclaw-xmpp/idea.md` (Commit 4e46961, Status `accepted`,
 | Vorhandene öffentliche XMPP-Projekte für OpenClaw | 12 Projekte und 1 Grenzfall auf GitHub: Dokumentation, Paketmetadaten, Quelltext (Klon mit `--depth 1` in getrennter Arbeitsumgebung, nur gelesen); npm-Register: Paketdaten und Suche; GitHub-Suche: `gh search repos` („openclaw xmpp“ 6, „openclaw jabber“ 0, „openclaw prosody“ 0, „openclaw omemo“ 0, „clawdbot xmpp“ 0, „moltbot xmpp“ 0, „openclaw-channel xmpp“ 0, „xmpp openclaw plugin“ 0, „openclaw ejabberd“ 0); `gh api search/repositories` (`xmpp in:name,description,readme openclaw` 176, `xmpp clawdbot in:readme` 10, `xmpp moltbot in:readme` 7, `topic:openclaw topic:xmpp` 4, `omemo openclaw in:readme` 12, `jabber openclaw in:readme` 24, `openclaw xmpp fork:true` 21, `xmpp in:name claw` 5); `gh api search/code` (`openclaw @xmpp/client filename:package.json` 5, `openclaw xmpp filename:openclaw.plugin.json` 2, `openclaw urn:xmpp:omemo` 2, `openclaw muc groupchat xmpp` 19, `"channels.xmpp" openclaw` 18); `gh search prs/issues --repo openclaw/openclaw xmpp` (je 7); Stand 2026-09-14; npm-Suche: https://registry.npmjs.org/-/v1/search mit `openclaw xmpp`, `openclaw jabber`, `openclaw omemo`, `openclaw prosody`, `clawdbot xmpp`, `moltbot xmpp`, `keywords:openclaw` (seitenweise), `keywords:clawdbot`, `keywords:moltbot`, `keywords:openclaw-plugin`, `keywords:openclaw-channel`, `text=xmpp`, `text=omemo`, `text=jabber`; Direktabfragen `@openclaw/xmpp`, `openclaw-xmpp`, `openclaw-channel-xmpp`, `@openclaw/channel-xmpp`, `clawdbot-xmpp`, `moltbot-xmpp`; Stand 2026-09-14 | Build, Tests und Funktionstest der Projekte: nicht durchgeführt; in einer getrennten, entbehrlichen Arbeitsumgebung nach `phases/swk-02-inventory.md` zulässig; Laden der Projekte unter 2026.7.1-2 und 2026.9.4: nicht durchgeführt; ClawHub, GitLab, Codeberg und allgemeine Websuche: nicht durchgeführt; Forks cronus42, kitschmensch, zhgzhg, jerry-harm, indorri: nicht durchgeführt; geschlossene Issues: nicht durchgeführt; OMEMO-Beschränkung im Code von MrCPA/oc-xmpp: nicht durchgeführt | Quelltext nur auf Vorhandensein geprüft; Aussagen zu Funktionen reichen höchstens bis `DOCUMENTED` oder bis zum Vorhandensein von Code (evd-052, evd-053); GitHub-Codesuche nur auf Standard-Branches; npm `keywords:openclaw`: 134 von 5134 Einträgen nicht abrufbar (Suchgrenze 5000); Projektliste auf GitHub und npm beschränkt (evd-054) |
 | Eigener XMPP-Server | Suche in `/srv/aixlab/docs`; Dienstliste auf srv001 | Server selbst: wegen fehlenden Zugriffs nicht möglich, da Standort und Zugang unbekannt | keine Angaben zu Server-Software und Erweiterungen (evd-008) |
 | Bisherige Versuche mit bestehenden Plugins | Suche in `/srv/aixlab/docs`; Versuch, `/var/lib/openclaw/.openclaw` auf srv001 zu lesen | Plugin-Liste der Installationen: wegen fehlenden Zugriffs nicht möglich; `openclaw plugins list` auf dem produktiv verwendeten srv001: nicht durchgeführt | die vom Ideengeber erprobten Plugins sind nicht identifizierbar (evd-003, evd-007) |
+| Zuordnung und aktuelle Versionen der vorhandenen OpenClaw-Installationen (Rückkehrpunkt aus swk-03) | Tatsachenaussagen des Ideengebers vom 2026-09-20 zu srv001 und srv002; Prüfung der Version, des Dienstes und der Installationspfade auf srv001 am 2026-09-20 | Rechner srv002: wegen fehlenden Zugriffs nicht möglich; Aktualisierungsvorgang auf srv001: nicht durchgeführt; Verbleib einer Installation mit 2026.7.1-2: nicht durchgeführt | Angaben zu srv002 sind Aussagen des Ideengebers ohne eigenen Nachweis (evd-057); die Angaben vom 2026-09-20 und die Aussage in evd-001 vom 2026-09-13 betreffen unterschiedliche Zeitpunkte (evd-058, evd-059) |
 
 ## 4. Befundübersicht
 
@@ -98,6 +99,11 @@ Grundlage ist `pilots/openclaw-xmpp/idea.md` (Commit 4e46961, Status `accepted`,
 | `evd-052` | Ob eines der untersuchten Projekte Direktnachrichten, OMEMO-Verschlüsselung und Gruppenchats über MUC tatsächlich funktionsfähig bereitstellt, ist unbekannt. | `UNKNOWN` |
 | `evd-053` | Ob die untersuchten Projekte unter OpenClaw 2026.7.1-2 oder 2026.9.4 laden und laufen, ist unbekannt; es liegen nur deklarierte Versionsangaben vor. | `UNKNOWN` |
 | `evd-054` | Ob es XMPP-Anbindungen für OpenClaw außerhalb von GitHub und npm gibt, etwa auf ClawHub, GitLab oder Codeberg, ist unbekannt. | `UNKNOWN` |
+| `evd-055` | Die beiden vom Ideengeber genannten OpenClaw-Installationen laufen auf den Rechnern srv001 und srv002. | `USER_PROVIDED` |
+| `evd-056` | Auf srv001 läuft am 2026-09-20 OpenClaw 2026.9.4 (Commit 3a9d69d); der Dienst `openclaw.service` ist aktiv, und unter den geprüften Pfaden gibt es keine zweite Installation. | `VERIFIED` |
+| `evd-057` | Auf srv002 läuft nach Aussage des Ideengebers OpenClaw 2026.9.4. | `USER_PROVIDED` |
+| `evd-058` | Der Ideengeber gibt an, dass OpenClaw auf srv001 inzwischen aktualisiert wurde. | `USER_PROVIDED` |
+| `evd-059` | Ob und wo zum 2026-09-20 noch eine OpenClaw-Installation mit Version 2026.7.1-2 betrieben wird, ist unbekannt. | `UNKNOWN` |
 
 ## 5. Einzelbefunde
 
@@ -327,7 +333,7 @@ Bezug zur Projektidee:
 - Bedeutung: Umfang der vorhandenen Installationen
 
 Folgerung:
-Die Installation mit 2026.7.1-2 ist nicht untersucht.
+Die Installation mit 2026.7.1-2 ist nicht untersucht. Am 2026-09-20 durch die Angaben des Ideengebers in evd-055, evd-057 und evd-058 sowie die Prüfung in evd-056 geklärt; die Aussage dieses Befunds gilt für den Stand vom 2026-09-14.
 
 ### evd-007
 
@@ -2187,6 +2193,198 @@ Bezug zur Projektidee:
 Folgerung:
 Die Projektliste ist auf GitHub und npm beschränkt.
 
+### evd-055
+
+Aussage:
+Die beiden vom Ideengeber genannten OpenClaw-Installationen laufen auf den Rechnern srv001 und srv002.
+
+Nachweisstatus:
+`USER_PROVIDED`
+
+Begründung des Nachweisstatus:
+Die Zuordnung stammt unmittelbar vom Ideengeber. Nach `rules/evidence.md`, Abschnitt „Nachträgliche Tatsachenaussagen des Ideengebers“, bleibt sie `USER_PROVIDED` und wird nicht auf `VERIFIED` hochgestuft.
+
+Quellen:
+
+| Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
+|---|---|---|---|---|
+| `USER_STATEMENT` | Gespräch mit dem Ideengeber, 2026-09-20; Rückkehrpunkt aus `assessment.md` Abschnitt 7 | – | 2026-09-20 | nennt srv001 und srv002 als die beiden Installationen |
+
+Prüfung:
+
+Durchgeführt:
+- Aussage übernommen
+
+Ergebnis: wie in der Aussage
+
+Nicht durchgeführt:
+- nicht durchgeführt: Prüfung auf srv002 (kein Zugriff)
+
+Einschränkung der Aussagekraft: Aussage des Ideengebers, für srv002 nicht durch skizzwerk bestätigt
+
+Bezug zur Projektidee:
+
+- Fundstelle: idea.md, Abschnitt 2, Abschnitt 6, Abschnitt 11
+- Bedeutung: klärt die in evd-006 offene Zuordnung der Installationen
+
+Folgerung:
+Die in evd-006 offene Zuordnung ist für beide Installationen benannt.
+
+### evd-056
+
+Aussage:
+Auf srv001 läuft am 2026-09-20 OpenClaw 2026.9.4 (Commit 3a9d69d); der Dienst `openclaw.service` ist aktiv, und unter den geprüften Pfaden gibt es keine zweite Installation.
+
+Nachweisstatus:
+`VERIFIED`
+
+Begründung des Nachweisstatus:
+Version, Paket und Dienststatus wurden unmittelbar durch Befehlsausgaben auf srv001 bestätigt; die Aussage beschränkt sich auf den geprüften Rechner und die geprüften Pfade.
+
+Quellen:
+
+| Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
+|---|---|---|---|---|
+| `MANUAL_TEST` | `openclaw --version` auf srv001 | openclaw@2026.9.4 | 2026-09-20 | Ausgabe `OpenClaw 2026.9.4 (3a9d69d)` |
+| `MANUAL_TEST` | `npm ls -g --depth=0` auf srv001 | openclaw@2026.9.4 | 2026-09-20 | Ausgabe `openclaw@2026.9.4` |
+| `MANUAL_TEST` | `systemctl is-active openclaw` und `systemctl cat openclaw` auf srv001 | – | 2026-09-20 | Dienst `active`, `ExecStart=/usr/bin/openclaw gateway run`, `User=openclaw` |
+| `SOURCE_CODE` | `/usr/lib/node_modules/openclaw/package.json` auf srv001 | Version 2026.9.4, Dateistand 2026-09-13 | 2026-09-20 | Versionsangabe des installierten Pakets |
+| `MANUAL_TEST` | `ls -d /usr/local/lib/node_modules/openclaw /opt/*/node_modules/openclaw /srv/*/node_modules/openclaw` auf srv001 | – | 2026-09-20 | keine Treffer |
+
+Prüfung:
+
+Durchgeführt:
+- Befehlsausgaben auf srv001 gelesen
+
+Ergebnis: wie in der Aussage
+
+Nicht durchgeführt:
+- nicht durchgeführt: vollständige Dateisystemsuche nach weiteren Installationen
+- wegen fehlenden Zugriffs nicht möglich: Lesen der Konfiguration unter `/var/lib/openclaw/.openclaw`
+
+Einschränkung der Aussagekraft: gilt nur für srv001, die geprüften Pfade und den Prüfzeitpunkt
+
+Bezug zur Projektidee:
+
+- Fundstelle: idea.md, Abschnitt 2, Abschnitt 6
+- Bedeutung: bestätigt die Version der Installation auf srv001 zum neuen Prüfzeitpunkt
+
+Folgerung:
+Auf srv001 ist zum 2026-09-20 die Version 2026.9.4 installiert und aktiv; evd-004 vom 2026-09-14 bleibt davon unberührt.
+
+### evd-057
+
+Aussage:
+Auf srv002 läuft nach Aussage des Ideengebers OpenClaw 2026.9.4.
+
+Nachweisstatus:
+`USER_PROVIDED`
+
+Begründung des Nachweisstatus:
+Die Angabe stammt unmittelbar vom Ideengeber und wurde von skizzwerk nicht geprüft; nach `rules/evidence.md` bleibt sie `USER_PROVIDED`.
+
+Quellen:
+
+| Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
+|---|---|---|---|---|
+| `USER_STATEMENT` | Aussage des Ideengebers im Gespräch am 2026-09-20 („auf dem anderen OpenClaw Rechner, srv002, läuft 2026.9.4“) | – | 2026-09-20 | Versionsangabe für srv002 |
+
+Prüfung:
+
+Durchgeführt:
+- Aussage übernommen
+
+Ergebnis: wie in der Aussage
+
+Nicht durchgeführt:
+- wegen fehlenden Zugriffs nicht möglich: Prüfung auf srv002
+
+Einschränkung der Aussagekraft: Aussage des Ideengebers, nicht durch skizzwerk bestätigt
+
+Bezug zur Projektidee:
+
+- Fundstelle: idea.md, Abschnitt 2, Abschnitt 10 („aktuelle OpenClaw-Versionen“)
+- Bedeutung: Version der zweiten Installation
+
+Folgerung:
+Für srv002 liegt eine Versionsangabe des Ideengebers vor, kein eigener Nachweis.
+
+### evd-058
+
+Aussage:
+Der Ideengeber gibt an, dass OpenClaw auf srv001 inzwischen aktualisiert wurde.
+
+Nachweisstatus:
+`USER_PROVIDED`
+
+Begründung des Nachweisstatus:
+Die Angabe zum Aktualisierungsvorgang stammt unmittelbar vom Ideengeber; der Vorgang selbst wurde nicht geprüft.
+
+Quellen:
+
+| Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
+|---|---|---|---|---|
+| `USER_STATEMENT` | Aussage des Ideengebers im Gespräch am 2026-09-20 („2026.9.4 stimmt, OpenClaw wurde aktualisiert“) | – | 2026-09-20 | Hinweis auf eine zwischenzeitliche Aktualisierung |
+
+Prüfung:
+
+Durchgeführt:
+- Aussage übernommen
+
+Ergebnis: wie in der Aussage
+
+Nicht durchgeführt:
+- nicht durchgeführt: Prüfung des Aktualisierungsvorgangs, etwa anhand von Paket- oder Dienstprotokollen
+
+Einschränkung der Aussagekraft: Aussage des Ideengebers; welche Installation zuvor welche Version hatte, sagt sie nicht
+
+Bezug zur Projektidee:
+
+- Fundstelle: idea.md, Abschnitt 2, Abschnitt 11
+- Bedeutung: erklärt die Abweichung zwischen evd-001 vom 2026-09-13 und den Angaben vom 2026-09-20
+
+Folgerung:
+Die Versionsangaben aus evd-001 und die Angaben vom 2026-09-20 betreffen unterschiedliche Zeitpunkte.
+
+### evd-059
+
+Aussage:
+Ob und wo zum 2026-09-20 noch eine OpenClaw-Installation mit Version 2026.7.1-2 betrieben wird, ist unbekannt.
+
+Nachweisstatus:
+`UNKNOWN`
+
+Begründung des Nachweisstatus:
+Weder die Angaben des Ideengebers vom 2026-09-20 noch die Prüfung auf srv001 treffen dazu eine Aussage. Kein `CONFLICT` zu evd-001: Die Angaben betreffen unterschiedliche Zeitpunkte (2026-09-13 und 2026-09-20).
+
+Quellen:
+
+| Quellenart | Fundstelle | Version oder Commit | Prüfdatum | Beitrag zum Befund |
+|---|---|---|---|---|
+| `USER_STATEMENT` | Aussage des Ideengebers im Gespräch am 2026-09-20 | – | 2026-09-20 | nennt für srv001 und srv002 jeweils 2026.9.4, ohne Angabe zu 2026.7.1-2 |
+| `MANUAL_TEST` | `openclaw --version` auf srv001 | openclaw@2026.9.4 | 2026-09-20 | zeigt auf srv001 keine Installation mit 2026.7.1-2 |
+
+Prüfung:
+
+Durchgeführt:
+- Angaben des Ideengebers und Prüfergebnis auf srv001 gegenübergestellt
+
+Ergebnis: keine Angabe zu einer laufenden Installation mit 2026.7.1-2
+
+Nicht durchgeführt:
+- wegen fehlenden Zugriffs nicht möglich: Prüfung auf srv002
+- nicht durchgeführt: Nachfrage nach weiteren Rechnern
+
+Einschränkung der Aussagekraft: Das Fehlen einer Angabe belegt nicht, dass keine solche Installation existiert
+
+Bezug zur Projektidee:
+
+- Fundstelle: idea.md, Abschnitt 2, Abschnitt 10, Abschnitt 11
+- Bedeutung: betrifft den Umfang der zu unterstützenden Versionen
+
+Folgerung:
+Für die Version 2026.7.1-2 liegt zum 2026-09-20 kein Betriebsnachweis vor.
+
 ## 6. Grenzen der Bestandsuntersuchung
 
 - Nicht in den Untersuchungsumfang aufgenommen: Werkzeuge und Verfahren zur automatischen Aktualisierung, auch mit KI-Agenten. `idea.md` Abschnitt 1 nennt ein solches Verfahren als Bedarf, nicht als vorhandenen Bestand; eine Suche danach wäre Lösungsrecherche. Die Änderungen an OpenClaw selbst sind im Bereich Versionen erfasst.
@@ -2198,12 +2396,13 @@ Die Projektliste ist auf GitHub und npm beschränkt.
 - Nicht mögliche Prüfungen: Prüfungen am eigenen XMPP-Server und an der Konfiguration von srv001 (fehlender Zugriff). Funktions- und Kompatibilitätsprüfungen der Projekte wären in einer getrennten Arbeitsumgebung möglich, wurden aber nicht durchgeführt.
 - Sonstige Einschränkung: Suche und Erstauswertung der Projekte und der OpenClaw-Schnittstelle erfolgten in zwei Hilfsaufträgen. Metadaten aller Projekte, Commits, Versionsdaten, Exportpfade, Stabilitätsaussage, Kanalliste, PR-Status und ausgewählte README- und Codestellen wurden von skizzwerk stichprobenartig nachgeprüft, nicht jede Zeilenangabe.
 - Kein externes System, keine Installation und kein Repository wurde durch die Bestandsuntersuchung verändert.
+- Nachtrag vom 2026-09-20: Die Bestandsuntersuchung wurde gezielt um den Rückkehrpunkt aus swk-03 ergänzt (evd-055 bis evd-059). Alle übrigen Befunde und ihr Prüfdatum 2026-09-14 bleiben unverändert.
 
 ## 7. Prüfergebnis swk-02
 
 - Vorprüfung bestanden: `true`
 - Qualitätsgrenze bestanden: `true`
-- geprüft am: 2026-09-15
+- geprüft am: 2026-09-20
 - geprüft durch: skizzwerk
 
 Nicht erfüllte Kriterien:
@@ -2213,7 +2412,7 @@ Nicht erfüllte Kriterien:
 
 ## 8. Freigabestatus
 
-- Dokumentstatus: `accepted`
-- angenommen am: 2026-09-16
-- angenommen durch: Martin Henkel
-- Anmerkungen: Bestandsuntersuchung durch den Ideengeber geprüft und akzeptiert.
+- Dokumentstatus: `review`
+- angenommen am: –
+- angenommen durch: –
+- Anmerkungen: –
