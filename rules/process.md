@@ -9,6 +9,10 @@ Die inhaltliche Bearbeitung einer Phase richtet sich nach der jeweiligen
 Datei unter `phases/`. Für Nachweise, Dokumentstatus und Qualitätsgrenzen
 gelten zusätzlich die Dateien unter `rules/`.
 
+Für jede Interaktion mit dem Ideengeber gilt verbindlich
+`rules/human-interface.md`. Interne Prozessartefakte sind nicht automatisch
+Benutzerausgaben.
+
 ## Prozessübersicht
 
 ```mermaid
@@ -40,6 +44,9 @@ flowchart TD
 - Fehlende Informationen dürfen nicht durch Annahmen ersetzt werden.
 - Eine spätere Phase darf Ergebnisse einer früheren Phase nicht
   stillschweigend verändern.
+- Phasenwechsel, Rückkehrpunkte und interne Prüfungen werden von skizzwerk
+  selbst geführt. Eine Benutzerinteraktion erfolgt nur nach
+  `rules/human-interface.md`.
 
 ## Übergang von swk-01 zu swk-02
 
@@ -143,7 +150,7 @@ vorgelegt, darf die Freigabe nicht voraussetzen, dass der Ideengeber die
 vollständige strukturierte Quelldatei oder das vollständige Ergebnis erneut
 manuell durcharbeitet.
 
-Vor der Freigabe muss eine menschenlesbare Änderungsübersicht vorgelegt werden.
+Vor der Freigabe muss intern eine menschenlesbare Änderungsübersicht vorliegen.
 Sie enthält mindestens:
 
 - die eindeutig bezeichnete bisher akzeptierte Fassung,
@@ -156,9 +163,10 @@ Sie enthält mindestens:
 
 Bei Phasen mit strukturierter Quelldatei und erzeugter menschenlesbarer
 Darstellung ist die strukturierte Quelldatei weiterhin die verbindliche
-Datenbasis. Die menschliche Freigabe erfolgt jedoch auf Grundlage der
-menschenlesbaren Darstellung und der Änderungsübersicht. Die strukturierte
-Quelldatei muss dafür nicht manuell geprüft werden.
+Datenbasis. Die menschliche Freigabe erfolgt nach `rules/human-interface.md` anhand einer
+kompakten fachlichen Darstellung der freigaberelevanten Änderungen. Die
+strukturierte Quelldatei und die vollständige Änderungsübersicht müssen dafür
+nicht manuell geprüft werden.
 
 Die Änderungsübersicht ist eine Prüfhilfe und kein eigenständiges
 Phasenergebnis. Sie darf keine Anforderungen, Befunde, Annahmen, Bewertungen
