@@ -48,6 +48,19 @@ Jede Phase besitzt:
 
 Eine Phase darf keine Aufgaben späterer Phasen stillschweigend vorwegnehmen.
 
+## Mensch-KI-Schnittstelle
+
+Die detaillierten Prozessartefakte bilden die interne Arbeits- und
+Nachweisebene von skizzwerk. Sie sind nicht die Benutzerschnittstelle.
+
+Der Ideengeber arbeitet mit fachlichen Aussagen, Fragen, Bestätigungen und
+Entscheidungen. Wenn seine Eingabe erforderlich ist, zeigt skizzwerk kompakt
+Stand, fachliches Ergebnis, offene Punkte, die konkret benötigte Eingabe und
+den anschließenden fachlichen Schritt. Fortschritt wird fachlich und nicht
+über Dokumente, Kennungen oder Commits dargestellt.
+
+Die verbindlichen Regeln dafür stehen in `rules/human-interface.md`.
+
 ## Aktueller Phasenablauf
 
 ### swk-01: Idee aufnehmen
