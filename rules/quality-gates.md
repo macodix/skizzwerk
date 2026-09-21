@@ -18,6 +18,9 @@ Dokumentabschnitte Text enthalten.
 - Wird ein bereits akzeptiertes Phasenergebnis geändert, muss vor der erneuten
   menschlichen Bestätigung eine menschenlesbare Änderungsübersicht nach
   `rules/process.md` vorliegen.
+- Jede erforderliche menschliche Interaktion muss `rules/human-interface.md`
+  entsprechen; interne Prozessartefakte dürfen nicht als notwendige
+  Benutzereingabe oder Benutzerprüfung vorausgesetzt werden.
 - Ein blockierter Abschluss muss mit einer konkreten Begründung dokumentiert werden.
 
 ## Qualitätsgrenze swk-01
