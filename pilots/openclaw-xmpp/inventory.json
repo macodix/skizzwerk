@@ -6,7 +6,7 @@
     "project": "openclaw-xmpp",
     "status": "review",
     "created": "2026-09-14",
-    "last_updated": "2026-09-20",
+    "last_updated": "2026-09-21",
     "basis": "idea.md"
   },
   "assignment": "Grundlage ist `pilots/openclaw-xmpp/idea.md` (Commit 4e46961, Status `accepted`, bestätigt am 2026-09-14). Die Untersuchung begann und endete am 2026-09-14; am 2026-09-15 wurde sie ohne neue Bestandsrecherche in das strukturierte Format übertragen. Untersucht wird der vorhandene Bestand zu einer XMPP-Anbindung an OpenClaw: die vorhandenen OpenClaw-Installationen, die Plugin-Schnittstelle der genannten OpenClaw-Versionen und ihre Änderungen, XMPP im Lieferumfang und im Hauptprojekt von OpenClaw, vorhandene öffentliche Projekte sowie die Angaben zum eigenen XMPP-Server und zu bisherigen Versuchen. Kennzeichnung nach `rules/evidence.md`: `USER_PROVIDED` (Aussage des Ideengebers), `VERIFIED` (unmittelbar durch Code, Befehlsausgabe oder Primärquelle bestätigt), `DOCUMENTED` (dokumentierte Behauptung), `INFERRED` (Ableitung), `UNKNOWN` (unbekannt). Es wurden keine Annahmen gesetzt, keine Aussage widerlegt und kein Widerspruch nach den Anforderungen an `CONFLICT` nachgewiesen; die in einer früheren Fassung als `CONFLICT` geführten Befunde evd-026, evd-029, evd-032 und evd-041 sind nach ihrer tatsächlichen Belegbarkeit eingestuft. Die Befunde enthalten keine neuen Anforderungen, keine Rangfolge oder Auswahl möglicher Lösungen und keine Architektur-, Technologie- oder Umsetzungsentscheidung. Am 2026-09-20 wurde die Untersuchung gezielt um den Rückkehrpunkt aus swk-03 zur Zuordnung der Installationen ergänzt; die bisher akzeptierte Fassung bleibt als Commit ac59af5 nachvollziehbar erhalten.",
@@ -160,7 +160,8 @@
       "area": "Zuordnung und aktuelle Versionen der vorhandenen OpenClaw-Installationen (Rückkehrpunkt aus swk-03)",
       "examined": [
         "Tatsachenaussagen des Ideengebers vom 2026-09-20 zu srv001 und srv002",
-        "Prüfung der Version, des Dienstes und der Installationspfade auf srv001 am 2026-09-20"
+        "Prüfung der Version, des Dienstes und der Installationspfade auf srv001 am 2026-09-20",
+        "Tatsachenaussage des Ideengebers vom 2026-09-21 zum Projektumfang der Installationen"
       ],
       "not_examined": [
         "Rechner srv002: wegen fehlenden Zugriffs nicht möglich",
@@ -183,12 +184,13 @@
     "Nicht mögliche Prüfungen: Prüfungen am eigenen XMPP-Server und an der Konfiguration von srv001 (fehlender Zugriff). Funktions- und Kompatibilitätsprüfungen der Projekte wären in einer getrennten Arbeitsumgebung möglich, wurden aber nicht durchgeführt.",
     "Sonstige Einschränkung: Suche und Erstauswertung der Projekte und der OpenClaw-Schnittstelle erfolgten in zwei Hilfsaufträgen. Metadaten aller Projekte, Commits, Versionsdaten, Exportpfade, Stabilitätsaussage, Kanalliste, PR-Status und ausgewählte README- und Codestellen wurden von skizzwerk stichprobenartig nachgeprüft, nicht jede Zeilenangabe.",
     "Kein externes System, keine Installation und kein Repository wurde durch die Bestandsuntersuchung verändert.",
-    "Nachtrag vom 2026-09-20: Die Bestandsuntersuchung wurde gezielt um den Rückkehrpunkt aus swk-03 ergänzt (evd-055 bis evd-059). Alle übrigen Befunde und ihr Prüfdatum 2026-09-14 bleiben unverändert."
+    "Nachtrag vom 2026-09-20: Die Bestandsuntersuchung wurde gezielt um den Rückkehrpunkt aus swk-03 ergänzt (evd-055 bis evd-059). Alle übrigen Befunde und ihr Prüfdatum 2026-09-14 bleiben unverändert.",
+    "Nachtrag vom 2026-09-21: Der Projektumfang der Installationen wurde durch eine Aussage des Ideengebers eingegrenzt (evd-060); evd-059 ist entsprechend enger gefasst."
   ],
   "review": {
     "precheck_passed": true,
     "quality_gate_passed": true,
-    "checked_at": "2026-09-20",
+    "checked_at": "2026-09-21",
     "checked_by": "skizzwerk",
     "unmet_criteria": [],
     "blockage": null
@@ -2552,9 +2554,9 @@
     },
     {
       "id": "evd-059",
-      "statement": "Ob und wo zum 2026-09-20 noch eine OpenClaw-Installation mit Version 2026.7.1-2 betrieben wird, ist unbekannt.",
+      "statement": "Außerhalb der beiden für das Projekt relevanten Installationen auf srv001 und srv002 ist unbekannt, ob und wo eine OpenClaw-Installation mit Version 2026.7.1-2 betrieben wird. Für den Projektumfang ist die Frage durch evd-060 beantwortet.",
       "evidence_status": "UNKNOWN",
-      "status_reason": "Weder die Angaben des Ideengebers vom 2026-09-20 noch die Prüfung auf srv001 treffen dazu eine Aussage. Kein `CONFLICT` zu evd-001: Die Angaben betreffen unterschiedliche Zeitpunkte (2026-09-13 und 2026-09-20).",
+      "status_reason": "Zum Projektumfang liegt mit evd-060 eine Aussage des Ideengebers vor. Darüber hinaus enthält keine Quelle eine Angabe; kein `CONFLICT` zu evd-001, weil die Angaben unterschiedliche Zeitpunkte betreffen (2026-09-13, 2026-09-20 und 2026-09-21).",
       "sources": [
         {
           "type": "USER_STATEMENT",
@@ -2569,24 +2571,63 @@
           "version": "openclaw@2026.9.4",
           "checked_at": "2026-09-20",
           "contribution": "zeigt auf srv001 keine Installation mit 2026.7.1-2"
+        },
+        {
+          "type": "USER_STATEMENT",
+          "location": "Gespräch mit dem Ideengeber, 2026-09-21",
+          "version": "–",
+          "checked_at": "2026-09-21",
+          "contribution": "grenzt die Frage auf Installationen außerhalb des Projektumfangs ein (siehe evd-060)"
         }
       ],
       "verification": {
         "performed": [
-          "Angaben des Ideengebers und Prüfergebnis auf srv001 gegenübergestellt"
+          "Angaben des Ideengebers und Prüfergebnis auf srv001 gegenübergestellt",
+          "Angaben des Ideengebers vom 2026-09-21 einbezogen"
         ],
-        "result": "keine Angabe zu einer laufenden Installation mit 2026.7.1-2",
+        "result": "für den Projektumfang beantwortet (evd-060); darüber hinaus keine Angabe",
         "not_performed": [
           "wegen fehlenden Zugriffs nicht möglich: Prüfung auf srv002",
           "nicht durchgeführt: Nachfrage nach weiteren Rechnern"
         ],
-        "limitation": "Das Fehlen einer Angabe belegt nicht, dass keine solche Installation existiert"
+        "limitation": "Das Fehlen einer Angabe belegt nicht, dass außerhalb des Projektumfangs keine solche Installation existiert; für den Projektumfang gilt die Aussage in evd-060"
       },
       "idea_reference": {
         "location": "idea.md, Abschnitt 2, Abschnitt 10, Abschnitt 11",
         "significance": "betrifft den Umfang der zu unterstützenden Versionen"
       },
-      "conclusion": "Für die Version 2026.7.1-2 liegt zum 2026-09-20 kein Betriebsnachweis vor."
+      "conclusion": "Für den Projektumfang wird keine Installation mit 2026.7.1-2 mehr betrieben (evd-060). Für Rechner außerhalb des Projektumfangs liegt keine Angabe vor."
+    },
+    {
+      "id": "evd-060",
+      "statement": "Nach Aussage des Ideengebers sind srv001 und srv002 die beiden für das Projekt relevanten OpenClaw-Installationen, beide laufen inzwischen mit OpenClaw 2026.9.4, und eine weitere für das Projekt relevante Installation mit 2026.7.1-2 gibt es nicht.",
+      "evidence_status": "USER_PROVIDED",
+      "status_reason": "Die Angabe stammt unmittelbar vom Ideengeber. Nach `rules/evidence.md`, Abschnitt „Nachträgliche Tatsachenaussagen des Ideengebers“, bleibt sie `USER_PROVIDED` und wird nicht auf `VERIFIED` hochgestuft.",
+      "sources": [
+        {
+          "type": "USER_STATEMENT",
+          "location": "Gespräch mit dem Ideengeber, 2026-09-21 („Die beiden für das Projekt relevanten OpenClaw-Installationen sind srv001 und srv002. Beide laufen inzwischen mit OpenClaw 2026.9.4. Eine weitere für dieses Projekt relevante Installation mit 2026.7.1-2 gibt es nicht.“)",
+          "version": "–",
+          "checked_at": "2026-09-21",
+          "contribution": "benennt den Projektumfang und schließt eine weitere relevante Installation aus"
+        }
+      ],
+      "verification": {
+        "performed": [
+          "Aussage übernommen"
+        ],
+        "result": "wie in der Aussage",
+        "not_performed": [
+          "wegen fehlenden Zugriffs nicht möglich: Prüfung auf srv002",
+          "nicht durchgeführt: Suche nach weiteren Installationen außerhalb des Projektumfangs"
+        ],
+        "limitation": "Aussage des Ideengebers; für srv001 deckt sie sich mit der Prüfung in evd-056, für srv002 liegt kein eigener Nachweis vor"
+      },
+      "idea_reference": {
+        "location": "idea.md, Abschnitt 2, Abschnitt 10 („aktuelle OpenClaw-Versionen“), Abschnitt 11",
+        "significance": "grenzt die für das Projekt maßgeblichen Installationen und Versionen ab"
+      },
+      "conclusion": "Für das Projekt sind zwei Installationen mit Version 2026.9.4 maßgeblich; die in evd-001 genannte Version 2026.7.1-2 ist dort nicht mehr im Einsatz."
     }
   ]
 }
